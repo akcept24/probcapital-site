@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+*.local
+
+# Env (keep .env.example in repo)
+.env
+.env.*
+!.env.example
+
+# Logs & debug
+*.log
+npm-debug.log*
+.DS_Store
+
+# Vite / tooling
+.vite/
+.wrangler/
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# OS
+Thumbs.db

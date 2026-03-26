@@ -1,18 +1,42 @@
-const items = [
-  { symbol: "EUR/USD", price: "1.08542", change: "+0.12%" },
-  { symbol: "GBP/USD", price: "1.26341", change: "+0.08%" },
-  { symbol: "XAU/USD", price: "2,318.40", change: "+0.34%" },
-  { symbol: "BTC/USD", price: "67,842.00", change: "+2.14%" },
-  { symbol: "NAS100", price: "18,024.5", change: "-0.22%" },
-  { symbol: "USD/JPY", price: "151.842", change: "+0.06%" },
-  { symbol: "SPX500", price: "5,248.30", change: "+0.15%" },
-  { symbol: "ETH/USD", price: "3,184.60", change: "+1.42%" },
-  { symbol: "OIL/USD", price: "81.24", change: "-0.31%" },
-  { symbol: "AUD/USD", price: "0.64821", change: "+0.09%" },
+import { useEffect, useState } from "react";
+import { fetchTickerQuotes, type TickerItem } from "../lib/ticker-quotes";
+
+const FALLBACK: TickerItem[] = [
+  { symbol: "EUR/USD", price: "—", change: "—" },
+  { symbol: "GBP/USD", price: "—", change: "—" },
+  { symbol: "XAU/USD", price: "—", change: "—" },
+  { symbol: "BTC/USD", price: "—", change: "—" },
+  { symbol: "NAS100", price: "—", change: "—" },
+  { symbol: "USD/JPY", price: "—", change: "—" },
+  { symbol: "SPX500", price: "—", change: "—" },
+  { symbol: "ETH/USD", price: "—", change: "—" },
+  { symbol: "OIL/USD", price: "—", change: "—" },
+  { symbol: "AUD/USD", price: "—", change: "—" },
 ];
 
+const REFRESH_MS = 60_000;
+
 export default function Ticker() {
+  const [items, setItems] = useState<TickerItem[]>(FALLBACK);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      const next = await fetchTickerQuotes();
+      if (!cancelled && next.length) setItems(next);
+    }
+
+    load();
+    const id = window.setInterval(load, REFRESH_MS);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+    };
+  }, []);
+
   const doubled = [...items, ...items];
+
   return (
     <div
       className="overflow-hidden py-3.5 relative"
@@ -24,14 +48,19 @@ export default function Ticker() {
     >
       <div className="ticker-inner gap-10">
         {doubled.map((item, i) => (
-          <div key={i} className="flex items-center gap-2 shrink-0">
-            <span className="text-[13px] font-semibold text-[#F0F2FF] tracking-wide">
-              {item.symbol}
-            </span>
+          <div key={`${item.symbol}-${i}`} className="flex items-center gap-2 shrink-0">
+            <span className="text-[13px] font-semibold text-[#F0F2FF] tracking-wide">{item.symbol}</span>
             <span className="text-[13px] text-[#8A8FA8]">{item.price}</span>
             <span
               className="text-[12px] font-medium"
-              style={{ color: item.change.startsWith("+") ? "#22C55E" : "#EF4444" }}
+              style={{
+                color:
+                  item.change === "—"
+                    ? "#8A8FA8"
+                    : item.change.startsWith("+")
+                      ? "#22C55E"
+                      : "#EF4444",
+              }}
             >
               {item.change}
             </span>

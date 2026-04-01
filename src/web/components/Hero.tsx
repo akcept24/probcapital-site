@@ -87,13 +87,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Photo — smaller, framed (not full-bleed) */}
+        {/* Photo — full width of column, wider frame on desktop */}
         <div
-          className="fade-in-up relative mx-auto w-full max-w-[min(100%,380px)] lg:mx-0 lg:max-w-[400px] lg:justify-self-end"
+          className="fade-in-up relative mx-auto w-full max-w-[min(100%,440px)] lg:mx-0 lg:max-w-none"
           style={{ animationDelay: "0.25s" }}
         >
           <div
-            className="relative h-[min(340px,46vh)] w-full overflow-hidden rounded-2xl sm:h-[min(380px,50vh)] lg:h-[min(420px,52vh)]"
+            className="relative h-[min(340px,46vh)] w-full overflow-hidden rounded-2xl sm:h-[min(380px,50vh)] lg:h-auto lg:aspect-[4/3] lg:max-h-[min(480px,56vh)] xl:aspect-[16/11] xl:max-h-[min(520px,58vh)]"
             style={{
               border: "1px solid rgba(255,255,255,0.1)",
               boxShadow:

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#0F1117]">
       <div
-        className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.75fr)] lg:items-center lg:gap-12"
+        className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-14"
         style={{ paddingTop: "100px", paddingBottom: "2rem" }}
       >
         {/* Copy — solid page background, no busy photo behind */}
@@ -103,7 +103,7 @@ export default function Hero() {
             <img
               src="/hero-trader.png"
               alt=""
-              className="h-full w-full object-cover object-[72%_28%] sm:object-[68%_center]"
+              className="h-full w-full object-cover object-[70%_30%] sm:object-[68%_center] lg:object-[62%_center]"
               width={800}
               height={1000}
               decoding="async"

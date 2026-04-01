@@ -68,12 +68,21 @@
   }
 }
 
-/* Teal gradient text */
+/* Teal gradient text (may render as dark/empty if background-clip unsupported — avoid on photo overlays) */
 .gold-text {
   background: linear-gradient(135deg, #00D4AA 0%, #00FFCC 50%, #00D4AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Hero H1 accent: always readable (opaque fill + glow, no clip-text) */
+.hero-accent-line {
+  color: #5dffdf;
+  text-shadow:
+    0 0 42px rgba(0, 255, 204, 0.45),
+    0 2px 14px rgba(0, 0, 0, 0.95),
+    0 0 2px rgba(0, 0, 0, 1);
 }
 
 /* Teal gradient bg */

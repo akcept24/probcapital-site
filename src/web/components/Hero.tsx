@@ -6,123 +6,121 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[#0F1117]">
-      {/* Full-bleed photo */}
-      <div className="absolute inset-0 z-0 min-h-[560px] lg:min-h-0">
-        <img
-          src="/hero-trader.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[70%_center] sm:object-[65%_center] lg:object-[72%_28%]"
-          width={1920}
-          height={1080}
-          decoding="async"
-          fetchPriority="high"
-        />
-        {/* Readability: heavy left vignette + top/bottom fade into page bg */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              linear-gradient(90deg, #0F1117 0%, rgba(15,17,23,0.97) 18%, rgba(15,17,23,0.55) 52%, rgba(15,17,23,0.2) 72%, transparent 100%),
-              linear-gradient(180deg, rgba(15,17,23,0.75) 0%, transparent 28%, transparent 62%, #0F1117 100%)
-            `,
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-overlay"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
-      {/* Copy + CTAs */}
       <div
-        className="relative z-10 flex min-h-[min(100vh,920px)] flex-col justify-center px-6"
-        style={{ paddingTop: "100px", paddingBottom: "2.5rem" }}
+        className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.75fr)] lg:items-center lg:gap-12"
+        style={{ paddingTop: "100px", paddingBottom: "2rem" }}
       >
-        <div className="mx-auto w-full max-w-7xl">
-          <div className="mx-auto max-w-[640px] text-center lg:mx-0 lg:text-left">
-            <div
-              className="fade-in-up mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 backdrop-blur-md lg:mx-0 mx-auto"
-              style={{
-                background: "rgba(0,212,170,0.12)",
-                border: "1px solid rgba(0,212,170,0.35)",
-                boxShadow: "0 0 40px rgba(0,212,170,0.08)",
-                animationDelay: "0.1s",
-              }}
+        {/* Copy — solid page background, no busy photo behind */}
+        <div className="mx-auto max-w-[640px] text-center lg:mx-0 lg:max-w-none lg:text-left">
+          <div
+            className="fade-in-up mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 backdrop-blur-md lg:mx-0 mx-auto"
+            style={{
+              background: "rgba(0,212,170,0.12)",
+              border: "1px solid rgba(0,212,170,0.35)",
+              boxShadow: "0 0 40px rgba(0,212,170,0.08)",
+              animationDelay: "0.1s",
+            }}
+          >
+            <span className="h-2 w-2 shrink-0 rounded-full gold-gradient pulse-gold" />
+            <span className="text-[13px] font-semibold tracking-wide text-[#00FFCC]">
+              {tr.hero_badge}
+            </span>
+          </div>
+
+          <h1
+            className="fade-in-up font-extrabold tracking-[-0.03em] text-[#F0F2FF]"
+            style={{
+              fontSize: "clamp(32px, 5.5vw, 68px)",
+              lineHeight: 1.08,
+              animationDelay: "0.2s",
+              textShadow:
+                "0 2px 20px rgba(0,0,0,0.85), 0 8px 40px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,1)",
+            }}
+          >
+            {tr.hero_h1_1}
+            <br />
+            <span className="hero-accent-line">{tr.hero_h1_2}</span>
+          </h1>
+
+          <p
+            className="fade-in-up mx-auto mt-6 max-w-[540px] leading-relaxed text-[#D2D8EA] lg:mx-0"
+            style={{
+              fontSize: "clamp(15px, 2vw, 18px)",
+              animationDelay: "0.3s",
+              textShadow: "0 2px 12px rgba(0,0,0,0.65)",
+            }}
+          >
+            {tr.hero_sub}{" "}
+            <span className="font-semibold text-white">{tr.hero_sub_amount}</span> {tr.hero_sub_mid}{" "}
+            <span className="font-semibold text-[#00FFCC]">{tr.hero_sub_split}</span>.
+          </p>
+
+          <div
+            className="fade-in-up mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap lg:justify-start"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <a
+              href={appPlans()}
+              className="gold-gradient rounded-xl px-8 py-4 text-center text-[16px] font-bold text-[#0F1117] transition-all duration-200 hover:opacity-95 hover:brightness-105"
+              style={{ boxShadow: "0 8px 36px rgba(0,212,170,0.45), 0 0 0 1px rgba(0,255,204,0.2)" }}
             >
-              <span className="h-2 w-2 shrink-0 rounded-full gold-gradient pulse-gold" />
-              <span className="text-[13px] font-semibold tracking-wide text-[#00FFCC]">
-                {tr.hero_badge}
+              {tr.hero_cta1}
+            </a>
+            <a
+              href="#how-it-works"
+              className="rounded-xl border border-white/15 bg-white/[0.06] px-8 py-4 text-center text-[16px] font-semibold text-[#F0F2FF] backdrop-blur-md transition-all duration-200 hover:border-[rgba(0,212,170,0.45)] hover:bg-[rgba(0,212,170,0.1)]"
+            >
+              {tr.hero_cta2}
+            </a>
+          </div>
+
+          <div
+            className="fade-in-up mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] text-[#B4BCD4] lg:justify-start"
+            style={{ animationDelay: "0.5s" }}
+          >
+            {[tr.hero_trust_1, tr.hero_trust_2, tr.hero_trust_3, tr.hero_trust_4].map((text) => (
+              <span key={text} className="flex items-center gap-1.5" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
+                <span className="font-bold text-[#00D4AA]">✓</span>
+                <span>{text}</span>
               </span>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            <h1
-              className="fade-in-up font-extrabold tracking-[-0.03em] text-[#F0F2FF]"
-              style={{
-                fontSize: "clamp(36px, 6.5vw, 76px)",
-                lineHeight: 1.06,
-                animationDelay: "0.2s",
-                textShadow:
-                  "0 2px 20px rgba(0,0,0,0.85), 0 8px 48px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,1)",
-              }}
-            >
-              {tr.hero_h1_1}
-              <br />
-              <span className="gold-text" style={{ filter: "drop-shadow(0 4px 24px rgba(0,212,170,0.35))" }}>
-                {tr.hero_h1_2}
-              </span>
-            </h1>
-
-            <p
-              className="fade-in-up mx-auto mt-6 max-w-[540px] leading-relaxed text-[#C8CDDF] lg:mx-0"
-              style={{
-                fontSize: "clamp(15px, 2vw, 18px)",
-                animationDelay: "0.3s",
-                textShadow: "0 2px 16px rgba(0,0,0,0.75)",
-              }}
-            >
-              {tr.hero_sub}{" "}
-              <span className="font-semibold text-white">{tr.hero_sub_amount}</span> {tr.hero_sub_mid}{" "}
-              <span className="font-semibold text-[#00FFCC]">{tr.hero_sub_split}</span>.
-            </p>
-
+        {/* Photo — smaller, framed (not full-bleed) */}
+        <div
+          className="fade-in-up relative mx-auto w-full max-w-[min(100%,380px)] lg:mx-0 lg:max-w-[400px] lg:justify-self-end"
+          style={{ animationDelay: "0.25s" }}
+        >
+          <div
+            className="relative h-[min(340px,46vh)] w-full overflow-hidden rounded-2xl sm:h-[min(380px,50vh)] lg:h-[min(420px,52vh)]"
+            style={{
+              border: "1px solid rgba(255,255,255,0.1)",
+              boxShadow:
+                "0 0 0 1px rgba(0,212,170,0.12), 0 24px 64px rgba(0,0,0,0.55), 0 0 60px rgba(0,212,170,0.08)",
+            }}
+          >
+            <img
+              src="/hero-trader.png"
+              alt=""
+              className="h-full w-full object-cover object-[72%_28%] sm:object-[68%_center]"
+              width={800}
+              height={1000}
+              decoding="async"
+              fetchPriority="high"
+            />
             <div
-              className="fade-in-up mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap lg:justify-start"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <a
-                href={appPlans()}
-                className="gold-gradient rounded-xl px-8 py-4 text-center text-[16px] font-bold text-[#0F1117] transition-all duration-200 hover:opacity-95 hover:brightness-105"
-                style={{ boxShadow: "0 8px 36px rgba(0,212,170,0.45), 0 0 0 1px rgba(0,255,204,0.2)" }}
-              >
-                {tr.hero_cta1}
-              </a>
-              <a
-                href="#how-it-works"
-                className="rounded-xl border border-white/15 bg-black/25 px-8 py-4 text-center text-[16px] font-semibold text-[#F0F2FF] backdrop-blur-md transition-all duration-200 hover:border-[rgba(0,212,170,0.45)] hover:bg-[rgba(0,212,170,0.08)]"
-              >
-                {tr.hero_cta2}
-              </a>
-            </div>
-
-            <div
-              className="fade-in-up mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] text-[#9BA3C0] lg:justify-start"
-              style={{ animationDelay: "0.5s" }}
-            >
-              {[tr.hero_trust_1, tr.hero_trust_2, tr.hero_trust_3, tr.hero_trust_4].map((text) => (
-                <span key={text} className="flex items-center gap-1.5" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}>
-                  <span className="font-bold text-[#00D4AA]">✓</span>
-                  <span>{text}</span>
-                </span>
-              ))}
-            </div>
+              className="pointer-events-none absolute inset-0 rounded-2xl"
+              style={{
+                background: "linear-gradient(125deg, rgba(15,17,23,0.35) 0%, transparent 45%, transparent 100%)",
+              }}
+            />
           </div>
         </div>
       </div>
 
-      {/* Dashboard mockup — sits on solid strip below photo */}
-      <div className="relative z-10 -mt-4 px-6 pb-20 pt-6">
+      {/* Dashboard mockup */}
+      <div className="relative z-10 px-6 pb-20 pt-4">
         <div className="fade-in-up mx-auto w-full max-w-[900px]" style={{ animationDelay: "0.6s" }}>
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-28 rounded-b-2xl"

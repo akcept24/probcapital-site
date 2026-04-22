@@ -43,13 +43,13 @@ export const t = {
     hiw_badge: "Process",
     hiw_h2_1: "From Zero to Funded in",
     hiw_h2_2: "4 Steps",
-    hiw_sub: "Our streamlined evaluation process gets you trading with real capital faster than any other firm.",
+    hiw_sub: "Our streamlined evaluation process gets you trading with simulated capital faster than any other firm.",
     hiw_s1_title: "Choose Your Challenge",
     hiw_s1_desc: "Select an account size from $10K to $400K. Pick between Standard or Aggressive evaluation. Pay the one-time fee.",
     hiw_s2_title: "Pass Phase 1 & 2",
     hiw_s2_desc: "Hit the 10% profit target in Phase 1, then 5% in Phase 2. Follow our simple risk rules. No time pressure on standard accounts.",
     hiw_s3_title: "Get Funded",
-    hiw_s3_desc: "Once you pass, receive your funded account in under 24 hours. Trade the same way you traded the challenge — no restrictions.",
+    hiw_s3_desc: "Once you pass, receive access to your simulated funded account in under 24 hours. Trade the same way as in your evaluation — same rules apply.",
     hiw_s4_title: "Withdraw Your Profits",
     hiw_s4_desc: "Request payouts anytime after your first profitable day. Get paid within 24 hours via crypto, bank wire, or PayPal.",
 
@@ -148,7 +148,7 @@ export const t = {
       },
       {
         q: "Do I trade with real money in the challenge?",
-        a: "The challenge is conducted in a simulated environment mirroring real market conditions. Once you pass and receive your funded account, you trade in a live environment where profits are real.",
+        a: "The challenge is conducted in a simulated environment using real-time market data. Once you pass and receive your funded account, you continue trading in a simulated environment — your profit split is paid by ProbCapital based on your performance.",
       },
       {
         q: "How fast do I get paid?",
@@ -200,8 +200,8 @@ export const t = {
     footer_c4: ["Terms of Service", "Privacy Policy", "Risk Disclosure", "AML Policy"],
     footer_disclaimer_title: "Risk Disclaimer:",
     footer_disclaimer:
-      "Trading in financial instruments involves substantial risk of loss. Probcapital provides simulated trading environments and funded accounts for evaluation purposes. Past performance is not indicative of future results. All challenge accounts are conducted in a simulated environment. Funded account profits are performance-based allocations. Please read our full risk disclosure before participating.",
-    footer_copy: "© 2024 Probcapital. All rights reserved.",
+      "ProbCapital is a trader evaluation and education platform. We do not offer investment services, brokerage, or financial advice. All accounts (evaluation and funded) are simulated environments using real-time market data — no real funds are placed in financial markets. Payouts to traders represent performance-based compensation paid by ProbCapital from its own funds, not proceeds from live trading. Past performance in simulations is not indicative of results in live markets. Trading involves substantial risk of loss. Participation fees are non-refundable except as stated in our Refund Policy. Please read our full Terms of Service and Risk Disclosure before participating.",
+    footer_copy: "© 2026 ProbCapital. All rights reserved.",
     footer_terms: "Terms",
     footer_privacy: "Privacy",
     footer_risk: "Risk Disclosure",
@@ -249,13 +249,13 @@ export const t = {
     hiw_badge: "Процесс",
     hiw_h2_1: "От нуля до финансирования за",
     hiw_h2_2: "4 шага",
-    hiw_sub: "Наш оптимизированный процесс оценки позволяет быстрее получить доступ к реальному капиталу.",
+    hiw_sub: "Наш оптимизированный процесс оценки позволяет быстрее получить доступ к симулированному капиталу.",
     hiw_s1_title: "Выберите челлендж",
     hiw_s1_desc: "Выберите размер счёта от $10K до $400K. Стандартный или агрессивный тип оценки. Разовая оплата.",
     hiw_s2_title: "Пройдите Фазу 1 и 2",
     hiw_s2_desc: "Достигните цели 10% в Фазе 1 и 5% в Фазе 2. Соблюдайте простые правила риска. Без ограничений по времени.",
     hiw_s3_title: "Получите финансирование",
-    hiw_s3_desc: "После прохождения получите финансируемый счёт менее чем за 24 часа. Торгуйте так же, как на челлендже.",
+    hiw_s3_desc: "После прохождения получите доступ к симулированному финансируемому счёту менее чем за 24 часа. Торгуйте так же, как на оценке.",
     hiw_s4_title: "Выведите прибыль",
     hiw_s4_desc: "Запрашивайте выплаты в любое время после первого прибыльного дня. Получите деньги в течение 24 часов.",
 
@@ -354,7 +354,7 @@ export const t = {
       },
       {
         q: "Я торгую реальными деньгами на челлендже?",
-        a: "Челлендж проводится в симулированной среде, максимально точно воспроизводящей реальные рыночные условия. После прохождения и получения финансируемого счёта торговля ведётся уже в реальной среде.",
+        a: "Челлендж проводится в симулированной среде с использованием данных рынка в реальном времени. После прохождения вы продолжаете торговать в симулированной среде — выплата вашей доли прибыли осуществляется ProbCapital на основе ваших результатов.",
       },
       {
         q: "Как быстро происходят выплаты?",
@@ -406,8 +406,8 @@ export const t = {
     footer_c4: ["Условия использования", "Политика конфиденциальности", "Раскрытие рисков", "AML-политика"],
     footer_disclaimer_title: "Предупреждение о рисках:",
     footer_disclaimer:
-      "Торговля финансовыми инструментами связана со значительным риском потери средств. Probcapital предоставляет симулированные торговые среды и финансируемые счета в целях оценки. Прошлые результаты не гарантируют будущих. Все счета челленджа ведутся в симулированной среде. Прибыль по финансируемым счетам основана на показателях торговли. Ознакомьтесь с полным раскрытием рисков перед участием.",
-    footer_copy: "© 2024 Probcapital. Все права защищены.",
+      "ProbCapital — это платформа для оценки и обучения трейдеров. Мы не предоставляем инвестиционные услуги, брокерские услуги или финансовые консультации. Все счета (оценочные и финансируемые) являются симулированными средами с использованием данных рынка в реальном времени — реальные средства на финансовые рынки не размещаются. Выплаты трейдерам представляют собой вознаграждение за показатели торговли, выплачиваемое ProbCapital из собственных средств, а не из доходов от реальной торговли. Прошлые результаты симуляций не гарантируют результатов на реальных рынках. Торговля сопряжена со значительным риском потерь. Участие в программе предполагает принятие рисков, описанных в Раскрытии рисков. Ознакомьтесь с Условиями использования и Раскрытием рисков перед участием.",
+    footer_copy: "© 2026 ProbCapital. Все права защищены.",
     footer_terms: "Условия",
     footer_privacy: "Конфиденциальность",
     footer_risk: "Раскрытие рисков",

@@ -10,7 +10,6 @@ import RiskPage from "./pages/risk";
 import AmlPage from "./pages/aml";
 import RefundPage from "./pages/refund";
 import { Provider } from "./components/provider";
-import { AgentFeedback, RunableBadge } from "@runablehq/website-runtime";
 import { LangProvider } from "./i18n/LangContext";
 
 function App() {
@@ -29,8 +28,6 @@ function App() {
           <Route path="/aml" component={AmlPage} />
           <Route path="/refund" component={RefundPage} />
         </Switch>
-        {import.meta.env.DEV && <AgentFeedback />}
-        {<RunableBadge />}
       </LangProvider>
     </Provider>
   );

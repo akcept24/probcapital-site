@@ -294,7 +294,7 @@ export default function AboutPage() {
         <Divider />
         <div style={{ maxWidth: "1140px", margin: "0 auto", paddingTop: "96px" }}>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "40px", alignItems: "start" }}>
             {/* Left: heading */}
             <div>
               <Badge text={ru ? "Философия" : "Our Philosophy"} />
@@ -428,7 +428,7 @@ export default function AboutPage() {
 
           {/* Entity card */}
           <GlassAccent style={{ marginBottom: "20px", padding: "28px 36px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "20px" }}>
               {[
                 { l: ru ? "Юридическое лицо" : "Legal Entity", v: "ProbCapital LLC" },
                 { l: ru ? "Штат" : "State", v: "Delaware, USA" },

@@ -1,32 +1,58 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { useLang } from "../i18n/LangContext";
 
-const navKeys = [
+const navItems = [
   { key: "nav_howItWorks" as const, id: "how-it-works" },
   { key: "nav_challenges" as const, id: "challenges" },
   { key: "nav_features" as const, id: "features" },
   { key: "nav_faq" as const, id: "faq" },
 ];
 
-function scrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const offset = 72; // navbar height
-    const top = el.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
-  }
+function scrollToSection(id: string) {
+  // Small delay to ensure DOM is ready
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) {
+      const navHeight = 72;
+      const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  }, 50);
 }
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang, tr } = useLang();
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function handleNavClick(id: string) {
+    setMenuOpen(false);
+    if (location !== "/") {
+      navigate("/");
+      // wait for page to mount then scroll
+      setTimeout(() => scrollToSection(id), 200);
+    } else {
+      scrollToSection(id);
+    }
+  }
+
+  function handleLogoClick(e: React.MouseEvent) {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  }
 
   return (
     <nav
@@ -39,7 +65,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-2">
           <img src="/logo.png" alt="Probcapital" className="w-9 h-9 rounded-lg object-cover" />
           <span className="font-bold text-[17px] tracking-tight">
             <span className="gold-text">Prob</span>
@@ -49,16 +75,20 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {navKeys.map((l) => (
+          {navItems.map((item) => (
             <button
-              key={l.key}
-              onClick={() => scrollTo(l.id)}
-              className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer"
+              key={item.key}
+              onClick={() => handleNavClick(item.id)}
+              className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer p-0"
             >
-              {tr[l.key]}
+              {tr[item.key]}
             </button>
           ))}
-          <a href="/about" className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium">
+          <a
+            href="/about"
+            onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/about"); }}
+            className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium"
+          >
             {lang === "ru" ? "О нас" : "About"}
           </a>
         </div>
@@ -103,6 +133,7 @@ export default function Navbar() {
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
         >
           <span className="block w-5 h-0.5 bg-[#F0F2FF] transition-all duration-200"
             style={{ transform: menuOpen ? "rotate(45deg) translate(3px,3px)" : "none" }} />
@@ -134,18 +165,26 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
-            {navKeys.map((l) => (
+
+            {/* Nav links */}
+            {navItems.map((item) => (
               <button
-                key={l.key}
-                onClick={() => { scrollTo(l.id); setMenuOpen(false); }}
-                className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1 bg-transparent border-none cursor-pointer text-left"
+                key={item.key}
+                onClick={() => handleNavClick(item.id)}
+                className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1 bg-transparent border-none cursor-pointer text-left w-full"
               >
-                {tr[l.key]}
+                {tr[item.key]}
               </button>
             ))}
-            <a href="/about" className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1" onClick={() => setMenuOpen(false)}>
+
+            <a
+              href="/about"
+              onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/about"); }}
+              className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
+            >
               {lang === "ru" ? "О нас" : "About"}
             </a>
+
             <a
               href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
               className="gold-gradient text-[#0F1117] text-[14px] font-bold px-5 py-3 rounded-lg text-center mt-2"

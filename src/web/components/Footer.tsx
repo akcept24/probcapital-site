@@ -57,11 +57,11 @@ export default function Footer() {
                 <span className="gold-text">Prob</span><span className="text-[#F0F2FF]">capital</span>
               </span>
             </div>
-            <p className="text-[13px] text-[#555A72] leading-relaxed max-w-[220px]">{tr.footer_desc}</p>
+            <p className="text-[13px] text-[#9098B8] leading-relaxed max-w-[220px]">{tr.footer_desc}</p>
             <div className="flex gap-3 mt-5">
               {["𝕏", "in", "📷", "💬"].map((icon, i) => (
                 <a key={i} href="#" className="w-9 h-9 rounded-xl flex items-center justify-center text-[13px] transition-all duration-200"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "#8A8FA8" }}
+                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "#A8AEBE" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; (e.currentTarget as HTMLElement).style.color = "#00D4AA"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLElement).style.color = "#8A8FA8"; }}>
                   {icon}
@@ -72,11 +72,11 @@ export default function Footer() {
 
           {groups.map((g) => (
             <div key={g.title}>
-              <div className="text-[12px] font-semibold uppercase tracking-widest text-[#555A72] mb-4">{g.title}</div>
+              <div className="text-[12px] font-semibold uppercase tracking-widest text-[#9098B8] mb-4">{g.title}</div>
               <ul className="space-y-2.5">
                 {g.items.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="text-[13px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-150">
+                    <a href={item.href} className="text-[13px] text-[#A8AEBE] hover:text-[#F0F2FF] transition-colors duration-150">
                       {item.label}
                     </a>
                   </li>
@@ -87,19 +87,19 @@ export default function Footer() {
         </div>
 
         {/* Disclaimer */}
-        <div className="py-5 px-6 rounded-xl mb-8 text-[12px] text-[#555A72] leading-relaxed"
+        <div className="py-5 px-6 rounded-xl mb-8 text-[12px] text-[#9098B8] leading-relaxed"
           style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)" }}>
-          <strong className="text-[#6A6A7A]">{tr.footer_disclaimer_title}</strong>{" "}{tr.footer_disclaimer}
+          <strong className="text-[#B0B4C8]">{tr.footer_disclaimer_title}</strong>{" "}{tr.footer_disclaimer}
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-5"
           style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}>
-          <div className="text-[12px] text-[#555A72]">{tr.footer_copy}</div>
-          <div className="flex flex-wrap gap-4 text-[12px] text-[#555A72]">
-            <a href="/terms" className="hover:text-[#8A8FA8] transition-colors">{tr.footer_terms}</a>
-            <a href="/privacy" className="hover:text-[#8A8FA8] transition-colors">{tr.footer_privacy}</a>
-            <a href="/refund" className="hover:text-[#8A8FA8] transition-colors">{ru ? "Возврат" : "Refund Policy"}</a>
-            <a href="/risk" className="hover:text-[#8A8FA8] transition-colors">{tr.footer_risk}</a>
+          <div className="text-[12px] text-[#9098B8]">{tr.footer_copy}</div>
+          <div className="flex flex-wrap gap-4 text-[12px] text-[#9098B8]">
+            <a href="/terms" className="hover:text-[#A8AEBE] transition-colors">{tr.footer_terms}</a>
+            <a href="/privacy" className="hover:text-[#A8AEBE] transition-colors">{tr.footer_privacy}</a>
+            <a href="/refund" className="hover:text-[#A8AEBE] transition-colors">{ru ? "Возврат" : "Refund Policy"}</a>
+            <a href="/risk" className="hover:text-[#A8AEBE] transition-colors">{tr.footer_risk}</a>
           </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 );
 
 const Sub = ({ children }: { children: ReactNode }) => (
-  <p style={{ color: "#7A7F99", fontSize: "clamp(15px,1.2vw,17px)", lineHeight: 1.8, maxWidth: "620px" }}>{children}</p>
+  <p style={{ color: "#B8BCCC", fontSize: "clamp(15px,1.2vw,17px)", lineHeight: 1.8, maxWidth: "620px" }}>{children}</p>
 );
 
 /* ── Grid lines decoration ── */
@@ -165,7 +165,7 @@ export default function AboutPage() {
             )}
           </h1>
 
-          <p style={{ fontSize: "clamp(16px,1.4vw,19px)", color: "#7A7F99", lineHeight: 1.8, maxWidth: "580px", marginBottom: "48px" }}>
+          <p style={{ fontSize: "clamp(16px,1.4vw,19px)", color: "#B8BCCC", lineHeight: 1.8, maxWidth: "580px", marginBottom: "48px" }}>
             {ru
               ? "ProbCapital — технологическая платформа оценки торговых навыков, созданная для выявления исключительно дисциплинированных трейдеров по всему миру."
               : "ProbCapital is a technology infrastructure and skill evaluation platform engineered to identify and verify elite trading discipline at global scale."}
@@ -181,7 +181,7 @@ export default function AboutPage() {
                 border: "1px solid rgba(255,255,255,0.09)",
               }}>
                 <span style={{ color: "#00D4AA", fontWeight: 800, fontSize: "15px" }}>{s.v}</span>
-                <span style={{ color: "#555A72", fontSize: "13px" }}>{s.l}</span>
+                <span style={{ color: "#8A90A8", fontSize: "13px" }}>{s.l}</span>
               </div>
             ))}
           </div>
@@ -214,7 +214,7 @@ export default function AboutPage() {
                   letterSpacing: "-0.04em",
                 }}>{p.n}</div>
                 <div style={{ fontWeight: 700, fontSize: "18px", marginBottom: "12px", color: "#F0F2FF" }}>{p.title}</div>
-                <div style={{ color: "#7A7F99", fontSize: "14px", lineHeight: 1.8 }}>{p.desc}</div>
+                <div style={{ color: "#B8BCCC", fontSize: "14px", lineHeight: 1.8 }}>{p.desc}</div>
               </Glass>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function AboutPage() {
                   }}>{t.tag}</span>
                 </div>
                 <div style={{ fontWeight: 700, fontSize: "16px", color: "#F0F2FF" }}>{t.title}</div>
-                <div style={{ color: "#7A7F99", fontSize: "13px", lineHeight: 1.75 }}>{t.desc}</div>
+                <div style={{ color: "#B8BCCC", fontSize: "13px", lineHeight: 1.75 }}>{t.desc}</div>
               </Glass>
             ))}
           </div>
@@ -292,13 +292,13 @@ export default function AboutPage() {
                   borderBottom: i < compliance.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
                 }}>
                   <Dot />
-                  <span style={{ color: "#C0C4D8", fontSize: "15px", lineHeight: 1.7 }}>{pt}</span>
+                  <span style={{ color: "#D8DCF0", fontSize: "15px", lineHeight: 1.7 }}>{pt}</span>
                 </div>
               ))}
             </div>
           </Glass>
 
-          <p style={{ marginTop: "20px", color: "#3A3F55", fontSize: "13px", textAlign: "center", lineHeight: 1.7 }}>
+          <p style={{ marginTop: "20px", color: "#7A8099", fontSize: "13px", textAlign: "center", lineHeight: 1.7 }}>
             {ru ? "Подробнее:" : "Full details:"}{" "}
             <a href="/terms" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Условия" : "Terms of Service"}</a>
             {" · "}
@@ -323,7 +323,7 @@ export default function AboutPage() {
           <h2 style={{ fontSize: "clamp(30px,5vw,54px)", fontWeight: 900, letterSpacing: "-0.025em", marginBottom: "20px" }}>
             {ru ? <>Готовы пройти<br /><span style={{ color: "#00D4AA" }}>оценку?</span></> : <>Ready to begin<br /><span style={{ color: "#00D4AA" }}>your evaluation?</span></>}
           </h2>
-          <p style={{ color: "#7A7F99", fontSize: "17px", marginBottom: "40px", lineHeight: 1.7 }}>
+          <p style={{ color: "#B8BCCC", fontSize: "17px", marginBottom: "40px", lineHeight: 1.7 }}>
             {ru
               ? "Присоединяйтесь к тысячам трейдеров которые прошли нашу программу оценки и получили доступ к финансируемым аккаунтам."
               : "Join thousands of traders who have completed our evaluation program and gained access to performance-based funding opportunities."}
@@ -343,7 +343,7 @@ export default function AboutPage() {
               ? ["Симулированная среда", "Прозрачные правила", "Без скрытых комиссий"]
               : ["Simulated Environment", "Transparent Rules", "No Hidden Fees"]
             ).map(t => (
-              <span key={t} style={{ display: "flex", alignItems: "center", gap: "7px", color: "#3A3F55", fontSize: "13px" }}>
+              <span key={t} style={{ display: "flex", alignItems: "center", gap: "7px", color: "#7A8099", fontSize: "13px" }}>
                 <span style={{ color: "#00D4AA" }}>✓</span>{t}
               </span>
             ))}

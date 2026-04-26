@@ -219,7 +219,7 @@ export default function Hero() {
       <style>{`
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-photo { display: none !important; }
+          .hero-photo { display: block !important; aspect-ratio: 16/9 !important; }
           .hero-stats { grid-template-columns: 1fr !important; }
           .hero-stats > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.07); }
           .hero-stats > div:last-child { border-bottom: none !important; }

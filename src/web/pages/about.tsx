@@ -3,265 +3,347 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
 
-const Badge = ({ text }: { text: string }) => (
+/* ── Reusable primitives ── */
+const Glass = ({ children, style = {} }: { children: ReactNode; style?: CSSProperties }) => (
   <div style={{
-    display: "inline-block", padding: "6px 16px", borderRadius: "100px",
-    background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.25)",
-    color: "#00D4AA", fontSize: "12px", fontWeight: 600,
-    textTransform: "uppercase" as const, letterSpacing: "0.08em", marginBottom: "20px",
-  }}>{text}</div>
+    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: "20px",
+    backdropFilter: "blur(12px)",
+    WebkitBackdropFilter: "blur(12px)",
+    padding: "36px",
+    ...style,
+  }}>{children}</div>
 );
 
-const Card = ({ children, style = {} }: { children: ReactNode; style?: CSSProperties }) => (
+const Badge = ({ text }: { text: string }) => (
+  <span style={{
+    display: "inline-block", padding: "5px 16px", borderRadius: "100px",
+    background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.22)",
+    color: "#00D4AA", fontSize: "11px", fontWeight: 700,
+    textTransform: "uppercase" as const, letterSpacing: "0.1em", marginBottom: "22px",
+  }}>{text}</span>
+);
+
+const Dot = () => (
+  <span style={{
+    display: "inline-block", width: "6px", height: "6px", borderRadius: "50%",
+    background: "#00D4AA", marginRight: "12px", flexShrink: 0,
+    boxShadow: "0 0 8px rgba(0,212,170,0.8)",
+  }} />
+);
+
+const SectionTitle = ({ children }: { children: ReactNode }) => (
+  <h2 style={{
+    fontSize: "clamp(28px,4vw,46px)", fontWeight: 900,
+    letterSpacing: "-0.025em", lineHeight: 1.1,
+    marginBottom: "20px", color: "#F0F2FF",
+  }}>{children}</h2>
+);
+
+const Sub = ({ children }: { children: ReactNode }) => (
+  <p style={{ color: "#7A7F99", fontSize: "clamp(15px,1.2vw,17px)", lineHeight: 1.8, maxWidth: "620px" }}>{children}</p>
+);
+
+/* ── Grid lines decoration ── */
+const GridLines = () => (
   <div style={{
-    background: "#111520", border: "1px solid rgba(255,255,255,0.07)",
-    borderRadius: "16px", padding: "32px", ...style,
-  }}>{children}</div>
+    position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+    backgroundImage: "linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px)",
+    backgroundSize: "60px 60px",
+  }} />
 );
 
 export default function AboutPage() {
   const { lang } = useLang();
   const ru = lang === "ru";
 
-  const steps = ru ? [
-    { n: "01", title: "Выберите программу оценки", desc: "Выберите размер счёта и тип испытания — Standard или Aggressive. Оплатите разовый взнос." },
-    { n: "02", title: "Торгуйте по правилам", desc: "Достигайте целей по прибыли в симулированной среде, соблюдая правила управления рисками." },
-    { n: "03", title: "Получите финансирование", desc: "После прохождения оценки вы получаете доступ к симулированному финансируемому счёту и компенсацию на основе результатов." },
-  ] : [
-    { n: "01", title: "Choose Your Evaluation", desc: "Select an account size and challenge type — Standard or Aggressive. Pay a one-time fee." },
-    { n: "02", title: "Trade Under Defined Rules", desc: "Hit profit targets in a simulated environment while following our clear risk management rules." },
-    { n: "03", title: "Qualify for Funding", desc: "Once you pass, you receive access to a simulated funded account and performance-based compensation." },
+  const techStack = [
+    {
+      icon: "⚡",
+      title: ru ? "Низкая задержка исполнения" : "Low-Latency Execution",
+      desc: ru ? "Выделенные VPS-серверы в ключевых финансовых центрах обеспечивают исполнение ордеров с задержкой менее 1 мс." : "Dedicated VPS infrastructure across major financial hubs ensures sub-millisecond order execution and feed processing.",
+      tag: "< 1ms",
+    },
+    {
+      icon: "🗄️",
+      title: ru ? "Целостность данных" : "Data Integrity Layer",
+      desc: ru ? "Платформа Supabase с шифрованием AES-256 и репликацией в реальном времени гарантирует целостность всех торговых данных." : "Supabase-powered backend with AES-256 encryption and real-time replication guarantees full auditability of all evaluation data.",
+      tag: "AES-256",
+    },
+    {
+      icon: "🤖",
+      title: ru ? "ИИ-анализ рисков" : "AI Risk Analytics",
+      desc: ru ? "Проприетарные модели машинного обучения в реальном времени анализируют паттерны торговли, выявляя аномалии и нарушения правил." : "Proprietary ML models analyze trading patterns in real time, flagging rule violations and behavioral anomalies instantly.",
+      tag: "ML-Powered",
+    },
+    {
+      icon: "📊",
+      title: ru ? "Панель аналитики" : "Performance Dashboard",
+      desc: ru ? "Интерактивная панель отображает кривую эквити, просадку, целевые показатели и историю оценок в реальном времени." : "Interactive analytics dashboard delivers real-time equity curves, drawdown tracking, target progress, and full evaluation history.",
+      tag: "Real-Time",
+    },
+    {
+      icon: "🔐",
+      title: ru ? "Безопасность" : "Enterprise Security",
+      desc: ru ? "SOC2-совместимая инфраструктура с двухфакторной аутентификацией, мониторингом угроз и полным журналом аудита." : "SOC2-aligned infrastructure with 2FA enforcement, intrusion monitoring, and complete audit trails for every session.",
+      tag: "SOC2",
+    },
+    {
+      icon: "🌐",
+      title: ru ? "Глобальная доступность" : "Global Accessibility",
+      desc: ru ? "Платформа обслуживает трейдеров из 140+ стран с поддержкой MT4/MT5 и доступом через веб-интерфейс." : "Platform serves traders across 140+ countries with MT4/MT5 bridge support and a responsive web interface.",
+      tag: "140+ Countries",
+    },
   ];
 
-  const pillars = ru ? [
-    { icon: "⚖️", title: "Прозрачные правила", desc: "Никаких скрытых условий. Все правила чётко прописаны до начала испытания." },
-    { icon: "🛡️", title: "Контролируемые риски", desc: "Чёткие лимиты просадки защищают как трейдера, так и целостность программы." },
-    { icon: "📈", title: "Прогрессия по результатам", desc: "Ваши успехи определяют ваш рост. Никаких случайных решений." },
-    { icon: "🔁", title: "Масштабируемая модель", desc: "Доказывайте стабильность — и мы увеличиваем размер вашего счёта до $2 000 000." },
+  const philosophy = ru ? [
+    { n: "01", title: "Дисциплина прежде всего", desc: "Мы убеждены: стабильная торговля определяется не интуицией, а строгой дисциплиной. Наша программа оценки выявляет трейдеров, которые последовательно соблюдают правила управления рисками." },
+    { n: "02", title: "Данные, а не мнения", desc: "Каждое решение о прохождении оценки основано исключительно на объективных метриках — коэффициент прибыли, максимальная просадка, последовательность результатов. Никакой субъективности." },
+    { n: "03", title: "Масштабируемый доступ", desc: "Талант не должен ограничиваться размером капитала. Наша инфраструктура позволяет масштабировать доступ к торговым возможностям для любого дисциплинированного трейдера в мире." },
   ] : [
-    { icon: "⚖️", title: "Transparent Rules", desc: "No hidden conditions. Every rule is clearly defined before you start the challenge." },
-    { icon: "🛡️", title: "Risk-Controlled Environment", desc: "Clear drawdown limits protect both the trader and the integrity of the program." },
-    { icon: "📈", title: "Performance-Based Progression", desc: "Your results determine your growth. No arbitrary decisions." },
-    { icon: "🔁", title: "Scalable Account Model", desc: "Prove consistency and we scale your allocation up to $2,000,000." },
+    { n: "01", title: "Discipline Over Intuition", desc: "We believe consistent trading performance is defined by systematic discipline, not instinct. Our evaluation framework identifies traders who reliably apply risk management principles under pressure." },
+    { n: "02", title: "Data Over Opinion", desc: "Every evaluation outcome is driven by objective performance metrics — profit factor, maximum drawdown, consistency ratio. No subjective judgment, no bias." },
+    { n: "03", title: "Scalable Access", desc: "Talent should not be gated by capital size. Our infrastructure enables scalable access to trading opportunities for any disciplined trader, anywhere in the world." },
   ];
 
-  const modelPoints = ru ? [
-    "ProbCapital — это платформа оценки трейдеров, а не инвестиционная компания.",
-    "Мы не принимаем депозиты и не управляем клиентскими средствами.",
-    "Всё торговля в рамках оценки и финансируемых счётов проходит в симулированной среде.",
-    "Финансирование предоставляется на основе торговых результатов и внутренних критериев.",
-    "Выплаты трейдерам — это компенсация от ProbCapital из собственных средств компании.",
-    "Мы не предоставляем инвестиционные консультации и брокерские услуги.",
+  const compliance = ru ? [
+    "ProbCapital — это компания-разработчик программного обеспечения, зарегистрированная в штате Вайоминг, США.",
+    "Мы предоставляем платформу для оценки торговых навыков и анализа результатов — не брокерские или инвестиционные услуги.",
+    "Мы не принимаем клиентские депозиты и не управляем активами пользователей.",
+    "Все торговые операции в рамках программы оценки выполняются в симулированной среде.",
+    "Мы не являемся финансовым посредником и не подпадаем под регулирование ценных бумаг.",
+    "Компенсация за прохождение оценки выплачивается ProbCapital из собственных средств на основе показателей производительности.",
+    "Использование платформы не гарантирует какого-либо финансового результата.",
   ] : [
-    "ProbCapital is a trader evaluation platform — not an investment company.",
-    "We do not accept deposits or manage client funds.",
-    "All evaluation and funded account trading occurs in a simulated environment.",
-    "Funding is granted based on trading performance and internal criteria.",
-    "Trader payouts are performance-based compensation paid by ProbCapital from its own funds.",
-    "We do not provide investment advice or brokerage services.",
+    "ProbCapital is a software technology company incorporated in Wyoming, USA.",
+    "We provide a performance analysis and trader evaluation platform — not brokerage, investment, or financial advisory services.",
+    "We do not accept client deposits or manage user assets of any kind.",
+    "All trading activity within the evaluation program takes place in a simulated software environment.",
+    "We are not a financial intermediary and are not subject to securities regulation.",
+    "Performance-based compensation is paid by ProbCapital from its own operating funds based solely on evaluation metrics.",
+    "Use of the platform does not guarantee any financial outcome.",
+  ];
+
+  const stats = [
+    { v: "Wyoming, USA", l: ru ? "Юрисдикция" : "Jurisdiction" },
+    { v: "140+", l: ru ? "Стран" : "Countries" },
+    { v: "< 1ms", l: ru ? "Задержка" : "Latency" },
+    { v: "99.9%", l: ru ? "Аптайм" : "Uptime SLA" },
   ];
 
   return (
-    <div style={{ background: "#070B12", minHeight: "100vh", color: "#F0F2FF" }}>
+    <div style={{ background: "#050914", minHeight: "100vh", color: "#F0F2FF", overflowX: "hidden" }}>
       <Navbar />
 
-      {/* ── HERO ── */}
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "120px 24px 64px", textAlign: "center" }}>
-        <Badge text={ru ? "О компании" : "About Us"} />
-        <h1 style={{
-          fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900,
-          lineHeight: 1.08, letterSpacing: "-0.025em", marginBottom: "24px",
-        }}>
-          {ru ? (<>Создано трейдерами.<br /><span style={{ color: "#00D4AA" }}>Для трейдеров.</span></>) : (<>Built by Traders.<br /><span style={{ color: "#00D4AA" }}>Designed for Performance.</span></>)}
-        </h1>
-        <p style={{ fontSize: "clamp(16px,1.4vw,19px)", color: "#8A8FA8", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto 16px" }}>
-          {ru
-            ? "ProbCapital — это платформа оценки трейдеров на основе результатов, созданная для выявления и поддержки дисциплинированных трейдеров по всему миру."
-            : "ProbCapital is a performance-based trading evaluation platform created to identify and support disciplined traders around the world."}
-        </p>
-        <p style={{ fontSize: "15px", color: "#555A72", lineHeight: 1.7, maxWidth: "560px", margin: "0 auto 40px" }}>
-          {ru
-            ? "Мы верим, что талантливые трейдеры заслуживают структурированной возможности — прозрачной, справедливой и масштабируемой."
-            : "We believe talented traders deserve a structured opportunity — one that is transparent, fair, and scalable."}
-        </p>
-        <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" style={{
-          display: "inline-flex", alignItems: "center", justifyContent: "center",
-          padding: "16px 40px", borderRadius: "10px",
-          background: "#00D4AA", color: "#070B12",
-          fontWeight: 700, fontSize: "16px", textDecoration: "none",
-          boxShadow: "0 4px 28px rgba(0,212,170,0.4)",
-        }}>
-          {ru ? "Начать испытание →" : "Start Challenge →"}
-        </a>
-      </section>
+      {/* ══════════════════════════════════════
+          HERO
+      ══════════════════════════════════════ */}
+      <section style={{ position: "relative", minHeight: "92vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <GridLines />
 
-      {/* ── FOUNDER STORY ── */}
-      <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px 64px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", alignItems: "center" }}>
-          <div>
-            <Badge text={ru ? "История основания" : "Our Background"} />
-            <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "20px", lineHeight: 1.15 }}>
-              {ru ? "Откуда мы пришли" : "Where We Come From"}
-            </h2>
-            <p style={{ color: "#8A8FA8", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
-              {ru
-                ? "ProbCapital основан трейдером с более чем 15-летним опытом работы на глобальных финансовых рынках — от форекса до деривативов и алгоритмических стратегий."
-                : "ProbCapital was founded by a U.S.-based trader with over 15 years of experience across global financial markets — from forex to derivatives and algorithmic strategies."}
-            </p>
-            <p style={{ color: "#8A8FA8", fontSize: "16px", lineHeight: 1.8 }}>
-              {ru
-                ? "После многолетней торговли мы пришли к одному выводу: индустрия нуждается в прозрачной, честной платформе, которая даёт трейдерам реальный шанс проявить себя."
-                : "After years in the industry, we arrived at one conclusion: the market needed a transparent, fair platform that gives traders a real chance to prove themselves."}
-            </p>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            {[
-              { v: "15+", l: ru ? "Лет опыта" : "Years of Experience" },
-              { v: "140+", l: ru ? "Стран" : "Countries Served" },
-              { v: "$400K", l: ru ? "Макс. финансирование" : "Max Funding" },
-              { v: "$2.4M+", l: ru ? "Выплачено трейдерам" : "Paid to Traders" },
-            ].map(s => (
-              <Card key={s.l} style={{ display: "flex", alignItems: "center", gap: "20px", padding: "20px 24px" }}>
-                <div style={{ fontSize: "clamp(22px,3vw,32px)", fontWeight: 900, color: "#00D4AA", minWidth: "90px" }}>{s.v}</div>
-                <div style={{ fontSize: "14px", color: "#8A8FA8" }}>{s.l}</div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Radial glow */}
+        <div style={{
+          position: "absolute", top: "20%", left: "50%", transform: "translateX(-50%)",
+          width: "800px", height: "500px", borderRadius: "50%",
+          background: "radial-gradient(ellipse, rgba(0,212,170,0.07) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
 
-      {/* ── WHY WE BUILT IT ── */}
-      <section style={{ background: "#0d1220", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto", padding: "64px 24px", textAlign: "center" }}>
-          <Badge text={ru ? "Наша миссия" : "Why We Exist"} />
-          <h2 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "20px" }}>
-            {ru ? "Зачем существует ProbCapital" : "Why PropCapital Exists"}
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px", textAlign: "left", marginTop: "40px" }}>
-            {(ru ? [
-              { icon: "❌", title: "Проблема", items: ["Талантливые трейдеры лишены структурированных возможностей", "Отсутствие доступа к масштабируемому капиталу", "Непрозрачные правила в индустрии"] },
-              { icon: "✅", title: "Наше решение", items: ["Структурированная программа оценки с чёткими правилами", "Масштабируемый симулированный капитал до $400 000", "Полная прозрачность условий до старта"] },
-            ] : [
-              { icon: "❌", title: "The Problem", items: ["Talented traders lack access to structured opportunities", "No scalable capital pathway exists for retail traders", "Unclear and inconsistent rules across the industry"] },
-              { icon: "✅", title: "Our Solution", items: ["Structured evaluation program with clear, defined rules", "Scalable simulated capital access up to $400,000", "Full transparency before you start — no surprises"] },
-            ]).map(col => (
-              <Card key={col.title}>
-                <div style={{ fontSize: "28px", marginBottom: "12px" }}>{col.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: "17px", marginBottom: "16px" }}>{col.title}</div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
-                  {col.items.map(item => (
-                    <li key={item} style={{ display: "flex", gap: "10px", color: "#8A8FA8", fontSize: "14px", lineHeight: 1.6 }}>
-                      <span style={{ color: "#00D4AA", flexShrink: 0 }}>—</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "1100px", margin: "0 auto", padding: "140px 32px 100px" }}>
+          <Badge text={ru ? "О компании" : "About ProbCapital"} />
 
-      {/* ── HOW IT WORKS ── */}
-      <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "64px 24px" }}>
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <Badge text={ru ? "Процесс" : "How It Works"} />
-          <h2 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em" }}>
-            {ru ? "Три шага к финансированию" : "Three Steps to Funding"}
-          </h2>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
-          {steps.map(s => (
-            <Card key={s.n} style={{ position: "relative", overflow: "hidden" }}>
-              <div style={{ fontSize: "56px", fontWeight: 900, color: "rgba(0,212,170,0.08)", lineHeight: 1, marginBottom: "16px", letterSpacing: "-0.03em" }}>{s.n}</div>
-              <div style={{ fontWeight: 700, fontSize: "18px", marginBottom: "10px" }}>{s.title}</div>
-              <div style={{ color: "#8A8FA8", fontSize: "14px", lineHeight: 1.7 }}>{s.desc}</div>
-            </Card>
-          ))}
-        </div>
-      </section>
+          <h1 style={{
+            fontSize: "clamp(40px, 7vw, 82px)", fontWeight: 900,
+            lineHeight: 1.03, letterSpacing: "-0.03em",
+            marginBottom: "28px", maxWidth: "820px",
+          }}>
+            {ru ? (
+              <>Демократизация<br /><span style={{ color: "#00D4AA" }}>институционального</span><br />доступа к рынкам.</>
+            ) : (
+              <>Democratizing<br /><span style={{ color: "#00D4AA" }}>Institutional-Grade</span><br />Market Access.</>
+            )}
+          </h1>
 
-      {/* ── OUR APPROACH ── */}
-      <section style={{ background: "#0d1220", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "64px 24px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
-            <Badge text={ru ? "Наш подход" : "Our Approach"} />
-            <h2 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em" }}>
-              {ru ? "На чём держится ProbCapital" : "What ProbCapital Stands For"}
-            </h2>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
-            {pillars.map(p => (
-              <Card key={p.title}>
-                <div style={{ fontSize: "32px", marginBottom: "16px" }}>{p.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: "17px", marginBottom: "10px" }}>{p.title}</div>
-                <div style={{ color: "#8A8FA8", fontSize: "14px", lineHeight: 1.7 }}>{p.desc}</div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMPLIANCE / OUR MODEL ── */}
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "64px 24px" }}>
-        <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <Badge text={ru ? "Соответствие требованиям" : "Compliance"} />
-          <h2 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em" }}>
-            {ru ? "Наша модель" : "Our Model"}
-          </h2>
-          <p style={{ color: "#8A8FA8", fontSize: "16px", maxWidth: "560px", margin: "16px auto 0", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "clamp(16px,1.4vw,19px)", color: "#7A7F99", lineHeight: 1.8, maxWidth: "580px", marginBottom: "48px" }}>
             {ru
-              ? "Прозрачность — основа доверия. Вот как мы работаем."
-              : "Transparency is the foundation of trust. Here is exactly how we operate."}
+              ? "ProbCapital — технологическая платформа оценки торговых навыков, созданная для выявления исключительно дисциплинированных трейдеров по всему миру."
+              : "ProbCapital is a technology infrastructure and skill evaluation platform engineered to identify and verify elite trading discipline at global scale."}
+          </p>
+
+          {/* Stat pills */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
+            {stats.map(s => (
+              <div key={s.l} style={{
+                display: "flex", alignItems: "center", gap: "10px",
+                padding: "10px 20px", borderRadius: "100px",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.09)",
+              }}>
+                <span style={{ color: "#00D4AA", fontWeight: 800, fontSize: "15px" }}>{s.v}</span>
+                <span style={{ color: "#555A72", fontSize: "13px" }}>{s.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          PHILOSOPHY
+      ══════════════════════════════════════ */}
+      <section style={{ position: "relative", padding: "80px 32px", background: "rgba(0,0,0,0.3)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ marginBottom: "56px" }}>
+            <Badge text={ru ? "Философия" : "Our Philosophy"} />
+            <SectionTitle>
+              {ru ? <>Мы верим в<br /><span style={{ color: "#00D4AA" }}>измеримую дисциплину.</span></> : <>We believe in<br /><span style={{ color: "#00D4AA" }}>measurable discipline.</span></>}
+            </SectionTitle>
+            <Sub>
+              {ru
+                ? "Наш подход строится на убеждении, что настоящий торговый талант поддаётся количественной оценке. Мы создали инфраструктуру, которая это доказывает."
+                : "Our approach is built on the conviction that genuine trading talent is quantifiable. We built the infrastructure to prove it."}
+            </Sub>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
+            {philosophy.map(p => (
+              <Glass key={p.n} style={{ position: "relative", overflow: "hidden" }}>
+                <div style={{
+                  fontSize: "72px", fontWeight: 900, lineHeight: 1,
+                  color: "rgba(0,212,170,0.06)", marginBottom: "20px",
+                  letterSpacing: "-0.04em",
+                }}>{p.n}</div>
+                <div style={{ fontWeight: 700, fontSize: "18px", marginBottom: "12px", color: "#F0F2FF" }}>{p.title}</div>
+                <div style={{ color: "#7A7F99", fontSize: "14px", lineHeight: 1.8 }}>{p.desc}</div>
+              </Glass>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          TECH STACK
+      ══════════════════════════════════════ */}
+      <section style={{ position: "relative", padding: "80px 32px", overflow: "hidden" }}>
+        <GridLines />
+        {/* Glow */}
+        <div style={{
+          position: "absolute", bottom: 0, right: "10%",
+          width: "500px", height: "400px",
+          background: "radial-gradient(ellipse, rgba(0,212,170,0.06) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ marginBottom: "56px" }}>
+            <Badge text={ru ? "Технологии" : "Infrastructure & Tech Stack"} />
+            <SectionTitle>
+              {ru ? <>Инфраструктура<br /><span style={{ color: "#00D4AA" }}>корпоративного уровня.</span></> : <>Enterprise-grade<br /><span style={{ color: "#00D4AA" }}>infrastructure.</span></>}
+            </SectionTitle>
+            <Sub>
+              {ru
+                ? "Каждый компонент нашего стека спроектирован для надёжности, скорости и точности — стандарты институциональных торговых систем."
+                : "Every layer of our stack is engineered for reliability, speed, and precision — the same standards applied in institutional trading systems."}
+            </Sub>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            {techStack.map(t => (
+              <Glass key={t.title} style={{ display: "flex", flexDirection: "column", gap: "14px", padding: "28px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: "28px" }}>{t.icon}</span>
+                  <span style={{
+                    fontSize: "11px", fontWeight: 700, padding: "4px 10px", borderRadius: "100px",
+                    background: "rgba(0,212,170,0.1)", color: "#00D4AA",
+                    border: "1px solid rgba(0,212,170,0.2)", letterSpacing: "0.05em",
+                  }}>{t.tag}</span>
+                </div>
+                <div style={{ fontWeight: 700, fontSize: "16px", color: "#F0F2FF" }}>{t.title}</div>
+                <div style={{ color: "#7A7F99", fontSize: "13px", lineHeight: 1.75 }}>{t.desc}</div>
+              </Glass>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          COMPLIANCE
+      ══════════════════════════════════════ */}
+      <section style={{ padding: "80px 32px", background: "rgba(0,0,0,0.4)" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "52px" }}>
+            <Badge text={ru ? "Правовой статус" : "Compliance & Legal"} />
+            <SectionTitle>
+              {ru ? <>Программное обеспечение.<br /><span style={{ color: "#00D4AA" }}>Не финансовый посредник.</span></> : <>Software platform.<br /><span style={{ color: "#00D4AA" }}>Not a financial intermediary.</span></>}
+            </SectionTitle>
+            <Sub style={{ margin: "0 auto" }}>
+              {ru
+                ? "Полная прозрачность в отношении нашей правовой модели — фундамент доверия к нашей платформе."
+                : "Full transparency around our legal model is the foundation of platform trust. Here is exactly what we are — and what we are not."}
+            </Sub>
+          </div>
+
+          <Glass style={{ borderColor: "rgba(0,212,170,0.15)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              {compliance.map((pt, i) => (
+                <div key={i} style={{
+                  display: "flex", alignItems: "flex-start", gap: "0",
+                  padding: "18px 0",
+                  borderBottom: i < compliance.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                }}>
+                  <Dot />
+                  <span style={{ color: "#C0C4D8", fontSize: "15px", lineHeight: 1.7 }}>{pt}</span>
+                </div>
+              ))}
+            </div>
+          </Glass>
+
+          <p style={{ marginTop: "20px", color: "#3A3F55", fontSize: "13px", textAlign: "center", lineHeight: 1.7 }}>
+            {ru ? "Подробнее:" : "Full details:"}{" "}
+            <a href="/terms" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Условия" : "Terms of Service"}</a>
+            {" · "}
+            <a href="/risk" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Раскрытие рисков" : "Risk Disclosure"}</a>
+            {" · "}
+            <a href="/refund" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Политика возврата" : "Refund Policy"}</a>
           </p>
         </div>
-        <Card style={{ borderColor: "rgba(0,212,170,0.2)" }}>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "16px" }}>
-            {modelPoints.map((pt, i) => (
-              <li key={i} style={{ display: "flex", gap: "14px", alignItems: "flex-start", paddingBottom: i < modelPoints.length - 1 ? "16px" : 0, borderBottom: i < modelPoints.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}>
-                <span style={{ width: "20px", height: "20px", borderRadius: "50%", background: "rgba(0,212,170,0.12)", border: "1px solid rgba(0,212,170,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "1px" }}>
-                  <span style={{ color: "#00D4AA", fontSize: "11px", fontWeight: 700 }}>✓</span>
-                </span>
-                <span style={{ color: "#C0C4D8", fontSize: "15px", lineHeight: 1.65 }}>{pt}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
-        <p style={{ marginTop: "20px", color: "#555A72", fontSize: "13px", lineHeight: 1.6, textAlign: "center" }}>
-          {ru
-            ? "Полная информация — в наших «Условиях использования», «Раскрытии рисков» и «Политике возврата»."
-            : "Full details are available in our Terms of Service, Risk Disclosure, and Refund Policy."}
-          {" "}
-          <a href="/terms" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Условия" : "Terms"}</a>
-          {" · "}
-          <a href="/risk" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Риски" : "Risk"}</a>
-          {" · "}
-          <a href="/refund" style={{ color: "#00D4AA", textDecoration: "none" }}>{ru ? "Возврат" : "Refund"}</a>
-        </p>
       </section>
 
-      {/* ── FINAL CTA ── */}
-      <section style={{ background: "#0d1220", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "64px 24px", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "16px" }}>
-            {ru ? "Готовы начать?" : "Ready to Get Started?"}
+      {/* ══════════════════════════════════════
+          CTA
+      ══════════════════════════════════════ */}
+      <section style={{ position: "relative", padding: "80px 32px", overflow: "hidden" }}>
+        <div style={{
+          position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)",
+          width: "600px", height: "300px",
+          background: "radial-gradient(ellipse, rgba(0,212,170,0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+          <h2 style={{ fontSize: "clamp(30px,5vw,54px)", fontWeight: 900, letterSpacing: "-0.025em", marginBottom: "20px" }}>
+            {ru ? <>Готовы пройти<br /><span style={{ color: "#00D4AA" }}>оценку?</span></> : <>Ready to begin<br /><span style={{ color: "#00D4AA" }}>your evaluation?</span></>}
           </h2>
-          <p style={{ color: "#8A8FA8", fontSize: "17px", marginBottom: "36px", lineHeight: 1.7 }}>
+          <p style={{ color: "#7A7F99", fontSize: "17px", marginBottom: "40px", lineHeight: 1.7 }}>
             {ru
-              ? "Присоединяйтесь к тысячам трейдеров которые уже прошли оценку и получили финансирование."
-              : "Join thousands of traders who have already passed evaluation and qualified for funding."}
+              ? "Присоединяйтесь к тысячам трейдеров которые прошли нашу программу оценки и получили доступ к финансируемым аккаунтам."
+              : "Join thousands of traders who have completed our evaluation program and gained access to performance-based funding opportunities."}
           </p>
           <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
-            padding: "16px 44px", borderRadius: "10px",
-            background: "#00D4AA", color: "#070B12",
-            fontWeight: 700, fontSize: "17px", textDecoration: "none",
-            boxShadow: "0 4px 32px rgba(0,212,170,0.4)",
+            padding: "17px 48px", borderRadius: "10px",
+            background: "#00D4AA", color: "#050914",
+            fontWeight: 800, fontSize: "16px", textDecoration: "none",
+            boxShadow: "0 0 40px rgba(0,212,170,0.35), 0 4px 20px rgba(0,212,170,0.2)",
+            letterSpacing: "0.01em",
           }}>
-            {ru ? "Начать испытание →" : "Start Your Challenge →"}
+            {ru ? "Начать программу оценки →" : "Start Evaluation Program →"}
           </a>
-          <div style={{ display: "flex", justifyContent: "center", gap: "24px", marginTop: "24px", flexWrap: "wrap" }}>
-            {(ru ? ["Возврат взноса при первой выплате", "Без подписок", "Финансирование за 24ч"] : ["Fee refunded on first payout", "No subscriptions", "Funded in 24h"]).map(t => (
-              <span key={t} style={{ display: "flex", alignItems: "center", gap: "6px", color: "#555A72", fontSize: "13px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "28px", marginTop: "24px", flexWrap: "wrap" }}>
+            {(ru
+              ? ["Симулированная среда", "Прозрачные правила", "Без скрытых комиссий"]
+              : ["Simulated Environment", "Transparent Rules", "No Hidden Fees"]
+            ).map(t => (
+              <span key={t} style={{ display: "flex", alignItems: "center", gap: "7px", color: "#3A3F55", fontSize: "13px" }}>
                 <span style={{ color: "#00D4AA" }}>✓</span>{t}
               </span>
             ))}

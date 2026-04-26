@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Just the photo — no text overlay */}
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="/hero-bg.png"
+          src={ru ? "/hero-bg-ru.png" : "/hero-bg.png"}
           alt="Professional trader"
           style={{
             display: "block",

@@ -49,6 +49,9 @@ export default function Navbar() {
               {tr[l.key]}
             </a>
           ))}
+          <a href="/about" className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium">
+            {lang === "ru" ? "О нас" : "About"}
+          </a>
         </div>
 
         {/* Right side */}
@@ -132,6 +135,9 @@ export default function Navbar() {
                 {tr[l.key]}
               </a>
             ))}
+            <a href="/about" className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1" onClick={() => setMenuOpen(false)}>
+              {lang === "ru" ? "О нас" : "About"}
+            </a>
             <a
               href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
               className="gold-gradient text-[#0F1117] text-[14px] font-bold px-5 py-3 rounded-lg text-center mt-2"

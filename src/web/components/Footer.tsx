@@ -9,7 +9,7 @@ export default function Footer() {
     {
       title: tr.footer_col1,
       items: [
-        { label: ru ? "О нас" : "About Us", href: "/contact" },
+        { label: ru ? "О нас" : "About Us", href: "/about" },
         { label: ru ? "Блог" : "Blog", href: "#" },
         { label: ru ? "Карьера" : "Careers", href: "#" },
         { label: ru ? "Пресса" : "Press", href: "#" },

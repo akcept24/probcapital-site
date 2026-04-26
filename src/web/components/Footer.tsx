@@ -10,9 +10,6 @@ export default function Footer() {
       title: tr.footer_col1,
       items: [
         { label: ru ? "О нас" : "About Us", href: "/about" },
-        { label: ru ? "Блог" : "Blog", href: "#" },
-        { label: ru ? "Карьера" : "Careers", href: "#" },
-        { label: ru ? "Пресса" : "Press", href: "#" },
       ],
     },
     {
@@ -21,7 +18,6 @@ export default function Footer() {
         { label: ru ? "Челленджи" : "Challenges", href: "/#challenges" },
         { label: ru ? "Тарифы" : "Pricing", href: "/#challenges" },
         { label: ru ? "Возможности" : "Features", href: "/#features" },
-        { label: ru ? "Программа масштабирования" : "Scaling Program", href: "#" },
       ],
     },
     {
@@ -30,7 +26,6 @@ export default function Footer() {
         { label: ru ? "Центр помощи" : "Help Center", href: "/help" },
         { label: ru ? "Связаться с нами" : "Contact Us", href: "/contact" },
         { label: ru ? "Правила" : "Rules & Guidelines", href: "/rules" },
-        { label: ru ? "Выплаты" : "Payouts", href: "/payouts" },
       ],
     },
     {

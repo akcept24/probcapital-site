@@ -65,54 +65,17 @@ export default function PayoutProof() {
           <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px] leading-relaxed">{l.sub}</p>
         </div>
 
-        {/* Certificate grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-          {certificates.map((cert) => (
+        {/* Certificate images grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {["/cert-1.png", "/cert-2.png", "/cert-3.png"].map((src, i) => (
             <div
-              key={cert.id}
-              className="rounded-2xl overflow-hidden transition-all duration-300 group"
-              style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.07)" }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(0,212,170,0.25)"; el.style.transform = "translateY(-2px)"; el.style.boxShadow = "0 8px 32px rgba(0,212,170,0.08)"; }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(255,255,255,0.07)"; el.style.transform = "none"; el.style.boxShadow = "none"; }}
+              key={i}
+              className="rounded-2xl overflow-hidden transition-all duration-300"
+              style={{ border: "1px solid rgba(0,212,170,0.2)", boxShadow: "0 0 30px rgba(0,212,170,0.06)" }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = "translateY(-4px)"; el.style.boxShadow = "0 12px 40px rgba(0,212,170,0.15)"; el.style.borderColor = "rgba(0,212,170,0.4)"; }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = "none"; el.style.boxShadow = "0 0 30px rgba(0,212,170,0.06)"; el.style.borderColor = "rgba(0,212,170,0.2)"; }}
             >
-              {/* Card header bar */}
-              <div className="px-5 py-3 flex items-center justify-between"
-                style={{ background: "rgba(0,212,170,0.05)", borderBottom: "1px solid rgba(0,212,170,0.1)" }}>
-                <div className="flex items-center gap-2">
-                  {/* Shield icon */}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6l-9-4z" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" strokeWidth="1.5"/>
-                    <path d="M9 12l2 2 4-4" stroke="#00D4AA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-[11px] font-bold text-[#00D4AA] uppercase tracking-wider">{l.cert}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold"
-                  style={{ background: "rgba(0,212,170,0.1)", color: "#00D4AA", border: "1px solid rgba(0,212,170,0.2)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00D4AA] pulse-gold inline-block" />
-                  {l.verified}
-                </div>
-              </div>
-
-              {/* Amount */}
-              <div className="px-5 pt-5 pb-3">
-                <div className="text-[36px] font-black gold-text leading-none mb-1">{cert.amount}</div>
-                <div className="text-[12px] text-[#555A72]">{l.id_label}: <span className="text-[#8A8FA8] font-mono">{cert.id}</span></div>
-              </div>
-
-              {/* Details grid */}
-              <div className="px-5 pb-5 grid grid-cols-2 gap-2">
-                {[
-                  { label: l.trader, value: cert.trader },
-                  { label: l.date_label, value: cert.date },
-                  { label: l.method_label, value: cert.method },
-                  { label: l.account_label, value: cert.account },
-                ].map(d => (
-                  <div key={d.label} className="py-2 px-3 rounded-lg" style={{ background: "rgba(255,255,255,0.03)" }}>
-                    <div className="text-[10px] text-[#555A72] uppercase tracking-wider mb-0.5">{d.label}</div>
-                    <div className="text-[13px] font-semibold text-[#F0F2FF]">{d.value}</div>
-                  </div>
-                ))}
-              </div>
+              <img src={src} alt={`Payout Certificate ${i + 1}`} style={{ display: "block", width: "100%", height: "auto" }} />
             </div>
           ))}
         </div>

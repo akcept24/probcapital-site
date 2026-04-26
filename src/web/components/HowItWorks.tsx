@@ -41,6 +41,11 @@ export default function HowItWorks() {
             {tr.hiw_h2_1}{" "}<span className="gold-text">{tr.hiw_h2_2}</span>
           </h2>
           <p className="text-[#8A8FA8] max-w-[500px] mx-auto text-[16px] leading-relaxed">{tr.hiw_sub}</p>
+          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full text-[14px] font-semibold text-[#0F1117] gold-gradient hover:opacity-90 transition-opacity"
+            style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.3)" }}>
+            Get Funded Now →
+          </a>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">

@@ -16,7 +16,7 @@ export const t = {
     hero_h1_2: "Keep Up to 90% of Profits.",
     hero_sub: "Join our simulated evaluation program. Get funded up to",
     hero_sub_amount: "$400,000",
-    hero_sub_mid: "in simulated trading capital and earn up to",
+    hero_sub_mid: "through our evaluation program and receive up to",
     hero_sub_split: "90% profit splits",
     hero_cta1: "Get Funded Now →",
     hero_cta2: "See How It Works",
@@ -147,7 +147,7 @@ export const t = {
     faq_items: [
       {
         q: "What is a prop trading challenge?",
-        a: "A prop trading challenge is a simulated evaluation where you prove your trading skills by hitting a profit target while respecting our risk rules. Once passed, you receive a real funded account with our capital.",
+        a: "A prop trading challenge is a simulated evaluation where you prove your trading skills by hitting a profit target while respecting our risk rules. Once passed, you receive access to a simulated funded account and earn performance-based compensation paid by ProbCapital.",
       },
       {
         q: "Do I trade with real money in the challenge?",

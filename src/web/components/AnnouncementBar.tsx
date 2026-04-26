@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
 
 const announcements = {
-  en: "🎉 New: 1-Step Challenge is here — pass in one phase, earn up to 90% split. <a href='https://app.probcapital.com' target='_blank' style='color:#0F1117;font-weight:700;text-decoration:underline;'>Start now →</a>",
-  ru: "🎉 Новинка: 1-шаговый челлендж — пройди за одну фазу, зарабатывай до 90%. <a href='https://app.probcapital.com' target='_blank' style='color:#0F1117;font-weight:700;text-decoration:underline;'>Начать →</a>",
+  en: "🎉 New: 1-Step Challenge is here — pass in one phase, keep up to 90% of profits. <a href='https://app.probcapital.com' target='_blank' style='color:#0F1117;font-weight:700;text-decoration:underline;'>Start now →</a>",
+  ru: "🎉 Новинка: 1-шаговый челлендж — пройди за одну фазу, сохраняй до 90% прибыли. <a href='https://app.probcapital.com' target='_blank' style='color:#0F1117;font-weight:700;text-decoration:underline;'>Начать →</a>",
 };
 
 export default function AnnouncementBar() {

@@ -39,6 +39,15 @@ export default function FAQ() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[15px] font-bold text-[#0F1117] gold-gradient hover:opacity-90 transition-opacity"
+            style={{ boxShadow: "0 8px 32px rgba(0,212,170,0.3)" }}>
+            Start Your Challenge →
+          </a>
+          <p className="mt-3 text-[12px] text-[#555A72]">Fee refunded on first payout · No subscriptions · Funded in 24h</p>
+        </div>
       </div>
     </section>
   );

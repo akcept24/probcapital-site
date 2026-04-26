@@ -1,12 +1,12 @@
 import { useLang } from "../i18n/LangContext";
 
 const authors = [
-  { name: "Alex M.", handle: "@alextrader_fx", avatar: "AM", payout: "$12,400" },
-  { name: "Sarah K.", handle: "@sarahkfx", avatar: "SK", payout: "$8,750" },
-  { name: "Daniel R.", handle: "@danr_trades", avatar: "DR", payout: "$31,200" },
-  { name: "Mia Chen", handle: "@mia_quantfx", avatar: "MC", payout: "$5,600" },
-  { name: "James O.", handle: "@jamesotrades", avatar: "JO", payout: "$19,800" },
-  { name: "Priya S.", handle: "@priya_swingfx", avatar: "PS", payout: "$7,200" },
+  { name: "Alex T.", handle: "🇬🇧 United Kingdom", avatar: "AT", payout: "$4,200" },
+  { name: "Marcus R.", handle: "🇩🇪 Germany", avatar: "MR", payout: "$2,800" },
+  { name: "Dmitri V.", handle: "🇷🇺 Russia", avatar: "DV", payout: "$11,500" },
+  { name: "James K.", handle: "🇺🇸 United States", avatar: "JK", payout: "$3,600" },
+  { name: "Sofia M.", handle: "🇪🇸 Spain", avatar: "SM", payout: "$1,900" },
+  { name: "Yusuf A.", handle: "🇹🇷 Turkey", avatar: "YA", payout: "$5,100" },
 ];
 
 export default function Testimonials() {

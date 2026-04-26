@@ -38,10 +38,10 @@ export default function Hero() {
             {/* Headline */}
             <h1 style={{
               margin: 0,
-              fontSize: "clamp(36px, 5vw, 68px)",
+              fontSize: "clamp(24px, 3.2vw, 48px)",
               fontWeight: 900,
-              lineHeight: 1.1,
-              letterSpacing: "-0.025em",
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
               color: "#FFFFFF",
             }}>
               {ru ? (
@@ -62,7 +62,7 @@ export default function Hero() {
             {/* Subtitle */}
             <p style={{
               marginTop: "clamp(14px, 2vw, 24px)",
-              fontSize: "clamp(14px, 1.2vw, 16px)",
+              fontSize: "clamp(12px, 1vw, 14px)",
               color: "rgba(255,255,255,0.65)",
               lineHeight: 1.7,
             }}>
@@ -75,7 +75,7 @@ export default function Hero() {
             {/* Buttons */}
             <div style={{
               display: "flex", gap: "14px",
-              marginTop: "clamp(28px, 4vw, 48px)",
+              marginTop: "clamp(18px, 2.5vw, 32px)",
               flexWrap: "wrap",
             }}>
               <a
@@ -84,9 +84,9 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  padding: "15px 32px", borderRadius: "8px",
+                  padding: "12px 26px", borderRadius: "8px",
                   background: "#00D4AA", color: "#060a10",
-                  fontWeight: 700, fontSize: "16px",
+                  fontWeight: 700, fontSize: "14px",
                   textDecoration: "none", whiteSpace: "nowrap",
                   boxShadow: "0 4px 28px rgba(0,212,170,0.5)",
                 }}
@@ -98,11 +98,11 @@ export default function Hero() {
                 href="#how-it-works"
                 style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  padding: "15px 28px", borderRadius: "8px",
+                  padding: "12px 22px", borderRadius: "8px",
                   background: "rgba(255,255,255,0.08)",
                   border: "1.5px solid rgba(255,255,255,0.3)",
                   color: "#FFFFFF",
-                  fontWeight: 600, fontSize: "16px",
+                  fontWeight: 600, fontSize: "14px",
                   textDecoration: "none", whiteSpace: "nowrap",
                 }}
               >

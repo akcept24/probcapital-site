@@ -2,11 +2,20 @@ import { useState, useEffect } from "react";
 import { useLang } from "../i18n/LangContext";
 
 const navKeys = [
-  { key: "nav_howItWorks" as const, href: "#how-it-works" },
-  { key: "nav_challenges" as const, href: "#challenges" },
-  { key: "nav_features" as const, href: "#features" },
-  { key: "nav_faq" as const, href: "#faq" },
+  { key: "nav_howItWorks" as const, id: "how-it-works" },
+  { key: "nav_challenges" as const, id: "challenges" },
+  { key: "nav_features" as const, id: "features" },
+  { key: "nav_faq" as const, id: "faq" },
 ];
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    const offset = 72; // navbar height
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,13 +50,13 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {navKeys.map((l) => (
-            <a
+            <button
               key={l.key}
-              href={l.href}
-              className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium"
+              onClick={() => scrollTo(l.id)}
+              className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer"
             >
               {tr[l.key]}
-            </a>
+            </button>
           ))}
           <a href="/about" className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium">
             {lang === "ru" ? "О нас" : "About"}
@@ -126,14 +135,13 @@ export default function Navbar() {
               ))}
             </div>
             {navKeys.map((l) => (
-              <a
+              <button
                 key={l.key}
-                href={l.href}
-                className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { scrollTo(l.id); setMenuOpen(false); }}
+                className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1 bg-transparent border-none cursor-pointer text-left"
               >
                 {tr[l.key]}
-              </a>
+              </button>
             ))}
             <a href="/about" className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1" onClick={() => setMenuOpen(false)}>
               {lang === "ru" ? "О нас" : "About"}

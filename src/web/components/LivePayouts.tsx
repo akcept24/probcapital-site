@@ -28,7 +28,7 @@ const labels = {
     stat1: "3.5M+", label1: "Traders Worldwide",
     stat2: "$2.4M+", label2: "Total Paid Out",
     stat3: "140+", label3: "Countries Served",
-    stat4: "4.9/5", label4: "Trustpilot Rating",
+    stat4: "24h", label4: "Avg Payout Time",
   },
   ru: {
     badge: "Сообщество",
@@ -40,7 +40,7 @@ const labels = {
     stat1: "3.5M+", label1: "Трейдеров по всему миру",
     stat2: "$2.4M+", label2: "Всего выплачено",
     stat3: "140+", label3: "Стран",
-    stat4: "4.9/5", label4: "Рейтинг Trustpilot",
+    stat4: "24h", label4: "Среднее время выплаты",
   },
 };
 

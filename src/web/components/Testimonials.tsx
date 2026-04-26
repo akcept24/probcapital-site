@@ -59,18 +59,9 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Trustpilot bar */}
+        {/* Stats bar */}
         <div className="mt-10 py-5 px-8 rounded-2xl flex flex-wrap items-center justify-center gap-6 text-center"
           style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
-          <div>
-            <div className="flex justify-center gap-0.5 mb-1">
-              {Array(5).fill(0).map((_, i) => <span key={i} className="text-[#22C96A] text-[16px]">★</span>)}
-            </div>
-            <div className="text-[13px] text-[#8A8FA8]">
-              {tr.test_tp} <strong className="text-[#F0F2FF]">4.9/5</strong> {tr.test_tp2}
-            </div>
-          </div>
-          <div className="w-px h-8 bg-white/5 hidden sm:block" />
           <div className="text-[13px] text-[#8A8FA8]"><strong className="text-[#F0F2FF]">2,800+</strong> {tr.test_reviews}</div>
           <div className="w-px h-8 bg-white/5 hidden sm:block" />
           <div className="text-[13px] text-[#8A8FA8]"><strong className="text-[#F0F2FF]">$2.4M+</strong> {tr.test_total}</div>

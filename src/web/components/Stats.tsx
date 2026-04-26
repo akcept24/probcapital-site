@@ -9,14 +9,13 @@ export default function Stats() {
     { value: "90%", label: tr.stats_split },
     { value: "$400K", label: tr.stats_funding },
     { value: "24h", label: tr.stats_payout_time },
-    { value: "4.9★", label: tr.stats_rating },
   ];
 
   return (
     <section className="py-20 px-6">
       <div className="max-w-[1200px] mx-auto">
         <div
-          className="rounded-2xl p-6 md:p-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6"
+          className="rounded-2xl p-6 md:p-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6"
           style={{
             background: "#1A1D27",
             border: "1px solid rgba(255,255,255,0.07)",

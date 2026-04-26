@@ -1,12 +1,12 @@
+import { useState, useEffect, useRef } from "react";
 import { useLang } from "../i18n/LangContext";
 
-const certificates = [
-  { id: "PC-2024-0841", trader: "A***x M.", amount: "$12,400", date: "Mar 14, 2024", method: "USDT", account: "$100K", phase: "Aggressive" },
-  { id: "PC-2024-1203", trader: "S***h K.", amount: "$8,750",  date: "Apr 02, 2024", method: "PayPal", account: "$50K", phase: "Standard" },
-  { id: "PC-2024-2187", trader: "D***l R.", amount: "$31,200", date: "May 18, 2024", method: "Bank Wire", account: "$200K", phase: "Aggressive" },
-  { id: "PC-2024-3094", trader: "M***a C.", amount: "$5,600",  date: "Jun 07, 2024", method: "BTC", account: "$25K", phase: "Standard" },
-  { id: "PC-2024-4451", trader: "J***s O.", amount: "$19,800", date: "Jul 23, 2024", method: "USDT", account: "$100K", phase: "Aggressive" },
-  { id: "PC-2024-5812", trader: "P***a S.", amount: "$7,200",  date: "Aug 31, 2024", method: "PayPal", account: "$50K", phase: "Standard" },
+const certs = [
+  "/cert-1.png",
+  "/cert-2.png",
+  "/cert-3.png",
+  "/cert-4.png",
+  "/cert-5.png",
 ];
 
 const labels = {
@@ -14,49 +14,54 @@ const labels = {
     badge: "Verified Payouts",
     h2_1: "Real Payouts.",
     h2_2: "Real Proof.",
-    sub: "Every payout is verified and certified. No screenshots — cryptographically signed certificates.",
-    cert: "Payout Certificate",
-    verified: "Verified",
-    trader: "Trader",
-    amount_label: "Amount",
-    date_label: "Date",
-    method_label: "Via",
-    account_label: "Account",
+    sub: "Every payout is verified and certified. No screenshots — real signed certificates.",
     total: "Total paid out to traders",
     cta: "Join Them →",
-    id_label: "Certificate ID",
   },
   ru: {
     badge: "Подтверждённые выплаты",
     h2_1: "Реальные выплаты.",
     h2_2: "Реальные доказательства.",
-    sub: "Каждая выплата верифицирована и сертифицирована. Не скриншоты — криптографически подписанные сертификаты.",
-    cert: "Сертификат выплаты",
-    verified: "Подтверждено",
-    trader: "Трейдер",
-    amount_label: "Сумма",
-    date_label: "Дата",
-    method_label: "Способ",
-    account_label: "Счёт",
+    sub: "Каждая выплата верифицирована и сертифицирована. Не скриншоты — настоящие подписанные сертификаты.",
     total: "Всего выплачено трейдерам",
     cta: "Присоединиться →",
-    id_label: "ID сертификата",
   },
 };
 
 export default function PayoutProof() {
   const { lang } = useLang();
   const l = labels[lang];
+  const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActive(p => (p + 1) % certs.length);
+    }, 3500);
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  const go = (i: number) => {
+    setActive(i);
+    startTimer();
+  };
+
+  const prev = () => go((active - 1 + certs.length) % certs.length);
+  const next = () => go((active + 1) % certs.length);
 
   return (
     <section className="py-24 px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
+
         {/* Header */}
-        <div className="text-center mb-14">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
-            style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}
-          >
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
+            style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
             {l.badge}
           </div>
           <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
@@ -65,39 +70,150 @@ export default function PayoutProof() {
           <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px] leading-relaxed">{l.sub}</p>
         </div>
 
-        {/* Certificate images grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {["/cert-1.png", "/cert-2.png", "/cert-3.png"].map((src, i) => (
-            <div
+        {/* Carousel */}
+        <div style={{ position: "relative" }}>
+
+          {/* Main visible cert */}
+          <div style={{
+            position: "relative",
+            maxWidth: "860px",
+            margin: "0 auto",
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 0 60px rgba(0,212,170,0.15)",
+            border: "1px solid rgba(0,212,170,0.25)",
+          }}>
+            <img
+              key={active}
+              src={certs[active]}
+              alt={`Payout Certificate ${active + 1}`}
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                animation: "certFadeIn 0.4s ease",
+              }}
+            />
+          </div>
+
+          {/* Prev button */}
+          <button
+            onClick={prev}
+            style={{
+              position: "absolute",
+              left: "clamp(-8px, -3vw, -24px)",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "48px", height: "48px",
+              borderRadius: "50%",
+              background: "#1A1D27",
+              border: "1px solid rgba(0,212,170,0.3)",
+              color: "#00D4AA",
+              fontSize: "20px",
+              cursor: "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+              zIndex: 10,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(0,212,170,0.15)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#1A1D27")}
+          >‹</button>
+
+          {/* Next button */}
+          <button
+            onClick={next}
+            style={{
+              position: "absolute",
+              right: "clamp(-8px, -3vw, -24px)",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "48px", height: "48px",
+              borderRadius: "50%",
+              background: "#1A1D27",
+              border: "1px solid rgba(0,212,170,0.3)",
+              color: "#00D4AA",
+              fontSize: "20px",
+              cursor: "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+              zIndex: 10,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(0,212,170,0.15)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#1A1D27")}
+          >›</button>
+        </div>
+
+        {/* Dot indicators */}
+        <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "24px" }}>
+          {certs.map((_, i) => (
+            <button
               key={i}
-              className="rounded-2xl overflow-hidden transition-all duration-300"
-              style={{ border: "1px solid rgba(0,212,170,0.2)", boxShadow: "0 0 30px rgba(0,212,170,0.06)" }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = "translateY(-4px)"; el.style.boxShadow = "0 12px 40px rgba(0,212,170,0.15)"; el.style.borderColor = "rgba(0,212,170,0.4)"; }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = "none"; el.style.boxShadow = "0 0 30px rgba(0,212,170,0.06)"; el.style.borderColor = "rgba(0,212,170,0.2)"; }}
-            >
-              <img src={src} alt={`Payout Certificate ${i + 1}`} style={{ display: "block", width: "100%", height: "auto" }} />
-            </div>
+              onClick={() => go(i)}
+              style={{
+                width: i === active ? "28px" : "8px",
+                height: "8px",
+                borderRadius: "4px",
+                background: i === active ? "#00D4AA" : "rgba(255,255,255,0.15)",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                padding: 0,
+              }}
+            />
           ))}
         </div>
 
-        {/* Total payout CTA strip */}
-        <div
-          className="rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6"
-          style={{ background: "rgba(0,212,170,0.05)", border: "1px solid rgba(0,212,170,0.15)" }}
-        >
+        {/* Thumbnail strip */}
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "12px",
+          marginTop: "20px",
+          flexWrap: "wrap",
+        }}>
+          {certs.map((src, i) => (
+            <button
+              key={i}
+              onClick={() => go(i)}
+              style={{
+                padding: 0,
+                border: i === active ? "2px solid #00D4AA" : "2px solid rgba(255,255,255,0.08)",
+                borderRadius: "8px",
+                overflow: "hidden",
+                cursor: "pointer",
+                width: "clamp(80px, 12vw, 140px)",
+                opacity: i === active ? 1 : 0.5,
+                transition: "all 0.25s ease",
+                background: "none",
+                flexShrink: 0,
+              }}
+            >
+              <img src={src} alt={`cert ${i + 1}`} style={{ display: "block", width: "100%", height: "auto" }} />
+            </button>
+          ))}
+        </div>
+
+        {/* Total strip */}
+        <div className="rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6 mt-12"
+          style={{ background: "rgba(0,212,170,0.05)", border: "1px solid rgba(0,212,170,0.15)" }}>
           <div className="flex items-center gap-4">
             <div className="text-[40px] font-black gold-text" style={{ letterSpacing: "-0.03em" }}>$2.4M+</div>
             <div className="text-[15px] text-[#8A8FA8] max-w-[280px] leading-snug">{l.total}</div>
           </div>
-          <a
-            href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
-            style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}
-          >
+            style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}
           </a>
         </div>
       </div>
+
+      <style>{`
+        @keyframes certFadeIn {
+          from { opacity: 0; transform: scale(0.98); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
     </section>
   );
 }

@@ -25,53 +25,51 @@ export default function Hero() {
           background: "linear-gradient(to top, #060a10, transparent)",
           pointerEvents: "none",
         }} />
+      </div>
 
-        {/* Active buttons overlaid in the exact position from the design */}
-        <div style={{
-          position: "absolute",
-          bottom: "22%",
-          left: "5%",
-          display: "flex",
-          gap: "14px",
-          flexWrap: "wrap",
-        }}>
-          <a
-            href="https://app.probcapital.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex", alignItems: "center", justifyContent: "center",
-              padding: "clamp(10px,1.5vw,15px) clamp(18px,2.5vw,32px)",
-              borderRadius: "8px",
-              background: "#00D4AA", color: "#060a10",
-              fontWeight: 700, fontSize: "clamp(13px, 1.2vw, 16px)",
-              textDecoration: "none", whiteSpace: "nowrap",
-              boxShadow: "0 4px 24px rgba(0,212,170,0.5)",
-            }}
-          >
-            {ru ? "Начать челлендж →" : "Start Challenge →"}
-          </a>
-          <a
-            href="#how-it-works"
-            style={{
-              display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
-              padding: "clamp(10px,1.5vw,15px) clamp(16px,2vw,28px)",
-              borderRadius: "8px",
-              background: "rgba(255,255,255,0.08)",
-              border: "1.5px solid rgba(255,255,255,0.3)",
-              color: "#FFFFFF",
-              fontWeight: 600, fontSize: "clamp(13px, 1.2vw, 16px)",
-              textDecoration: "none", whiteSpace: "nowrap",
-            }}
-          >
-            <span style={{
-              display: "inline-flex", alignItems: "center", justifyContent: "center",
-              width: "20px", height: "20px", borderRadius: "50%",
-              border: "1.5px solid rgba(255,255,255,0.45)", fontSize: "8px",
-            }}>▶</span>
-            {ru ? "Как это работает" : "How It Works"}
-          </a>
-        </div>
+      {/* Buttons below the image, in normal flow */}
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "24px 32px clamp(24px, 4vw, 48px)",
+        display: "flex",
+        gap: "14px",
+        flexWrap: "wrap",
+      }}>
+        <a
+          href="https://app.probcapital.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex", alignItems: "center", justifyContent: "center",
+            padding: "15px 34px", borderRadius: "8px",
+            background: "#00D4AA", color: "#060a10",
+            fontWeight: 700, fontSize: "clamp(14px, 1.2vw, 16px)",
+            textDecoration: "none", whiteSpace: "nowrap",
+            boxShadow: "0 4px 24px rgba(0,212,170,0.5)",
+          }}
+        >
+          {ru ? "Начать челлендж →" : "Start Challenge →"}
+        </a>
+        <a
+          href="#how-it-works"
+          style={{
+            display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
+            padding: "15px 28px", borderRadius: "8px",
+            background: "rgba(255,255,255,0.06)",
+            border: "1.5px solid rgba(255,255,255,0.28)",
+            color: "#FFFFFF",
+            fontWeight: 600, fontSize: "clamp(14px, 1.2vw, 16px)",
+            textDecoration: "none", whiteSpace: "nowrap",
+          }}
+        >
+          <span style={{
+            display: "inline-flex", alignItems: "center", justifyContent: "center",
+            width: "22px", height: "22px", borderRadius: "50%",
+            border: "1.5px solid rgba(255,255,255,0.45)", fontSize: "9px",
+          }}>▶</span>
+          {ru ? "Как это работает" : "How It Works"}
+        </a>
       </div>
 
     </section>

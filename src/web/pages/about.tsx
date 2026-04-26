@@ -96,7 +96,7 @@ export default function AboutPage() {
 
       {/* ── FOUNDER STORY ── */}
       <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px 64px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", alignItems: "center" }}>
           <div>
             <Badge text={ru ? "История основания" : "Our Background"} />
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "20px", lineHeight: 1.15 }}>

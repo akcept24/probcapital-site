@@ -19,11 +19,11 @@ export default function Hero() {
         {/* Buttons are at ~72% from top, ~6% from left on the original image */}
         <div style={{
           position: "absolute",
-          top: "72%",
+          top: "63%",
           left: "6%",
           display: "flex",
           gap: "2%",
-          width: "60%",
+          width: "62%",
         }}>
           <a
             href="https://app.probcapital.com"

@@ -90,11 +90,28 @@ export default function Hero() {
               <strong style={{ color: "#fff" }}>{tr.hero_sub_split}</strong>.
             </p>
 
+            {/* Trust bullets */}
+            <div style={{
+              marginTop: "clamp(10px, 1.5vw, 22px)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+            }}>
+              {[tr.hero_bullets_1, tr.hero_bullets_2, tr.hero_bullets_3].map((b, i) => (
+                <span key={i} style={{
+                  fontSize: "clamp(12px, 1.1vw, 14px)",
+                  color: "#00D4AA",
+                  fontWeight: 600,
+                  letterSpacing: "0.01em",
+                }}>{b}</span>
+              ))}
+            </div>
+
             {/* Buttons */}
             <div style={{
               display: "flex",
               gap: "12px",
-              marginTop: "clamp(12px, 2vw, 32px)",
+              marginTop: "clamp(12px, 2vw, 28px)",
               flexWrap: "wrap",
             }}>
               <a

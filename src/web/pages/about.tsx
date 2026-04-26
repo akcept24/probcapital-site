@@ -154,9 +154,10 @@ export default function AboutPage() {
           <Badge text={ru ? "О компании" : "About ProbCapital"} />
 
           <h1 style={{
-            fontSize: "clamp(40px, 7vw, 82px)", fontWeight: 900,
-            lineHeight: 1.03, letterSpacing: "-0.03em",
+            fontSize: "clamp(28px, 7vw, 82px)", fontWeight: 900,
+            lineHeight: 1.05, letterSpacing: "-0.02em",
             marginBottom: "28px", maxWidth: "820px",
+            overflowWrap: "break-word", wordBreak: "break-word",
           }}>
             {ru ? (
               <>Демократизация<br /><span style={{ color: "#00D4AA" }}>институционального</span><br />доступа к рынкам.</>

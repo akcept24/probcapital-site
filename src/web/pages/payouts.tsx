@@ -15,7 +15,7 @@ export default function PayoutsPage() {
     { n: "01", title: "Open Dashboard", desc: "Log in at app.probcapital.com and go to the Withdrawals section." },
     { n: "02", title: "Select Amount", desc: "Enter withdrawal amount. Minimum is $50. Maximum is your full accumulated profit." },
     { n: "03", title: "Choose Method", desc: "Bank wire transfer or other verified payment method registered in your name." },
-    { n: "04", title: "Get Paid", desc: "Processed within 24 hours. Crypto is instant after approval." },
+    { n: "04", title: "Get Paid", desc: "Processed within 24 hours via bank wire or card after approval." },
   ];
 
   const splits = [

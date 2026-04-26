@@ -64,7 +64,7 @@ export default function RulesPage() {
         "Metals: Gold (XAUUSD), Silver (XAGUSD)",
         "Indices: US30, NAS100, SP500, UK100 and more",
         "Oil: WTI and Brent",
-        "Crypto: BTC, ETH, major pairs",
+        "Crypto pairs: BTC, ETH, major pairs",
       ],
     },
     {

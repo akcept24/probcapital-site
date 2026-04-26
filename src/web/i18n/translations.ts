@@ -8,7 +8,7 @@ export const t = {
     nav_features: "Features",
     nav_faq: "FAQ",
     nav_login: "Log In",
-    nav_getFunded: "Get Funded",
+    nav_getFunded: "Start Evaluation",
 
     // Hero
     hero_badge: "🏆 Over $2.4M Paid Out · 12,400+ Funded Traders",
@@ -217,7 +217,7 @@ export const t = {
     nav_features: "Возможности",
     nav_faq: "FAQ",
     nav_login: "Войти",
-    nav_getFunded: "Получить финансирование",
+    nav_getFunded: "Начать оценку",
 
     // Hero
     hero_badge: "🏆 Выплачено более $2.4M · 12 400+ трейдеров с финансированием",

@@ -5,7 +5,7 @@ import { useLang } from "../i18n/LangContext";
 const sectionsEn = [
   {
     title: "1. Data Controller",
-    text: `ProbCapital ("Company", "we", "us") is the data controller responsible for the processing of your personal data collected through probcapital.com and associated services. For all privacy-related inquiries, please contact: privacy@probcapital.com.`,
+    text: `Probcapital LLC ("Company", "we", "us") is a Limited Liability Company registered in the State of Delaware, USA (File #10541343), with registered address at 8 The Green, Suite B, Dover, DE 19901. The Company is the data controller responsible for the processing of your personal data collected through probcapital.com and associated services. For all privacy-related inquiries, please contact: privacy@probcapital.com.`,
   },
   {
     title: "2. Personal Data We Collect",
@@ -56,7 +56,7 @@ const sectionsEn = [
 const sectionsRu = [
   {
     title: "1. Оператор персональных данных",
-    text: `ProbCapital («Компания», «мы», «нас») является оператором персональных данных, ответственным за их обработку, осуществляемую через сайт probcapital.com и связанные сервисы. По всем вопросам, касающимся конфиденциальности, обращайтесь: privacy@probcapital.com.`,
+    text: `Probcapital LLC («Компания», «мы», «нас») — общество с ограниченной ответственностью, зарегистрированное в штате Делавэр, США (регистрационный номер: 10541343), юридический адрес: 8 The Green, Suite B, Dover, DE 19901. Компания является оператором персональных данных, ответственным за их обработку, осуществляемую через сайт probcapital.com и связанные сервисы. По всем вопросам конфиденциальности обращайтесь: privacy@probcapital.com.`,
   },
   {
     title: "2. Персональные данные, которые мы собираем",
@@ -121,6 +121,30 @@ export default function PrivacyPage() {
             {ru ? "Политика конфиденциальности" : "Privacy Policy"}
           </h1>
           <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: апрель 2026" : "Last updated: April 2026"}</p>
+        </div>
+
+        {/* Entity block */}
+        <div style={{
+          background: "linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(0,150,255,0.03) 100%)",
+          border: "1px solid rgba(0,212,170,0.15)", borderRadius: "16px",
+          padding: "20px 24px", marginBottom: "40px",
+        }}>
+          <div style={{ fontSize: "10px", color: "#00D4AA", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>
+            {ru ? "Юридическое лицо — оператор данных" : "Legal Entity — Data Controller"}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "14px" }}>
+            {[
+              { l: ru ? "Компания" : "Company", v: "Probcapital LLC" },
+              { l: ru ? "Штат" : "State", v: "Delaware, USA" },
+              { l: ru ? "Рег. номер" : "File Number", v: "#10541343" },
+              { l: ru ? "Адрес" : "Address", v: "8 The Green, Suite B, Dover, DE 19901" },
+            ].map(item => (
+              <div key={item.l}>
+                <div style={{ fontSize: "10px", color: "#5A6278", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "4px" }}>{item.l}</div>
+                <div style={{ fontSize: "13px", color: "#D0D8F0", fontWeight: 600 }}>{item.v}</div>
+              </div>
+            ))}
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
           {sections.map((s) => (

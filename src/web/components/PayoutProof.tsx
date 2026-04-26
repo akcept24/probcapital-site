@@ -32,6 +32,7 @@ export default function PayoutProof() {
   const { lang } = useLang();
   const l = labels[lang];
   const [active, setActive] = useState(0);
+  const [fading, setFading] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startTimer = () => {
@@ -47,7 +48,11 @@ export default function PayoutProof() {
   }, []);
 
   const go = (i: number) => {
-    setActive(i);
+    setFading(true);
+    setTimeout(() => {
+      setActive(i);
+      setFading(false);
+    }, 300);
     startTimer();
   };
 
@@ -84,14 +89,14 @@ export default function PayoutProof() {
             border: "1px solid rgba(0,212,170,0.25)",
           }}>
             <img
-              key={active}
               src={certs[active]}
               alt={`Payout Certificate ${active + 1}`}
               style={{
                 display: "block",
                 width: "100%",
                 height: "auto",
-                animation: "certFadeIn 0.4s ease",
+                opacity: fading ? 0 : 1,
+                transition: "opacity 0.3s ease",
               }}
             />
           </div>
@@ -163,36 +168,6 @@ export default function PayoutProof() {
           ))}
         </div>
 
-        {/* Thumbnail strip */}
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "12px",
-          marginTop: "20px",
-          flexWrap: "wrap",
-        }}>
-          {certs.map((src, i) => (
-            <button
-              key={i}
-              onClick={() => go(i)}
-              style={{
-                padding: 0,
-                border: i === active ? "2px solid #00D4AA" : "2px solid rgba(255,255,255,0.08)",
-                borderRadius: "8px",
-                overflow: "hidden",
-                cursor: "pointer",
-                width: "clamp(80px, 12vw, 140px)",
-                opacity: i === active ? 1 : 0.5,
-                transition: "all 0.25s ease",
-                background: "none",
-                flexShrink: 0,
-              }}
-            >
-              <img src={src} alt={`cert ${i + 1}`} style={{ display: "block", width: "100%", height: "auto" }} />
-            </button>
-          ))}
-        </div>
-
         {/* Total strip */}
         <div className="rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6 mt-12"
           style={{ background: "rgba(0,212,170,0.05)", border: "1px solid rgba(0,212,170,0.15)" }}>
@@ -208,12 +183,7 @@ export default function PayoutProof() {
         </div>
       </div>
 
-      <style>{`
-        @keyframes certFadeIn {
-          from { opacity: 0; transform: scale(0.98); }
-          to   { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
+
     </section>
   );
 }

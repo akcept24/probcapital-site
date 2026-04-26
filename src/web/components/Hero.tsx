@@ -15,24 +15,24 @@ export default function Hero() {
           style={{ display: "block", width: "100%", height: "auto" }}
         />
 
-        {/* Button 1 — green, sits exactly over left drawn button */}
+        {/* Button 1 — green */}
         <a
           href="https://app.probcapital.com"
           target="_blank"
           rel="noopener noreferrer"
           style={{
             position: "absolute",
-            top: "70%",
-            left: "6%",
-            width: "22%",
-            height: "8%",
+            top: "73%",
+            left: "7.5%",
+            width: "20%",
+            height: "7%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             background: "transparent",
             color: "#0a0e17",
             fontWeight: 700,
-            fontSize: "clamp(10px, 1.4vw, 16px)",
+            fontSize: "clamp(9px, 1.2vw, 15px)",
             textDecoration: "none",
             whiteSpace: "nowrap",
           }}
@@ -40,22 +40,22 @@ export default function Hero() {
           {ru ? "Начать челлендж →" : "Start Challenge →"}
         </a>
 
-        {/* Button 2 — dark, sits exactly over right drawn button */}
+        {/* Button 2 — dark */}
         <a
           href="#how-it-works"
           style={{
             position: "absolute",
-            top: "70%",
-            left: "31%",
+            top: "73%",
+            left: "30%",
             width: "20%",
-            height: "8%",
+            height: "7%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             background: "transparent",
             color: "#FFFFFF",
             fontWeight: 600,
-            fontSize: "clamp(10px, 1.4vw, 16px)",
+            fontSize: "clamp(9px, 1.2vw, 15px)",
             textDecoration: "none",
             whiteSpace: "nowrap",
           }}

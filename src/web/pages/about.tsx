@@ -1,3 +1,4 @@
+import type { ReactNode, CSSProperties } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
@@ -11,7 +12,7 @@ const Badge = ({ text }: { text: string }) => (
   }}>{text}</div>
 );
 
-const Card = ({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) => (
+const Card = ({ children, style = {} }: { children: ReactNode; style?: CSSProperties }) => (
   <div style={{
     background: "#111520", border: "1px solid rgba(255,255,255,0.07)",
     borderRadius: "16px", padding: "32px", ...style,

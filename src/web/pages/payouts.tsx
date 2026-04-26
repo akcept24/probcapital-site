@@ -9,12 +9,12 @@ export default function PayoutsPage() {
   const steps = ru ? [
     { n: "01", title: "Откройте кабинет", desc: "Войдите на app.probcapital.com и перейдите в раздел «Вывод средств»." },
     { n: "02", title: "Выберите сумму", desc: "Укажите сумму вывода. Минимальная сумма — $50. Максимум — весь накопленный профит." },
-    { n: "03", title: "Выберите способ", desc: "Криптовалюта (USDT/BTC), банковский перевод или PayPal." },
+    { n: "03", title: "Выберите способ", desc: "Банковский перевод или другой верифицированный метод оплаты." },
     { n: "04", title: "Получите деньги", desc: "Обрабатываем в течение 24 часов. Крипто — моментально после одобрения." },
   ] : [
     { n: "01", title: "Open Dashboard", desc: "Log in at app.probcapital.com and go to the Withdrawals section." },
     { n: "02", title: "Select Amount", desc: "Enter withdrawal amount. Minimum is $50. Maximum is your full accumulated profit." },
-    { n: "03", title: "Choose Method", desc: "Cryptocurrency (USDT/BTC), bank wire transfer, or PayPal." },
+    { n: "03", title: "Choose Method", desc: "Bank wire transfer or other verified payment method registered in your name." },
     { n: "04", title: "Get Paid", desc: "Processed within 24 hours. Crypto is instant after approval." },
   ];
 
@@ -83,9 +83,8 @@ export default function PayoutsPage() {
         <h2 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "20px" }}>{ru ? "Способы выплат" : "Payment Methods"}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: "12px" }}>
           {[
-            { icon: "₿", name: "Cryptocurrency", detail: "USDT (TRC20/ERC20), BTC", time: ru ? "Мгновенно" : "Instant" },
             { icon: "🏦", name: ru ? "Банковский перевод" : "Bank Wire", detail: "SWIFT / SEPA", time: "1-3 " + (ru ? "дня" : "days") },
-            { icon: "💳", name: "PayPal", detail: "paypal.com", time: ru ? "До 24 часов" : "Up to 24h" },
+            { icon: "💳", name: ru ? "Верифицированный метод" : "Verified Method", detail: ru ? "На имя владельца аккаунта" : "Registered in account holder's name", time: ru ? "До 24 часов" : "Up to 24h" },
           ].map((m) => (
             <div key={m.name} style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "16px", padding: "20px" }}>
               <div style={{ fontSize: "28px", marginBottom: "8px" }}>{m.icon}</div>

@@ -9,7 +9,7 @@ const faqs = [
     items: [
       { q: "How do I start a challenge?", qRu: "Как начать челлендж?", a: "Register on app.probcapital.com, choose your account size and plan, complete payment, and receive your login credentials within minutes.", aRu: "Зарегистрируйтесь на app.probcapital.com, выберите размер счёта и план, оплатите — данные для входа придут в течение нескольких минут." },
       { q: "What trading platforms are supported?", qRu: "Какие платформы поддерживаются?", a: "We support MetaTrader 4 (MT4) and MetaTrader 5 (MT5). Both platforms are available for desktop, web, and mobile.", aRu: "Мы поддерживаем MetaTrader 4 (MT4) и MetaTrader 5 (MT5). Доступны версии для ПК, браузера и мобильных устройств." },
-      { q: "What instruments can I trade?", qRu: "Какими инструментами можно торговать?", a: "You can trade Forex pairs, indices, commodities, metals, and cryptocurrencies. All major and minor pairs are available.", aRu: "Доступны форекс-пары, индексы, сырьевые товары, металлы и криптовалюты. Все основные и минорные пары." },
+      { q: "What instruments can I trade?", qRu: "Какими инструментами можно торговать?", a: "The simulation environment supports Forex pairs, indices, commodities, and metals. All major and minor pairs are available within the evaluation software.", aRu: "Симулированная среда поддерживает форекс-пары, индексы, сырьевые товары и металлы. Все основные и минорные пары доступны в рамках программы оценки." },
     ],
   },
   {
@@ -26,8 +26,8 @@ const faqs = [
     categoryRu: "Выплаты",
     items: [
       { q: "How do I request a payout?", qRu: "Как запросить выплату?", a: "Log in to your dashboard, navigate to Withdrawals, enter the amount and your payment details. Payouts are processed within 24 hours.", aRu: "Войдите в личный кабинет, перейдите в раздел «Вывод средств», укажите сумму и реквизиты. Выплаты обрабатываются в течение 24 часов." },
-      { q: "What payment methods are available?", qRu: "Какие способы оплаты доступны?", a: "We pay via cryptocurrency (USDT, BTC), bank wire transfer, and PayPal.", aRu: "Мы выплачиваем через криптовалюту (USDT, BTC), банковский перевод и PayPal." },
-      { q: "What is the profit split?", qRu: "Какой сплит прибыли?", a: "Standard plan: 80% to trader. Aggressive plan: 90% to trader.", aRu: "Стандартный план: 80% трейдеру. Агрессивный план: 90% трейдеру." },
+      { q: "What payout methods are available?", qRu: "Какие способы выплат доступны?", a: "Approved performance-based payouts are issued via bank wire transfer or other verified payment methods to the account registered in your name. All payouts require completed KYC verification.", aRu: "Одобренные выплаты на основе показателей производительности осуществляются банковским переводом или другими верифицированными методами на счёт, зарегистрированный на ваше имя. Все выплаты требуют пройденной KYC-верификации." },
+      { q: "How is performance-based compensation calculated?", qRu: "Как рассчитывается вознаграждение за результаты?", a: "Performance-based compensation is paid by ProbCapital LLC from its own operating funds based on your Evaluation Process metrics. The applicable rate depends on your selected evaluation plan.", aRu: "Вознаграждение за результаты выплачивается ProbCapital LLC из собственных операционных средств на основании метрик вашего процесса оценки. Применимая ставка зависит от выбранного плана оценки." },
     ],
   },
 ];

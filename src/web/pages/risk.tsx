@@ -5,7 +5,7 @@ import { useLang } from "../i18n/LangContext";
 const sectionsEn = [
   {
     title: "1. Important Notice",
-    text: `This Risk Disclosure Statement is provided by ProbCapital ("Company") to ensure that all Users understand the nature and extent of risks associated with simulated financial trading. Please read this document carefully before participating in any evaluation or funded account program.`,
+    text: `This Risk Disclosure Statement is provided by ProbCapital LLC ("Company"), a technology provider registered in Delaware, USA (File #10541343), to ensure that all Users understand the nature and extent of risks associated with simulated financial trading within our Skill Evaluation Software. Please read this document carefully before participating in any Evaluation Process or Educational Trading Simulation.`,
   },
   {
     title: "2. Nature of Trading Activities",
@@ -21,7 +21,7 @@ const sectionsEn = [
   },
   {
     title: "5. Volatility and Liquidity Risk",
-    text: `Certain instruments, particularly exotic currency pairs, small-cap indices, and cryptocurrencies, may experience periods of extreme volatility or reduced liquidity. During such periods, spreads may widen significantly, order execution may be delayed or unavailable at quoted prices, and stop-loss orders may be executed at materially worse prices than intended (slippage).`,
+    text: `Certain instruments within the simulation environment, particularly exotic currency pairs and small-cap indices, may experience periods of extreme volatility or reduced liquidity in the underlying real-time data feeds. During such periods, spreads may widen significantly, simulated order execution may be delayed, and stop-loss orders may be executed at materially worse prices than intended (slippage).`,
   },
   {
     title: "6. Technology and Connectivity Risk",
@@ -41,14 +41,14 @@ const sectionsEn = [
   },
   {
     title: "10. Acknowledgement",
-    text: `By registering with ProbCapital and participating in any evaluation or funded account program, you acknowledge that you have read, understood, and accept the risks described in this disclosure. You confirm that you are participating voluntarily and that your participation is appropriate given your knowledge, experience, and financial circumstances.`,
+    text: `By registering with ProbCapital LLC and participating in any Evaluation Process or Educational Trading Simulation, you acknowledge that you have read, understood, and accept the risks described in this disclosure. You confirm that you are participating voluntarily in a software simulation service and that your participation is appropriate given your knowledge and experience.`,
   },
 ];
 
 const sectionsRu = [
   {
     title: "1. Важное уведомление",
-    text: `Настоящее Заявление о раскрытии рисков предоставляется ProbCapital («Компания») с целью обеспечить полное понимание Пользователями характера и масштабов рисков, связанных с имитационной торговлей финансовыми инструментами. Пожалуйста, внимательно ознакомьтесь с настоящим документом перед участием в какой-либо программе оценки или финансируемого счёта.`,
+    text: `Настоящее Заявление о раскрытии рисков предоставляется ProbCapital LLC («Компания»), поставщиком технологий, зарегистрированным в штате Делавэр, США (Рег. №10541343), с целью обеспечить полное понимание Пользователями характера и масштабов рисков, связанных с имитационной торговлей в рамках нашего программного обеспечения для оценки навыков. Пожалуйста, внимательно ознакомьтесь с настоящим документом перед участием в Процессе оценки или Образовательной симуляции торговли.`,
   },
   {
     title: "2. Характер торговой деятельности",
@@ -64,7 +64,7 @@ const sectionsRu = [
   },
   {
     title: "5. Риск волатильности и ликвидности",
-    text: `Отдельные инструменты, в особенности экзотические валютные пары, индексы с малой капитализацией и криптовалюты, могут переживать периоды экстремальной волатильности или сниженной ликвидности. В такие периоды спреды могут существенно расшириться, исполнение ордеров может задерживаться или осуществляться по ценам, отличным от котируемых, а стоп-лосс ордера могут исполняться по значительно худшим ценам, чем предполагалось (проскальзывание).`,
+    text: `Отдельные инструменты в рамках симулированной среды, в особенности экзотические валютные пары и индексы с малой капитализацией, могут переживать периоды экстремальной волатильности или сниженной ликвидности в базовых потоках данных в реальном времени. В такие периоды спреды могут существенно расшириться, исполнение ордеров в симуляции может задерживаться, а стоп-лосс ордера могут исполняться по значительно худшим ценам, чем предполагалось (проскальзывание).`,
   },
   {
     title: "6. Технологический риск и риск связи",
@@ -84,7 +84,7 @@ const sectionsRu = [
   },
   {
     title: "10. Подтверждение",
-    text: `Регистрируясь в ProbCapital и участвуя в какой-либо программе оценки или финансируемого счёта, вы подтверждаете, что ознакомились с настоящим раскрытием рисков, понимаете его содержание и принимаете описанные риски. Вы подтверждаете, что участвуете добровольно и что ваше участие соответствует вашим знаниям, опыту и финансовым возможностям.`,
+    text: `Регистрируясь в ProbCapital LLC и участвуя в Процессе оценки или Образовательной симуляции торговли, вы подтверждаете, что ознакомились с настоящим раскрытием рисков, понимаете его содержание и принимаете описанные риски. Вы подтверждаете, что добровольно пользуетесь программным обеспечением для имитации торговли и что ваше участие соответствует вашим знаниям и опыту.`,
   },
 ];
 

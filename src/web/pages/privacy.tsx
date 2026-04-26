@@ -17,7 +17,7 @@ const sectionsEn = [
   },
   {
     title: "4. How We Use Your Data",
-    text: `Your personal data is used for the following purposes: (a) creating and maintaining your account; (b) processing evaluation fees and funded account payouts; (c) verifying your identity in compliance with KYC/AML requirements; (d) providing customer support and responding to inquiries; (e) detecting, preventing, and investigating fraud and rule violations; (f) sending service-related communications, including policy updates and payout notifications; (g) analysing platform usage to improve functionality and user experience; (h) complying with applicable legal and regulatory obligations.`,
+    text: `Your personal data is used for the following purposes: (a) creating and maintaining your account; (b) processing evaluation fees and performance-based compensation; (c) verifying your identity in compliance with KYC/AML requirements; (d) providing customer support and responding to inquiries; (e) detecting, preventing, and investigating fraud and rule violations; (f) sending service-related communications, including policy updates and payout notifications; (g) analysing platform usage to improve functionality and user experience; (h) complying with applicable legal and regulatory obligations.`,
   },
   {
     title: "5. Data Sharing and Third Parties",
@@ -68,7 +68,7 @@ const sectionsRu = [
   },
   {
     title: "4. Цели использования данных",
-    text: `Ваши персональные данные используются в следующих целях: (а) создание и ведение вашего аккаунта; (б) обработка оценочных взносов и выплат с финансируемого счёта; (в) верификация личности в соответствии с требованиями KYC/ПОД; (г) оказание поддержки и ответы на запросы; (д) выявление, предотвращение и расследование мошенничества и нарушений правил; (е) направление сервисных уведомлений, включая обновления политик и уведомления о выплатах; (ж) анализ использования платформы в целях улучшения функциональности; (з) соблюдение применимых правовых и регуляторных обязательств.`,
+    text: `Ваши персональные данные используются в следующих целях: (а) создание и ведение вашего аккаунта; (б) обработка оценочных взносов и выплат вознаграждения за результаты оценки; (в) верификация личности в соответствии с требованиями KYC/ПОД; (г) оказание поддержки и ответы на запросы; (д) выявление, предотвращение и расследование мошенничества и нарушений правил; (е) направление сервисных уведомлений, включая обновления политик и уведомления о выплатах; (ж) анализ использования платформы в целях улучшения функциональности; (з) соблюдение применимых правовых и регуляторных обязательств.`,
   },
   {
     title: "5. Передача данных третьим лицам",

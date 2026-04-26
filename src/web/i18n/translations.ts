@@ -17,7 +17,7 @@ export const t = {
     hero_sub: "Join our simulated evaluation program. Get funded up to",
     hero_sub_amount: "$400,000",
     hero_sub_mid: "through our evaluation program and receive up to",
-    hero_sub_split: "90% profit splits",
+    hero_sub_split: "performance-based compensation",
     hero_cta1: "Get Funded Now →",
     hero_cta2: "See How It Works",
     hero_bullets_1: "✓ Fee refunded on first payout",
@@ -52,9 +52,9 @@ export const t = {
     hiw_s2_title: "Pass Phase 1 & 2",
     hiw_s2_desc: "Hit the 10% profit target in Phase 1, then 5% in Phase 2. Follow our simple risk rules. No time pressure on standard accounts.",
     hiw_s3_title: "Get Funded",
-    hiw_s3_desc: "Once you pass, receive access to your simulated funded account in under 24 hours. Trade the same way as in your evaluation — same rules apply.",
-    hiw_s4_title: "Withdraw Your Profits",
-    hiw_s4_desc: "Request payouts anytime after your first profitable day. Get paid within 24 hours via crypto, bank wire, or PayPal.",
+    hiw_s3_desc: "Once you pass, receive access to your expanded simulation environment in under 24 hours. Trade the same way as in your evaluation — same rules apply.",
+    hiw_s4_title: "Receive Performance Compensation",
+    hiw_s4_desc: "Request performance-based payouts anytime after your first profitable day. Processed within 24 hours via bank wire or verified payment method.",
 
     // Challenges
     ch_badge: "Pricing",
@@ -109,9 +109,9 @@ export const t = {
     feat_h2_2: "Succeed",
     feat_sub: "We give you the tools, capital, and support to trade at the highest level.",
     feat_1_title: "MT4 & MT5 Platforms",
-    feat_1_desc: "Trade on the world's most popular platforms with access to 50+ instruments including Forex, Metals, Indices, and Crypto.",
-    feat_2_title: "Instant Payouts",
-    feat_2_desc: "No waiting. Request your profits and receive them within 24 hours via crypto, bank transfer, or PayPal.",
+    feat_1_desc: "Trade on the world's most popular platforms with access to 50+ instruments including Forex, Metals, and Indices within our simulation environment.",
+    feat_2_title: "Fast Performance Payouts",
+    feat_2_desc: "No waiting. Request performance-based compensation and receive it within 24 hours via bank wire or verified payment method.",
     feat_3_title: "Scaling Program",
     feat_3_desc: "Grow your account up to $2M. Every 3 months of consistent profitability, we increase your allocation by 25%.",
     feat_4_title: "Expert Support",
@@ -147,15 +147,15 @@ export const t = {
     faq_items: [
       {
         q: "What is a prop trading challenge?",
-        a: "A prop trading challenge is a simulated evaluation where you prove your trading skills by hitting a profit target while respecting our risk rules. Once passed, you receive access to a simulated funded account and earn performance-based compensation paid by ProbCapital.",
+        a: "A skill evaluation challenge is a structured Evaluation Process where you prove your trading discipline by hitting a performance target while respecting our risk rules. Once passed, you receive access to an expanded simulation environment and earn performance-based compensation paid by ProbCapital LLC from its own operating funds.",
       },
       {
         q: "Do I trade with real money in the challenge?",
-        a: "The challenge is conducted in a simulated environment using real-time market data. Once you pass and receive your funded account, you continue trading in a simulated environment — your profit split is paid by ProbCapital based on your performance.",
+        a: "The Evaluation Process is conducted entirely within a software simulation environment using real-time market data feeds. No real capital is deployed. Performance-based compensation is paid by ProbCapital LLC from its own operating funds based on your Evaluation Process metrics.",
       },
       {
         q: "How fast do I get paid?",
-        a: "Payout requests are processed within 24 hours. We support crypto (USDT, BTC), bank wire, and PayPal. There is no minimum withdrawal amount.",
+        a: "Performance compensation requests are processed within 24 hours. We support bank wire and other verified payment methods. All payouts require completed KYC verification.",
       },
       {
         q: "Can I use EAs and copy trading?",
@@ -163,11 +163,11 @@ export const t = {
       },
       {
         q: "What happens if I lose money?",
-        a: "If you breach a rule or lose beyond the drawdown limit, your challenge or funded account is closed. You get 1 free re-take if you fail.",
+        a: "If you breach a rule or exceed the drawdown limit, your evaluation session is closed. You get 1 free re-take if you fail your first attempt.",
       },
       {
         q: "Is the challenge fee refunded?",
-        a: "Yes. The challenge fee is fully refunded with your first funded account payout on all plans.",
+        a: "Yes. The evaluation fee is credited back with your first approved performance-based payout on all plans, as detailed in our Refund Policy.",
       },
       {
         q: "What instruments can I trade?",
@@ -189,10 +189,10 @@ export const t = {
     cta_t1: "Fee refunded on first payout",
     cta_t2: "No subscriptions ever",
     cta_t3: "Funded in 24h",
-    cta_t4: "90% profit split",
+    cta_t4: "Performance-based payouts",
 
     // Footer
-    footer_desc: "The world's most transparent proprietary trading firm. Trade our capital. Keep your profits.",
+    footer_desc: "Institutional-grade Skill Evaluation Software and Educational Trading Simulations. Delaware LLC, File #10541343.",
     footer_col1: "Company",
     footer_col2: "Product",
     footer_col3: "Support",
@@ -203,7 +203,7 @@ export const t = {
     footer_c4: ["Terms of Service", "Privacy Policy", "Risk Disclosure", "AML Policy"],
     footer_disclaimer_title: "Risk Disclaimer:",
     footer_disclaimer:
-      "ProbCapital is a trader evaluation and education platform. We do not offer investment services, brokerage, or financial advice. All accounts (evaluation and funded) are simulated environments using real-time market data — no real funds are placed in financial markets. Payouts to traders represent performance-based compensation paid by ProbCapital from its own funds, not proceeds from live trading. Past performance in simulations is not indicative of results in live markets. Trading involves substantial risk of loss. Participation fees are non-refundable except as stated in our Refund Policy. Please read our full Terms of Service and Risk Disclosure before participating.",
+      "ProbCapital LLC provides Skill Evaluation Software and Educational Trading Simulation services. ProbCapital LLC is NOT a financial broker, NOT an investment firm, and does NOT accept client deposits for investment. All evaluation environments are proprietary software simulations using real-time market data feeds — no real capital is deployed in financial markets. Performance-based compensation is paid by ProbCapital LLC from its own operating funds based solely on Evaluation Process metrics. Past simulation performance does not indicate future results. Participation fees are non-refundable once the service is rendered. Please read our Terms of Service, Refund Policy, and Risk Disclosure in full before participating.",
     footer_copy: "© 2026 ProbCapital. All rights reserved.",
     footer_terms: "Terms",
     footer_privacy: "Privacy",
@@ -226,7 +226,7 @@ export const t = {
     hero_sub: "Пройдите нашу программу оценки. Получите финансирование до",
     hero_sub_amount: "$400,000",
     hero_sub_mid: "симулированного торгового капитала с выплатой до",
-    hero_sub_split: "90% от прибыли",
+    hero_sub_split: "вознаграждение за результаты",
     hero_cta1: "Получить финансирование →",
     hero_cta2: "Как это работает",
     hero_bullets_1: "✓ Возврат взноса при первой выплате",
@@ -246,7 +246,7 @@ export const t = {
     // Stats
     stats_payouts: "Всего выплачено",
     stats_traders: "Трейдеров с финансированием",
-    stats_split: "Макс. сплит прибыли",
+    stats_split: "Макс. вознаграждение за результаты",
     stats_funding: "Макс. финансирование",
     stats_payout_time: "Среднее время выплаты",
     stats_rating: "Рейтинг Trustpilot",
@@ -261,7 +261,7 @@ export const t = {
     hiw_s2_title: "Пройдите Фазу 1 и 2",
     hiw_s2_desc: "Достигните цели 10% в Фазе 1 и 5% в Фазе 2. Соблюдайте простые правила риска. Без ограничений по времени.",
     hiw_s3_title: "Получите финансирование",
-    hiw_s3_desc: "После прохождения получите доступ к симулированному финансируемому счёту менее чем за 24 часа. Торгуйте так же, как на оценке.",
+    hiw_s3_desc: "После прохождения получите доступ к расширенной симулированной среде менее чем за 24 часа. Торгуйте так же, как на оценке.",
     hiw_s4_title: "Выведите прибыль",
     hiw_s4_desc: "Запрашивайте выплаты в любое время после первого прибыльного дня. Получите деньги в течение 24 часов.",
 
@@ -318,9 +318,9 @@ export const t = {
     feat_h2_2: "успеха",
     feat_sub: "Инструменты, капитал и поддержка для торговли на высшем уровне.",
     feat_1_title: "MT4 и MT5",
-    feat_1_desc: "Торгуйте на самых популярных платформах с доступом к 50+ инструментам: Forex, металлы, индексы и крипто.",
+    feat_1_desc: "Торгуйте на самых популярных платформах с доступом к 50+ инструментам: Forex, металлы и индексы в рамках симулированной среды.",
     feat_2_title: "Мгновенные выплаты",
-    feat_2_desc: "Никаких ожиданий. Запросите прибыль и получите её в течение 24 часов через крипто, банк или PayPal.",
+    feat_2_desc: "Никаких ожиданий. Запросите вознаграждение за результаты и получите его в течение 24 часов банковским переводом или верифицированным методом оплаты.",
     feat_3_title: "Программа масштабирования",
     feat_3_desc: "Увеличивайте счёт до $2M. Каждые 3 месяца стабильной прибыльности — рост аллокации на 25%.",
     feat_4_title: "Экспертная поддержка",
@@ -356,15 +356,15 @@ export const t = {
     faq_items: [
       {
         q: "Что такое проп-трейдинговый челлендж?",
-        a: "Проп-трейдинговый челлендж — это симулированная оценка, в ходе которой вы демонстрируете навыки торговли, достигая цели по прибыли при соблюдении наших правил управления рисками. После прохождения вы получаете реальный финансируемый счёт.",
+        a: "Процесс оценки навыков — это структурированная симулированная оценка, в ходе которой вы демонстрируете торговую дисциплину, достигая целевых показателей производительности при соблюдении правил управления рисками. После прохождения вы получаете доступ к расширенной симулированной среде и вознаграждение за результаты, выплачиваемое ProbCapital LLC из собственных средств.",
       },
       {
         q: "Я торгую реальными деньгами на челлендже?",
-        a: "Челлендж проводится в симулированной среде с использованием данных рынка в реальном времени. После прохождения вы продолжаете торговать в симулированной среде — выплата вашей доли прибыли осуществляется ProbCapital на основе ваших результатов.",
+        a: "Процесс оценки полностью проводится в программной симулированной среде с использованием данных рынка в реальном времени. Реальный капитал не используется. Вознаграждение за результаты выплачивается ProbCapital LLC из собственных операционных средств на основании метрик процесса оценки.",
       },
       {
         q: "Как быстро происходят выплаты?",
-        a: "Запросы на выплату обрабатываются в течение 24 часов. Мы поддерживаем крипто (USDT, BTC), банковский перевод и PayPal. Минимальной суммы вывода нет.",
+        a: "Запросы на выплату вознаграждения обрабатываются в течение 24 часов. Мы поддерживаем банковский перевод и другие верифицированные методы оплаты. Для получения выплат требуется пройденная KYC-верификация.",
       },
       {
         q: "Можно использовать советников (EA) и копирование?",
@@ -372,15 +372,15 @@ export const t = {
       },
       {
         q: "Что происходит при превышении просадки?",
-        a: "При нарушении правил или превышении лимита просадки счёт закрывается. При первом провале вы получаете 1 бесплатный рестарт. Ваш финансовый риск ограничен разовой оплатой.",
+        a: "При нарушении правил или превышении лимита просадки оценочная сессия закрывается. При первом провале вы получаете 1 бесплатный рестарт.",
       },
       {
         q: "Возвращается ли оплата за челлендж?",
-        a: "Да. Стоимость челленджа полностью возвращается вместе с первой выплатой с финансируемого счёта на всех тарифах.",
+        a: "Да. Стоимость оценки возвращается вместе с первой одобренной выплатой вознаграждения за результаты на всех тарифах, согласно Политике возврата.",
       },
       {
         q: "Какими инструментами можно торговать?",
-        a: "Доступны основные, второстепенные и экзотические валютные пары Forex, золото (XAU/USD), серебро, индексы США и ЕС (NAS100, SPX500, DAX), нефть и крупные криптовалютные пары.",
+        a: "В симулированной среде доступны основные, второстепенные и экзотические валютные пары Forex, золото (XAU/USD), серебро, индексы США и ЕС (NAS100, SPX500, DAX) и нефть.",
       },
       {
         q: "Как работает программа масштабирования?",
@@ -398,10 +398,10 @@ export const t = {
     cta_t1: "Возврат оплаты при первой выплате",
     cta_t2: "Никаких подписок",
     cta_t3: "Финансирование за 24 часа",
-    cta_t4: "90% сплит прибыли",
+    cta_t4: "Выплаты за результаты",
 
     // Footer
-    footer_desc: "Самая прозрачная проп-трейдинговая компания в мире. Торгуйте нашим капиталом. Забирайте прибыль.",
+    footer_desc: "Программное обеспечение для оценки торговых навыков и образовательные симуляции. Делавэр LLC, Рег. №10541343.",
     footer_col1: "Компания",
     footer_col2: "Продукт",
     footer_col3: "Поддержка",
@@ -412,7 +412,7 @@ export const t = {
     footer_c4: ["Условия использования", "Политика конфиденциальности", "Раскрытие рисков", "AML-политика"],
     footer_disclaimer_title: "Предупреждение о рисках:",
     footer_disclaimer:
-      "ProbCapital — это платформа для оценки и обучения трейдеров. Мы не предоставляем инвестиционные услуги, брокерские услуги или финансовые консультации. Все счета (оценочные и финансируемые) являются симулированными средами с использованием данных рынка в реальном времени — реальные средства на финансовые рынки не размещаются. Выплаты трейдерам представляют собой вознаграждение за показатели торговли, выплачиваемое ProbCapital из собственных средств, а не из доходов от реальной торговли. Прошлые результаты симуляций не гарантируют результатов на реальных рынках. Торговля сопряжена со значительным риском потерь. Участие в программе предполагает принятие рисков, описанных в Раскрытии рисков. Ознакомьтесь с Условиями использования и Раскрытием рисков перед участием.",
+      "ProbCapital LLC предоставляет программное обеспечение для оценки торговых навыков и образовательные симуляции торговли. ProbCapital LLC НЕ является финансовым брокером, инвестиционной компанией и НЕ принимает клиентские средства для инвестирования. Все оценочные среды являются проприетарными программными симуляциями. Компенсация, основанная на показателях торговли, выплачивается из собственных операционных средств ProbCapital LLC исключительно на основании метрик процесса оценки. Прошлые результаты симуляций не свидетельствуют о будущих результатах. Взносы за участие не возвращаются после оказания услуги. Перед участием ознакомьтесь с Условиями использования, Политикой возврата и Раскрытием рисков.",
     footer_copy: "© 2026 ProbCapital. Все права защищены.",
     footer_terms: "Условия",
     footer_privacy: "Конфиденциальность",

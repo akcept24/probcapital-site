@@ -40,7 +40,7 @@ export default function Affiliate() {
   const l = labels[lang];
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
         <div
           className="rounded-3xl p-10 md:p-14 relative overflow-hidden"

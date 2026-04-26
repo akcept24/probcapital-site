@@ -50,7 +50,7 @@ export default function Platforms() {
   const l = labels[lang];
 
   return (
-    <section id="platform" className="py-24 px-6">
+    <section id="platform" className="py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}

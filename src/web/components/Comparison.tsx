@@ -58,7 +58,7 @@ export default function Comparison() {
   const l = labels[lang];
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-[900px] mx-auto">
         {/* Header */}
         <div className="text-center mb-14">

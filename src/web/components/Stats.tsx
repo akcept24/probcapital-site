@@ -12,7 +12,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-10 px-6">
       <div className="max-w-[1200px] mx-auto">
         <div
           className="rounded-2xl p-6 md:p-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6"

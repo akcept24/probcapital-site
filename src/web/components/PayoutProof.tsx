@@ -60,7 +60,7 @@ export default function PayoutProof() {
   const next = () => go((active + 1) % certs.length);
 
   return (
-    <section className="py-24 px-6 overflow-hidden">
+    <section className="py-12 px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}

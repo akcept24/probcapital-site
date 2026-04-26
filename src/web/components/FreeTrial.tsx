@@ -34,7 +34,7 @@ export default function FreeTrial() {
   const l = labels[lang];
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
         <div className="rounded-3xl overflow-hidden relative"
           style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.07)" }}>

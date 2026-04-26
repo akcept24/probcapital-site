@@ -4,7 +4,7 @@ export default function CTA() {
   const { tr } = useLang();
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
         <div className="relative rounded-3xl p-12 md:p-20 text-center overflow-hidden"
           style={{ background: "#1A1D27", border: "1px solid rgba(0,212,170,0.2)", boxShadow: "0 0 80px rgba(0,212,170,0.08)" }}>

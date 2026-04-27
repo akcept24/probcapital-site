@@ -10,12 +10,10 @@ const navItems = [
 ];
 
 function scrollToSection(id: string) {
-  // Small delay to ensure DOM is ready
   setTimeout(() => {
     const el = document.getElementById(id);
     if (el) {
-      const navHeight = 72;
-      const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+      const top = el.getBoundingClientRect().top + window.scrollY - 72;
       window.scrollTo({ top, behavior: "smooth" });
     }
   }, 50);
@@ -33,11 +31,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 1024) setMenuOpen(false); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   function handleNavClick(id: string) {
     setMenuOpen(false);
     if (location !== "/") {
       navigate("/");
-      // wait for page to mount then scroll
       setTimeout(() => scrollToSection(id), 200);
     } else {
       scrollToSection(id);
@@ -64,22 +68,23 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
+
         {/* Logo */}
-        <a href="/" onClick={handleLogoClick} className="flex items-center gap-2">
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 shrink-0">
           <img src="/logo.png" alt="Probcapital" className="w-9 h-9 rounded-lg object-cover" />
-          <span className="font-bold text-[17px] tracking-tight">
+          <span className="font-bold text-[17px] tracking-tight whitespace-nowrap">
             <span className="gold-text">Prob</span>
             <span className="text-[#F0F2FF]">capital</span>
           </span>
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop links — only at lg (1024px+) */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => (
             <button
               key={item.key}
               onClick={() => handleNavClick(item.id)}
-              className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer p-0"
+              className="text-[13px] xl:text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer p-0 whitespace-nowrap"
             >
               {tr[item.key]}
             </button>
@@ -87,14 +92,14 @@ export default function Navbar() {
           <a
             href="/about"
             onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/about"); }}
-            className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium"
+            className="text-[13px] xl:text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium whitespace-nowrap"
           >
             {lang === "ru" ? "О нас" : "About"}
           </a>
         </div>
 
-        {/* Right side */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right side — only at lg (1024px+) */}
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
           {/* Lang switcher */}
           <div
             className="flex items-center rounded-lg overflow-hidden"
@@ -104,7 +109,7 @@ export default function Navbar() {
               <button
                 key={l}
                 onClick={() => setLang(l)}
-                className="px-3 py-1.5 text-[13px] font-semibold uppercase transition-all duration-200"
+                className="px-2.5 py-1.5 text-[12px] font-semibold uppercase transition-all duration-200"
                 style={
                   lang === l
                     ? { background: "linear-gradient(135deg,#00D4AA,#00FFCC)", color: "#0F1117" }
@@ -117,21 +122,21 @@ export default function Navbar() {
           </div>
           <a
             href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
-            className="text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium px-4 py-2"
+            className="text-[13px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium px-3 py-2 whitespace-nowrap"
           >
             {tr.nav_login}
           </a>
           <a
             href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
-            className="gold-gradient text-[#0F1117] text-[14px] font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+            className="gold-gradient text-[#0F1117] text-[13px] font-bold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             {tr.nav_getFunded}
           </a>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger — shows below lg (< 1024px) */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -144,11 +149,12 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile/Tablet menu — below lg */}
       {menuOpen && (
-        <div className="md:hidden border-t border-white/5 bg-[#0F1117]">
-          <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-4">
-            {/* Mobile lang switcher */}
+        <div className="lg:hidden border-t border-white/5 bg-[#0F1117]">
+          <div className="max-w-[1200px] mx-auto px-6 py-5 flex flex-col gap-4">
+
+            {/* Lang switcher */}
             <div className="flex gap-2">
               {(["ru", "en"] as const).map((l) => (
                 <button
@@ -185,13 +191,22 @@ export default function Navbar() {
               {lang === "ru" ? "О нас" : "About"}
             </a>
 
-            <a
-              href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
-              className="gold-gradient text-[#0F1117] text-[14px] font-bold px-5 py-3 rounded-lg text-center mt-2"
-              onClick={() => setMenuOpen(false)}
-            >
-              {tr.nav_getFunded}
-            </a>
+            <div className="flex gap-3 mt-1">
+              <a
+                href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                className="flex-1 text-center text-[14px] text-[#8A8FA8] border border-white/10 font-medium px-4 py-3 rounded-lg"
+                onClick={() => setMenuOpen(false)}
+              >
+                {tr.nav_login}
+              </a>
+              <a
+                href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                className="flex-1 text-center gold-gradient text-[#0F1117] text-[14px] font-bold px-4 py-3 rounded-lg"
+                onClick={() => setMenuOpen(false)}
+              >
+                {tr.nav_getFunded}
+              </a>
+            </div>
           </div>
         </div>
       )}

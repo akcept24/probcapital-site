@@ -208,7 +208,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ══════════ HERO ══════════ */}
-      <section style={{ position: "relative", minHeight: "95vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+      <section style={{ position: "relative", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <GridLines />
         <Glow top="10%" left="50%" size={900} opacity={0.06} />
         <Glow top="60%" right="-5%" size={400} opacity={0.05} />
@@ -292,7 +292,7 @@ export default function AboutPage() {
       {/* ══════════ PHILOSOPHY ══════════ */}
       <section style={{ position: "relative", padding: "96px 28px", background: "rgba(0,0,0,0.25)" }}>
         <Divider />
-        <div style={{ maxWidth: "1140px", margin: "0 auto", paddingTop: "96px" }}>
+        <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "40px", alignItems: "start" }}>
             {/* Left: heading */}
@@ -407,7 +407,7 @@ export default function AboutPage() {
       {/* ══════════ COMPLIANCE ══════════ */}
       <section style={{ position: "relative", padding: "96px 28px", background: "rgba(0,0,0,0.35)", overflow: "hidden" }}>
         <Divider />
-        <div style={{ maxWidth: "960px", margin: "0 auto", paddingTop: "96px" }}>
+        <div style={{ maxWidth: "960px", margin: "0 auto" }}>
 
           {/* Header */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginBottom: "56px" }}>

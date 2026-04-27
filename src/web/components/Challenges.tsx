@@ -3,12 +3,12 @@ import { useLang } from "../i18n/LangContext";
 
 const accountSizes = ["$10,000", "$25,000", "$50,000", "$100,000", "$200,000", "$400,000"];
 const prices: Record<string, { standard: number; aggressive: number }> = {
-  "$10,000":  { standard: 79,   aggressive: 59   },
-  "$25,000":  { standard: 149,  aggressive: 109  },
-  "$50,000":  { standard: 249,  aggressive: 189  },
-  "$100,000": { standard: 449,  aggressive: 349  },
-  "$200,000": { standard: 799,  aggressive: 599  },
-  "$400,000": { standard: 1299, aggressive: 999  },
+  "$10,000":  { standard: 59,   aggressive: 79   },
+  "$25,000":  { standard: 109,  aggressive: 149  },
+  "$50,000":  { standard: 189,  aggressive: 249  },
+  "$100,000": { standard: 349,  aggressive: 449  },
+  "$200,000": { standard: 599,  aggressive: 799  },
+  "$400,000": { standard: 999,  aggressive: 1299 },
 };
 
 export default function Challenges() {
@@ -16,29 +16,6 @@ export default function Challenges() {
   const { tr } = useLang();
 
   const plans = [
-    {
-      id: "standard" as const,
-      name: tr.ch_standard,
-      badge: null,
-      highlight: false,
-      rules: [
-        { label: tr.ch_phase1,  value: "10%",    good: true },
-        { label: tr.ch_phase2,  value: "5%",     good: true },
-        { label: tr.ch_maxdd,   value: "10%",    good: false },
-        { label: tr.ch_dailydd, value: "5%",     good: false },
-        { label: tr.ch_mindays, value: "4 " + tr.ch_days, good: false },
-        { label: tr.ch_split,   value: "80%",    good: true },
-        { label: tr.ch_leverage,value: "1:100",  good: true },
-        { label: tr.ch_payouts, value: tr.ch_weekly, good: false },
-      ],
-      features: [
-        tr.ch_feat_mt,
-        tr.ch_feat_instruments,
-        tr.ch_feat_retake,
-        tr.ch_feat_phase2,
-      ],
-      cta: tr.ch_cta_std,
-    },
     {
       id: "aggressive" as const,
       name: tr.ch_aggressive,
@@ -62,6 +39,29 @@ export default function Challenges() {
         tr.ch_feat_leverage,
       ],
       cta: tr.ch_cta_agg,
+    },
+    {
+      id: "standard" as const,
+      name: tr.ch_standard,
+      badge: null,
+      highlight: false,
+      rules: [
+        { label: tr.ch_phase1,  value: "10%",    good: true },
+        { label: tr.ch_phase2,  value: "5%",     good: true },
+        { label: tr.ch_maxdd,   value: "10%",    good: false },
+        { label: tr.ch_dailydd, value: "5%",     good: false },
+        { label: tr.ch_mindays, value: "4 " + tr.ch_days, good: false },
+        { label: tr.ch_split,   value: "80%",    good: true },
+        { label: tr.ch_leverage,value: "1:100",  good: true },
+        { label: tr.ch_payouts, value: tr.ch_weekly, good: false },
+      ],
+      features: [
+        tr.ch_feat_mt,
+        tr.ch_feat_instruments,
+        tr.ch_feat_retake,
+        tr.ch_feat_phase2,
+      ],
+      cta: tr.ch_cta_std,
     },
   ];
 

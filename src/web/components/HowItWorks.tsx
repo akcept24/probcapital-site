@@ -133,12 +133,7 @@ export default function HowItWorks() {
           gap: 20,
           position: "relative",
         }}>
-          {/* Connector line — desktop only, hidden via media query trick using inline hack */}
-          <div style={{
-            position: "absolute", top: 56, left: "10%", right: "10%", height: 1,
-            background: "linear-gradient(to right, transparent, rgba(0,212,170,0.25) 20%, rgba(0,212,170,0.25) 80%, transparent)",
-            pointerEvents: "none",
-          }} className="hiw-connector" />
+          {/* Connector line removed */}
 
           {steps.map((step, i) => (
             <StepCard key={i} step={step} icon={icons[i]} />

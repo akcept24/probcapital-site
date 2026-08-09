@@ -20,7 +20,7 @@ const labels = {
     devices: ["iOS", "Android", "Windows", "macOS", "Web"],
     cta: "Try ProbTrader Free →",
     cta2: "View Documentation",
-    exclusive: "Exclusive to Probcapital traders",
+    exclusive: "Exclusive to ProbCapital traders",
   },
   ru: {
     badge: "Собственная платформа",
@@ -41,7 +41,7 @@ const labels = {
     devices: ["iOS", "Android", "Windows", "macOS", "Web"],
     cta: "Попробовать бесплатно →",
     cta2: "Документация",
-    exclusive: "Доступно только трейдерам Probcapital",
+    exclusive: "Доступно только трейдерам ProbCapital",
   },
 };
 

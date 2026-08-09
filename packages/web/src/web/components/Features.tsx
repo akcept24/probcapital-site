@@ -214,13 +214,11 @@ export default function Features() {
             { v: "AES-256", l: "Шифрование данных" },
             { v: "99.9%", l: "Аптайм платформы" },
             { v: "140+", l: "Обслуживаемых стран" },
-            { v: "SOC 2", l: "Соответствие стандарту" },
           ] : [
             { v: "< 1ms", l: "VPS Latency" },
             { v: "AES-256", l: "Data Encryption" },
-            { v: "99.9%", l: "Platform Uptime SLA" },
+            { v: "99.9%", l: "Platform Uptime Target" },
             { v: "140+", l: "Countries Served" },
-            { v: "SOC 2", l: "Aligned Standard" },
           ]).map(s => (
             <div key={s.l} style={{ textAlign: "center" }}>
               <div style={{ fontSize: "18px", fontWeight: 800, color: "#00D4AA", letterSpacing: "-0.02em" }}>{s.v}</div>

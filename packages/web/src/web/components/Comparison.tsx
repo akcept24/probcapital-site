@@ -2,14 +2,14 @@ import { useLang } from "../i18n/LangContext";
 
 const labels = {
   en: {
-    badge: "Why Probcapital",
+    badge: "Why ProbCapital",
     h2_1: "How We Compare to",
     h2_2: "Other Firms",
     sub: "Based on publicly available information. Features and policies vary by firm.",
-    us: "Probcapital",
+    us: "ProbCapital",
     them: "Other Firms",
     rows: [
-      { feature: "Instant funding after passing", us: true, them: false },
+      { feature: "Funding within 24 hours after passing", us: true, them: false },
       { feature: "Evaluation fee rebate on first approved payout", us: true, them: false },
       { feature: "Performance-based payouts", us: true, them: false },
       { feature: "No minimum trading days (Aggressive)", us: true, them: false },
@@ -27,14 +27,14 @@ const labels = {
     cta: "Start Evaluation →",
   },
   ru: {
-    badge: "Почему Probcapital",
+    badge: "Почему ProbCapital",
     h2_1: "Как мы сравниваемся с",
     h2_2: "другими фирмами",
     sub: "На основе публично доступной информации. Условия могут отличаться у разных компаний.",
-    us: "Probcapital",
+    us: "ProbCapital",
     them: "Другие фирмы",
     rows: [
-      { feature: "Мгновенное финансирование после прохождения", us: true, them: false },
+      { feature: "Финансирование в течение 24 часов после прохождения", us: true, them: false },
       { feature: "Рибейт взноса при первой одобренной выплате", us: true, them: false },
       { feature: "Выплаты по результатам оценки", us: true, them: false },
       { feature: "Без минимума дней (Агрессивный)", us: true, them: false },

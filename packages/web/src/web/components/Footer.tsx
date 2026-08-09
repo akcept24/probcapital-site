@@ -46,7 +46,7 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ gridColumn: "span 1" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-              <img src="/logo.png" alt="Probcapital" style={{ width: "36px", height: "36px", borderRadius: "10px", objectFit: "cover" }} />
+              <img src="/logo.png" alt="ProbCapital" style={{ width: "36px", height: "36px", borderRadius: "10px", objectFit: "cover" }} />
               <span style={{ fontWeight: 700, fontSize: "17px" }}>
                 <span className="gold-text">Prob</span>
                 <span style={{ color: "#F0F2FF" }}>capital</span>
@@ -102,7 +102,7 @@ export default function Footer() {
           background: "rgba(0,212,170,0.03)", border: "1px solid rgba(0,212,170,0.1)",
           fontSize: "11px", color: "#5A6880", lineHeight: 1.7,
         }}>
-          <strong style={{ color: "#7A8499" }}>Probcapital LLC</strong>
+          <strong style={{ color: "#7A8499" }}>ProbCapital LLC</strong>
           {ru
             ? " · Зарегистрирована в штате Делавэр, США · Регистрационный номер: 10541343 · Зарегистрированный офис: 8 The Green, Suite B, Dover, DE 19901"
             : " · Registered in the State of Delaware, USA · File #10541343 · Registered Office: 8 The Green, Suite B, Dover, DE 19901"}
@@ -114,7 +114,7 @@ export default function Footer() {
           display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px",
         }}>
           <div style={{ fontSize: "12px", color: "#9098B8" }}>
-            {ru ? `© ${new Date().getFullYear()} Probcapital LLC. Все права защищены.` : `© ${new Date().getFullYear()} Probcapital LLC. All rights reserved.`}
+            {ru ? `© ${new Date().getFullYear()} ProbCapital LLC. Все права защищены.` : `© ${new Date().getFullYear()} ProbCapital LLC. All rights reserved.`}
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", fontSize: "12px" }}>
             {[

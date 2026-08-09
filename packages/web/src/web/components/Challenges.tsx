@@ -3,9 +3,9 @@ import { useLang } from "../i18n/LangContext";
 
 const accountSizes = ["$10,000", "$25,000", "$50,000", "$100,000", "$200,000", "$400,000"];
 const prices: Record<string, { standard: number; aggressive: number }> = {
-  "$10,000":  { standard: 59,   aggressive: 79   },
-  "$25,000":  { standard: 109,  aggressive: 149  },
-  "$50,000":  { standard: 189,  aggressive: 249  },
+  "$10,000":  { standard: 79,   aggressive: 99   },
+  "$25,000":  { standard: 149,  aggressive: 189  },
+  "$50,000":  { standard: 249,  aggressive: 329  },
   "$100,000": { standard: 349,  aggressive: 449  },
   "$200,000": { standard: 599,  aggressive: 799  },
   "$400,000": { standard: 999,  aggressive: 1299 },

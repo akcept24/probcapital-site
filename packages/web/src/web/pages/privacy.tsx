@@ -5,7 +5,7 @@ import { useLang } from "../i18n/LangContext";
 const sectionsEn = [
   {
     title: "1. Data Controller",
-    text: `Probcapital LLC ("Company", "we", "us") is a Limited Liability Company registered in the State of Delaware, USA (File #10541343), with registered address at 8 The Green, Suite B, Dover, DE 19901. The Company is the data controller responsible for the processing of your personal data collected through probcapital.com and associated services. For all privacy-related inquiries, please contact: privacy@probcapital.com.`,
+    text: `ProbCapital LLC ("Company", "we", "us") is a Limited Liability Company registered in the State of Delaware, USA (File #10541343), with registered address at 8 The Green, Suite B, Dover, DE 19901. The Company is the data controller responsible for the processing of your personal data collected through probcapital.com and associated services. For all privacy-related inquiries, please contact: privacy@probcapital.com.`,
   },
   {
     title: "2. Personal Data We Collect",
@@ -85,7 +85,7 @@ To exercise your California privacy rights, contact: privacy@probcapital.com. We
 const sectionsRu = [
   {
     title: "1. Оператор персональных данных",
-    text: `Probcapital LLC («Компания», «мы», «нас») — общество с ограниченной ответственностью, зарегистрированное в штате Делавэр, США (регистрационный номер: 10541343), юридический адрес: 8 The Green, Suite B, Dover, DE 19901. Компания является оператором персональных данных, ответственным за их обработку, осуществляемую через сайт probcapital.com и связанные сервисы. По всем вопросам конфиденциальности обращайтесь: privacy@probcapital.com.`,
+    text: `ProbCapital LLC («Компания», «мы», «нас») — общество с ограниченной ответственностью, зарегистрированное в штате Делавэр, США (регистрационный номер: 10541343), юридический адрес: 8 The Green, Suite B, Dover, DE 19901. Компания является оператором персональных данных, ответственным за их обработку, осуществляемую через сайт probcapital.com и связанные сервисы. По всем вопросам конфиденциальности обращайтесь: privacy@probcapital.com.`,
   },
   {
     title: "2. Персональные данные, которые мы собираем",
@@ -192,7 +192,7 @@ export default function PrivacyPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "14px" }}>
             {[
-              { l: ru ? "Компания" : "Company", v: "Probcapital LLC" },
+              { l: ru ? "Компания" : "Company", v: "ProbCapital LLC" },
               { l: ru ? "Штат" : "State", v: "Delaware, USA" },
               { l: ru ? "Рег. номер" : "File Number", v: "#10541343" },
               { l: ru ? "Юридический адрес" : "Registered Office", v: "8 The Green, Suite B, Dover, DE 19901" },

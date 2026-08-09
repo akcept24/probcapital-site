@@ -71,7 +71,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 shrink-0">
-          <img src="/logo.png" alt="Probcapital" className="w-9 h-9 rounded-lg object-cover" />
+          <img src="/logo.png" alt="ProbCapital" className="w-9 h-9 rounded-lg object-cover" />
           <span className="font-bold text-[17px] tracking-tight whitespace-nowrap">
             <span className="gold-text">Prob</span>
             <span className="text-[#F0F2FF]">capital</span>

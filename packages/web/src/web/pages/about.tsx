@@ -170,9 +170,9 @@ export default function AboutPage() {
       icon: "🔐",
       title: ru ? "Безопасность корпоративного уровня" : "Enterprise-Grade Security",
       desc: ru
-        ? "Инфраструктура, соответствующая SOC 2, с принудительной двухфакторной аутентификацией, мониторингом вторжений и полными журналами аудита для каждой сессии."
-        : "SOC 2-aligned infrastructure with mandatory 2FA enforcement, continuous intrusion monitoring, and immutable audit trails for every user session and evaluation event.",
-      tag: "SOC 2",
+        ? "Корпоративная инфраструктура безопасности с принудительной двухфакторной аутентификацией, мониторингом вторжений и полными журналами аудита для каждой сессии."
+        : "Enterprise security infrastructure with mandatory 2FA enforcement, continuous intrusion monitoring, and immutable audit trails for every user session and evaluation event.",
+      tag: "Secure",
     },
     {
       icon: "🌐",

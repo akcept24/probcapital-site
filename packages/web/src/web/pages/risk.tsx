@@ -43,7 +43,6 @@ const sectionsEn = [
     title: "10. Acknowledgement",
     text: `By registering with ProbCapital LLC and participating in any Evaluation Process or Educational Trading Simulation, you acknowledge that you have read, understood, and accept the risks described in this disclosure. You confirm that you are participating voluntarily in a software simulation service and that your participation is appropriate given your knowledge and experience.`,
   },
-,
   {
     title: "11. Restricted Jurisdictions",
     text: `The Service is not available to individuals located in jurisdictions subject to comprehensive US, EU, or UN sanctions, or designated as high-risk by FATF. It is your sole responsibility to verify that accessing and using this Service is lawful in your country of residence. The Company makes no representation that the Service is appropriate or available in all locations. Access from restricted jurisdictions is prohibited and may result in immediate account termination.`,
@@ -91,7 +90,6 @@ const sectionsRu = [
     title: "10. Подтверждение",
     text: `Регистрируясь в ProbCapital LLC и участвуя в Процессе оценки или Образовательной симуляции торговли, вы подтверждаете, что ознакомились с настоящим раскрытием рисков, понимаете его содержание и принимаете описанные риски. Вы подтверждаете, что добровольно пользуетесь программным обеспечением для имитации торговли и что ваше участие соответствует вашим знаниям и опыту.`,
   },
-,
   {
     title: "11. Ограниченные юрисдикции",
     text: `Сервис недоступен для лиц, находящихся в юрисдикциях, на которые распространяются комплексные санкции США, ЕС или ООН, либо включённых в список FATF юрисдикций с высоким уровнем риска. Вы несёте единоличную ответственность за проверку законности использования данного Сервиса в стране вашего проживания. Компания не гарантирует доступность Сервиса во всех регионах. Доступ из ограниченных юрисдикций запрещён и может повлечь немедленное закрытие аккаунта.`,

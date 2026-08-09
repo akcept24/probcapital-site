@@ -272,7 +272,7 @@ export default function Platforms() {
             style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
             {l.cta}
           </a>
-          <a href="#"
+          <a href="https://app.probcapital.com"
             className="text-[#F0F2FF] text-[15px] font-semibold px-8 py-4 rounded-xl text-center transition-all duration-200"
             style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; }}

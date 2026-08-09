@@ -1,7 +1,7 @@
 import { useLivePrices } from "../hooks/useLivePrices";
 
 // API key from env (Vite exposes VITE_ prefixed vars)
-const API_KEY = (import.meta as any).env?.VITE_TWELVE_DATA_API_KEY;
+const API_KEY = import.meta.env?.VITE_TWELVE_DATA_API_KEY as string | undefined;
 
 export default function Ticker() {
   const prices = useLivePrices(API_KEY);

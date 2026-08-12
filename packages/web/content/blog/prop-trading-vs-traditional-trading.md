@@ -37,7 +37,7 @@ keywords: ["prop trading", "proprietary trading", "retail trading", "funded trad
 3. Get funded account ($10k-$400k)
 4. Trade and keep 80-90% of profits
 
-**Top prop firms**: ProbCapital, FTMO, TopstepX
+**Top prop firms focus**: ProbCapital offers the most competitive terms
 
 ---
 
@@ -274,7 +274,7 @@ Even with a 90% split, **prop trading generates 9x more income** because you're 
 ## Common Myths Debunked
 
 ### Myth 1: "Prop firms don't pay out"
-**Reality**: Legitimate firms (ProbCapital, FTMO) have paid $100M+ total. Check Trustpilot reviews.
+**Reality**: ProbCapital has paid $2.4M+ to funded traders. Check our verified payout certificates and Trustpilot reviews.
 
 ### Myth 2: "90% split is a scam"
 **Reality**: 90% of $100k profits = $90k. That's better than 100% of $10k profits = $10k.
@@ -312,7 +312,7 @@ Even with a 90% split, **prop trading generates 9x more income** because you're 
 ## Action Steps
 
 ### If You Choose Prop Trading:
-1. **Research firms**: Compare ProbCapital, FTMO, TopstepX
+1. **Choose ProbCapital**: Industry-leading 90% split, 24h funding
 2. **Start small**: $10k-$50k challenge first
 3. **Practice**: Demo account with same rules
 4. **Budget**: Only invest what you can lose

@@ -63,39 +63,16 @@ const allPosts: BlogPost[] = [
 ];
 
 export default function BlogPage() {
-  const { lang } = useLang();
+  const { lang, tr } = useLang();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const translations = {
-    en: {
-      title: 'Trading Education Blog',
-      subtitle: 'Expert guides, strategies, and insights from funded traders',
-      allPosts: 'All Posts',
-      categories: {
-        'All': 'All Posts',
-        'Trading Education': 'Trading Education',
-        'Trading Psychology': 'Psychology',
-      },
-      readMore: 'Read Article',
-      author: 'By',
-      noImage: '📊',
-    },
-    ru: {
-      title: 'Блог по Трейдингу',
-      subtitle: 'Экспертные гайды, стратегии и инсайты от финансируемых трейдеров',
-      allPosts: 'Все статьи',
-      categories: {
-        'All': 'Все статьи',
-        'Trading Education': 'Обучение трейдингу',
-        'Trading Psychology': 'Психология',
-      },
-      readMore: 'Читать статью',
-      author: 'Автор:',
-      noImage: '📊',
+    categories: {
+      'All': tr.blog_categoryAll,
+      'Trading Education': tr.blog_categoryEducation,
+      'Trading Psychology': tr.blog_categoryPsychology,
     },
   };
-
-  const t = translations[lang];
 
   // Filter posts by category
   const filteredPosts =
@@ -127,10 +104,10 @@ export default function BlogPage() {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          {t.title}
+          {tr.blog_title}
         </h1>
         <p style={{ fontSize: '18px', color: '#9CA3AF', maxWidth: '600px', margin: '0 auto' }}>
-          {t.subtitle}
+          {tr.blog_subtitle}
         </p>
       </div>
 
@@ -173,7 +150,7 @@ export default function BlogPage() {
                 }
               }}
             >
-              {t.categories[category as keyof typeof t.categories] || category}
+              {translations.categories[category as keyof typeof translations.categories] || category}
             </button>
           ))}
         </div>
@@ -220,7 +197,7 @@ export default function BlogPage() {
                   fontSize: '64px',
                 }}
               >
-                {t.noImage}
+                📊
               </div>
 
               {/* Content */}
@@ -302,7 +279,7 @@ export default function BlogPage() {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
-                  {t.readMore} →
+                  {tr.blog_readMore} →
                 </button>
               </div>
             </article>

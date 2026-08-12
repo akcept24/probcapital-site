@@ -417,6 +417,25 @@ export const t = {
     footer_terms: "Условия",
     footer_privacy: "Конфиденциальность",
     footer_risk: "Раскрытие рисков",
+
+    // Blog
+    blog_title: "Блог по Трейдингу",
+    blog_subtitle: "Экспертные гайды, стратегии и инсайты от финансируемых трейдеров",
+    blog_allPosts: "Все статьи",
+    blog_categoryAll: "Все статьи",
+    blog_categoryEducation: "Обучение трейдингу",
+    blog_categoryPsychology: "Психология",
+    blog_readMore: "Читать статью",
+    blog_backToBlog: "Назад к блогу",
+    blog_shareArticle: "Поделиться статьей",
+    blog_copyLink: "Копировать ссылку",
+    blog_linkCopied: "Ссылка скопирована!",
+    blog_by: "Автор:",
+    blog_comingSoon: "Полная версия статьи скоро появится!",
+    blog_meanwhile: "А пока ознакомьтесь с другими статьями или начните свой челлендж.",
+    blog_startChallenge: "Начать челлендж",
+    blog_ctaTitle: "Готовы начать свой путь в трейдинге?",
+    blog_ctaDesc: "Получите финансирование до $400,000 и зарабатывайте до 90% прибыли. Пройдите челлендж всего за 1 шаг.",
   },
 } as const;
 

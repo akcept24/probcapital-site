@@ -11,6 +11,8 @@ import AmlPage from "./pages/aml";
 import RefundPage from "./pages/refund";
 import AboutPage from "./pages/about";
 import PricingPage from "./pages/pricing";
+import BlogPage from "./pages/blog";
+import BlogArticlePage from "./pages/blog-article";
 import { Provider } from "./components/provider";
 import { LangProvider } from "./i18n/LangContext";
 
@@ -31,6 +33,8 @@ function App() {
           <Route path="/refund" component={RefundPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/pricing" component={PricingPage} />
+          <Route path="/blog/:slug" component={BlogArticlePage} />
+          <Route path="/blog" component={BlogPage} />
         </Switch>
 
       </LangProvider>

@@ -113,7 +113,7 @@ The 3-Trade Rule:
 
 ### Real Example:
 > *"I used to take 15-20 trades per day and kept failing. With the 3-trade rule, I passed in 12 days."*  
-> — Sarah K., $50k FTMO funded trader
+> — Sarah K., $50k ProbCapital funded trader
 
 ---
 

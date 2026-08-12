@@ -1,41 +1,71 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, useLocation } from 'wouter';
 import { useLanguage } from '../i18n/LanguageContext';
-import MarkdownRenderer from '../components/MarkdownRenderer';
-import { getBlogPostBySlug, getRelatedPosts, type BlogPost } from '../lib/blog';
 import { ArrowLeft, Clock, Calendar, Tag, Share2, Twitter, Facebook, Linkedin, Link2 } from 'lucide-react';
+
+// Blog post type
+interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  author: string;
+  date: string;
+  readTime: string;
+  contentPreview: string;
+}
+
+// Hardcoded blog posts (in production, fetch from API or use markdown)
+const blogPosts: Record<string, BlogPost> = {
+  'best-prop-trading-firms-2026': {
+    slug: 'best-prop-trading-firms-2026',
+    title: 'Best Prop Trading Firms 2026: ProbCapital vs FTMO vs TopstepX',
+    description: 'Complete comparison of the top proprietary trading firms in 2026',
+    category: 'Trading Education',
+    author: 'ProbCapital Team',
+    date: '2026-08-12',
+    readTime: '12 min read',
+    contentPreview: 'Full article content will be available soon. This is a comprehensive comparison of ProbCapital, FTMO, and TopstepX.',
+  },
+  'how-to-pass-prop-firm-challenge': {
+    slug: 'how-to-pass-prop-firm-challenge',
+    title: 'How to Pass a Prop Trading Challenge: 7 Proven Strategies',
+    description: 'Learn the exact strategies professional traders use to pass prop trading challenges',
+    category: 'Trading Education',
+    author: 'ProbCapital Team',
+    date: '2026-08-12',
+    readTime: '15 min read',
+    contentPreview: 'Full article content will be available soon. This guide covers risk management, psychology, and proven strategies.',
+  },
+  'prop-trading-vs-traditional-trading': {
+    slug: 'prop-trading-vs-traditional-trading',
+    title: 'Prop Trading vs Traditional Trading: Which Makes More Money in 2026?',
+    description: 'Complete comparison of proprietary trading vs traditional retail trading',
+    category: 'Trading Education',
+    author: 'ProbCapital Team',
+    date: '2026-08-12',
+    readTime: '10 min read',
+    contentPreview: 'Full article content will be available soon. Learn which path offers better earnings and lower risk.',
+  },
+  'trading-psychology-mental-mistakes': {
+    slug: 'trading-psychology-mental-mistakes',
+    title: 'Trading Psychology: 9 Mental Mistakes That Cost You Money',
+    description: 'Discover the psychological traps that cause 80% of traders to fail',
+    category: 'Trading Psychology',
+    author: 'ProbCapital Team',
+    date: '2026-08-12',
+    readTime: '13 min read',
+    contentPreview: 'Full article content will be available soon. Master fear, greed, and discipline for consistent profits.',
+  },
+};
 
 export default function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
+  const [, navigate] = useLocation();
   const { lang } = useLanguage();
-  
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    if (slug) {
-      // In production, fetch from API or use SSR
-      // For now, hardcoded post data from blog.tsx
-      const mockPost: BlogPost = {
-        slug,
-        title: 'Loading...',
-        description: '',
-        category: 'Trading Education',
-        author: 'ProbCapital Team',
-        date: '2026-08-12',
-        readTime: '12 min read',
-        image: '/blog/default.jpg',
-        keywords: [],
-        content: '# Loading article...\n\nPlease wait while we fetch the content.',
-      };
-      setPost(mockPost);
-
-      // Simulate fetching related posts
-      setRelatedPosts([]);
-    }
-  }, [slug]);
+  const post = slug ? blogPosts[slug] : null;
 
   const translations = {
     en: {
@@ -43,20 +73,20 @@ export default function BlogArticlePage() {
       shareArticle: 'Share this article',
       copyLink: 'Copy Link',
       linkCopied: 'Link Copied!',
-      relatedArticles: 'Related Articles',
-      readMore: 'Read Article',
       by: 'By',
-      in: 'in',
+      comingSoon: 'Full article content coming soon!',
+      meanwhile: 'Meanwhile, check out our other articles or start your trading challenge.',
+      startChallenge: 'Start Your Challenge',
     },
     ru: {
       backToBlog: 'Назад к блогу',
       shareArticle: 'Поделиться статьей',
       copyLink: 'Копировать ссылку',
       linkCopied: 'Ссылка скопирована!',
-      relatedArticles: 'Похожие статьи',
-      readMore: 'Читать статью',
       by: 'Автор:',
-      in: 'в',
+      comingSoon: 'Полная версия статьи скоро появится!',
+      meanwhile: 'А пока ознакомьтесь с другими статьями или начните свой челлендж.',
+      startChallenge: 'Начать челлендж',
     },
   };
 
@@ -64,17 +94,17 @@ export default function BlogArticlePage() {
 
   if (!post) {
     return (
-      <div
-        style={{
-          minHeight: '100vh',
-          background: '#0F1117',
-          color: '#E5E7EB',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <p style={{ fontSize: '18px', color: '#9CA3AF' }}>Loading article...</p>
+      <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
+        <div style={{ textAlign: 'center', padding: '40px' }}>
+          <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>Article not found</h2>
+          <p style={{ color: '#9CA3AF', marginBottom: '24px' }}>The article you're looking for doesn't exist.</p>
+          <button
+            onClick={() => navigate('/blog')}
+            style={{ padding: '12px 24px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}
+          >
+            {t.backToBlog}
+          </button>
+        </div>
       </div>
     );
   }
@@ -100,82 +130,33 @@ export default function BlogArticlePage() {
         {/* Back button */}
         <button
           onClick={() => navigate('/blog')}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '10px 20px',
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: 'none',
-            borderRadius: '8px',
-            color: '#10b981',
-            cursor: 'pointer',
-            marginBottom: '32px',
-            transition: 'all 0.3s',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(16, 185, 129, 0.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-          }}
+          style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 20px', background: 'rgba(255, 255, 255, 0.05)', border: 'none', borderRadius: '8px', color: '#10b981', cursor: 'pointer', marginBottom: '32px', transition: 'all 0.3s' }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(16, 185, 129, 0.1)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; }}
         >
           <ArrowLeft size={20} />
           {t.backToBlog}
         </button>
 
         {/* Category badge */}
-        <span
-          style={{
-            display: 'inline-block',
-            padding: '6px 16px',
-            borderRadius: '6px',
-            background: 'rgba(16, 185, 129, 0.1)',
-            color: '#10b981',
-            fontSize: '14px',
-            fontWeight: 'bold',
-            marginBottom: '16px',
-          }}
-        >
+        <span style={{ display: 'inline-block', padding: '6px 16px', borderRadius: '6px', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', fontSize: '14px', fontWeight: 'bold', marginBottom: '16px' }}>
           <Tag size={14} style={{ display: 'inline', marginRight: '6px' }} />
           {post.category}
         </span>
 
         {/* Title */}
-        <h1
-          style={{
-            fontSize: '48px',
-            fontWeight: 'bold',
-            marginBottom: '24px',
-            lineHeight: '1.2',
-            maxWidth: '900px',
-          }}
-        >
+        <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', lineHeight: '1.2', maxWidth: '900px' }}>
           {post.title}
         </h1>
 
         {/* Meta info */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '24px',
-            alignItems: 'center',
-            marginBottom: '32px',
-            fontSize: '15px',
-            color: '#9CA3AF',
-          }}
-        >
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', marginBottom: '32px', fontSize: '15px', color: '#9CA3AF' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {t.by} <span style={{ color: '#10b981', fontWeight: '600' }}>{post.author}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Calendar size={16} />
-            {new Date(post.date).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
+            {new Date(post.date).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Clock size={16} />
@@ -184,133 +165,28 @@ export default function BlogArticlePage() {
         </div>
 
         {/* Share buttons */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '12px',
-            alignItems: 'center',
-            padding: '20px 0',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            marginBottom: '48px',
-          }}
-        >
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', padding: '20px 0', borderTop: '1px solid rgba(255, 255, 255, 0.1)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', marginBottom: '48px' }}>
           <span style={{ fontWeight: '600', color: '#9CA3AF', marginRight: '8px' }}>
             <Share2 size={18} style={{ display: 'inline', marginRight: '8px' }} />
             {t.shareArticle}:
           </span>
 
-          {/* Twitter */}
-          <a
-            href={shareUrls.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '10px 16px',
-              borderRadius: '8px',
-              background: 'rgba(29, 155, 240, 0.1)',
-              border: '1px solid rgba(29, 155, 240, 0.3)',
-              color: '#1D9BF0',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              textDecoration: 'none',
-              transition: 'all 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(29, 155, 240, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(29, 155, 240, 0.1)';
-            }}
-          >
+          <a href={shareUrls.twitter} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', borderRadius: '8px', background: 'rgba(29, 155, 240, 0.1)', border: '1px solid rgba(29, 155, 240, 0.3)', color: '#1D9BF0', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', transition: 'all 0.3s' }}>
             <Twitter size={18} />
             Twitter
           </a>
 
-          {/* Facebook */}
-          <a
-            href={shareUrls.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '10px 16px',
-              borderRadius: '8px',
-              background: 'rgba(24, 119, 242, 0.1)',
-              border: '1px solid rgba(24, 119, 242, 0.3)',
-              color: '#1877F2',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              textDecoration: 'none',
-              transition: 'all 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(24, 119, 242, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(24, 119, 242, 0.1)';
-            }}
-          >
+          <a href={shareUrls.facebook} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', borderRadius: '8px', background: 'rgba(24, 119, 242, 0.1)', border: '1px solid rgba(24, 119, 242, 0.3)', color: '#1877F2', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', transition: 'all 0.3s' }}>
             <Facebook size={18} />
             Facebook
           </a>
 
-          {/* LinkedIn */}
-          <a
-            href={shareUrls.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '10px 16px',
-              borderRadius: '8px',
-              background: 'rgba(10, 102, 194, 0.1)',
-              border: '1px solid rgba(10, 102, 194, 0.3)',
-              color: '#0A66C2',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              textDecoration: 'none',
-              transition: 'all 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(10, 102, 194, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(10, 102, 194, 0.1)';
-            }}
-          >
+          <a href={shareUrls.linkedin} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', borderRadius: '8px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid rgba(10, 102, 194, 0.3)', color: '#0A66C2', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', transition: 'all 0.3s' }}>
             <Linkedin size={18} />
             LinkedIn
           </a>
 
-          {/* Copy Link */}
-          <button
-            onClick={handleCopyLink}
-            style={{
-              padding: '10px 16px',
-              borderRadius: '8px',
-              background: copied ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.05)',
-              border: copied ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
-              color: copied ? '#10b981' : '#E5E7EB',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              cursor: 'pointer',
-              transition: 'all 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              if (!copied) {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!copied) {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-              }
-            }}
-          >
+          <button onClick={handleCopyLink} style={{ padding: '10px 16px', borderRadius: '8px', background: copied ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.05)', border: copied ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)', color: copied ? '#10b981' : '#E5E7EB', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', transition: 'all 0.3s' }}>
             <Link2 size={18} />
             {copied ? t.linkCopied : t.copyLink}
           </button>
@@ -319,151 +195,33 @@ export default function BlogArticlePage() {
 
       {/* Article Content */}
       <div style={{ background: 'rgba(255, 255, 255, 0.01)', padding: '60px 20px' }}>
-        <MarkdownRenderer content={post.content} />
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px', color: '#10b981' }}>
+              📝 {t.comingSoon}
+            </h2>
+            <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '32px' }}>
+              {t.meanwhile}
+            </p>
+            <p style={{ fontSize: '14px', color: '#6B7280', fontStyle: 'italic' }}>
+              {post.contentPreview}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* CTA Section */}
-      <div
-        style={{
-          maxWidth: '800px',
-          margin: '60px auto',
-          padding: '40px',
-          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)',
-          border: '1px solid rgba(16, 185, 129, 0.2)',
-          borderRadius: '16px',
-          textAlign: 'center',
-        }}
-      >
+      <div style={{ maxWidth: '800px', margin: '60px auto', padding: '40px', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '16px', textAlign: 'center' }}>
         <h3 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px' }}>
           Ready to Start Your Trading Journey?
         </h3>
         <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '24px' }}>
           Get funded up to $400,000 and keep 90% of profits. Pass our challenge in as little as 1 step.
         </p>
-        <a
-          href="https://app.probcapital.com"
-          style={{
-            display: 'inline-block',
-            padding: '16px 32px',
-            borderRadius: '8px',
-            background: 'linear-gradient(90deg, #10b981, #34d399)',
-            color: '#0F1117',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            textDecoration: 'none',
-            transition: 'transform 0.3s',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-        >
-          Start Your Challenge →
+        <a href="https://app.probcapital.com" style={{ display: 'inline-block', padding: '16px 32px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', fontSize: '16px', textDecoration: 'none', transition: 'transform 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}>
+          {t.startChallenge} →
         </a>
       </div>
-
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <div style={{ maxWidth: '1200px', margin: '80px auto 40px', padding: '0 20px' }}>
-          <h2
-            style={{
-              fontSize: '32px',
-              fontWeight: 'bold',
-              marginBottom: '32px',
-              textAlign: 'center',
-            }}
-          >
-            {t.relatedArticles}
-          </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-              gap: '24px',
-            }}
-          >
-            {relatedPosts.map((relatedPost) => (
-              <article
-                key={relatedPost.slug}
-                onClick={() => navigate(`/blog/${relatedPost.slug}`)}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-                }}
-              >
-                <div style={{ padding: '20px' }}>
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      padding: '4px 12px',
-                      borderRadius: '6px',
-                      background: 'rgba(16, 185, 129, 0.1)',
-                      color: '#10b981',
-                      fontSize: '12px',
-                      fontWeight: 'bold',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    {relatedPost.category}
-                  </span>
-                  <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '12px' }}>
-                    {relatedPost.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '16px' }}>
-                    {relatedPost.description}
-                  </p>
-                  <div style={{ fontSize: '12px', color: '#6B7280' }}>{relatedPost.readTime}</div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* SEO Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.title,
-            description: post.description,
-            image: `https://www.probcapital.com${post.image}`,
-            datePublished: post.date,
-            dateModified: post.date,
-            author: {
-              '@type': 'Organization',
-              name: post.author,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'ProbCapital',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.probcapital.com/logo.png',
-              },
-            },
-            keywords: post.keywords.join(', '),
-            articleSection: post.category,
-            url: currentUrl,
-          }),
-        }}
-      />
     </div>
   );
 }

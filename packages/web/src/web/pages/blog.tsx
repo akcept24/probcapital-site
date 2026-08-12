@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../i18n/LanguageContext';
+import { useLang } from '../i18n/LangContext';
 
 // Blog post metadata type
 interface BlogPost {
@@ -63,7 +63,7 @@ const allPosts: BlogPost[] = [
 ];
 
 export default function BlogPage() {
-  const { lang } = useLanguage();
+  const { lang } = useLang();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const translations = {

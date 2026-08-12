@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { useLanguage } from '../i18n/LanguageContext';
+import { useLang } from '../i18n/LangContext';
 import { ArrowLeft, Clock, Calendar, Tag, Share2, Twitter, Facebook, Linkedin, Link2 } from 'lucide-react';
 
 // Blog post type
@@ -62,7 +62,7 @@ const blogPosts: Record<string, BlogPost> = {
 export default function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
-  const { lang } = useLanguage();
+  const { lang } = useLang();
   const [copied, setCopied] = useState(false);
 
   const post = slug ? blogPosts[slug] : null;

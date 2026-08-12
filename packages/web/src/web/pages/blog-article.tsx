@@ -62,35 +62,10 @@ const blogPosts: Record<string, BlogPost> = {
 export default function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
-  const { lang } = useLang();
+  const { lang, tr } = useLang();
   const [copied, setCopied] = useState(false);
 
   const post = slug ? blogPosts[slug] : null;
-
-  const translations = {
-    en: {
-      backToBlog: 'Back to Blog',
-      shareArticle: 'Share this article',
-      copyLink: 'Copy Link',
-      linkCopied: 'Link Copied!',
-      by: 'By',
-      comingSoon: 'Full article content coming soon!',
-      meanwhile: 'Meanwhile, check out our other articles or start your trading challenge.',
-      startChallenge: 'Start Your Challenge',
-    },
-    ru: {
-      backToBlog: 'Назад к блогу',
-      shareArticle: 'Поделиться статьей',
-      copyLink: 'Копировать ссылку',
-      linkCopied: 'Ссылка скопирована!',
-      by: 'Автор:',
-      comingSoon: 'Полная версия статьи скоро появится!',
-      meanwhile: 'А пока ознакомьтесь с другими статьями или начните свой челлендж.',
-      startChallenge: 'Начать челлендж',
-    },
-  };
-
-  const t = translations[lang];
 
   if (!post) {
     return (
@@ -102,7 +77,7 @@ export default function BlogArticlePage() {
             onClick={() => navigate('/blog')}
             style={{ padding: '12px 24px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}
           >
-            {t.backToBlog}
+            {tr.blog_backToBlog}
           </button>
         </div>
       </div>
@@ -135,7 +110,7 @@ export default function BlogArticlePage() {
           onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; }}
         >
           <ArrowLeft size={20} />
-          {t.backToBlog}
+          {tr.blog_backToBlog}
         </button>
 
         {/* Category badge */}
@@ -152,7 +127,7 @@ export default function BlogArticlePage() {
         {/* Meta info */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', marginBottom: '32px', fontSize: '15px', color: '#9CA3AF' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {t.by} <span style={{ color: '#10b981', fontWeight: '600' }}>{post.author}</span>
+            {tr.blog_by} <span style={{ color: '#10b981', fontWeight: '600' }}>{post.author}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Calendar size={16} />
@@ -168,7 +143,7 @@ export default function BlogArticlePage() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', padding: '20px 0', borderTop: '1px solid rgba(255, 255, 255, 0.1)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', marginBottom: '48px' }}>
           <span style={{ fontWeight: '600', color: '#9CA3AF', marginRight: '8px' }}>
             <Share2 size={18} style={{ display: 'inline', marginRight: '8px' }} />
-            {t.shareArticle}:
+            {tr.blog_shareArticle}:
           </span>
 
           <a href={shareUrls.twitter} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', borderRadius: '8px', background: 'rgba(29, 155, 240, 0.1)', border: '1px solid rgba(29, 155, 240, 0.3)', color: '#1D9BF0', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', transition: 'all 0.3s' }}>
@@ -188,7 +163,7 @@ export default function BlogArticlePage() {
 
           <button onClick={handleCopyLink} style={{ padding: '10px 16px', borderRadius: '8px', background: copied ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.05)', border: copied ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)', color: copied ? '#10b981' : '#E5E7EB', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', transition: 'all 0.3s' }}>
             <Link2 size={18} />
-            {copied ? t.linkCopied : t.copyLink}
+            {copied ? tr.blog_linkCopied : tr.blog_copyLink}
           </button>
         </div>
       </div>
@@ -198,10 +173,10 @@ export default function BlogArticlePage() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
             <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px', color: '#10b981' }}>
-              📝 {t.comingSoon}
+              📝 {tr.blog_comingSoon}
             </h2>
             <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '32px' }}>
-              {t.meanwhile}
+              {tr.blog_meanwhile}
             </p>
             <p style={{ fontSize: '14px', color: '#6B7280', fontStyle: 'italic' }}>
               {post.contentPreview}
@@ -213,13 +188,13 @@ export default function BlogArticlePage() {
       {/* CTA Section */}
       <div style={{ maxWidth: '800px', margin: '60px auto', padding: '40px', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '16px', textAlign: 'center' }}>
         <h3 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px' }}>
-          Ready to Start Your Trading Journey?
+          {tr.blog_ctaTitle}
         </h3>
         <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '24px' }}>
-          Get funded up to $400,000 and keep 90% of profits. Pass our challenge in as little as 1 step.
+          {tr.blog_ctaDesc}
         </p>
         <a href="https://app.probcapital.com" style={{ display: 'inline-block', padding: '16px 32px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', fontSize: '16px', textDecoration: 'none', transition: 'transform 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}>
-          {t.startChallenge} →
+          {tr.blog_startChallenge} →
         </a>
       </div>
     </div>

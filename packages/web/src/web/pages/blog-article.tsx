@@ -29,13 +29,13 @@ const blogPostsEn: Record<string, BlogPost> = {
   },
   'how-to-pass-prop-firm-challenge': {
     slug: 'how-to-pass-prop-firm-challenge',
-    title: 'How to Pass Your ProbCapital Challenge: 7 Proven Strategies',
-    description: 'Learn the exact strategies professional traders use to pass prop trading challenges',
+    title: 'How to Pass a Prop Firm Challenge: 10 Practical Tips (2026)',
+    description: 'Learn how to pass a prop firm challenge with better risk management, drawdown control, position sizing and a disciplined trading plan',
     category: 'Trading Education',
     author: 'ProbCapital Team',
     date: '2026-08-12',
     readTime: '15 min read',
-    contentPreview: 'Full article content will be available soon. This guide covers risk management, psychology, and proven strategies specifically for ProbCapital challenges.',
+    contentPreview: 'Passing a prop firm challenge isn\'t about taking bigger risks or finding a "perfect" trading strategy. It\'s about proving that you can trade consistently while staying within strict risk and drawdown limits. This comprehensive guide covers 10 practical tips, common mistakes, risk management strategies, and a detailed FAQ section.',
   },
   'prop-trading-vs-traditional-trading': {
     slug: 'prop-trading-vs-traditional-trading',
@@ -73,13 +73,13 @@ const blogPostsRu: Record<string, BlogPost> = {
   },
   'how-to-pass-prop-firm-challenge': {
     slug: 'how-to-pass-prop-firm-challenge',
-    title: 'Как пройти челлендж ProbCapital: 7 проверенных стратегий',
-    description: 'Изучите точные стратегии, которые используют профессиональные трейдеры для прохождения проп-трейдинг челленджей',
+    title: 'Как пройти челлендж проп-компании: 10 практических советов (2026)',
+    description: 'Узнайте, как пройти челлендж проп-компании с помощью лучшего риск-менеджмента, контроля просадки, расчёта позиций и дисциплинированного торгового плана',
     category: 'Обучение трейдингу',
     author: 'Команда ProbCapital',
     date: '2026-08-12',
     readTime: '15 мин чтения',
-    contentPreview: 'Полная статья скоро появится. Это руководство охватывает риск-менеджмент, психологию и проверенные стратегии специально для челленджей ProbCapital.',
+    contentPreview: 'Прохождение челленджа проп-компании — это не о больших рисках или поиске "идеальной" стратегии. Это о том, чтобы доказать, что вы можете торговать стабильно, соблюдая строгие лимиты риска и просадки. Это подробное руководство охватывает 10 практических советов, распространённые ошибки, стратегии риск-менеджмента и раздел FAQ.',
   },
   'prop-trading-vs-traditional-trading': {
     slug: 'prop-trading-vs-traditional-trading',

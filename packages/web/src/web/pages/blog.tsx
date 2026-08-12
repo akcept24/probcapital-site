@@ -29,14 +29,14 @@ const blogPostsEn: BlogPost[] = [
   },
   {
     slug: 'how-to-pass-prop-firm-challenge',
-    title: 'How to Pass Your ProbCapital Challenge: 7 Proven Strategies',
-    description: 'Learn the exact strategies professional traders use to pass prop trading challenges. Covers risk management, psychology, and common mistakes to avoid.',
+    title: 'How to Pass a Prop Firm Challenge: 10 Practical Tips (2026)',
+    description: 'Learn how to pass a prop firm challenge with better risk management, drawdown control, position sizing and a disciplined trading plan.',
     category: 'Trading Education',
     author: 'ProbCapital Team',
     date: '2026-08-12',
     readTime: '15 min read',
     image: '/blog/pass-prop-challenge.jpg',
-    keywords: ['pass prop challenge', 'trading tips', 'funded trader', 'risk management'],
+    keywords: ['pass prop firm challenge', 'prop trading tips', 'funded trader', 'risk management'],
   },
   {
     slug: 'prop-trading-vs-traditional-trading',
@@ -76,8 +76,8 @@ const blogPostsRu: BlogPost[] = [
   },
   {
     slug: 'how-to-pass-prop-firm-challenge',
-    title: 'Как пройти челлендж ProbCapital: 7 проверенных стратегий',
-    description: 'Изучите точные стратегии, которые используют профессиональные трейдеры для прохождения проп-трейдинг челленджей. Риск-менеджмент, психология и типичные ошибки.',
+    title: 'Как пройти челлендж проп-компании: 10 практических советов (2026)',
+    description: 'Узнайте, как пройти челлендж проп-компании с помощью лучшего риск-менеджмента, контроля просадки, расчёта позиций и дисциплинированного торгового плана.',
     category: 'Обучение трейдингу',
     author: 'Команда ProbCapital',
     date: '2026-08-12',

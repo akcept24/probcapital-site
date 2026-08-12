@@ -14,8 +14,8 @@ interface BlogPost {
   keywords: string[];
 }
 
-// All blog posts (in production, this would come from CMS/API)
-const allPosts: BlogPost[] = [
+// Blog posts with translations
+const blogPostsEn: BlogPost[] = [
   {
     slug: 'best-prop-trading-firms-2026',
     title: 'Why ProbCapital is the Best Choice for Funded Traders in 2026',
@@ -62,9 +62,59 @@ const allPosts: BlogPost[] = [
   },
 ];
 
+const blogPostsRu: BlogPost[] = [
+  {
+    slug: 'best-prop-trading-firms-2026',
+    title: 'Почему ProbCapital — лучший выбор для финансируемых трейдеров в 2026',
+    description: 'Узнайте, почему ProbCapital предлагает самые высокие выплаты (90%), самое быстрое финансирование (24ч) и самые дружелюбные правила в индустрии проп-трейдинга.',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '12 мин чтения',
+    image: '/blog/best-prop-firms-2026.jpg',
+    keywords: ['проп трейдинг', 'финансируемый трейдер', 'лучшая проп компания 2026', '90% выплат'],
+  },
+  {
+    slug: 'how-to-pass-prop-firm-challenge',
+    title: 'Как пройти челлендж ProbCapital: 7 проверенных стратегий',
+    description: 'Изучите точные стратегии, которые используют профессиональные трейдеры для прохождения проп-трейдинг челленджей. Риск-менеджмент, психология и типичные ошибки.',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '15 мин чтения',
+    image: '/blog/pass-prop-challenge.jpg',
+    keywords: ['пройти челлендж', 'советы по трейдингу', 'финансируемый трейдер', 'риск-менеджмент'],
+  },
+  {
+    slug: 'prop-trading-vs-traditional-trading',
+    title: 'Проп-трейдинг с ProbCapital: почему это приносит больше денег в 2026',
+    description: 'Полный анализ того, почему проп-трейдинг с ProbCapital предлагает более высокий доход, меньший риск и быстрый рост по сравнению с традиционным трейдингом.',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '10 мин чтения',
+    image: '/blog/prop-vs-traditional.jpg',
+    keywords: ['проп трейдинг', 'ProbCapital', 'финансируемый торговый счёт'],
+  },
+  {
+    slug: 'trading-psychology-mental-mistakes',
+    title: 'Психология трейдинга: 9 ментальных ошибок, которые стоят вам денег',
+    description: 'Откройте для себя психологические ловушки, из-за которых 80% трейдеров терпят неудачу. Научитесь управлять страхом, жадностью и дисциплиной для стабильной прибыли.',
+    category: 'Психология',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '13 мин чтения',
+    image: '/blog/trading-psychology.jpg',
+    keywords: ['психология трейдинга', 'эмоциональный трейдинг', 'дисциплина трейдера'],
+  },
+];
+
 export default function BlogPage() {
   const { lang, tr } = useLang();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+  // Select posts based on current language
+  const allPosts = lang === 'ru' ? blogPostsRu : blogPostsEn;
 
   const translations = {
     categories: {

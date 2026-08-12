@@ -103,6 +103,13 @@ export default function Navbar() {
           >
             {lang === "ru" ? "Тарифы" : "Pricing"}
           </a>
+          <a
+            href="/blog"
+            onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/blog"); }}
+            className="text-[13px] xl:text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium whitespace-nowrap"
+          >
+            {lang === "ru" ? "Блог" : "Blog"}
+          </a>
         </div>
 
         {/* Right side — only at lg (1024px+) */}
@@ -204,6 +211,14 @@ export default function Navbar() {
               className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
             >
               {lang === "ru" ? "Тарифы" : "Pricing"}
+            </a>
+
+            <a
+              href="/blog"
+              onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/blog"); }}
+              className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
+            >
+              {lang === "ru" ? "Блог" : "Blog"}
             </a>
 
             <div className="flex gap-3 mt-1">

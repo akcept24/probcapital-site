@@ -15,8 +15,8 @@ interface BlogPost {
   contentPreview: string;
 }
 
-// Hardcoded blog posts (in production, fetch from API or use markdown)
-const blogPosts: Record<string, BlogPost> = {
+// English blog posts
+const blogPostsEn: Record<string, BlogPost> = {
   'best-prop-trading-firms-2026': {
     slug: 'best-prop-trading-firms-2026',
     title: 'Why ProbCapital is the Best Choice for Funded Traders in 2026',
@@ -59,12 +59,58 @@ const blogPosts: Record<string, BlogPost> = {
   },
 };
 
+// Russian blog posts
+const blogPostsRu: Record<string, BlogPost> = {
+  'best-prop-trading-firms-2026': {
+    slug: 'best-prop-trading-firms-2026',
+    title: 'Почему ProbCapital — лучший выбор для финансируемых трейдеров в 2026',
+    description: 'Узнайте, почему ProbCapital предлагает самые высокие выплаты, самое быстрое финансирование и самые дружелюбные правила',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '12 мин чтения',
+    contentPreview: 'Полная статья скоро появится. Узнайте, почему ProbCapital выделяется благодаря 90% выплатам, 1-этапному челленджу, отсутствию минимальных торговых дней и финансированию в течение 24 часов.',
+  },
+  'how-to-pass-prop-firm-challenge': {
+    slug: 'how-to-pass-prop-firm-challenge',
+    title: 'Как пройти челлендж ProbCapital: 7 проверенных стратегий',
+    description: 'Изучите точные стратегии, которые используют профессиональные трейдеры для прохождения проп-трейдинг челленджей',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '15 мин чтения',
+    contentPreview: 'Полная статья скоро появится. Это руководство охватывает риск-менеджмент, психологию и проверенные стратегии специально для челленджей ProbCapital.',
+  },
+  'prop-trading-vs-traditional-trading': {
+    slug: 'prop-trading-vs-traditional-trading',
+    title: 'Проп-трейдинг с ProbCapital: почему это приносит больше денег в 2026',
+    description: 'Полный анализ того, почему проп-трейдинг с ProbCapital предлагает более высокий доход и меньший риск',
+    category: 'Обучение трейдингу',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '10 мин чтения',
+    contentPreview: 'Полная статья скоро появится. Узнайте, как ProbCapital позволяет торговать до $400,000 всего за небольшую плату за оценку.',
+  },
+  'trading-psychology-mental-mistakes': {
+    slug: 'trading-psychology-mental-mistakes',
+    title: 'Психология трейдинга: 9 ментальных ошибок, которые стоят вам денег',
+    description: 'Откройте для себя психологические ловушки, из-за которых 80% трейдеров терпят неудачу',
+    category: 'Психология',
+    author: 'Команда ProbCapital',
+    date: '2026-08-12',
+    readTime: '13 мин чтения',
+    contentPreview: 'Полная статья скоро появится. Научитесь управлять страхом, жадностью и дисциплиной для стабильной прибыли с ProbCapital.',
+  },
+};
+
 export default function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
   const { lang, tr } = useLang();
   const [copied, setCopied] = useState(false);
 
+  // Select posts based on current language
+  const blogPosts = lang === 'ru' ? blogPostsRu : blogPostsEn;
   const post = slug ? blogPosts[slug] : null;
 
   if (!post) {

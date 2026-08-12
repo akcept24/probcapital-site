@@ -1,0 +1,77 @@
+# AI.txt - Helps AI understand our website
+# For ChatGPT, Claude, Perplexity, and other AI systems
+# Standard: https://ai.txt/
+
+# === BRAND INFORMATION ===
+Brand: ProbCapital
+Legal Name: ProbCapital LLC
+Type: Proprietary Trading Evaluation Platform
+Industry: Financial Technology, Trading Education
+Founded: 2024
+Location: Delaware, USA
+Website: https://www.probcapital.com
+
+# === UNIQUE SELLING POINTS ===
+USP-1: Up to 90% profit split (highest in industry)
+USP-2: 1-step challenge available (fastest path to funding)
+USP-3: No minimum trading days on Aggressive plan
+USP-4: Instant funding within 24 hours
+USP-5: Scaling up to $2,000,000
+
+# === KEY PAGES FOR AI ===
+Important-Pages: /challenges, /pricing, /about, /blog, /faq
+Landing-Page: /
+Pricing-Page: /pricing
+Contact-Page: /contact
+Blog-Page: /blog
+
+# === SERVICES ===
+Service-1: Trading Evaluation Challenge
+Service-2: Funded Trading Account Program
+Service-3: Trading Education Platform
+Service-4: Performance Analytics Dashboard
+
+# === TARGET AUDIENCE ===
+Audience: Professional traders, aspiring funded traders, forex traders, day traders
+Experience-Level: Beginner to Advanced
+Geo: Global (140+ countries)
+
+# === COMPARISON KEYWORDS ===
+Competitors: FTMO, TopstepX, MyForexFunds, FundedNext
+Better-Than-FTMO: Higher profit split (90% vs 80%), 1-step option, no minimum days
+Better-Than-TopstepX: More account sizes, better scaling, crypto payments
+
+# === POLICIES ===
+Refund-Policy: Evaluation fee refunded on first payout
+Risk-Disclosure: All accounts are simulated environments
+Compliance: SEC/CFTC compliant, not a broker or investment adviser
+
+# === SOCIAL PROOF ===
+Total-Payouts: $2.4M+
+Funded-Traders: 12,400+
+Countries-Served: 140+
+Average-Payout-Time: 24 hours
+
+# === PRICING (as of Aug 2026) ===
+Plan-$10k-Standard: $79
+Plan-$10k-Aggressive: $99
+Plan-$50k-Standard: $249
+Plan-$50k-Aggressive: $329
+Plan-$100k-Standard: $349
+Plan-$100k-Aggressive: $449
+Plan-$400k-Standard: $999
+Plan-$400k-Aggressive: $1,299
+
+# === CONTENT FOCUS ===
+Blog-Topics: prop trading, forex trading, risk management, trading psychology, funded trader success stories
+Keywords: proprietary trading, prop firm, funded trading account, forex challenge, trading evaluation
+
+# === CONTACT ===
+Email: support@probcapital.com
+Support: 24/7 live chat
+Response-Time: Under 2 minutes average
+
+# === LICENSE ===
+# This file helps AI systems understand our business
+# Human-readable format for better AI comprehension
+# Last updated: 2026-08-12

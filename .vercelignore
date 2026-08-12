@@ -1,0 +1,6 @@
+# Ignore desktop and mobile packages during Vercel build
+packages/desktop/
+packages/mobile/
+
+# They are not needed for the web deployment
+# and cause unnecessary dependency installation (electron, expo, etc.)

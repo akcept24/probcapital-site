@@ -216,17 +216,44 @@ export default function BlogArticlePage() {
 
       {/* Article Content */}
       <div style={{ background: 'rgba(255, 255, 255, 0.01)', padding: '60px 20px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px', color: '#10b981' }}>
-              📝 {tr.blog_comingSoon}
-            </h2>
-            <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '32px' }}>
-              {tr.blog_meanwhile}
-            </p>
-            <p style={{ fontSize: '14px', color: '#6B7280', fontStyle: 'italic' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#E5E7EB', lineHeight: '1.8' }}>
+          {/* Info box */}
+          <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '12px', padding: '24px', marginBottom: '40px' }}>
+            <p style={{ fontSize: '16px', color: '#9CA3AF', margin: 0 }}>
               {post.contentPreview}
             </p>
+          </div>
+
+          {/* Full article link */}
+          <div style={{ background: 'rgba(255, 255, 255, 0.02)', borderRadius: '12px', padding: '32px', marginBottom: '40px', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#10b981' }}>
+              📖 {lang === 'ru' ? 'Полная статья доступна' : 'Full Article Available'}
+            </h3>
+            <p style={{ fontSize: '15px', color: '#9CA3AF', marginBottom: '24px' }}>
+              {lang === 'ru' 
+                ? 'Читайте полную версию с примерами, таблицами и детальными объяснениями в нашей базе знаний.' 
+                : 'Read the full version with examples, tables, and detailed explanations in our knowledge base.'}
+            </p>
+            <a 
+              href={`https://github.com/akcept24/probcapital-site/blob/main/packages/web/content/blog/${post.slug}${lang === 'ru' ? '-ru' : ''}.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                display: 'inline-block', 
+                padding: '14px 28px', 
+                borderRadius: '8px', 
+                background: 'linear-gradient(90deg, #10b981, #34d399)', 
+                color: '#0F1117', 
+                fontWeight: 'bold', 
+                fontSize: '15px', 
+                textDecoration: 'none',
+                transition: 'transform 0.2s'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              {lang === 'ru' ? 'Читать полную статью →' : 'Read Full Article →'}
+            </a>
           </div>
         </div>
       </div>

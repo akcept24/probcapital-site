@@ -215,35 +215,35 @@ export default function BlogArticlePage() {
       </div>
 
       {/* Article Content */}
-      <article style={{ background: 'rgba(255, 255, 255, 0.01)', padding: '60px 20px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#E5E7EB', lineHeight: '1.8', fontSize: '16px' }}>
+      <article style={{ background: 'rgba(255, 255, 255, 0.01)', padding: '40px 16px' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#E5E7EB', lineHeight: '1.7' }} className="article-content">
           
           {/* Intro paragraph */}
-          <p style={{ fontSize: '18px', color: '#D1D5DB', marginBottom: '32px', lineHeight: '1.7' }}>
+          <p style={{ fontSize: '16px', color: '#D1D5DB', marginBottom: '24px', lineHeight: '1.6' }} className="intro-text">
             {lang === 'ru' 
               ? 'Прохождение челленджа проп-компании — это не о том, чтобы рисковать больше или искать "идеальную" торговую стратегию. Это о том, чтобы доказать, что вы можете торговать стабильно, соблюдая строгие лимиты риска и просадки.'
               : 'Passing a prop firm challenge isn\'t about taking bigger risks or finding a "perfect" trading strategy. It\'s about proving that you can trade consistently while staying within strict risk and drawdown limits.'}
           </p>
 
-          <p style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '48px' }}>
+          <p style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '32px' }} className="sub-text">
             {lang === 'ru'
               ? 'В этом руководстве вы узнаете, как подходить к оценке проп-компании шаг за шагом — от понимания правил и установки риска на сделку до управления просадкой, избежания распространённых ошибок и создания торгового плана.'
               : 'In this guide, you\'ll learn how to approach a prop firm evaluation step by step — from understanding the rules and setting your risk per trade to managing drawdown, avoiding common mistakes, and building a trading plan designed to get you through the challenge.'}
           </p>
 
           {/* Section 1 */}
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', color: '#10b981', marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#10b981', marginTop: '32px', marginBottom: '16px' }} className="section-heading">
             {lang === 'ru' ? '1. Изучите все правила перед началом торговли' : '1. Understand Every Rule Before You Start Trading'}
           </h2>
-          <p style={{ marginBottom: '16px' }}>
+          <p style={{ marginBottom: '12px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Один из самых простых способов провалить челлендж проп-компании — сосредоточиться на целевой прибыли, игнорируя правила, которые определяют, сколько риска вы действительно можете взять.'
               : 'One of the easiest ways to fail a prop firm challenge is to focus on the profit target while ignoring the rules that determine how much risk you can actually take.'}
           </p>
-          <p style={{ marginBottom: '24px' }}>
+          <p style={{ marginBottom: '16px', fontSize: '14px' }} className="section-text">
             {lang === 'ru' ? 'Перед открытием первой позиции убедитесь, что вы знаете:' : 'Before opening your first position, make sure you know:'}
           </p>
-          <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
+          <ul style={{ listStyle: 'none', padding: 0, marginBottom: '24px', fontSize: '14px' }}>
             {[
               lang === 'ru' ? 'Вашу целевую прибыль' : 'Your profit target',
               lang === 'ru' ? 'Дневной лимит просадки' : 'Daily drawdown limit',
@@ -252,100 +252,102 @@ export default function BlogArticlePage() {
               lang === 'ru' ? 'Можно ли держать позиции на ночь' : 'Whether positions can be held overnight',
               lang === 'ru' ? 'Разрешена ли торговля на новостях' : 'Whether news trading is allowed',
             ].map((item, i) => (
-              <li key={i} style={{ padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: '#10b981', marginRight: '12px', fontSize: '20px' }}>✓</span>
-                {item}
+              <li key={i} style={{ padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center' }}>
+                <span style={{ color: '#10b981', marginRight: '10px', fontSize: '16px' }}>✓</span>
+                <span style={{ fontSize: '13px' }}>{item}</span>
               </li>
             ))}
           </ul>
 
           {/* Section 2 */}
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', color: '#10b981', marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#10b981', marginTop: '32px', marginBottom: '16px' }} className="section-heading">
             {lang === 'ru' ? '2. Рискуйте меньше на сделку' : '2. Risk Less Per Trade'}
           </h2>
-          <p style={{ marginBottom: '24px' }}>
+          <p style={{ marginBottom: '16px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Распространённая ошибка — рисковать слишком много, потому что трейдер хочет завершить оценку быстро.'
               : 'A common mistake during prop firm challenges is risking too much because the trader wants to complete the evaluation quickly.'}
           </p>
           
           {/* Risk table */}
-          <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '12px', padding: '24px', marginBottom: '32px', overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '8px', padding: '12px', marginBottom: '24px', overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid rgba(16, 185, 129, 0.3)' }}>
-                  <th style={{ padding: '12px', textAlign: 'left', color: '#10b981' }}>{lang === 'ru' ? 'Риск %' : 'Risk %'}</th>
-                  <th style={{ padding: '12px', textAlign: 'left', color: '#10b981' }}>{lang === 'ru' ? 'Счёт' : 'Account'}</th>
-                  <th style={{ padding: '12px', textAlign: 'left', color: '#10b981' }}>{lang === 'ru' ? 'Убыток/сделка' : 'Loss per Trade'}</th>
-                  <th style={{ padding: '12px', textAlign: 'left', color: '#10b981' }}>{lang === 'ru' ? '3 убытка' : '3 Losses'}</th>
+                  <th style={{ padding: '8px 4px', textAlign: 'left', color: '#10b981', fontSize: '12px' }}>{lang === 'ru' ? 'Риск %' : 'Risk %'}</th>
+                  <th style={{ padding: '8px 4px', textAlign: 'left', color: '#10b981', fontSize: '12px' }}>{lang === 'ru' ? 'Счёт' : 'Account'}</th>
+                  <th style={{ padding: '8px 4px', textAlign: 'left', color: '#10b981', fontSize: '12px' }}>{lang === 'ru' ? 'Убыток' : 'Loss'}</th>
+                  <th style={{ padding: '8px 4px', textAlign: 'left', color: '#10b981', fontSize: '12px' }}>{lang === 'ru' ? '3 убытка' : '3 Losses'}</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['2.0%', '$100k', '$2,000', '$6,000'],
-                  ['1.0%', '$100k', '$1,000', '$3,000'],
-                  ['0.5%', '$100k', '$500', '$1,500']
+                  ['2.0%', '$100k', '$2k', '$6k'],
+                  ['1.0%', '$100k', '$1k', '$3k'],
+                  ['0.5%', '$100k', '$500', '$1.5k']
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: '12px', color: j === 0 ? '#34d399' : '#E5E7EB' }}>{cell}</td>
+                      <td key={j} style={{ padding: '8px 4px', color: j === 0 ? '#34d399' : '#E5E7EB', fontSize: '12px' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: '15px', fontStyle: 'italic', color: '#9CA3AF', marginBottom: '32px' }}>
+          <p style={{ fontSize: '13px', fontStyle: 'italic', color: '#9CA3AF', marginBottom: '24px' }}>
             {lang === 'ru'
               ? 'Чем меньше ваш риск на сделку, тем больше ошибок и нормальных убыточных сделок может пережить ваш счёт.'
               : 'The smaller your risk per trade, the more mistakes and normal losing trades your account can survive.'}
           </p>
 
           {/* Section 3 */}
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', color: '#10b981', marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#10b981', marginTop: '32px', marginBottom: '16px' }} className="section-heading">
             {lang === 'ru' ? '3. Относитесь к лимиту просадки как к реальному размеру счёта' : '3. Treat the Drawdown Limit as Your Real Account Size'}
           </h2>
-          <p style={{ marginBottom: '16px' }}>
+          <p style={{ marginBottom: '12px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Если максимально допустимая просадка составляет $10,000, то эти $10,000 — фактически ваш реальный бюджет риска.'
               : 'If the maximum permitted drawdown is $10,000, that $10,000 is effectively your real risk budget.'}
           </p>
-          <div style={{ background: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.3)', borderRadius: '8px', padding: '16px', marginBottom: '32px' }}>
-            <p style={{ margin: 0, fontSize: '15px' }}>
+          <div style={{ background: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.3)', borderRadius: '8px', padding: '12px', marginBottom: '24px' }}>
+            <p style={{ margin: 0, fontSize: '13px' }}>
               <strong style={{ color: '#fbbf24' }}>{lang === 'ru' ? '💡 Ключевой вопрос:' : '💡 Key Question:'}</strong><br />
-              {lang === 'ru'
-                ? 'Вместо "Как быстро достичь цели?" спросите: "Как достичь цели, не исчерпав доступную просадку?"'
-                : 'Instead of "How quickly can I make the target?" ask: "How can I reach the target without exhausting my available drawdown?"'}
+              <span style={{ fontSize: '12px', display: 'block', marginTop: '4px' }}>
+                {lang === 'ru'
+                  ? 'Вместо "Как быстро достичь цели?" спросите: "Как достичь цели, не исчерпав доступную просадку?"'
+                  : 'Instead of "How quickly can I make the target?" ask: "How can I reach the target without exhausting my available drawdown?"'}
+              </span>
             </p>
           </div>
 
           {/* More sections */}
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', color: '#10b981', marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#10b981', marginTop: '32px', marginBottom: '16px' }} className="section-heading">
             {lang === 'ru' ? '4. Не пытайтесь пройти челлендж одной сделкой' : '4. Don\'t Try to Pass the Challenge in One Trade'}
           </h2>
-          <p style={{ marginBottom: '32px' }}>
+          <p style={{ marginBottom: '24px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Большая прибыльная сделка может приблизить вас к цели. Большая убыточная сделка может закончить челлендж. Стабильность важнее скорости.'
               : 'A large winning trade can move you close to the profit target. A large losing trade can end the challenge. Consistency matters more than speed.'}
           </p>
 
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', color: '#10b981', marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#10b981', marginTop: '32px', marginBottom: '16px' }} className="section-heading">
             {lang === 'ru' ? '5. Установите личный дневной лимит убытков' : '5. Set a Personal Daily Loss Limit'}
           </h2>
-          <p style={{ marginBottom: '16px' }}>
+          <p style={{ marginBottom: '12px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Дневной лимит просадки вашей проп-компании должен быть аварийной границей — а не вашей нормальной точкой остановки.'
               : 'Your prop firm\'s daily drawdown limit should be an emergency boundary — not your normal stopping point.'}
           </p>
-          <p style={{ marginBottom: '32px' }}>
+          <p style={{ marginBottom: '24px', fontSize: '14px' }} className="section-text">
             {lang === 'ru'
               ? 'Рассмотрите возможность создания собственного дневного лимита убытков, который значительно ниже. Это поможет предотвратить мстительную торговлю, чрезмерную торговлю и эмоциональные решения.'
               : 'Consider creating your own daily loss limit that is significantly lower. This can help prevent revenge trading, overtrading, and emotional decisions.'}
           </p>
 
           {/* FAQ Section */}
-          <div style={{ background: 'rgba(16, 185, 129, 0.03)', borderRadius: '16px', padding: '40px 32px', marginTop: '64px', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '32px', fontWeight: 'bold', color: '#10b981', marginBottom: '32px', textAlign: 'center' }}>
+          <div style={{ background: 'rgba(16, 185, 129, 0.03)', borderRadius: '12px', padding: '24px 16px', marginTop: '48px', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#10b981', marginBottom: '24px', textAlign: 'center' }} className="faq-heading">
               {lang === 'ru' ? 'Часто задаваемые вопросы' : 'Frequently Asked Questions'}
             </h2>
 
@@ -358,11 +360,11 @@ export default function BlogArticlePage() {
               { q: 'How long does it take to pass a prop firm challenge?', a: 'The time varies widely. Some traders pass in 7-10 days, others take 30-60 days. There is typically no advantage in rushing — consistency matters more than speed.' },
               { q: 'What percentage of traders pass prop firm challenges?', a: 'Industry estimates suggest 8-15% pass on their first attempt. Main reasons for failure are risk management errors: over-leveraging, revenge trading, and violating drawdown limits.' },
             ]).map((faq, i) => (
-              <div key={i} style={{ marginBottom: '24px', paddingBottom: '24px', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#34d399', marginBottom: '12px' }}>
+              <div key={i} style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#34d399', marginBottom: '8px' }}>
                   {faq.q}
                 </h3>
-                <p style={{ color: '#D1D5DB', fontSize: '15px', lineHeight: '1.7', margin: 0 }}>
+                <p style={{ color: '#D1D5DB', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>
                   {faq.a}
                 </p>
               </div>
@@ -370,8 +372,8 @@ export default function BlogArticlePage() {
           </div>
 
           {/* Summary box */}
-          <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)', border: '2px solid rgba(16, 185, 129, 0.3)', borderRadius: '16px', padding: '32px', marginTop: '48px' }}>
-            <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: '#10b981', marginBottom: '16px' }}>
+          <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)', border: '2px solid rgba(16, 185, 129, 0.3)', borderRadius: '12px', padding: '20px 16px', marginTop: '32px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#10b981', marginBottom: '12px' }}>
               {lang === 'ru' ? '🎯 Ключевые выводы' : '🎯 Key Takeaways'}
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -388,13 +390,43 @@ export default function BlogArticlePage() {
                 'Follow a tested strategy',
                 'Stop trading when your plan tells you to stop'
               ]).map((item, i) => (
-                <li key={i} style={{ padding: '12px 0', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#10b981', marginRight: '12px', fontSize: '20px' }}>✓</span>
-                  <span style={{ fontSize: '16px' }}>{item}</span>
+                <li key={i} style={{ padding: '8px 0', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ color: '#10b981', marginRight: '10px', fontSize: '16px' }}>✓</span>
+                  <span style={{ fontSize: '13px' }}>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Mobile styles */}
+          <style>{`
+            @media (max-width: 768px) {
+              .article-content {
+                font-size: 14px !important;
+                padding: 0 !important;
+              }
+              .intro-text {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+                margin-bottom: 16px !important;
+              }
+              .sub-text {
+                font-size: 13px !important;
+                margin-bottom: 24px !important;
+              }
+              .section-heading {
+                font-size: 18px !important;
+                margin-top: 24px !important;
+                margin-bottom: 12px !important;
+              }
+              .section-text {
+                font-size: 13px !important;
+              }
+              .faq-heading {
+                font-size: 20px !important;
+              }
+            }
+          `}</style>
 
         </div>
       </article>

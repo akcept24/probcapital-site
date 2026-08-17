@@ -115,6 +115,47 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Company trust signal */}
+            <div style={{
+              marginTop: "clamp(18px, 2.5vw, 28px)",
+              padding: "12px 18px",
+              borderRadius: "10px",
+              background: "linear-gradient(135deg, rgba(0,212,170,0.04) 0%, rgba(0,150,255,0.02) 100%)",
+              border: "1px solid rgba(0,212,170,0.15)",
+              display: "inline-block",
+            }}>
+              <div style={{
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase" as const,
+                color: "#00D4AA",
+                marginBottom: "4px",
+              }}>
+                {ru ? "Зарегистрированная в США компания" : "U.S.-Registered Company"}
+              </div>
+              <div style={{
+                fontSize: "13px",
+                fontWeight: 600,
+                color: "#D0D8F0",
+              }}>
+                ProbCapital LLC · Delaware, USA
+              </div>
+              <a
+                href="/about"
+                style={{
+                  fontSize: "11px",
+                  color: "#00D4AA",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  marginTop: "6px",
+                  opacity: 0.9,
+                }}
+              >
+                {ru ? "Информация о компании и правовые документы →" : "Company & Legal Information →"}
+              </a>
+            </div>
+
             {/* Simulated account disclosure */}
             <p style={{
               marginTop: "clamp(14px, 2vw, 22px)",

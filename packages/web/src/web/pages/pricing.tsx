@@ -10,12 +10,12 @@ interface PlanRow {
 }
 
 const PLANS: PlanRow[] = [
-  { size: "$10,000",  standard: "$59",    aggressive: "$79"    },
-  { size: "$25,000",  standard: "$109",   aggressive: "$149"   },
-  { size: "$50,000",  standard: "$189",   aggressive: "$249"   },
-  { size: "$100,000", standard: "$349",   aggressive: "$449"   },
-  { size: "$200,000", standard: "$599",   aggressive: "$799"   },
-  { size: "$400,000", standard: "$999",   aggressive: "$1,299" },
+  { size: "$10,000",  standard: "$79",    aggressive: "$59"    },
+  { size: "$25,000",  standard: "$149",   aggressive: "$109"   },
+  { size: "$50,000",  standard: "$249",   aggressive: "$189"   },
+  { size: "$100,000", standard: "$449",   aggressive: "$349"   },
+  { size: "$200,000", standard: "$799",   aggressive: "$599"   },
+  { size: "$400,000", standard: "$1,299", aggressive: "$999"   },
 ];
 
 /* ─── Primitives ─── */

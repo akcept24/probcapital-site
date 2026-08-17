@@ -163,7 +163,7 @@ export default function AboutPage() {
       title: ru ? "Панель анализа производительности" : "Performance Analysis Dashboard",
       desc: ru
         ? "Интерактивная аналитическая панель отображает кривую эквити, отслеживание просадки, целевые показатели и полную историю оценок в реальном времени."
-        : "Interactive dashboard delivers real-time equity curves, drawdown tracking, target progress indicators, and complete Evaluation Process history — all in a single institutional-grade interface.",
+        : "Interactive dashboard delivers real-time equity curves, drawdown tracking, target progress indicators, and complete Evaluation Process history — all in a single professional-grade interface.",
       tag: "Real-Time",
     },
     {
@@ -361,8 +361,8 @@ export default function AboutPage() {
             </SectionTitle>
             <Sub center>
               {ru
-                ? "Каждый уровень нашего стека спроектирован для надёжности, скорости и точности — стандарты институциональных систем обработки данных."
-                : "Every layer of our stack is engineered for reliability, speed, and precision — the same standards applied in institutional-grade data processing systems."}
+                ? "Каждый уровень нашего стека спроектирован для надёжности, скорости и точности — стандарты профессиональных систем обработки данных."
+                : "Every layer of our stack is engineered for reliability, speed, and precision — the same standards applied in professional-grade data processing systems."}
             </Sub>
           </div>
 

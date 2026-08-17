@@ -52,9 +52,8 @@ Compliance: SEC/CFTC compliant, not a broker or investment adviser
 
 # === SOCIAL PROOF ===
 Total-Payouts: $2.4M+
-Funded-Traders: 12,400+
 Countries-Served: 140+
-Average-Payout-Time: 24 hours
+Average-Payout-Time: 24 hours (for performance-based compensation requests)
 
 # === PRICING (as of Aug 2026) ===
 Plan-$10k-Standard: $79

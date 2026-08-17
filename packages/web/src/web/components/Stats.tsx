@@ -5,7 +5,6 @@ export default function Stats() {
 
   const stats = [
     { value: "$2.4M+", label: tr.stats_payouts },
-    { value: "12,400+", label: tr.stats_traders },
     { value: "90%", label: tr.stats_split },
     { value: "$400K", label: tr.stats_funding },
     { value: "24h", label: tr.stats_payout_time },

@@ -95,7 +95,7 @@ export default function Features() {
     },
     {
       title: "Advanced Performance Dashboards",
-      desc: "Interactive Performance Analysis dashboard delivers real-time equity curves, drawdown tracking, target progress, and full evaluation history in a single institutional-grade interface.",
+      desc: "Interactive Performance Analysis dashboard delivers real-time equity curves, drawdown tracking, target progress, and full evaluation history in a single professional-grade interface.",
       tag: "Advanced Analytics",
     },
     {

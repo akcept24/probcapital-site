@@ -9,7 +9,7 @@ const labels = {
     us: "ProbCapital",
     them: "Other Firms",
     rows: [
-      { feature: "Funding within 24 hours after passing", us: true, them: false },
+      { feature: "Account activation within 24h after passing", us: true, them: false },
       { feature: "Evaluation fee rebate on first approved payout", us: true, them: false },
       { feature: "Performance-based payouts", us: true, them: false },
       { feature: "No minimum trading days (Aggressive)", us: true, them: false },

@@ -66,8 +66,6 @@ export default function Testimonials() {
           <div className="text-[13px] text-[#8A8FA8]"><strong className="text-[#F0F2FF]">2,800+</strong> {tr.test_reviews}</div>
           <div className="w-px h-8 bg-white/5 hidden sm:block" />
           <div className="text-[13px] text-[#8A8FA8]"><strong className="text-[#F0F2FF]">$2.4M+</strong> {tr.test_total}</div>
-          <div className="w-px h-8 bg-white/5 hidden sm:block" />
-          <div className="text-[13px] text-[#8A8FA8]"><strong className="text-[#F0F2FF]">12,400+</strong> {tr.test_traders}</div>
         </div>
 
         {/* Results disclaimer */}

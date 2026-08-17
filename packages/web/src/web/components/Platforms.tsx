@@ -19,7 +19,6 @@ const labels = {
     available: "Available on",
     devices: ["iOS", "Android", "Windows", "macOS", "Web"],
     cta: "Try ProbTrader Free →",
-    cta2: "View Documentation",
     exclusive: "Exclusive to ProbCapital traders",
   },
   ru: {
@@ -40,7 +39,6 @@ const labels = {
     available: "Доступно на",
     devices: ["iOS", "Android", "Windows", "macOS", "Web"],
     cta: "Попробовать бесплатно →",
-    cta2: "Документация",
     exclusive: "Доступно только трейдерам ProbCapital",
   },
 };
@@ -266,18 +264,11 @@ export default function Platforms() {
         </div>
 
         {/* CTA row */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
             style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
             {l.cta}
-          </a>
-          <a href="https://app.probcapital.com"
-            className="text-[#F0F2FF] text-[15px] font-semibold px-8 py-4 rounded-xl text-center transition-all duration-200"
-            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)"; }}>
-            {l.cta2}
           </a>
         </div>
 

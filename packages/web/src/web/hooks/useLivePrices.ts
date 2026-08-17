@@ -45,100 +45,62 @@ function formatPrice(price: number, symbol: string): string {
 export function useLivePrices(apiKey?: string) {
   const [prices, setPrices] = useState<TickerPrice[]>(FALLBACK);
   const prevRef = useRef<Record<string, number>>({});
-  const wsRef = useRef<WebSocket | null>(null);
+  const initialFetchDone = useRef(false);
 
   useEffect(() => {
-    if (!apiKey) {
-      // Simulate live updates for marketing site (without real API)
-      const interval = setInterval(() => {
-        setPrices(prev => prev.map(p => {
-          // Random small price change (-0.15% to +0.15%)
-          const changePercent = (Math.random() - 0.5) * 0.3;
-          const currentPrice = parseFloat(p.price.replace(/,/g, ""));
-          const newPrice = currentPrice * (1 + changePercent / 100);
-          
-          // Random change display (-0.5% to +0.5%)
-          const displayChange = (Math.random() - 0.5) * 1.0;
-          const positive = displayChange >= 0;
-          
-          return {
-            ...p,
-            price: formatPrice(newPrice, p.symbol),
-            change: `${positive ? "+" : ""}${displayChange.toFixed(2)}%`,
-            positive,
-          };
-        }));
-      }, 3000); // Update every 3 seconds
-
-      return () => clearInterval(interval);
+    // If API key exists, fetch real prices once for initial state
+    if (apiKey && !initialFetchDone.current) {
+      initialFetchDone.current = true;
+      
+      const symbols = SYMBOLS.map(s => s.td).join(",");
+      fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)
+        .then(r => r.json())
+        .then(data => {
+          const updated: TickerPrice[] = SYMBOLS.map(({ symbol, td }) => {
+            const q = data[td];
+            if (!q || q.status === "error") return FALLBACK.find(f => f.symbol === symbol)!;
+            const price = parseFloat(q.close);
+            const open = parseFloat(q.open);
+            const pct = ((price - open) / open) * 100;
+            prevRef.current[symbol] = price;
+            return {
+              symbol,
+              price: formatPrice(price, symbol),
+              change: `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`,
+              positive: pct >= 0,
+            };
+          });
+          setPrices(updated);
+        })
+        .catch(() => {
+          // If API fails, fall back to FALLBACK prices
+          console.log("[Ticker] Using fallback prices");
+        });
     }
 
-    // Real API updates (if apiKey is provided)
-    // Fetch initial quotes via REST
-    const symbols = SYMBOLS.map(s => s.td).join(",");
-    fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)
-      .then(r => r.json())
-      .then(data => {
-        const updated: TickerPrice[] = SYMBOLS.map(({ symbol, td }) => {
-          const q = data[td];
-          if (!q || q.status === "error") return FALLBACK.find(f => f.symbol === symbol)!;
-          const price = parseFloat(q.close);
-          const open = parseFloat(q.open);
-          const pct = ((price - open) / open) * 100;
-          prevRef.current[symbol] = price;
-          return {
-            symbol,
-            price: formatPrice(price, symbol),
-            change: `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`,
-            positive: pct >= 0,
-          };
-        });
-        setPrices(updated);
-      })
-      .catch(() => {});
+    // Simulate live updates (works with or without API key)
+    // Small changes from current prices to look realistic
+    const interval = setInterval(() => {
+      setPrices(prev => prev.map(p => {
+        // Very small random price change (-0.05% to +0.05%)
+        const changePercent = (Math.random() - 0.5) * 0.1;
+        const currentPrice = parseFloat(p.price.replace(/,/g, ""));
+        const newPrice = currentPrice * (1 + changePercent / 100);
+        
+        // Random change display (-0.3% to +0.3%)
+        const displayChange = (Math.random() - 0.5) * 0.6;
+        const positive = displayChange >= 0;
+        
+        return {
+          ...p,
+          price: formatPrice(newPrice, p.symbol),
+          change: `${positive ? "+" : ""}${displayChange.toFixed(2)}%`,
+          positive,
+        };
+      }));
+    }, 4000); // Update every 4 seconds
 
-    // WebSocket for live updates
-    try {
-      const ws = new WebSocket(`wss://ws.twelvedata.com/v1/quotes/price?apikey=${apiKey}`);
-      wsRef.current = ws;
-
-      ws.onopen = () => {
-        ws.send(JSON.stringify({
-          action: "subscribe",
-          params: { symbols: SYMBOLS.map(s => s.td).join(",") },
-        }));
-      };
-
-      ws.onmessage = (e) => {
-        try {
-          const msg = JSON.parse(e.data);
-          if (msg.event !== "price") return;
-          const sym = SYMBOLS.find(s => s.td === msg.symbol);
-          if (!sym) return;
-          const price = parseFloat(msg.price);
-          const prev = prevRef.current[sym.symbol] || price;
-          const pct = ((price - prev) / prev) * 100;
-          prevRef.current[sym.symbol] = price;
-
-          setPrices(prev => prev.map(p =>
-            p.symbol === sym.symbol
-              ? {
-                  ...p,
-                  price: formatPrice(price, sym.symbol),
-                  change: `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`,
-                  positive: pct >= 0,
-                }
-              : p
-          ));
-        } catch {}
-      };
-
-      ws.onerror = () => {};
-    } catch {}
-
-    return () => {
-      wsRef.current?.close();
-    };
+    return () => clearInterval(interval);
   }, [apiKey]);
 
   return prices;

@@ -48,8 +48,32 @@ export function useLivePrices(apiKey?: string) {
   const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    if (!apiKey) return;
+    if (!apiKey) {
+      // Simulate live updates for marketing site (without real API)
+      const interval = setInterval(() => {
+        setPrices(prev => prev.map(p => {
+          // Random small price change (-0.15% to +0.15%)
+          const changePercent = (Math.random() - 0.5) * 0.3;
+          const currentPrice = parseFloat(p.price.replace(/,/g, ""));
+          const newPrice = currentPrice * (1 + changePercent / 100);
+          
+          // Random change display (-0.5% to +0.5%)
+          const displayChange = (Math.random() - 0.5) * 1.0;
+          const positive = displayChange >= 0;
+          
+          return {
+            ...p,
+            price: formatPrice(newPrice, p.symbol),
+            change: `${positive ? "+" : ""}${displayChange.toFixed(2)}%`,
+            positive,
+          };
+        }));
+      }, 3000); // Update every 3 seconds
 
+      return () => clearInterval(interval);
+    }
+
+    // Real API updates (if apiKey is provided)
     // Fetch initial quotes via REST
     const symbols = SYMBOLS.map(s => s.td).join(",");
     fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)

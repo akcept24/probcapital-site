@@ -86,52 +86,120 @@ export default function LivePayouts() {
 
         {/* Scrolling trader cards — row 1 */}
         <div className="relative mb-4">
-          <div className="ticker-inner gap-4" style={{ animationDuration: "35s" }}>
+          <div className="ticker-inner gap-4" style={{ animationDuration: "40s" }}>
             {doubled.map((t, i) => (
-              <div key={i} className="shrink-0 w-[220px] rounded-2xl p-5"
-                style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[22px]">{t.country}</span>
-                  <span className="text-[11px] text-[#555A72] font-medium">▶ {t.views} {l.views}</span>
+              <div key={i} className="shrink-0 w-[280px] h-[140px] rounded-2xl p-5 relative group"
+                style={{ background: "linear-gradient(135deg, #1A1D27 0%, #15181F 100%)", border: "1px solid rgba(0,212,170,0.15)" }}>
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: "linear-gradient(135deg, rgba(0,212,170,0.15) 0%, rgba(0,212,170,0.05) 100%)", filter: "blur(10px)" }} />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Header with check icon */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center"
+                        style={{ background: "linear-gradient(135deg, #00D4AA 0%, #00FFCC 100%)" }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1117" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </div>
+                      <span className="text-[13px] font-semibold text-[#F0F2FF]">{t.name}</span>
+                    </div>
+                    <span className="text-[20px]">{t.country}</span>
+                  </div>
+
+                  {/* Amount */}
+                  <div className="mb-2 flex items-baseline gap-1.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    <span className="text-[26px] font-black"
+                      style={{ background: "linear-gradient(135deg, #00D4AA 0%, #00FFCC 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                      {t.payout}
+                    </span>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between text-[11px]">
+                    <span className="text-[#555A72] uppercase tracking-wider">Withdrawal</span>
+                    <span className="text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
+                  </div>
                 </div>
-                <div className="text-[22px] font-black gold-text mb-1">{t.payout}</div>
-                <div className="text-[13px] font-semibold text-[#F0F2FF] mb-1">{t.name}</div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] text-[#555A72] uppercase tracking-wider">{l.style}:</span>
-                  <span className="text-[11px] text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
+
+                {/* Verified badge */}
+                <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[9px] font-black shadow-lg"
+                  style={{ background: "#00D4AA", color: "#0F1117" }}>
+                  VERIFIED
                 </div>
               </div>
             ))}
           </div>
           {/* Fade edges */}
-          <div className="absolute inset-y-0 left-0 w-16 pointer-events-none"
+          <div className="absolute inset-y-0 left-0 w-24 pointer-events-none"
             style={{ background: "linear-gradient(to right, #0F1117, transparent)" }} />
-          <div className="absolute inset-y-0 right-0 w-16 pointer-events-none"
+          <div className="absolute inset-y-0 right-0 w-24 pointer-events-none"
             style={{ background: "linear-gradient(to left, #0F1117, transparent)" }} />
         </div>
 
         {/* Row 2 — reverse direction */}
         <div className="relative">
-          <div className="ticker-inner gap-4" style={{ animationDuration: "40s", animationDirection: "reverse" }}>
+          <div className="ticker-inner gap-4" style={{ animationDuration: "45s", animationDirection: "reverse" }}>
             {[...doubled].reverse().map((t, i) => (
-              <div key={i} className="shrink-0 w-[220px] rounded-2xl p-5"
-                style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[22px]">{t.country}</span>
-                  <span className="text-[11px] text-[#555A72] font-medium">▶ {t.views} {l.views}</span>
+              <div key={i} className="shrink-0 w-[280px] h-[140px] rounded-2xl p-5 relative group"
+                style={{ background: "linear-gradient(135deg, #1A1D27 0%, #15181F 100%)", border: "1px solid rgba(0,212,170,0.15)" }}>
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: "linear-gradient(135deg, rgba(0,212,170,0.15) 0%, rgba(0,212,170,0.05) 100%)", filter: "blur(10px)" }} />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Header with check icon */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center"
+                        style={{ background: "linear-gradient(135deg, #00D4AA 0%, #00FFCC 100%)" }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1117" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </div>
+                      <span className="text-[13px] font-semibold text-[#F0F2FF]">{t.name}</span>
+                    </div>
+                    <span className="text-[20px]">{t.country}</span>
+                  </div>
+
+                  {/* Amount */}
+                  <div className="mb-2 flex items-baseline gap-1.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    <span className="text-[26px] font-black"
+                      style={{ background: "linear-gradient(135deg, #00D4AA 0%, #00FFCC 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                      {t.payout}
+                    </span>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between text-[11px]">
+                    <span className="text-[#555A72] uppercase tracking-wider">Withdrawal</span>
+                    <span className="text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
+                  </div>
                 </div>
-                <div className="text-[22px] font-black gold-text mb-1">{t.payout}</div>
-                <div className="text-[13px] font-semibold text-[#F0F2FF] mb-1">{t.name}</div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] text-[#555A72] uppercase tracking-wider">{l.style}:</span>
-                  <span className="text-[11px] text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
+
+                {/* Verified badge */}
+                <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[9px] font-black shadow-lg"
+                  style={{ background: "#00D4AA", color: "#0F1117" }}>
+                  VERIFIED
                 </div>
               </div>
             ))}
           </div>
-          <div className="absolute inset-y-0 left-0 w-16 pointer-events-none"
+          <div className="absolute inset-y-0 left-0 w-24 pointer-events-none"
             style={{ background: "linear-gradient(to right, #0F1117, transparent)" }} />
-          <div className="absolute inset-y-0 right-0 w-16 pointer-events-none"
+          <div className="absolute inset-y-0 right-0 w-24 pointer-events-none"
             style={{ background: "linear-gradient(to left, #0F1117, transparent)" }} />
         </div>
       </div>

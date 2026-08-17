@@ -7,7 +7,7 @@ const faqs = [
     category: "Getting Started",
     categoryRu: "Начало работы",
     items: [
-      { q: "How do I start a challenge?", qRu: "Как начать челлендж?", a: "Register on app.probcapital.com, choose your account size and plan, complete payment, and receive your login credentials within minutes.", aRu: "Зарегистрируйтесь на app.probcapital.com, выберите размер счёта и план, оплатите — данные для входа придут в течение нескольких минут." },
+      { q: "How do I start an evaluation?", qRu: "Как начать оценку?", a: "Register on app.probcapital.com, choose your account size and evaluation plan, complete payment, and receive your login credentials within minutes.", aRu: "Зарегистрируйтесь на app.probcapital.com, выберите размер счёта и план оценки, оплатите — данные для входа придут в течение нескольких минут." },
       { q: "What trading platforms are supported?", qRu: "Какие платформы поддерживаются?", a: "We support MetaTrader 4 (MT4) and MetaTrader 5 (MT5). Both platforms are available for desktop, web, and mobile.", aRu: "Мы поддерживаем MetaTrader 4 (MT4) и MetaTrader 5 (MT5). Доступны версии для ПК, браузера и мобильных устройств." },
       { q: "What instruments can I trade?", qRu: "Какими инструментами можно торговать?", a: "The simulation environment supports Forex pairs, indices, commodities, and metals. All major and minor pairs are available within the evaluation software.", aRu: "Симулированная среда поддерживает форекс-пары, индексы, сырьевые товары и металлы. Все основные и минорные пары доступны в рамках программы оценки." },
     ],
@@ -18,7 +18,7 @@ const faqs = [
     items: [
       { q: "What is the profit target for Phase 1?", qRu: "Какова цель прибыли в Фазе 1?", a: "Standard plan: 10% profit target. Aggressive plan: 8% profit target.", aRu: "Стандартный план: цель 10%. Агрессивный план: цель 8%." },
       { q: "Is there a minimum trading days requirement?", qRu: "Есть ли требование по минимальному количеству дней?", a: "Standard plan requires a minimum of 4 trading days. Aggressive plan has no minimum days requirement.", aRu: "Стандартный план — минимум 4 торговых дня. Агрессивный — без минимума." },
-      { q: "What happens if I breach a rule?", qRu: "Что происходит при нарушении правила?", a: "If you breach a drawdown rule, your challenge account will be closed. You get 1 free re-take on your first attempt.", aRu: "При нарушении правила просадки счёт закрывается. На первой попытке вы получаете 1 бесплатный рестарт." },
+      { q: "What happens if I breach a rule?", qRu: "Что происходит при нарушении правила?", a: "If you breach a drawdown rule, your evaluation account will be closed. You get 1 free re-take on your first attempt.", aRu: "При нарушении правила просадки счёт закрывается. На первой попытке вы получаете 1 бесплатный рестарт." },
     ],
   },
   {

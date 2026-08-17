@@ -146,11 +146,11 @@ export const t = {
     faq_h2_2: "Questions",
     faq_items: [
       {
-        q: "What is a prop trading challenge?",
-        a: "A skill evaluation challenge is a structured Evaluation Process where you prove your trading discipline by hitting a performance target while respecting our risk rules. Once passed, you receive access to an expanded simulation environment and earn performance-based compensation paid by ProbCapital LLC from its own operating funds.",
+        q: "What is a prop trading evaluation?",
+        a: "A prop trading evaluation is a structured Evaluation Process where you prove your trading discipline by hitting a performance target while respecting our risk rules. Once passed, you receive access to an expanded simulation environment and earn performance-based compensation paid by ProbCapital LLC from its own operating funds.",
       },
       {
-        q: "Do I trade with real money in the challenge?",
+        q: "Do I trade with real money in the evaluation?",
         a: "The Evaluation Process is conducted entirely within a software simulation environment using real-time market data feeds. No real capital is deployed. Performance-based compensation is paid by ProbCapital LLC from its own operating funds based on your Evaluation Process metrics.",
       },
       {
@@ -166,7 +166,7 @@ export const t = {
         a: "If you breach a rule or exceed the drawdown limit, your evaluation session is closed. You get 1 free re-take if you fail your first attempt.",
       },
       {
-        q: "Is the challenge fee refunded?",
+        q: "Is the evaluation fee refunded?",
         a: "Yes. The evaluation fee is credited back with your first approved performance-based payout on all plans, as detailed in our Refund Policy.",
       },
       {
@@ -355,11 +355,11 @@ export const t = {
     faq_h2_2: "вопросы",
     faq_items: [
       {
-        q: "Что такое проп-трейдинговый челлендж?",
+        q: "Что такое проп-трейдинговая оценка?",
         a: "Процесс оценки навыков — это структурированная симулированная оценка, в ходе которой вы демонстрируете торговую дисциплину, достигая целевых показателей производительности при соблюдении правил управления рисками. После прохождения вы получаете доступ к расширенной симулированной среде и вознаграждение за результаты, выплачиваемое ProbCapital LLC из собственных средств.",
       },
       {
-        q: "Я торгую реальными деньгами на челлендже?",
+        q: "Я торгую реальными деньгами в процессе оценки?",
         a: "Процесс оценки полностью проводится в программной симулированной среде с использованием данных рынка в реальном времени. Реальный капитал не используется. Вознаграждение за результаты выплачивается ProbCapital LLC из собственных операционных средств на основании метрик процесса оценки.",
       },
       {
@@ -375,7 +375,7 @@ export const t = {
         a: "При нарушении правил или превышении лимита просадки оценочная сессия закрывается. При первом провале вы получаете 1 бесплатный рестарт.",
       },
       {
-        q: "Возвращается ли оплата за челлендж?",
+        q: "Возвращается ли оценочный взнос?",
         a: "Да. Стоимость оценки возвращается вместе с первой одобренной выплатой вознаграждения за результаты на всех тарифах, согласно Политике возврата.",
       },
       {

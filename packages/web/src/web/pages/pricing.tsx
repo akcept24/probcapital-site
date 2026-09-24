@@ -11,12 +11,12 @@ interface PlanRow {
 }
 
 const PLANS: PlanRow[] = [
-  { size: "$10,000",  standard: "$79",    aggressive: "$59"    },
-  { size: "$25,000",  standard: "$149",   aggressive: "$109"   },
-  { size: "$50,000",  standard: "$249",   aggressive: "$189"   },
-  { size: "$100,000", standard: "$449",   aggressive: "$349"   },
-  { size: "$200,000", standard: "$799",   aggressive: "$599"   },
-  { size: "$400,000", standard: "$1,299", aggressive: "$999"   },
+  { size: "$10,000",  standard: "$79",    aggressive: "$99"    },
+  { size: "$25,000",  standard: "$149",   aggressive: "$189"   },
+  { size: "$50,000",  standard: "$249",   aggressive: "$329"   },
+  { size: "$100,000", standard: "$349",   aggressive: "$449"   },
+  { size: "$200,000", standard: "$599",   aggressive: "$799"   },
+  { size: "$400,000", standard: "$999",   aggressive: "$1,299" },
 ];
 
 /* ─── Primitives ─── */
@@ -58,7 +58,7 @@ export default function PricingPage() {
   const { lang } = useLang();
   usePageHead({
     title: lang === "ru" ? "Тарифы ProbCapital — стоимость челленджей Standard и Aggressive" : "ProbCapital Pricing — Standard & Aggressive Challenge Fees",
-    description: lang === "ru" ? "Цены челленджей ProbCapital: Standard и Aggressive, счета от $10,000 до $100,000. Разовый взнос, без подписок." : "ProbCapital challenge pricing: Standard and Aggressive plans, $10K–$100K accounts. One-time fee, no subscriptions.",
+    description: lang === "ru" ? "Цены челленджей ProbCapital: Standard и Aggressive, счета от $10,000 до $400,000. Разовый взнос, без подписок." : "ProbCapital challenge pricing: Standard and Aggressive plans, $10K–$400K accounts. One-time fee, no subscriptions.",
     path: "/pricing",
     lang,
   });
@@ -115,13 +115,13 @@ export default function PricingPage() {
           <div style={{ color: "#8A92A8", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", textAlign: "center" as const }}>
             Standard
             <div style={{ fontSize: "10px", color: "#4A5268", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>
-              {ru ? "10% цель / 10% просадка" : "10% target / 10% drawdown"}
+              {ru ? "10% + 5% цели / 10% просадка" : "10% + 5% targets / 10% drawdown"}
             </div>
           </div>
           <div style={{ color: "#00D4AA", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", textAlign: "center" as const }}>
             Aggressive
             <div style={{ fontSize: "10px", color: "#4A8268", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>
-              {ru ? "8% цель / 12% просадка" : "8% target / 12% drawdown"}
+              {ru ? "10% + 5% цели / 12% просадка" : "10% + 5% targets / 12% drawdown"}
             </div>
           </div>
         </div>

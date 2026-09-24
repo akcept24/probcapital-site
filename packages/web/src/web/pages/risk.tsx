@@ -18,7 +18,7 @@ const sectionsEn = [
   },
   {
     title: "4. Leverage Risk",
-    text: `The use of leverage amplifies both the potential for profit and the potential for loss. A relatively small adverse market movement can result in losses that exceed the initial investment. The higher the leverage applied (Standard plan: 1:100; Aggressive plan: 1:200), the greater the risk exposure per unit of capital. Traders should only employ leverage levels they fully understand and have experience managing.`,
+    text: `The use of leverage amplifies both the potential for profit and the potential for loss. A relatively small adverse market movement can result in losses that exceed the initial investment. The higher the leverage applied (Standard plan: 1:100; Aggressive plan: 1:20, up to 1:100), the greater the risk exposure per unit of capital. Traders should only employ leverage levels they fully understand and have experience managing.`,
   },
   {
     title: "5. Volatility and Liquidity Risk",
@@ -65,7 +65,7 @@ const sectionsRu = [
   },
   {
     title: "4. Риск кредитного плеча",
-    text: `Использование кредитного плеча увеличивает как потенциальную прибыль, так и потенциальные убытки. Относительно небольшое неблагоприятное движение рынка может привести к убыткам, превышающим первоначальные вложения. Чем выше применяемое плечо (Стандартный план: 1:100; Агрессивный план: 1:200), тем больше подверженность риску на единицу капитала. Трейдерам следует использовать только те уровни плеча, которые они полностью понимают и умеют контролировать.`,
+    text: `Использование кредитного плеча увеличивает как потенциальную прибыль, так и потенциальные убытки. Относительно небольшое неблагоприятное движение рынка может привести к убыткам, превышающим первоначальные вложения. Чем выше применяемое плечо (Стандартный план: 1:100; Агрессивный план: 1:20, до 1:100), тем больше подверженность риску на единицу капитала. Трейдерам следует использовать только те уровни плеча, которые они полностью понимают и умеют контролировать.`,
   },
   {
     title: "5. Риск волатильности и ликвидности",

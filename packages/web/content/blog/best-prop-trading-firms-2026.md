@@ -104,7 +104,7 @@ Start with any account size and scale up based on performance:
 | **$25,000** | $149 | $189 |
 | **$50,000** | $249 | $329 |
 | **$100,000** | $349 | $449 |
-| **$200,000** | $649 | $849 |
+| **$200,000** | $599 | $799 |
 | **$400,000** | $999 | $1,299 |
 
 **Fee Refunded:** Your evaluation fee is fully refunded on your first withdrawal. This means the challenge is essentially **free** if you're profitable.
@@ -115,8 +115,8 @@ Start with any account size and scale up based on performance:
 
 ### Profit Targets
 
-- **Phase 1:** 10% profit target (Standard) or 8% (Aggressive)
-- **Phase 2:** 5% profit target (Standard only)
+- **Phase 1:** 10% profit target (both plans)
+- **Phase 2:** 5% profit target (both plans)
 
 ### Risk Limits
 

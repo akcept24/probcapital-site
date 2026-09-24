@@ -92,13 +92,13 @@ export const t = {
     ch_feat_retake: "1 free re-take",
     ch_feat_phase2: "2-phase evaluation",
     ch_feat_nophase2: "1-phase only — no Phase 2",
-    ch_feat_leverage: "Up to 1:200 leverage",
+    ch_feat_leverage: "Leverage 1:20 (up to 1:100)",
     ch_diff1_title: "Standard: Safe & Steady",
     ch_diff1_desc: "2-phase evaluation, 80% split, conservative rules. Best for disciplined traders.",
     ch_diff2_title: "Aggressive: Fast Track",
-    ch_diff2_desc: "1-phase only, no minimum days, on-demand payouts. Pass faster, earn more.",
+    ch_diff2_desc: "No minimum days, on-demand payouts, 90% split. Pass faster, earn more.",
     ch_diff3_title: "Key Difference",
-    ch_diff3_desc: "Aggressive has no Phase 2, higher leverage (1:200), 90% split & on-demand payouts.",
+    ch_diff3_desc: "Aggressive has a 12% max drawdown (vs 10%), no minimum days, 90% split & on-demand payouts.",
 
     // Features
     feat_badge: "Why Us",
@@ -321,13 +321,13 @@ export const t = {
     ch_feat_retake: "1 бесплатный рестарт",
     ch_feat_phase2: "2-фазная оценка",
     ch_feat_nophase2: "Только 1 фаза — без Фазы 2",
-    ch_feat_leverage: "Плечо до 1:200",
+    ch_feat_leverage: "Плечо 1:20 (до 1:100)",
     ch_diff1_title: "Стандартный: Стабильно",
     ch_diff1_desc: "2 фазы, сплит 80%, консервативные правила. Лучший выбор для дисциплинированных.",
     ch_diff2_title: "Агрессивный: Быстрый старт",
-    ch_diff2_desc: "Только 1 фаза, нет минимума дней, выплаты по запросу. Проходи быстрее.",
+    ch_diff2_desc: "Нет минимума дней, выплаты по запросу, сплит 90%. Проходи быстрее.",
     ch_diff3_title: "Главное отличие",
-    ch_diff3_desc: "Агрессивный — без Фазы 2, плечо 1:200, сплит 90% и выплаты по запросу.",
+    ch_diff3_desc: "Агрессивный — просадка 12% (вместо 10%), нет минимума дней, сплит 90% и выплаты по запросу.",
 
     // Features
     feat_badge: "Почему мы",

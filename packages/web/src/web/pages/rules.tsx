@@ -20,13 +20,13 @@ export default function RulesPage() {
       items: ru ? [
         "Стандарт · Фаза 1: достичь 10% прибыли",
         "Стандарт · Фаза 2: достичь 5% прибыли",
-        "Агрессив · Фаза 1: достичь 8% прибыли",
-        "Агрессив: нет Фазы 2",
+        "Агрессив · Фаза 1: достичь 10% прибыли",
+        "Агрессив · Фаза 2: достичь 5% прибыли",
       ] : [
         "Standard Phase 1: reach 10% profit target",
         "Standard Phase 2: reach 5% profit target",
-        "Aggressive Phase 1: reach 8% profit target",
-        "Aggressive: no Phase 2 required",
+        "Aggressive Phase 1: reach 10% profit target",
+        "Aggressive Phase 2: reach 5% profit target",
       ],
     },
     {
@@ -94,11 +94,11 @@ export default function RulesPage() {
       icon: "⚡",
       items: ru ? [
         "Стандартный план: плечо до 1:100",
-        "Агрессивный план: плечо до 1:200",
+        "Агрессивный план: плечо 1:20 (до 1:100)",
         "Плечо применяется ко всем инструментам",
       ] : [
         "Standard plan: leverage up to 1:100",
-        "Aggressive plan: leverage up to 1:200",
+        "Aggressive plan: leverage 1:20 (up to 1:100)",
         "Leverage applies across all instruments",
       ],
     },

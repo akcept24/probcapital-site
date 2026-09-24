@@ -17,7 +17,7 @@ const faqs = [
     category: "Evaluation Rules",
     categoryRu: "Правила оценки",
     items: [
-      { q: "What is the profit target for Phase 1?", qRu: "Какова цель прибыли в Фазе 1?", a: "Standard plan: 10% profit target. Aggressive plan: 8% profit target.", aRu: "Стандартный план: цель 10%. Агрессивный план: цель 8%." },
+      { q: "What is the profit target for Phase 1?", qRu: "Какова цель прибыли в Фазе 1?", a: "Standard plan: 10% (Phase 1) / 5% (Phase 2). Aggressive plan: 10% (Phase 1) / 5% (Phase 2).", aRu: "Стандартный план: 10% (Фаза 1) / 5% (Фаза 2). Агрессивный план: 10% (Фаза 1) / 5% (Фаза 2)." },
       { q: "Is there a minimum trading days requirement?", qRu: "Есть ли требование по минимальному количеству дней?", a: "Standard plan requires a minimum of 4 trading days. Aggressive plan has no minimum days requirement.", aRu: "Стандартный план — минимум 4 торговых дня. Агрессивный — без минимума." },
       { q: "What happens if I breach a rule?", qRu: "Что происходит при нарушении правила?", a: "If you breach a drawdown rule, your evaluation account will be closed. You get 1 free re-take on your first attempt.", aRu: "При нарушении правила просадки счёт закрывается. На первой попытке вы получаете 1 бесплатный рестарт." },
     ],

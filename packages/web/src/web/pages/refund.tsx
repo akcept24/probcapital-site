@@ -86,8 +86,8 @@ export default function RefundPage() {
           </h1>
           <p style={{ color: "#606880", fontSize: "13px", lineHeight: 1.7 }}>
             {ru
-              ? "Последнее обновление: апрель 2026 · ProbCapital LLC · Делавэр, США · Рег. №10541343"
-              : "Last updated: April 2026 · ProbCapital LLC · Delaware, USA · File #10541343"}
+              ? "Последнее обновление: сентябрь 2026 · ProbCapital LLC · Делавэр, США · Рег. №10541343"
+              : "Last updated: September 2026 · ProbCapital LLC · Delaware, USA · File #10541343"}
           </p>
         </div>
 
@@ -275,7 +275,7 @@ export default function RefundPage() {
               <Ul items={[
                 "недостижение целевого показателя прибыли или нарушение правил управления рисками в ходе оценки;",
                 "добровольный отказ от прохождения оценки после использования учётных данных или размещения первого ордера;",
-                "закрытие аккаунта вследствие нарушения Условий использования, Торговых правил или Политики ПОД/ФТ;",
+                "закрытие аккаунта вследствие нарушения Условий использования, Торговых правил или Политики ПОД/ФТ (см. страницу «AML-политика»);",
                 "изменение решения после начала использования Услуги по оценке навыков;",
                 "бездействие в рамках любых применимых временных ограничений;",
                 "рыночные условия, ошибки, связанные с MT4/MT5 или иными сторонними провайдерами, или проблемы с интернет-соединением на стороне клиента.",
@@ -284,7 +284,7 @@ export default function RefundPage() {
               <Ul items={[
                 "failure to meet profit targets or breach of risk management rules during the evaluation;",
                 "voluntary discontinuation of the evaluation after credentials have been used or first trade placed;",
-                "account termination due to violation of Terms of Service, Trading Rules, or AML Policy;",
+                "account termination due to violation of Terms of Service, Trading Rules, or the AML/KYC Policy (see our AML Policy page);",
                 "change of mind after use of the Skill Assessment Service has commenced;",
                 "inactivity within any applicable time limits;",
                 "market conditions, errors attributable to MT4/MT5 or other third-party providers, or connectivity issues on the client's side.",

@@ -7,101 +7,102 @@ export interface TickerPrice {
   positive: boolean;
 }
 
-const SYMBOLS = [
-  { symbol: "EUR/USD", td: "EUR/USD" },
-  { symbol: "GBP/USD", td: "GBP/USD" },
-  { symbol: "XAU/USD", td: "XAU/USD" },
-  { symbol: "BTC/USD", td: "BTC/USD" },
-  { symbol: "NAS100", td: "IXIC" },
-  { symbol: "USD/JPY", td: "USD/JPY" },
-  { symbol: "SPX500", td: "SPX" },
-  { symbol: "ETH/USD", td: "ETH/USD" },
-  { symbol: "OIL/USD", td: "WTI" },
-  { symbol: "AUD/USD", td: "AUD/USD" },
+export type QuotesStatus = "loading" | "live" | "stale" | "error";
+
+// Real market data via Yahoo Finance (proxied same-origin through
+// /api/quotes/* -> query1.finance.yahoo.com, see vercel.json).
+// No API key needed, no fabricated prices: if a fetch fails we keep the
+// last real values instead of inventing numbers.
+interface SymbolDef {
+  label: string;
+  yahoo: string;
+}
+
+const SYMBOLS: SymbolDef[] = [
+  { label: "EUR/USD", yahoo: "EURUSD=X" },
+  { label: "GBP/USD", yahoo: "GBPUSD=X" },
+  { label: "XAU/USD", yahoo: "GC=F" }, // gold front-month future
+  { label: "BTC/USD", yahoo: "BTC-USD" },
+  { label: "NAS100", yahoo: "^NDX" },
+  { label: "USD/JPY", yahoo: "JPY=X" },
+  { label: "SPX500", yahoo: "^GSPC" },
+  { label: "ETH/USD", yahoo: "ETH-USD" },
+  { label: "OIL/USD", yahoo: "CL=F" }, // WTI front-month future
+  { label: "AUD/USD", yahoo: "AUDUSD=X" },
 ];
 
-const FALLBACK: TickerPrice[] = [
-  { symbol: "EUR/USD", price: "1.08542", change: "+0.12%", positive: true },
-  { symbol: "GBP/USD", price: "1.26341", change: "+0.08%", positive: true },
-  { symbol: "XAU/USD", price: "2,318.40", change: "+0.34%", positive: true },
-  { symbol: "BTC/USD", price: "67,842.00", change: "+2.14%", positive: true },
-  { symbol: "NAS100", price: "18,024.5", change: "-0.22%", positive: false },
-  { symbol: "USD/JPY", price: "151.842", change: "+0.06%", positive: true },
-  { symbol: "SPX500", price: "5,248.30", change: "+0.15%", positive: true },
-  { symbol: "ETH/USD", price: "3,184.60", change: "+1.42%", positive: true },
-  { symbol: "OIL/USD", price: "81.24", change: "-0.31%", positive: false },
-  { symbol: "AUD/USD", price: "0.64821", change: "+0.09%", positive: true },
-];
+const POLL_MS = 60_000; // refresh every minute
 
-function formatPrice(price: number, symbol: string): string {
-  if (symbol.includes("BTC") || symbol.includes("NAS") || symbol.includes("SPX")) {
+function formatPrice(price: number, label: string): string {
+  if (label.includes("BTC") || label.includes("NAS") || label.includes("SPX")) {
     return price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
-  if (symbol.includes("JPY")) return price.toFixed(3);
-  if (symbol.includes("XAU") || symbol.includes("OIL")) return price.toFixed(2);
+  if (label.includes("JPY")) return price.toFixed(3);
+  if (label.includes("XAU") || label.includes("OIL")) return price.toFixed(2);
   return price.toFixed(5);
 }
 
-export function useLivePrices(apiKey?: string) {
-  const [prices, setPrices] = useState<TickerPrice[]>(FALLBACK);
-  const prevRef = useRef<Record<string, number>>({});
-  const initialFetchDone = useRef(false);
+interface YahooMeta {
+  regularMarketPrice?: number;
+  chartPreviousClose?: number;
+}
+
+async function fetchQuote(def: SymbolDef): Promise<TickerPrice | null> {
+  try {
+    const res = await fetch(`/api/quotes/${encodeURIComponent(def.yahoo)}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const meta = data?.chart?.result?.[0]?.meta as YahooMeta | undefined;
+    const price = meta?.regularMarketPrice;
+    const prev = meta?.chartPreviousClose;
+    if (typeof price !== "number" || typeof prev !== "number" || prev === 0) return null;
+    const pct = ((price - prev) / prev) * 100;
+    return {
+      symbol: def.label,
+      price: formatPrice(price, def.label),
+      change: `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`,
+      positive: pct >= 0,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function useLivePrices() {
+  const [prices, setPrices] = useState<TickerPrice[] | null>(null);
+  const [status, setStatus] = useState<QuotesStatus>("loading");
+  const hasDataRef = useRef(false);
 
   useEffect(() => {
-    // If API key exists, fetch real prices once for initial state
-    if (apiKey && !initialFetchDone.current) {
-      initialFetchDone.current = true;
-      
-      const symbols = SYMBOLS.map(s => s.td).join(",");
-      fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)
-        .then(r => r.json())
-        .then(data => {
-          const updated: TickerPrice[] = SYMBOLS.map(({ symbol, td }) => {
-            const q = data[td];
-            if (!q || q.status === "error") return FALLBACK.find(f => f.symbol === symbol)!;
-            const price = parseFloat(q.close);
-            const open = parseFloat(q.open);
-            const pct = ((price - open) / open) * 100;
-            prevRef.current[symbol] = price;
-            return {
-              symbol,
-              price: formatPrice(price, symbol),
-              change: `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`,
-              positive: pct >= 0,
-            };
-          });
-          setPrices(updated);
-        })
-        .catch(() => {
-          // If API fails, fall back to FALLBACK prices
-          console.log("[Ticker] Using fallback prices");
+    let cancelled = false;
+
+    async function load() {
+      const results = await Promise.all(SYMBOLS.map(fetchQuote));
+      if (cancelled) return;
+      const fresh = results.filter((r): r is TickerPrice => r !== null);
+      if (fresh.length > 0) {
+        hasDataRef.current = true;
+        const bySymbol = new Map(fresh.map((q) => [q.symbol, q]));
+        // Merge: keep last real value for symbols that failed this round
+        setPrices((prev) => {
+          if (!prev) return fresh;
+          return prev.map((p) => bySymbol.get(p.symbol) ?? p);
         });
+        setStatus("live");
+      } else if (hasDataRef.current) {
+        setStatus("stale");
+      } else {
+        setStatus("error");
+      }
     }
 
-    // Simulate live updates (works with or without API key)
-    // Small changes from current prices to look realistic
-    const interval = setInterval(() => {
-      setPrices(prev => prev.map(p => {
-        // Very small random price change (-0.05% to +0.05%)
-        const changePercent = (Math.random() - 0.5) * 0.1;
-        const currentPrice = parseFloat(p.price.replace(/,/g, ""));
-        const newPrice = currentPrice * (1 + changePercent / 100);
-        
-        // Random change display (-0.3% to +0.3%)
-        const displayChange = (Math.random() - 0.5) * 0.6;
-        const positive = displayChange >= 0;
-        
-        return {
-          ...p,
-          price: formatPrice(newPrice, p.symbol),
-          change: `${positive ? "+" : ""}${displayChange.toFixed(2)}%`,
-          positive,
-        };
-      }));
-    }, 4000); // Update every 4 seconds
+    load();
+    const id = setInterval(load, POLL_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [apiKey]);
-
-  return prices;
+  return { prices, status };
 }

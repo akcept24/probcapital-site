@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useParams, useLocation } from 'wouter';
-import matter from 'gray-matter';
 import { useLang } from '../i18n/LangContext';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { TRIAL_SIGNUP_URL } from '../lib/links';
@@ -15,6 +14,17 @@ const blogModules = import.meta.glob('/content/blog/*.md', {
 }) as Record<string, string>;
 
 /**
+ * Strip a leading YAML frontmatter block (`---` ... `---`) from a raw
+ * markdown file. Hand-rolled on purpose: `gray-matter` calls
+ * `Buffer.from()` at parse time, which does not exist in browsers and
+ * throws during render, unmounting the whole React tree on article routes.
+ */
+function stripFrontmatter(raw: string): string {
+  const match = raw.match(/^---\r?\n[\s\S]*?\r?\n---(\r?\n|$)/);
+  return (match ? raw.slice(match[0].length) : raw).trim();
+}
+
+/**
  * Returns the parsed markdown body for a slug.
  * Uses `${slug}-ru.md` when lang is ru and the file exists,
  * otherwise falls back to the English `${slug}.md`.
@@ -24,8 +34,7 @@ function getArticleMarkdown(slug: string, lang: 'en' | 'ru'): string | null {
   const enKey = `/content/blog/${slug}.md`;
   const raw = lang === 'ru' && blogModules[ruKey] ? blogModules[ruKey] : blogModules[enKey];
   if (!raw) return null;
-  const { content } = matter(raw);
-  return content;
+  return stripFrontmatter(raw);
 }
 
 // Blog post type

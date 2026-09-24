@@ -34,7 +34,7 @@ const sectionsEn = [
   },
   {
     title: "8. Regulatory and Legal Risk",
-    text: `The regulatory environment governing financial trading differs across jurisdictions and is subject to change. Changes in tax laws, financial regulations, or the legal status of certain instruments could materially affect a Trader's activities or the Company's ability to operate in certain regions.`,
+    text: `The regulatory environment governing financial trading differs across jurisdictions and is subject to change. Changes in tax laws, financial regulations, or the legal status of certain instruments could materially affect a Trader's activities or the Company's ability to operate in certain regions. None of the Services are subject to laws regulating the financial sector in the United States; the Company is not regulated by the Commodity Futures Trading Commission, the National Futures Association, or a similar authority, and you will not receive regulatory protection associated with the financial sector with respect to the Services.`,
   },
   {
     title: "9. No Investment Advice",
@@ -46,7 +46,7 @@ const sectionsEn = [
   },
   {
     title: "11. Restricted Jurisdictions",
-    text: `The Service is not available to individuals located in jurisdictions subject to comprehensive US, EU, or UN sanctions, or designated as high-risk by FATF. It is your sole responsibility to verify that accessing and using this Service is lawful in your country of residence. The Company makes no representation that the Service is appropriate or available in all locations. Access from restricted jurisdictions is prohibited and may result in immediate account termination.`,
+    text: `The Service is not available to individuals located in jurisdictions subject to comprehensive US, EU, or UN sanctions, or designated as high-risk by FATF. It is your sole responsibility to verify that accessing and using this Service is lawful in your country of residence. The Company makes no representation that the Service is appropriate or available in all locations. Access from restricted jurisdictions is prohibited and may result in immediate account termination. The Service is also not available to residents of the US states of Arkansas, Delaware, Louisiana, Montana, and South Carolina.`,
   },
 ];
 
@@ -81,7 +81,7 @@ const sectionsRu = [
   },
   {
     title: "8. Регуляторный и правовой риск",
-    text: `Нормативно-правовая среда, регулирующая финансовую торговлю, различается в разных юрисдикциях и может изменяться. Изменения в налоговом законодательстве, финансовом регулировании или правовом статусе отдельных инструментов могут существенно повлиять на деятельность Трейдера или способность Компании осуществлять деятельность в определённых регионах.`,
+    text: `Нормативно-правовая среда, регулирующая финансовую торговлю, различается в разных юрисдикциях и может изменяться. Изменения в налоговом законодательстве, финансовом регулировании или правовом статусе отдельных инструментов могут существенно повлиять на деятельность Трейдера или способность Компании осуществлять деятельность в определённых регионах. Ни одна из услуг не подпадает под действие законодательства, регулирующего финансовый сектор США; Компания не регулируется Комиссией по торговле товарными фьючерсами (CFTC), Национальной фьючерсной ассоциацией (NFA) или аналогичным органом, и в отношении услуг вам не предоставляется защита, связанная с регулированием финансового сектора.`,
   },
   {
     title: "9. Отсутствие инвестиционных рекомендаций",
@@ -93,7 +93,7 @@ const sectionsRu = [
   },
   {
     title: "11. Ограниченные юрисдикции",
-    text: `Сервис недоступен для лиц, находящихся в юрисдикциях, на которые распространяются комплексные санкции США, ЕС или ООН, либо включённых в список FATF юрисдикций с высоким уровнем риска. Вы несёте единоличную ответственность за проверку законности использования данного Сервиса в стране вашего проживания. Компания не гарантирует доступность Сервиса во всех регионах. Доступ из ограниченных юрисдикций запрещён и может повлечь немедленное закрытие аккаунта.`,
+    text: `Сервис недоступен для лиц, находящихся в юрисдикциях, на которые распространяются комплексные санкции США, ЕС или ООН, либо включённых в список FATF юрисдикций с высоким уровнем риска. Вы несёте единоличную ответственность за проверку законности использования данного Сервиса в стране вашего проживания. Компания не гарантирует доступность Сервиса во всех регионах. Доступ из ограниченных юрисдикций запрещён и может повлечь немедленное закрытие аккаунта. Сервис также недоступен резидентам штатов США Арканзас, Делавэр, Луизиана, Монтана и Южная Каролина.`,
   },
 ];
 
@@ -119,7 +119,7 @@ export default function RiskPage() {
           <h1 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "12px" }}>
             {ru ? "Раскрытие рисков" : "Risk Disclosure"}
           </h1>
-          <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: апрель 2026" : "Last updated: April 2026"}</p>
+          <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: сентябрь 2026" : "Last updated: September 2026"}</p>
         </div>
 
         <div style={{ background: "rgba(239,68,68,0.07)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: "14px", padding: "20px 24px", marginBottom: "36px", display: "flex", gap: "14px" }}>

@@ -81,8 +81,8 @@ export default function TermsPage() {
           </h1>
           <p style={{ color: "#606880", fontSize: "13px", lineHeight: 1.7 }}>
             {ru
-              ? "Последнее обновление: апрель 2026 · ProbCapital LLC · Делавэр, США · Рег. №10541343"
-              : "Last updated: April 2026 · ProbCapital LLC · Delaware, USA · File #10541343"}
+              ? "Последнее обновление: сентябрь 2026 · ProbCapital LLC · Делавэр, США · Рег. №10541343"
+              : "Last updated: September 2026 · ProbCapital LLC · Delaware, USA · File #10541343"}
           </p>
         </div>
 
@@ -112,11 +112,11 @@ export default function TermsPage() {
         {/* ── Legal Disclaimer Box ── */}
         {!ru ? (
           <DisclaimerBox>
-            <strong style={{ color: "#E0E8FF" }}>ProbCapital LLC is a technology company that provides Proprietary Trading Skill Evaluation and Educational Simulation software.</strong> The Company is <strong style={{ color: "#E0E8FF" }}>NOT a broker-dealer, NOT a registered investment adviser, NOT an investment firm, and does NOT manage, hold, or control client funds of any kind.</strong> All evaluation environments are software simulations. No real capital is deployed on any financial market on behalf of users. Nothing contained in these Terms of Service, on the Company's website, or within the platform constitutes investment advice, a solicitation, or an offer to buy or sell any financial instrument or security.
+            <strong style={{ color: "#E0E8FF" }}>ProbCapital LLC is a technology company that provides Proprietary Trading Skill Evaluation and Educational Simulation software.</strong> The Company is <strong style={{ color: "#E0E8FF" }}>NOT a broker-dealer, NOT a registered investment adviser, NOT an investment firm, and does NOT manage, hold, or control client funds of any kind.</strong> All evaluation environments are software simulations. No real capital is deployed on any financial market on behalf of users. Nothing contained in these Terms of Service, on the Company's website, or within the platform constitutes investment advice, a solicitation, or an offer to buy or sell any financial instrument or security. None of the Services are subject to laws regulating the financial sector in the United States. The Company is not regulated by the Commodity Futures Trading Commission, the National Futures Association, or a similar authority. As a result, you will not receive regulatory protection associated with the financial sector with respect to the Services.
           </DisclaimerBox>
         ) : (
           <DisclaimerBox>
-            <strong style={{ color: "#E0E8FF" }}>ProbCapital LLC — технологическая компания, предоставляющая программное обеспечение для оценки торговых навыков и образовательного симулятора торговли.</strong> Компания <strong style={{ color: "#E0E8FF" }}>НЕ является брокером-дилером, НЕ является зарегистрированным инвестиционным советником, НЕ является инвестиционной фирмой и НЕ управляет, не хранит и не контролирует клиентские средства любого рода.</strong> Все оценочные среды являются программными симуляциями. Реальный капитал на финансовых рынках от имени пользователей не размещается. Ничто в настоящих Условиях, на сайте Компании или в платформе не является инвестиционной консультацией, предложением или призывом к покупке или продаже каких-либо финансовых инструментов или ценных бумаг.
+            <strong style={{ color: "#E0E8FF" }}>ProbCapital LLC — технологическая компания, предоставляющая программное обеспечение для оценки торговых навыков и образовательного симулятора торговли.</strong> Компания <strong style={{ color: "#E0E8FF" }}>НЕ является брокером-дилером, НЕ является зарегистрированным инвестиционным советником, НЕ является инвестиционной фирмой и НЕ управляет, не хранит и не контролирует клиентские средства любого рода.</strong> Все оценочные среды являются программными симуляциями. Реальный капитал на финансовых рынках от имени пользователей не размещается. Ничто в настоящих Условиях, на сайте Компании или в платформе не является инвестиционной консультацией, предложением или призывом к покупке или продаже каких-либо финансовых инструментов или ценных бумаг. Ни одна из услуг Компании не подпадает под действие законодательства, регулирующего финансовый сектор США. Компания не регулируется Комиссией по торговле товарными фьючерсами (CFTC), Национальной фьючерсной ассоциацией (NFA) или аналогичным органом. Следовательно, в отношении услуг вам не предоставляется защита, связанная с регулированием финансового сектора.
           </DisclaimerBox>
         )}
 
@@ -141,7 +141,7 @@ export default function TermsPage() {
                   "Интерактивную панель управления процессом оценки;",
                   "Образовательные материалы и симуляционные сценарии.",
                 ]} />
-                <p style={{ marginTop: "12px" }}>Компания <strong style={{ color: "#E0E8FF" }}>не является</strong> брокером, дилером, инвестиционным советником, управляющей компанией или финансовым посредником. Все торговые среды являются исключительно программными симуляциями. Компания не управляет реальными активами пользователей и не размещает реальный капитал на финансовых рынках.</p>
+                <p style={{ marginTop: "12px" }}>Компания <strong style={{ color: "#E0E8FF" }}>не является</strong> брокером, дилером, инвестиционным советником, управляющей компанией или финансовым посредником. Все торговые среды являются исключительно программными симуляциями. Компания не управляет реальными активами пользователей и не размещает реальный капитал на финансовых рынках. Имитационная торговля в рамках Сервиса носит чисто фиктивный характер: сделки симулируются и не являются сделками с реальными финансовыми инструментами. Сумма, отображаемая в качестве капитала на вашем симулированном счёте в любой момент времени, носит симулированный характер, не является депозитом денежных средств и не имеет денежной стоимости. Вознаграждение или прибыль по результатам вашей имитационной торговли в процессе оценки не выплачиваются; выплаты по результатам производительности, где они предусмотрены, регулируются исключительно условиями выплат, описанными в разделе 6.</p>
               </>
             ) : (
               <>
@@ -152,7 +152,7 @@ export default function TermsPage() {
                   "An interactive evaluation process management dashboard;",
                   "Educational resources and simulation scenario modules.",
                 ]} />
-                <p style={{ marginTop: "12px" }}>The Company is <strong style={{ color: "#E0E8FF" }}>NOT</strong> a broker-dealer, investment adviser, fund manager, or financial intermediary of any kind. All trading environments are software simulations only. The Company does not manage real user assets, does not deploy real capital on financial markets, and does not offer any form of investment product or financial service regulated under applicable securities law.</p>
+                <p style={{ marginTop: "12px" }}>The Company is <strong style={{ color: "#E0E8FF" }}>NOT</strong> a broker-dealer, investment adviser, fund manager, or financial intermediary of any kind. All trading environments are software simulations only. The Company does not manage real user assets, does not deploy real capital on financial markets, and does not offer any form of investment product or financial service regulated under applicable securities law. Simulated trading within the Service is purely fictional: trades are simulated and are not trades in real financial instruments. The amount shown as capital in your simulated account at any point is simulated in nature, does not represent any deposit of funds, and has no monetary value. You will not be paid any remuneration or profits based on the results of your simulated trading in the Evaluation Process; performance-based payouts, where available, are governed exclusively by the payout terms described in Section 6.</p>
               </>
             )}
           </S>
@@ -167,6 +167,8 @@ export default function TermsPage() {
                   "Юрисдикция: использование Сервиса не должно нарушать законодательство вашей юрисдикции. Вы несёте самостоятельную ответственность за проверку законности использования Сервиса в своей стране проживания;",
                   "Санкции: вы не должны быть включены в санкционные списки ООН, OFAC (США), ЕС или эквивалентных органов;",
                   "Один аккаунт: каждому физическому лицу разрешён только один аккаунт.",
+                  "Налоговый идентификатор: если вы являетесь налоговым резидентом США (гражданин США, налоговый резидент США или организация, зарегистрированная в США), вы обязаны предоставить действующий налоговый идентификационный номер США (например, SSN, ITIN или EIN). Заполненная форма IRS W-9 (или применимая форма W-8 для лиц, не являющихся резидентами США) требуется до первой выплаты по результатам производительности; без неё выплата невозможна.",
+                  "Исключённые штаты США: Сервис недоступен резидентам штатов Арканзас, Делавэр, Луизиана, Монтана и Южная Каролина.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>Компания не оказывает услуги лицам, находящимся в юрисдикциях, на которые распространяются комплексные санкции США, ЕС или ООН, либо включённых в список FATF юрисдикций с высоким уровнем риска. Актуальный перечень таких юрисдикций может быть обновлён без предварительного уведомления. Компания оставляет за собой право проверять соответствие требованиям и прекращать действие аккаунтов при нарушении.</p>
               </>
@@ -179,6 +181,8 @@ export default function TermsPage() {
                   "Jurisdiction: your use of the Service must not violate the laws or regulations of your jurisdiction of residence. You are solely responsible for verifying that use of the Service is lawful in your country;",
                   "Sanctions: you must not be listed on any sanctions list administered by the UN, OFAC (USA), EU, or equivalent authorities;",
                   "Single account: each individual is permitted one account only.",
+                  "Tax identification: if you are a US person (US citizen, US tax resident, or US-incorporated entity), you must provide a valid US Tax Identification Number (e.g. Social Security Number, ITIN, or EIN). A completed IRS Form W-9 (or applicable W-8 form for non-US persons) is required before your first performance-based payout; without it, no payout can be issued;",
+                  "Excluded US states: the Service is not available to residents of the states of Arkansas, Delaware, Louisiana, Montana, and South Carolina.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>The Company does not provide the Service to individuals located in jurisdictions subject to comprehensive US, EU, or UN sanctions, or designated as high-risk by FATF. The list of restricted jurisdictions may be updated without prior notice. The Company reserves the right to verify eligibility at any time and to terminate accounts found to be in violation.</p>
               </>
@@ -201,7 +205,7 @@ export default function TermsPage() {
                   "Все оценочные взносы взимаются в полном объёме в момент покупки.",
                   "Взносы не подлежат возврату после начала использования Сервиса (первый ордер или первое применение учётных данных).",
                   "14-дневный период охлаждения применяется при условии, что Сервис не был использован — подробнее в Политике возврата средств.",
-                  "Все транзакции обрабатываются авторизованными сторонними платёжными процессорами (включая Stripe там, где это применимо). Компания не хранит данные платёжных карт.",
+                  "Все транзакции обрабатываются авторизованными сторонними платёжными процессорами. Компания не хранит данные платёжных карт.",
                   "Оценочный взнос зачисляется обратно клиенту при первой одобренной выплате по результатам оценки согласно условиям программы.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>Полные условия возврата изложены в нашей <a href="/refund" style={{ color: "#00D4AA", textDecoration: "none", fontWeight: 600 }}>Политике возврата средств</a>, которая является неотъемлемой частью настоящих Условий.</p>
@@ -213,7 +217,7 @@ export default function TermsPage() {
                   "All evaluation fees are charged in full at the time of purchase.",
                   "Fees are non-refundable once the Service has been accessed (first trade placed or credentials first used).",
                   "A 14-day cooling-off period applies where the Service has not been used — see the Refund Policy for full details.",
-                  "All transactions are processed by authorized third-party payment processors (including Stripe where enabled). The Company does not store card payment data.",
+                  "All transactions are processed by authorized third-party payment processors. The Company does not store card payment data.",
                   "The evaluation fee is credited back to the client upon their first approved performance-based payout under the evaluation program terms.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>Full refund terms are set out in our <a href="/refund" style={{ color: "#00D4AA", textDecoration: "none", fontWeight: 600 }}>Refund Policy</a>, which is incorporated by reference into these Terms and forms part of this agreement.</p>
@@ -225,11 +229,13 @@ export default function TermsPage() {
             {ru ? (
               <>
                 <p style={{ marginBottom: "12px" }}>Программа оценки навыков ProbCapital — это структурированный процесс анализа торговой дисциплины и управления рисками в симулированной среде. После успешного прохождения всех этапов оценки клиент может получить доступ к расширенной симулированной торговой среде с условиями выплат, основанных на показателях производительности.</p>
+                <p style={{ marginBottom: "12px" }}>Если программа предусматривает выплаты по результатам производительности, такие выплаты представляют собой вознаграждение за торговые данные и сигналы, сгенерированные вами в рамках финансируемой симулированной среды, и регулируются условиями выплат, указанными в вашем личном кабинете. Для получения выплаты вы обязаны: (а) успешно пройти все обязательные этапы оценки; (б) пройти верификацию личности (KYC); (в) предоставить заполненную форму IRS W-9 (для резидентов США) или применимую форму W-8 (для нерезидентов США), если это требуется для налоговой отчётности; и (г) указать счёт для выплаты, открытый на ваше имя. Вы несёте единоличную ответственность за уплату любых налогов, сборов и пошлин, применимых к получаемым вами выплатам; Компания не оказывает налоговых консультаций.</p>
                 <WarnBox>Выплаты по результатам производительности производятся ProbCapital LLC из собственных операционных средств. Они не являются инвестиционной прибылью, доходностью ценных бумаг или какими-либо гарантированными доходами. Прошлые результаты оценки не гарантируют будущих выплат.</WarnBox>
               </>
             ) : (
               <>
                 <p style={{ marginBottom: "12px" }}>The ProbCapital Skill Evaluation Program is a structured process for assessing trading discipline and risk management within a software simulation environment. Upon successful completion of all required evaluation phases, a client may gain access to an expanded simulation environment with performance-based payout terms.</p>
+                <p style={{ marginBottom: "12px" }}>Where the program offers performance-based payouts, such payouts constitute a reward for the trading data and signals generated by you within the funded simulation environment, and are governed by the payout terms communicated in your Client Area. To receive a payout you must: (a) successfully complete all required evaluation phases; (b) complete identity verification (KYC); (c) provide a completed IRS Form W-9 (US persons) or applicable W-8 form (non-US persons) where required for tax reporting; and (d) designate a payout account held in your own name. You are solely responsible for the payment of any taxes, levies, or fees applicable to payouts you receive; the Company does not provide tax advice.</p>
                 <WarnBox>Performance-based payouts are made by ProbCapital LLC from its own operating funds. They do not constitute investment returns, securities income, or any form of guaranteed earnings. Past evaluation performance does not guarantee future payouts.</WarnBox>
               </>
             )}
@@ -347,7 +353,15 @@ export default function TermsPage() {
             )}
           </S>
 
-          <S title={ru ? "15. Контакты" : "15. Contact Information"}>
+          <S title={ru ? "15. Использование данных имитационной торговли" : "15. Use of Simulated Trading Data"}>
+            {ru ? (
+              <p>Вы признаёте, что при предоставлении услуг Компания имеет доступ к информации о симулированных сделках, которые вы совершаете на торговой платформе. Вы соглашаетесь с тем, что Компания вправе передавать эту информацию в рамках своей группы компаний и использовать её — включая, помимо прочего, в связи со своей собственной торговлей финансовыми продуктами или для улучшения своих услуг — по своему усмотрению, а также обрабатывать и анализировать эту информацию, в том числе автоматизированными средствами. Информация о ваших симулированных сделках, передаваемая, используемая, обрабатываемая или анализируемая в соответствии с настоящим разделом, всегда обезличена. Вы соглашаетесь, что указанные действия могут выполняться автоматически без дополнительного согласия, что у вас нет права на какое-либо вознаграждение в связи с таким использованием, и что Компания не обязана информировать вас о конкретном использовании этой информации. Ваше согласие сохраняет силу после прекращения действия соглашения.</p>
+            ) : (
+              <p>You acknowledge that while providing the Services the Company has access to information about the simulated trades you perform on the trading platform. You consent to the Company sharing this information within its corporate group and to the Company using this information — including, without limitation, in connection with its own trading in financial products or to improve its services — at its sole discretion, and to processing and analysing this information, including by automated means. Information about your simulated trades that is shared, used, processed, or analysed under this section is always anonymised. You agree that these activities may be performed automatically without further consent, that you have no right or entitlement to any benefit in connection with such use, and that the Company is not obliged to inform you about its specific use of this information. Your consent survives termination of the agreement.</p>
+            )}
+          </S>
+
+          <S title={ru ? "16. Контакты" : "16. Contact Information"}>
             {ru ? (
               <>
                 <p style={{ marginBottom: "14px" }}>По вопросам, касающимся настоящих Условий, обращайтесь:</p>
@@ -384,8 +398,8 @@ export default function TermsPage() {
           fontSize: "13px", color: "#4A5268", lineHeight: 1.7,
         }}>
           {ru
-            ? "Настоящие Условия составлены на английском и русском языках. В случае каких-либо расхождений английская версия имеет приоритет. Дата вступления в силу: апрель 2026."
-            : "These Terms are available in English and Russian. In the event of any discrepancy, the English language version shall prevail. Effective date: April 2026."}
+            ? "Настоящие Условия составлены на английском и русском языках. В случае каких-либо расхождений английская версия имеет приоритет. Дата вступления в силу: апрель 2026. Последние изменения: сентябрь 2026."
+            : "These Terms are available in English and Russian. In the event of any discrepancy, the English language version shall prevail. Effective date: April 2026. Last amended: September 2026."}
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "12px" }}>
             <span>{ru ? "Связанные документы:" : "Related documents:"}</span>

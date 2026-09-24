@@ -10,7 +10,7 @@ const sectionsEn = [
   },
   {
     title: "2. Personal Data We Collect",
-    text: `We collect and process the following categories of personal data: (a) Identity data: full name, date of birth, nationality, government-issued identification document; (b) Contact data: email address, phone number, country of residence; (c) Financial data: payment method details, transaction history, payout information; (d) Technical data: IP address, browser type, operating system, device identifiers, cookies and similar tracking technologies; (e) Usage data: pages visited, features used, session duration, click-through patterns; (f) Trading data: all trading activity, account performance metrics, evaluation results.`,
+    text: `We collect and process the following categories of personal data: (a) Identity data: full name, date of birth, nationality, government-issued identification document, tax identification number (for example SSN, ITIN, or EIN where applicable); (b) Contact data: email address, phone number, country of residence; (c) Financial data: payment method details, transaction history, payout information, tax documentation (for example IRS Forms W-9/W-8); (d) Technical data: IP address, browser type, operating system, device identifiers, cookies and similar tracking technologies; (e) Usage data: pages visited, features used, session duration, click-through patterns; (f) Trading data: all trading activity, account performance metrics, evaluation results.`,
   },
   {
     title: "3. Legal Basis for Processing",
@@ -18,11 +18,11 @@ const sectionsEn = [
   },
   {
     title: "4. How We Use Your Data",
-    text: `Your personal data is used for the following purposes: (a) creating and maintaining your account; (b) processing evaluation fees and performance-based compensation; (c) verifying your identity in compliance with KYC/AML requirements; (d) providing customer support and responding to inquiries; (e) detecting, preventing, and investigating fraud and rule violations; (f) sending service-related communications, including policy updates and payout notifications; (g) analysing platform usage to improve functionality and user experience; (h) complying with applicable legal and regulatory obligations.`,
+    text: `Your personal data is used for the following purposes: (a) creating and maintaining your account; (b) processing evaluation fees and performance-based compensation; (c) verifying your identity in compliance with KYC/AML requirements; (d) providing customer support and responding to inquiries; (e) detecting, preventing, and investigating fraud and rule violations; (f) sending service-related communications, including policy updates and payout notifications; (g) analysing platform usage to improve functionality and user experience; (h) complying with applicable legal and regulatory obligations; (i) calculating and processing performance-based payouts and fulfilling tax reporting obligations.`,
   },
   {
     title: "5. Data Sharing and Third Parties",
-    text: `We do not sell, rent, or trade your personal data to third parties for marketing purposes. We may share your data with: (a) payment processors and financial institutions for transaction processing, including Stripe where enabled (see Section 13 for the full sub-processor list); (b) identity verification (KYC) service providers; (c) cloud hosting and infrastructure providers operating under strict data processing agreements; (d) regulatory, law enforcement, or governmental authorities when required by law or to protect our legal rights; (e) professional advisers including lawyers, auditors, and accountants under obligations of confidentiality. All third-party processors are contractually bound to handle your data in accordance with applicable data protection laws.`,
+    text: `We do not sell, rent, or trade your personal data to third parties for marketing purposes. We may share your data with: (a) payment processors and financial institutions for transaction processing (see Section 13 for the full sub-processor list); (b) identity verification (KYC) service providers; (c) cloud hosting and infrastructure providers operating under strict data processing agreements; (d) regulatory, law enforcement, or governmental authorities when required by law or to protect our legal rights; (e) professional advisers including lawyers, auditors, and accountants under obligations of confidentiality. All third-party processors are contractually bound to handle your data in accordance with applicable data protection laws.`,
   },
   {
     title: "6. International Data Transfers",
@@ -38,7 +38,7 @@ const sectionsEn = [
   },
   {
     title: "9. Cookies",
-    text: `We use cookies and similar technologies to operate and improve the Service. Strictly necessary cookies are required for the website to function and cannot be disabled. Analytical and performance cookies help us understand how users interact with the platform; these are only set with your consent where required by applicable law, and may be disabled at any time via your browser settings or our cookie preferences panel. We do not use third-party advertising or behavioural tracking cookies. For users in the EU/EEA/UK, we obtain consent before placing non-essential cookies.`,
+    text: `We use cookies and similar technologies to operate and improve the Service. Strictly necessary cookies are required for the website to function and cannot be disabled. Analytical and performance cookies help us understand how users interact with the platform; these are only set with your consent where required by applicable law, and may be disabled at any time via your browser settings. We do not use third-party advertising or behavioural tracking cookies. For users in the EU/EEA/UK, we obtain consent before placing non-essential cookies.`,
   },
   {
     title: "10. Security",
@@ -56,7 +56,7 @@ const sectionsEn = [
     title: "13. Third-Party Sub-Processors",
     text: `The following third-party service providers may process your personal data on our behalf under data processing agreements. This list may be updated as our service providers change.
 
-— Stripe, Inc. (USA): payment processing and card data tokenisation. Privacy Policy: stripe.com/privacy
+— Plisio: crypto payment processing for evaluation fees.
 — Other providers (for example identity verification, cloud hosting and platform analytics vendors) process data only under written data processing agreements and only for the purposes described in this policy.
 
 Where any sub-processor is located outside your jurisdiction, appropriate safeguards (including standard contractual clauses) are in place. For an up-to-date list, contact privacy@probcapital.com.`,
@@ -88,7 +88,7 @@ const sectionsRu = [
   },
   {
     title: "2. Персональные данные, которые мы собираем",
-    text: `Мы собираем и обрабатываем следующие категории персональных данных: (а) Идентификационные данные: полное имя, дата рождения, гражданство, документ, удостоверяющий личность; (б) Контактные данные: адрес электронной почты, номер телефона, страна проживания; (в) Финансовые данные: реквизиты платёжного средства, история транзакций, информация о выплатах; (г) Технические данные: IP-адрес, тип браузера, операционная система, идентификаторы устройства, файлы cookie; (д) Данные об использовании: посещённые страницы, используемые функции, продолжительность сессий; (е) Торговые данные: вся торговая активность, показатели счёта, результаты оценки.`,
+    text: `Мы собираем и обрабатываем следующие категории персональных данных: (а) Идентификационные данные: полное имя, дата рождения, гражданство, документ, удостоверяющий личность, налоговый идентификационный номер (например, SSN, ITIN или EIN, где применимо); (б) Контактные данные: адрес электронной почты, номер телефона, страна проживания; (в) Финансовые данные: реквизиты платёжного средства, история транзакций, информация о выплатах, налоговая документация (например, формы IRS W-9/W-8); (г) Технические данные: IP-адрес, тип браузера, операционная система, идентификаторы устройства, файлы cookie; (д) Данные об использовании: посещённые страницы, используемые функции, продолжительность сессий; (е) Торговые данные: вся торговая активность, показатели счёта, результаты оценки.`,
   },
   {
     title: "3. Правовые основания для обработки",
@@ -96,11 +96,11 @@ const sectionsRu = [
   },
   {
     title: "4. Цели использования данных",
-    text: `Ваши персональные данные используются в следующих целях: (а) создание и ведение вашего аккаунта; (б) обработка оценочных взносов и выплат вознаграждения за результаты оценки; (в) верификация личности в соответствии с требованиями KYC/ПОД; (г) оказание поддержки и ответы на запросы; (д) выявление, предотвращение и расследование мошенничества и нарушений правил; (е) направление сервисных уведомлений, включая обновления политик и уведомления о выплатах; (ж) анализ использования платформы в целях улучшения функциональности; (з) соблюдение применимых правовых и регуляторных обязательств.`,
+    text: `Ваши персональные данные используются в следующих целях: (а) создание и ведение вашего аккаунта; (б) обработка оценочных взносов и выплат вознаграждения за результаты оценки; (в) верификация личности в соответствии с требованиями KYC/ПОД; (г) оказание поддержки и ответы на запросы; (д) выявление, предотвращение и расследование мошенничества и нарушений правил; (е) направление сервисных уведомлений, включая обновления политик и уведомления о выплатах; (ж) анализ использования платформы в целях улучшения функциональности; (з) соблюдение применимых правовых и регуляторных обязательств; (и) расчёт и обработка выплат по результатам производительности и исполнение обязанностей налоговой отчётности.`,
   },
   {
     title: "5. Передача данных третьим лицам",
-    text: `Мы не продаём, не сдаём в аренду и не передаём ваши персональные данные третьим лицам в маркетинговых целях. Данные могут быть переданы: (а) платёжным системам и финансовым организациям для обработки транзакций (включая Stripe там, где это применимо — полный список субобработчиков в разделе 13); (б) провайдерам услуг верификации личности (KYC); (в) провайдерам облачной инфраструктуры, работающим в рамках соглашений об обработке данных; (г) регуляторным, правоохранительным или государственным органам по требованию закона; (д) профессиональным консультантам, включая юристов, аудиторов и бухгалтеров, обязанных соблюдать конфиденциальность.`,
+    text: `Мы не продаём, не сдаём в аренду и не передаём ваши персональные данные третьим лицам в маркетинговых целях. Данные могут быть переданы: (а) платёжным системам и финансовым организациям для обработки транзакций (полный список субобработчиков — в разделе 13); (б) провайдерам услуг верификации личности (KYC); (в) провайдерам облачной инфраструктуры, работающим в рамках соглашений об обработке данных; (г) регуляторным, правоохранительным или государственным органам по требованию закона; (д) профессиональным консультантам, включая юристов, аудиторов и бухгалтеров, обязанных соблюдать конфиденциальность.`,
   },
   {
     title: "6. Международная передача данных",
@@ -116,7 +116,7 @@ const sectionsRu = [
   },
   {
     title: "9. Файлы cookie",
-    text: `Мы используем файлы cookie и аналогичные технологии для работы и улучшения Сервиса. Строго необходимые cookie требуются для функционирования сайта и не могут быть отключены. Аналитические и технические cookie устанавливаются только с вашего согласия там, где это требуется применимым законодательством, и могут быть отключены в любой момент через настройки браузера или панель управления cookie. Сторонние рекламные или поведенческие cookie мы не используем. Для пользователей из ЕС/ЕЭЗ/Великобритании мы запрашиваем согласие перед установкой необязательных cookie.`,
+    text: `Мы используем файлы cookie и аналогичные технологии для работы и улучшения Сервиса. Строго необходимые cookie требуются для функционирования сайта и не могут быть отключены. Аналитические и технические cookie устанавливаются только с вашего согласия там, где это требуется применимым законодательством, и могут быть отключены в любой момент через настройки браузера. Сторонние рекламные или поведенческие cookie мы не используем. Для пользователей из ЕС/ЕЭЗ/Великобритании мы запрашиваем согласие перед установкой необязательных cookie.`,
   },
   {
     title: "10. Безопасность",
@@ -134,7 +134,7 @@ const sectionsRu = [
     title: "13. Субобработчики персональных данных",
     text: `Следующие сторонние поставщики услуг могут обрабатывать ваши персональные данные от нашего имени в рамках соглашений об обработке данных. Список может обновляться по мере изменения состава провайдеров.
 
-— Stripe, Inc. (США): обработка платежей и токенизация данных карт. Политика конфиденциальности: stripe.com/privacy
+— Plisio: обработка криптоплатежей за оценочные взносы.
 — [KYC-провайдер — уточняется]: верификация личности и аутентификация документов.
 — [Хостинг-провайдер — уточняется]: облачная инфраструктура и хранение данных.
 — [Аналитический провайдер — уточняется]: аналитика использования платформы (без межсайтового отслеживания).
@@ -183,7 +183,7 @@ export default function PrivacyPage() {
           <h1 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "12px" }}>
             {ru ? "Политика конфиденциальности" : "Privacy Policy"}
           </h1>
-          <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: апрель 2026" : "Last updated: April 2026"}</p>
+          <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: сентябрь 2026" : "Last updated: September 2026"}</p>
         </div>
 
         {/* Entity block */}

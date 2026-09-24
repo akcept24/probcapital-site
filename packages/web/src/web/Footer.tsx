@@ -51,9 +51,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="Probcapital" className="w-9 h-9 rounded-lg object-cover" />
+              <img src="/logo.png" alt="ProbCapital" className="w-9 h-9 rounded-lg object-cover" />
               <span className="font-bold text-[17px]">
-                <span className="gold-text">Prob</span><span className="text-[#F0F2FF]">capital</span>
+                <span className="gold-text">Prob</span><span className="text-[#F0F2FF]">Capital</span>
               </span>
             </div>
             <p className="text-[13px] text-[#555A72] leading-relaxed max-w-[220px]">{tr.footer_desc}</p>

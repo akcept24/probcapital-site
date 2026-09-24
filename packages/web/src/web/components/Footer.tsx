@@ -1,4 +1,14 @@
 import { useLang } from "../i18n/LangContext";
+import { Twitter, Instagram, Youtube, Send, MessageCircle } from "lucide-react";
+
+// TODO(QA): replace with real social URLs
+const SOCIAL_LINKS = [
+  { label: "X (Twitter)", href: "#", Icon: Twitter },
+  { label: "Instagram", href: "#", Icon: Instagram },
+  { label: "YouTube", href: "#", Icon: Youtube },
+  { label: "Telegram", href: "#", Icon: Send },
+  { label: "Discord", href: "#", Icon: MessageCircle },
+];
 
 export default function Footer() {
   const { tr, lang } = useLang();
@@ -49,7 +59,7 @@ export default function Footer() {
               <img src="/logo.png" alt="ProbCapital" style={{ width: "36px", height: "36px", borderRadius: "10px", objectFit: "cover" }} />
               <span style={{ fontWeight: 700, fontSize: "17px" }}>
                 <span className="gold-text">Prob</span>
-                <span style={{ color: "#F0F2FF" }}>capital</span>
+                <span style={{ color: "#F0F2FF" }}>Capital</span>
               </span>
             </div>
             <p style={{ fontSize: "13px", color: "#9098B8", lineHeight: 1.7, maxWidth: "200px", margin: "0 0 20px" }}>
@@ -57,6 +67,31 @@ export default function Footer() {
                 ? "Программное обеспечение для оценки трейдинговых навыков институционального уровня."
                 : "Institutional-grade skill assessment software for professional traders."}
             </p>
+
+            {/* Social links */}
+            <div style={{ display: "flex", gap: "10px" }}>
+              {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href === "#" ? undefined : "_blank"}
+                  rel={href === "#" ? undefined : "noopener noreferrer"}
+                  aria-label={label}
+                  title={label}
+                  style={{
+                    width: "34px", height: "34px", borderRadius: "10px",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    color: "#9098B8", transition: "all 0.15s",
+                  }}
+                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.color = "#00D4AA"; el.style.borderColor = "rgba(0,212,170,0.35)"; }}
+                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = "#9098B8"; el.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Nav columns */}

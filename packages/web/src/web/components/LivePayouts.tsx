@@ -29,6 +29,8 @@ const labels = {
     stat2: "$2.4M+", label2: "Total Paid Out",
     stat3: "140+", label3: "Countries Served",
     stat4: "24h", label4: "Avg Payout Time",
+    withdrawal: "Withdrawal",
+    verified: "VERIFIED",
   },
   ru: {
     badge: "Сообщество",
@@ -41,6 +43,8 @@ const labels = {
     stat2: "$2.4M+", label2: "Всего выплачено",
     stat3: "140+", label3: "Стран",
     stat4: "24h", label4: "Среднее время выплаты",
+    withdrawal: "Вывод средств",
+    verified: "ПОДТВЕРЖДЕНО",
   },
 };
 
@@ -124,7 +128,7 @@ export default function LivePayouts() {
 
                   {/* Footer */}
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-[#555A72] uppercase tracking-wider">Withdrawal</span>
+                    <span className="text-[#555A72] uppercase tracking-wider">{l.withdrawal}</span>
                     <span className="text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
                   </div>
                 </div>
@@ -132,7 +136,7 @@ export default function LivePayouts() {
                 {/* Verified badge */}
                 <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[9px] font-black shadow-lg"
                   style={{ background: "#00D4AA", color: "#0F1117" }}>
-                  VERIFIED
+                  {l.verified}
                 </div>
               </div>
             ))}
@@ -184,7 +188,7 @@ export default function LivePayouts() {
 
                   {/* Footer */}
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-[#555A72] uppercase tracking-wider">Withdrawal</span>
+                    <span className="text-[#555A72] uppercase tracking-wider">{l.withdrawal}</span>
                     <span className="text-[#8A8FA8] font-medium">{styleLabels[t.style][lang]}</span>
                   </div>
                 </div>
@@ -192,7 +196,7 @@ export default function LivePayouts() {
                 {/* Verified badge */}
                 <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[9px] font-black shadow-lg"
                   style={{ background: "#00D4AA", color: "#0F1117" }}>
-                  VERIFIED
+                  {l.verified}
                 </div>
               </div>
             ))}

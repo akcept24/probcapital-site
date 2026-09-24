@@ -191,6 +191,10 @@ export const t = {
     cta_t3: "Account activation within 24h",
     cta_t4: "Performance-based payouts",
 
+    // FAQ section CTA + microcopy
+    faq_cta: "Start Your Challenge →",
+    faq_micro: "Fee refunded on first payout · No subscriptions · Account activation within 24h",
+
     // Footer
     footer_desc: "Trading skill assessment platform for disciplined traders. Delaware LLC, File #10541343.",
     footer_col1: "Company",
@@ -215,7 +219,7 @@ export const t = {
     nav_howItWorks: "Как это работает",
     nav_challenges: "Челленджи",
     nav_features: "Возможности",
-    nav_faq: "FAQ",
+    nav_faq: "Частые вопросы",
     nav_login: "Войти",
     nav_getFunded: "Начать оценку",
 
@@ -399,6 +403,10 @@ export const t = {
     cta_t2: "Никаких подписок",
     cta_t3: "Активация счёта в течение 24ч",
     cta_t4: "Выплаты за результаты",
+
+    // FAQ section CTA + microcopy
+    faq_cta: "Начать челлендж →",
+    faq_micro: "Возврат взноса при первой выплате · Без подписок · Активация счёта в течение 24 часов",
 
     // Footer
     footer_desc: "Программное обеспечение для оценки торговых навыков и образовательные симуляции. Делавэр LLC, Рег. №10541343.",

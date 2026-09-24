@@ -1,4 +1,5 @@
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 const icons = [
   // Clipboard / Evaluation
@@ -143,7 +144,7 @@ export default function HowItWorks() {
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: 56 }}>
           <a
-            href="https://app.probcapital.com"
+            href={TRIAL_SIGNUP_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{

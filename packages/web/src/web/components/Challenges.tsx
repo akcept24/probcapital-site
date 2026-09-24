@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 const accountSizes = ["$10,000", "$25,000", "$50,000", "$100,000", "$200,000", "$400,000"];
 const prices: Record<string, { standard: number; aggressive: number }> = {
@@ -151,7 +152,7 @@ export default function Challenges() {
 
               <button
                 className="w-full py-3.5 rounded-xl text-[15px] font-bold transition-all duration-200"
-                onClick={() => window.open("https://app.probcapital.com", "_blank")}
+                onClick={() => window.open(TRIAL_SIGNUP_URL, "_blank")}
                 style={plan.highlight
                   ? { background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0F1117", boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }
                   : { background: "transparent", border: "1px solid rgba(0,212,170,0.3)", color: "#00D4AA" }}

@@ -1,4 +1,5 @@
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 const labels = {
   en: {
@@ -146,7 +147,7 @@ export default function Comparison() {
         {/* Footer note + CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
           <p className="text-[12px] text-[#555A72] max-w-[400px]">{l.note}</p>
-          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+          <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[14px] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}

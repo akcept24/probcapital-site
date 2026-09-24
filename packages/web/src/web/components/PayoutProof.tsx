@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 const certs = [
   "/cert-1.png",
@@ -17,6 +18,10 @@ const labels = {
     sub: "Every payout is verified and certified. No screenshots — real signed certificates.",
     total: "Total paid out to traders",
     cta: "Join Them →",
+    certAlt: "Payout Certificate",
+    prevSlide: "Previous slide",
+    nextSlide: "Next slide",
+    goToSlide: "Go to slide",
   },
   ru: {
     badge: "Подтверждённые выплаты",
@@ -25,6 +30,10 @@ const labels = {
     sub: "Каждая выплата верифицирована и сертифицирована. Не скриншоты — настоящие подписанные сертификаты.",
     total: "Всего выплачено трейдерам",
     cta: "Присоединиться →",
+    certAlt: "Сертификат выплаты",
+    prevSlide: "Предыдущий слайд",
+    nextSlide: "Следующий слайд",
+    goToSlide: "Перейти к слайду",
   },
 };
 
@@ -90,7 +99,7 @@ export default function PayoutProof() {
           }}>
             <img
               src={certs[active]}
-              alt={`Payout Certificate ${active + 1}`}
+              alt={`${l.certAlt} ${active + 1}`}
               style={{
                 display: "block",
                 width: "100%",
@@ -104,6 +113,7 @@ export default function PayoutProof() {
           {/* Prev button */}
           <button
             onClick={prev}
+            aria-label={l.prevSlide}
             style={{
               position: "absolute",
               left: "clamp(-8px, -3vw, -24px)",
@@ -127,6 +137,7 @@ export default function PayoutProof() {
           {/* Next button */}
           <button
             onClick={next}
+            aria-label={l.nextSlide}
             style={{
               position: "absolute",
               right: "clamp(-8px, -3vw, -24px)",
@@ -154,6 +165,8 @@ export default function PayoutProof() {
             <button
               key={i}
               onClick={() => go(i)}
+              aria-label={`${l.goToSlide} ${i + 1}`}
+              aria-current={i === active}
               style={{
                 width: i === active ? "28px" : "8px",
                 height: "8px",
@@ -175,7 +188,7 @@ export default function PayoutProof() {
             <div className="text-[40px] font-black gold-text" style={{ letterSpacing: "-0.03em" }}>$2.4M+</div>
             <div className="text-[15px] text-[#8A8FA8] max-w-[280px] leading-snug">{l.total}</div>
           </div>
-          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+          <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}

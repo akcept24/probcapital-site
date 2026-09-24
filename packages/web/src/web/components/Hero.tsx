@@ -1,11 +1,12 @@
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 export default function Hero() {
   const { lang } = useLang();
   const ru = lang === "ru";
 
   return (
-    <section style={{ background: "#060a10", paddingTop: "80px" }}>
+    <section style={{ background: "#060a10", paddingTop: "24px" }}>
       <div style={{
         position: "relative",
         width: "100%",
@@ -79,7 +80,7 @@ export default function Hero() {
               flexWrap: "wrap",
             }}>
               <a
-                href="https://app.probcapital.com"
+                href={TRIAL_SIGNUP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -139,7 +140,7 @@ export default function Hero() {
                 fontWeight: 600,
                 color: "#D0D8F0",
               }}>
-                ProbCapital LLC · Delaware, USA
+                ProbCapital LLC · {ru ? "Делавэр, США" : "Delaware, USA"}
               </div>
               <a
                 href="/about"

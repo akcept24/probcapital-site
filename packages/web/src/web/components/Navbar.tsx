@@ -11,13 +11,23 @@ const navItems = [
 ];
 
 function scrollToSection(id: string) {
-  setTimeout(() => {
+  const maxAttempts = 60;
+  let attempts = 0;
+
+  const tryScroll = () => {
     const el = document.getElementById(id);
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - 72;
       window.scrollTo({ top, behavior: "smooth" });
+      return;
     }
-  }, 50);
+    if (attempts < maxAttempts) {
+      attempts++;
+      setTimeout(tryScroll, 50);
+    }
+  };
+
+  setTimeout(tryScroll, 50);
 }
 
 export default function Navbar({ sticky = false }: { sticky?: boolean }) {

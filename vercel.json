@@ -4,7 +4,7 @@
   "installCommand": "bun install",
   "framework": null,
   "rewrites": [
-    { "source": "/api/quotes/:symbol", "destination": "https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1d&range=2d" },
+    { "source": "/api/quotes/:symbol", "destination": "https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1d&range=1d" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

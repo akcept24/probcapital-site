@@ -44,7 +44,7 @@ function formatPrice(price: number, label: string): string {
 
 interface YahooMeta {
   regularMarketPrice?: number;
-  chartPreviousClose?: number;
+  regularMarketPreviousClose?: number;
 }
 
 async function fetchQuote(def: SymbolDef): Promise<TickerPrice | null> {
@@ -54,7 +54,7 @@ async function fetchQuote(def: SymbolDef): Promise<TickerPrice | null> {
     const data = await res.json();
     const meta = data?.chart?.result?.[0]?.meta as YahooMeta | undefined;
     const price = meta?.regularMarketPrice;
-    const prev = meta?.chartPreviousClose;
+    const prev = meta?.regularMarketPreviousClose;
     if (typeof price !== "number" || typeof prev !== "number" || prev === 0) return null;
     const pct = ((price - prev) / prev) * 100;
     return {
@@ -85,8 +85,10 @@ export function useLivePrices() {
         const bySymbol = new Map(fresh.map((q) => [q.symbol, q]));
         // Merge: keep last real value for symbols that failed this round
         setPrices((prev) => {
-          if (!prev) return fresh;
-          return prev.map((p) => bySymbol.get(p.symbol) ?? p);
+          const prevBySymbol = new Map((prev ?? []).map((p) => [p.symbol, p]));
+          return SYMBOLS.map((def) => bySymbol.get(def.label) ?? prevBySymbol.get(def.label)).filter(
+            (q): q is TickerPrice => q !== undefined,
+          );
         });
         setStatus("live");
       } else if (hasDataRef.current) {

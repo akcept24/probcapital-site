@@ -115,7 +115,7 @@ Start with any account size and scale up based on performance:
 
 ### Profit Targets
 
-- **Phase 1:** 8% profit target (Standard) or 10% (Aggressive)
+- **Phase 1:** 10% profit target (Standard) or 8% (Aggressive)
 - **Phase 2:** 5% profit target (Standard only)
 
 ### Risk Limits

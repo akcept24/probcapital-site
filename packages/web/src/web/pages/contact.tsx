@@ -1,13 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { OPEN_CHAT_EVENT } from "../components/LiveChat";
 import { useLang } from "../i18n/LangContext";
 
 export default function ContactPage() {
   const { lang } = useLang();
   const ru = lang === "ru";
 
+  const openChat = () => window.dispatchEvent(new CustomEvent(OPEN_CHAT_EVENT));
+
   const channels = [
-    { icon: "💬", title: ru ? "Живой чат" : "Live Chat", desc: ru ? "Отвечаем в течение нескольких минут" : "We respond within minutes", action: ru ? "Открыть чат" : "Open Chat", href: "https://app.probcapital.com" },
+    { icon: "💬", title: ru ? "Живой чат" : "Live Chat", desc: ru ? "Отвечаем в течение нескольких минут" : "We respond within minutes", action: ru ? "Открыть чат" : "Open Chat", onClick: openChat },
     { icon: "📧", title: "Email", desc: "support@probcapital.com", action: ru ? "Написать" : "Send Email", href: "mailto:support@probcapital.com" },
     { icon: "📱", title: "Telegram", desc: "@probcapital_support", action: ru ? "Написать в Telegram" : "Message on Telegram", href: "https://t.me/probcapital_support" },
   ];
@@ -34,9 +37,15 @@ export default function ContactPage() {
               <div style={{ fontSize: "32px" }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: "18px" }}>{c.title}</div>
               <div style={{ color: "#8A8FA8", fontSize: "14px", flex: 1 }}>{c.desc}</div>
-              <a href={c.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "10px 20px", borderRadius: "50px", background: "rgba(0,212,170,0.12)", border: "1px solid rgba(0,212,170,0.3)", color: "#00D4AA", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>
-                {c.action}
-              </a>
+              {"onClick" in c && c.onClick ? (
+                <button onClick={c.onClick} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "10px 20px", borderRadius: "50px", background: "rgba(0,212,170,0.12)", border: "1px solid rgba(0,212,170,0.3)", color: "#00D4AA", fontWeight: 600, fontSize: "14px", cursor: "pointer" }}>
+                  {c.action}
+                </button>
+              ) : (
+                <a href={"href" in c ? c.href : "#"} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "10px 20px", borderRadius: "50px", background: "rgba(0,212,170,0.12)", border: "1px solid rgba(0,212,170,0.3)", color: "#00D4AA", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>
+                  {c.action}
+                </a>
+              )}
             </div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import { useLang } from "../i18n/LangContext";
+import { AFFILIATE_SIGNUP_URL } from "../lib/links";
 
 const labels = {
   en: {
@@ -79,12 +80,12 @@ export default function Affiliate() {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                <a href={AFFILIATE_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
                   className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
                   style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
                   {l.cta}
                 </a>
-                <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                <a href={AFFILIATE_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
                   className="text-[#F0F2FF] text-[15px] font-semibold px-7 py-3.5 rounded-xl text-center transition-all duration-200"
                   style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; }}

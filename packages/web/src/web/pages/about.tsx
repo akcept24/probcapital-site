@@ -2,6 +2,7 @@ import type { ReactNode, CSSProperties } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 /* ─────────────────────────────────────────
    PRIMITIVES
@@ -510,7 +511,7 @@ export default function AboutPage() {
               : "Join thousands of professionals who have completed our Skill Assessment program and gained access to performance-based opportunities."}
           </p>
 
-          <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" style={{
+          <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             padding: "18px 52px", borderRadius: "12px",
             background: "linear-gradient(135deg, #00D4AA 0%, #00B894 100%)",

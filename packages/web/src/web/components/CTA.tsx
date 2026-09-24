@@ -1,4 +1,5 @@
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 export default function CTA() {
   const { tr } = useLang();
@@ -33,7 +34,7 @@ export default function CTA() {
             <p className="text-[#8A8FA8] text-[17px] max-w-[500px] mx-auto mb-10 leading-relaxed">{tr.cta_sub}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[16px] font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-all duration-200"
+              <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[16px] font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-all duration-200"
                 style={{ boxShadow: "0 8px 32px rgba(0,212,170,0.3)" }}>
                 {tr.cta_btn1}
               </a>

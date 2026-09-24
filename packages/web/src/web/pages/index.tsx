@@ -23,7 +23,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-[#0F1117] text-[#F0F2FF] overflow-x-hidden">
       <AnnouncementBar />
-      <Navbar />
+      <Navbar sticky />
       <Hero />
       <SimDisclaimer />
       <Ticker />

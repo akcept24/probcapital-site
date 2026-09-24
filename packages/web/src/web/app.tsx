@@ -1,4 +1,4 @@
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import Index from "./pages/index";
 import HelpPage from "./pages/help";
 import ContactPage from "./pages/contact";
@@ -33,6 +33,9 @@ function App() {
           <Route path="/refund" component={RefundPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/pricing" component={PricingPage} />
+          <Route path="/blog/prop-trading-makes-money">
+            <Redirect to="/blog/prop-trading-vs-traditional-trading" />
+          </Route>
           <Route path="/blog/:slug" component={BlogArticlePage} />
           <Route path="/blog" component={BlogPage} />
         </Switch>

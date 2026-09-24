@@ -1,4 +1,5 @@
 import { useLang } from "../i18n/LangContext";
+import { TRIAL_SIGNUP_URL } from "../lib/links";
 
 const labels = {
   en: {
@@ -13,6 +14,13 @@ const labels = {
     cta: "Start Free Trial →",
     cta2: "See Challenge Plans",
     note: "Free Trial accounts are identical to paid challenges — same instruments, same dashboard, same experience.",
+    card_title: "Free Trial Account",
+    card_profit_target: "Profit Target",
+    card_max_drawdown: "Max Drawdown",
+    card_profit_split: "Profit Split",
+    card_time_limit: "Time Limit",
+    card_time_value: "14 Days",
+    card_start: "$0.00 — Start Free",
   },
   ru: {
     badge: "Без риска",
@@ -26,6 +34,13 @@ const labels = {
     cta: "Начать бесплатно →",
     cta2: "Смотреть тарифы",
     note: "Бесплатные аккаунты идентичны платным — те же инструменты, тот же дашборд, тот же опыт.",
+    card_title: "Бесплатный пробный счёт",
+    card_profit_target: "Целевая прибыль",
+    card_max_drawdown: "Макс. просадка",
+    card_profit_split: "Сплит прибыли",
+    card_time_limit: "Лимит времени",
+    card_time_value: "14 дней",
+    card_start: "$0.00 — Начать бесплатно",
   },
 };
 
@@ -70,11 +85,11 @@ export default function FreeTrial() {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
+                <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
                   style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
                   {l.cta}
                 </a>
-                <a href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer" className="text-[#F0F2FF] text-[15px] font-semibold px-7 py-3.5 rounded-xl text-center transition-all duration-200"
+                <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="text-[#F0F2FF] text-[15px] font-semibold px-7 py-3.5 rounded-xl text-center transition-all duration-200"
                   style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)"; }}>
@@ -90,7 +105,7 @@ export default function FreeTrial() {
                 {/* Mock account card */}
                 <div className="flex items-center justify-between mb-5">
                   <div>
-                    <div className="text-[11px] text-[#555A72] uppercase tracking-widest mb-1">Free Trial Account</div>
+                    <div className="text-[11px] text-[#555A72] uppercase tracking-widest mb-1">{l.card_title}</div>
                     <div className="text-[26px] font-black text-[#F0F2FF]">$10,000</div>
                   </div>
                   <div className="px-2.5 py-1 rounded-full text-[11px] font-bold"
@@ -101,10 +116,10 @@ export default function FreeTrial() {
 
                 <div className="space-y-3 mb-5">
                   {[
-                    { label: "Profit Target", value: "10%", color: "#00D4AA" },
-                    { label: "Max Drawdown", value: "10%", color: "#F0F2FF" },
-                    { label: "Profit Split", value: "80%", color: "#00D4AA" },
-                    { label: "Time Limit", value: "14 Days", color: "#F0F2FF" },
+                    { label: l.card_profit_target, value: "10%", color: "#00D4AA" },
+                    { label: l.card_max_drawdown, value: "10%", color: "#F0F2FF" },
+                    { label: l.card_profit_split, value: "80%", color: "#00D4AA" },
+                    { label: l.card_time_limit, value: l.card_time_value, color: "#F0F2FF" },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between items-center py-2.5 px-3 rounded-lg"
                       style={{ background: "rgba(255,255,255,0.03)", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
@@ -116,7 +131,7 @@ export default function FreeTrial() {
 
                 <div className="w-full py-3 rounded-xl text-center text-[14px] font-bold text-[#0F1117] gold-gradient"
                   style={{ boxShadow: "0 4px 16px rgba(0,212,170,0.2)" }}>
-                  $0.00 — Start Free
+                  {l.card_start}
                 </div>
 
                 <p className="text-[11px] text-[#555A72] text-center mt-3 leading-relaxed">{l.note}</p>

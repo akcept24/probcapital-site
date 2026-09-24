@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useLang } from "../i18n/LangContext";
+import { APP_LOGIN_URL, TRIAL_SIGNUP_URL } from "../lib/links";
 
 const navItems = [
   { key: "nav_howItWorks" as const, id: "how-it-works" },
@@ -19,7 +20,7 @@ function scrollToSection(id: string) {
   }, 50);
 }
 
-export default function Navbar() {
+export default function Navbar({ sticky = false }: { sticky?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang, tr } = useLang();
@@ -60,7 +61,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      // sticky variant (homepage): sits in normal flow below the announcement
+      // bar and sticks to the top on scroll. fixed variant (default): overlays
+      // content like before, for pages without the announcement bar.
+      className={sticky ? "sticky top-0 z-50 transition-all duration-500" : "fixed top-0 left-0 right-0 z-50 transition-all duration-500"}
       style={{
         background: scrolled ? "rgba(10,10,11,0.92)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
@@ -74,7 +78,7 @@ export default function Navbar() {
           <img src="/logo.png" alt="ProbCapital" className="w-9 h-9 rounded-lg object-cover" />
           <span className="font-bold text-[17px] tracking-tight whitespace-nowrap">
             <span className="gold-text">Prob</span>
-            <span className="text-[#F0F2FF]">capital</span>
+            <span className="text-[#F0F2FF]">Capital</span>
           </span>
         </a>
 
@@ -135,13 +139,13 @@ export default function Navbar() {
             ))}
           </div>
           <a
-            href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+            href={APP_LOGIN_URL} target="_blank" rel="noopener noreferrer"
             className="text-[13px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium px-3 py-2 whitespace-nowrap"
           >
             {tr.nav_login}
           </a>
           <a
-            href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+            href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[13px] font-bold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             {tr.nav_getFunded}
@@ -223,14 +227,14 @@ export default function Navbar() {
 
             <div className="flex gap-3 mt-1">
               <a
-                href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                href={APP_LOGIN_URL} target="_blank" rel="noopener noreferrer"
                 className="flex-1 text-center text-[14px] text-[#8A8FA8] border border-white/10 font-medium px-4 py-3 rounded-lg"
                 onClick={() => setMenuOpen(false)}
               >
                 {tr.nav_login}
               </a>
               <a
-                href="https://app.probcapital.com" target="_blank" rel="noopener noreferrer"
+                href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
                 className="flex-1 text-center gold-gradient text-[#0F1117] text-[14px] font-bold px-4 py-3 rounded-lg"
                 onClick={() => setMenuOpen(false)}
               >

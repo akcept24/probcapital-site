@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useParams, useLocation } from 'wouter';
 import { useLang } from '../i18n/LangContext';
+import { usePageHead } from '../hooks/usePageHead';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { TRIAL_SIGNUP_URL } from '../lib/links';
 import { ArrowLeft, Clock, Calendar, Tag, Share2, Twitter, Facebook, Linkedin, Link2 } from 'lucide-react';
@@ -25,6 +28,15 @@ function stripFrontmatter(raw: string): string {
 }
 
 /**
+ * Strip a leading H1 from the markdown body: the page already renders the
+ * article title as <h1>, so a duplicate "# Title" in the markdown would
+ * create two h1 elements and repeat the headline.
+ */
+function stripLeadingH1(body: string): string {
+  return body.replace(/^#[^#\n]*\r?\n/, '').trim();
+}
+
+/**
  * Returns the parsed markdown body for a slug.
  * Uses `${slug}-ru.md` when lang is ru and the file exists,
  * otherwise falls back to the English `${slug}.md`.
@@ -34,7 +46,7 @@ function getArticleMarkdown(slug: string, lang: 'en' | 'ru'): string | null {
   const enKey = `/content/blog/${slug}.md`;
   const raw = lang === 'ru' && blogModules[ruKey] ? blogModules[ruKey] : blogModules[enKey];
   if (!raw) return null;
-  return stripFrontmatter(raw);
+  return stripLeadingH1(stripFrontmatter(raw));
 }
 
 // Blog post type
@@ -150,6 +162,13 @@ export default function BlogArticlePage() {
   // Real article body from content/blog/*.md (ru variant when available)
   const markdown = slug ? getArticleMarkdown(slug, lang) : null;
 
+  usePageHead({
+    title: post ? `${post.title} | ProbCapital` : 'ProbCapital Blog',
+    description: post ? post.description : 'ProbCapital trading blog.',
+    path: slug ? `/blog/${slug}` : '/blog',
+    lang,
+  });
+
   if (!post) {
     return (
       <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
@@ -183,6 +202,7 @@ export default function BlogArticlePage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', paddingTop: '80px' }}>
+      <Navbar />
       {/* Header */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
         {/* Back button */}
@@ -214,7 +234,7 @@ export default function BlogArticlePage() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Calendar size={16} />
-            {new Date(post.date).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {new Date(post.date + 'T00:00:00').toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Clock size={16} />
@@ -276,6 +296,7 @@ export default function BlogArticlePage() {
           {tr.blog_startChallenge} →
         </a>
       </div>
+      <Footer />
     </div>
   );
 }

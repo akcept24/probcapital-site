@@ -18,7 +18,7 @@ export default function AnnouncementBar() {
         🎉 {lang === "ru" ? "Новинка" : "New"}: 1-{lang === "ru" ? "шаговый челлендж" : "Step Challenge"}{" "}
         —{" "}
         {lang === "ru" 
-          ? "пройди за одну фазу, сохраняй до 90% прибыли" 
+          ? "пройдите за одну фазу, сохраняйте до 90% прибыли" 
           : "pass in one phase, keep up to 90% of profits"}.{" "}
         <a 
           href={TRIAL_SIGNUP_URL} 

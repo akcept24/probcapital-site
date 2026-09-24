@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 const sectionsEn = [
   {
@@ -56,9 +57,7 @@ const sectionsEn = [
     text: `The following third-party service providers may process your personal data on our behalf under data processing agreements. This list may be updated as our service providers change.
 
 — Stripe, Inc. (USA): payment processing and card data tokenisation. Privacy Policy: stripe.com/privacy
-— [KYC Provider — TBD]: identity verification and document authentication.
-— [Hosting Provider — TBD]: cloud infrastructure and data storage.
-— [Analytics Provider — TBD]: platform usage analytics (privacy-preserving, no cross-site tracking).
+— Other providers (for example identity verification, cloud hosting and platform analytics vendors) process data only under written data processing agreements and only for the purposes described in this policy.
 
 Where any sub-processor is located outside your jurisdiction, appropriate safeguards (including standard contractual clauses) are in place. For an up-to-date list, contact privacy@probcapital.com.`,
   },
@@ -164,6 +163,12 @@ const sectionsRu = [
 
 export default function PrivacyPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Политика конфиденциальности — ProbCapital" : "Privacy Policy — ProbCapital",
+    description: lang === "ru" ? "Политика конфиденциальности ProbCapital: как мы обрабатываем ваши данные." : "ProbCapital Privacy Policy: how we handle your data.",
+    path: "/privacy",
+    lang,
+  });
   const ru = lang === "ru";
   const sections = ru ? sectionsRu : sectionsEn;
 

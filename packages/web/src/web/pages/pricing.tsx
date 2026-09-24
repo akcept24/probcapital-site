@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 /* ─── Types ─── */
 interface PlanRow {
@@ -55,6 +56,12 @@ const InfoNote = ({ children }: { children: React.ReactNode }) => (
 /* ─── Page ─── */
 export default function PricingPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Тарифы ProbCapital — стоимость челленджей Standard и Aggressive" : "ProbCapital Pricing — Standard & Aggressive Challenge Fees",
+    description: lang === "ru" ? "Цены челленджей ProbCapital: Standard и Aggressive, счета от $10,000 до $100,000. Разовый взнос, без подписок." : "ProbCapital challenge pricing: Standard and Aggressive plans, $10K–$100K accounts. One-time fee, no subscriptions.",
+    path: "/pricing",
+    lang,
+  });
   const ru = lang === "ru";
 
   return (
@@ -108,13 +115,13 @@ export default function PricingPage() {
           <div style={{ color: "#8A92A8", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", textAlign: "center" as const }}>
             Standard
             <div style={{ fontSize: "10px", color: "#4A5268", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>
-              {ru ? "5% цель / 4% просадка" : "5% target / 4% drawdown"}
+              {ru ? "10% цель / 10% просадка" : "10% target / 10% drawdown"}
             </div>
           </div>
           <div style={{ color: "#00D4AA", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", textAlign: "center" as const }}>
             Aggressive
             <div style={{ fontSize: "10px", color: "#4A8268", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>
-              {ru ? "10% цель / 8% просадка" : "10% target / 8% drawdown"}
+              {ru ? "8% цель / 12% просадка" : "8% target / 12% drawdown"}
             </div>
           </div>
         </div>
@@ -188,15 +195,15 @@ export default function PricingPage() {
             {(ru ? [
               ["📊", "Симулированный счёт", "Реальные рыночные данные в реальном времени"],
               ["💸", "Выплата до 90%", "При достижении целевых показателей"],
-              ["🔄", "Неограниченные попытки", "В рамках срока оценки"],
-              ["📞", "Поддержка", "Ответ в течение 2 рабочих дней"],
+              ["🔄", "1 бесплатный рестарт", "При первом провале оценки"],
+              ["📞", "Поддержка 24/7", "Живой чат: ответ в течение пары минут"],
               ["🛡️", "Без скрытых комиссий", "Один взнос, больше ничего"],
               ["📋", "Все инструменты", "Forex, индексы, металлы, крипто"],
             ] : [
               ["📊", "Simulated Account", "Live market data in real-time"],
               ["💸", "Up to 90% Payout", "Upon hitting profit targets"],
-              ["🔄", "Unlimited Retries", "Within evaluation period"],
-              ["📞", "Support", "Response within 2 business days"],
+              ["🔄", "1 Free Re-take", "On first failed attempt"],
+              ["📞", "24/7 Support", "Live chat: replies within minutes"],
               ["🛡️", "No Hidden Fees", "One fee, nothing else"],
               ["📋", "All Instruments", "Forex, indices, metals, crypto"],
             ]).map(([icon, title, desc]) => (

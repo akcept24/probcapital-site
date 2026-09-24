@@ -2,9 +2,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { OPEN_CHAT_EVENT } from "../components/LiveChat";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 export default function ContactPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Связаться с нами — ProbCapital" : "Contact Us — ProbCapital",
+    description: lang === "ru" ? "Свяжитесь с ProbCapital: живой чат, email support@probcapital.com, Telegram @probcapital_support." : "Contact ProbCapital: live chat, email support@probcapital.com, Telegram @probcapital_support.",
+    path: "/contact",
+    lang,
+  });
   const ru = lang === "ru";
 
   const openChat = () => window.dispatchEvent(new CustomEvent(OPEN_CHAT_EVENT));
@@ -27,7 +34,7 @@ export default function ContactPage() {
             {ru ? "Связаться с нами" : "Contact Us"}
           </h1>
           <p style={{ color: "#8A8FA8", fontSize: "17px" }}>
-            {ru ? "Поддержка: Пн–Пт 9:00–17:00 ET · Ответ в течение 2 рабочих дней" : "Support: Mon–Fri 9am–5pm ET · Response within 2 business days"}
+            {ru ? "Живой чат: 24/7 · Email: ответ в течение 2 рабочих дней" : "Live chat: 24/7 · Email: reply within 2 business days"}
           </p>
         </div>
 
@@ -54,24 +61,32 @@ export default function ContactPage() {
           <h2 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "24px" }}>
             {ru ? "Отправить сообщение" : "Send a Message"}
           </h2>
-          <form onSubmit={(e) => { e.preventDefault(); alert(ru ? "Сообщение отправлено!" : "Message sent!"); }} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            const data = new FormData(e.currentTarget);
+            const subject = encodeURIComponent(String(data.get("subject") || ""));
+            const body = encodeURIComponent(
+              `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
+            );
+            window.location.href = `mailto:support@probcapital.com?subject=${subject}&body=${body}`;
+          }} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               <div>
                 <label style={{ display: "block", fontSize: "13px", color: "#8A8FA8", marginBottom: "8px" }}>{ru ? "Имя" : "Name"}</label>
-                <input required style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder={ru ? "Ваше имя" : "Your name"} />
+                <input name="name" required style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder={ru ? "Ваше имя" : "Your name"} />
               </div>
               <div>
                 <label style={{ display: "block", fontSize: "13px", color: "#8A8FA8", marginBottom: "8px" }}>Email</label>
-                <input required type="email" style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder="you@example.com" />
+                <input name="email" required type="email" style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder="you@example.com" />
               </div>
             </div>
             <div>
               <label style={{ display: "block", fontSize: "13px", color: "#8A8FA8", marginBottom: "8px" }}>{ru ? "Тема" : "Subject"}</label>
-              <input required style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder={ru ? "Тема сообщения" : "Subject"} />
+              <input name="subject" required style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", boxSizing: "border-box" }} placeholder={ru ? "Тема сообщения" : "Subject"} />
             </div>
             <div>
               <label style={{ display: "block", fontSize: "13px", color: "#8A8FA8", marginBottom: "8px" }}>{ru ? "Сообщение" : "Message"}</label>
-              <textarea required rows={5} style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", resize: "vertical", boxSizing: "border-box" }} placeholder={ru ? "Ваше сообщение..." : "Your message..."} />
+              <textarea name="message" required rows={5} style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", resize: "vertical", boxSizing: "border-box" }} placeholder={ru ? "Ваше сообщение..." : "Your message..."} />
             </div>
             <button type="submit" style={{ padding: "14px 32px", borderRadius: "50px", background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0a0e17", fontWeight: 700, fontSize: "15px", border: "none", cursor: "pointer", alignSelf: "flex-start" }}>
               {ru ? "Отправить" : "Send Message"}
@@ -108,8 +123,8 @@ export default function ContactPage() {
             </div>
             <div style={{ color: "#5A6278", fontSize: "12px", marginTop: "6px" }}>
               {ru
-                ? "Время ответа: 2 рабочих дня · Пн–Пт 9:00–17:00 ET"
-                : "Response SLA: 2 business days · Mon–Fri 9am–5pm ET"}
+                ? "Живой чат: 24/7 · Email: ответ в течение 2 рабочих дней"
+                : "Live chat: 24/7 · Email: reply within 2 business days"}
             </div>
           </div>
         </div>

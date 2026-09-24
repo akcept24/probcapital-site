@@ -1,9 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 export default function RulesPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Правила торговли ProbCapital" : "ProbCapital Trading Rules",
+    description: lang === "ru" ? "Правила челленджей ProbCapital: цели, просадки, разрешённые инструменты и ограничения." : "ProbCapital challenge rules: targets, drawdowns, allowed instruments and restrictions.",
+    path: "/rules",
+    lang,
+  });
   const ru = lang === "ru";
 
   const rules = [
@@ -11,9 +18,9 @@ export default function RulesPage() {
       title: ru ? "Цели прибыли" : "Profit Targets",
       icon: "🎯",
       items: ru ? [
-        "Стандарт Фаза 1: достичь 10% прибыли",
-        "Стандарт Фаза 2: достичь 5% прибыли",
-        "Агрессив Фаза 1: достичь 8% прибыли",
+        "Стандарт · Фаза 1: достичь 10% прибыли",
+        "Стандарт · Фаза 2: достичь 5% прибыли",
+        "Агрессив · Фаза 1: достичь 8% прибыли",
         "Агрессив: нет Фазы 2",
       ] : [
         "Standard Phase 1: reach 10% profit target",
@@ -71,7 +78,7 @@ export default function RulesPage() {
       title: ru ? "Запрещённые действия" : "Prohibited Actions",
       icon: "🚫",
       items: ru ? [
-        "Торговля на новостях с задержкой (latency arbitrage)",
+        "Латентный арбитраж или тиковый скальпинг (latency arbitrage, tick scalping)",
         "Копирование сделок между счетами ProbCapital",
         "Использование советников с запрещёнными стратегиями",
         "Удержание позиций через выходные на агрессивном плане не рекомендуется",

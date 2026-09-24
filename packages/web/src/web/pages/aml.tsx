@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 /* ─── Primitives ─── */
 const S = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -52,6 +53,12 @@ const SanctionBadge = ({ name }: { name: string }) => (
 /* ─── Page ─── */
 export default function AmlPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "AML-политика — ProbCapital" : "AML Policy — ProbCapital",
+    description: lang === "ru" ? "Политика противодействия отмыванию денег ProbCapital." : "ProbCapital Anti-Money Laundering policy.",
+    path: "/aml",
+    lang,
+  });
   const ru = lang === "ru";
 
   return (

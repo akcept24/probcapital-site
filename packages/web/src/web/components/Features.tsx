@@ -137,7 +137,7 @@ export default function Features() {
             textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "20px",
           }}>
             <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#00D4AA", boxShadow: "0 0 6px #00D4AA" }} />
-            {ru ? "Инфраструктура" : "Infrastructure & Opportunities"}
+            {ru ? "Инфраструктура и возможности" : "Infrastructure & Opportunities"}
           </span>
           <h2 style={{
             fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 900,
@@ -212,7 +212,7 @@ export default function Features() {
           {(ru ? [
             { v: "< 1ms", l: "Задержка VPS" },
             { v: "AES-256", l: "Шифрование данных" },
-            { v: "99.9%", l: "Аптайм платформы" },
+            { v: "99.9%", l: "Целевой аптайм платформы" },
             { v: "140+", l: "Обслуживаемых стран" },
           ] : [
             { v: "< 1ms", l: "VPS Latency" },

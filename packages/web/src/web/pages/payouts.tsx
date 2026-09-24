@@ -1,9 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 export default function PayoutsPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Выплаты ProbCapital — как получить выплату" : "ProbCapital Payouts — How Payouts Work",
+    description: lang === "ru" ? "Как работают выплаты ProbCapital: сплиты до 90%, минимум $50, обработка в течение 24 часов." : "How ProbCapital payouts work: up to 90% splits, $50 minimum, processed within 24 hours.",
+    path: "/payouts",
+    lang,
+  });
   const ru = lang === "ru";
 
   const steps = ru ? [

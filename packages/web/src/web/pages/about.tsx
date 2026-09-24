@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
 import { TRIAL_SIGNUP_URL } from "../lib/links";
+import { usePageHead } from "../hooks/usePageHead";
 
 /* ─────────────────────────────────────────
    PRIMITIVES
@@ -100,14 +101,20 @@ const Glow = ({ top, left, right, bottom, size = 500, opacity = 0.07 }: {
 ───────────────────────────────────────── */
 export default function AboutPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "О ProbCapital — платформа оценки торговых навыков" : "About ProbCapital — Trading Skill Evaluation Platform",
+    description: lang === "ru" ? "ProbCapital: технологии объективной оценки торговых навыков. Симулированный капитал до $400,000." : "ProbCapital: technology for objective trading skill assessment. Simulated capital up to $400,000.",
+    path: "/about",
+    lang,
+  });
   const ru = lang === "ru";
 
   /* ── DATA ── */
   const stats = [
     { v: "Delaware, USA", l: ru ? "Юрисдикция" : "Jurisdiction" },
     { v: "#10541343", l: ru ? "Номер регистрации" : "File Number" },
-    { v: "140+", l: ru ? "Стран" : "Countries Served" },
-    { v: "99.9%", l: ru ? "Аптайм" : "Uptime SLA" },
+    { v: "MT4 & MT5", l: ru ? "Платформы" : "Platforms" },
+    { v: "99.9%", l: ru ? "Целевой аптайм" : "Uptime Target" },
   ];
 
   const philosophy = [
@@ -179,9 +186,9 @@ export default function AboutPage() {
       icon: "🌐",
       title: ru ? "Глобальная платформа SaaS" : "Global SaaS Platform",
       desc: ru
-        ? "Платформа обслуживает специалистов из 140+ стран с поддержкой MT4/MT5 и полнофункциональным веб-интерфейсом, оптимизированным для любых устройств."
-        : "Platform serves professionals across 140+ countries with MT4/MT5 bridge support and a fully responsive web interface — enterprise SaaS architecture built for global scale.",
-      tag: "140+ Countries",
+        ? "Платформа с поддержкой MT4/MT5 и полнофункциональным веб-интерфейсом, оптимизированным для любых устройств."
+        : "A platform with MT4/MT5 bridge support and a fully responsive web interface, optimized for any device.",
+      tag: "Global SaaS",
     },
   ];
 
@@ -197,7 +204,7 @@ export default function AboutPage() {
     { strong: "Legal Entity:", text: "ProbCapital LLC is a Limited Liability Company registered in the State of Delaware, United States. File Number: 10541343." },
     { strong: "Registered Address:", text: "8 The Green, Suite B, Dover, DE 19901, United States." },
     { strong: "Business Activity:", text: "We develop and provide Skill Assessment Software and Performance Analysis tools. We are not a broker, dealer, investment advisor, or financial intermediary of any kind." },
-    { strong: "No Client Deposits:", text: "We do not accept, hold, or manage client funds or assets of any kind. Our platform is a SaaS product accessed via subscription." },
+    { strong: "No Client Deposits:", text: "We do not accept, hold, or manage client funds or assets of any kind. Our platform is a SaaS product." },
     { strong: "Simulated Environment:", text: "All trading activity within the Evaluation Process takes place exclusively within a software simulation environment. No real client capital is deployed." },
     { strong: "No Securities Regulation:", text: "Our product is a technology SaaS platform. We are not subject to SEC, CFTC, FCA, or equivalent securities or financial services regulation." },
     { strong: "Compensation:", text: "Performance-based payouts are made by ProbCapital LLC from its own operating funds, based solely on Evaluation Process metrics within the software environment." },
@@ -228,21 +235,21 @@ export default function AboutPage() {
             fontSize: "clamp(30px, 6.5vw, 86px)", fontWeight: 900,
             lineHeight: 1.03, letterSpacing: "-0.03em",
             marginBottom: "30px", maxWidth: "860px",
-            overflowWrap: "break-word", wordBreak: "break-word",
+            overflowWrap: "break-word",
           }}>
             {ru ? (
-              <>Демократизация<br />
+              <>Технологии объективной<br />
                 <span style={{
                   background: "linear-gradient(90deg, #00D4AA 0%, #00A8FF 100%)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                }}>институциональной<br />ликвидности.</span>
+                }}>оценки торговых навыков.</span>
               </>
             ) : (
-              <>Democratizing<br />
+              <>Technology for objective<br />
                 <span style={{
                   background: "linear-gradient(90deg, #00D4AA 0%, #00A8FF 100%)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                }}>Institutional-Grade<br />Liquidity.</span>
+                }}>trading skill assessment.</span>
               </>
             )}
           </h1>

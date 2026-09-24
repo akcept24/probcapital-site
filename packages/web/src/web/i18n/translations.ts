@@ -14,10 +14,6 @@ export const t = {
     hero_badge: "🏆 Proven Trading Evaluation Platform",
     hero_h1_1: "Prove Your Trading Discipline. Access Simulated Capital.",
     hero_h1_2: "Keep Up to 90% of Approved Payouts.",
-    hero_sub: "Join our simulated evaluation program. Get funded up to",
-    hero_sub_amount: "$400,000",
-    hero_sub_mid: "through our evaluation program and receive up to",
-    hero_sub_split: "performance-based compensation",
     hero_cta1: "Get Funded Now →",
     hero_cta2: "See How It Works",
     hero_bullets_1: "✓ Evaluation fee rebate on first approved payout",
@@ -36,6 +32,7 @@ export const t = {
 
     // Stats
     stats_payouts: "Total Payouts",
+    stats_affiliate: "Max Affiliate Commission",
     stats_traders: "Funded Traders",
     stats_split: "Max Profit Split",
     stats_funding: "Max Funding",
@@ -128,7 +125,7 @@ export const t = {
     test_sub: "Real payouts. Real traders. Join funded professionals building their performance worldwide.",
     test_tp: "Rated",
     test_tp2: "on Trustpilot",
-    test_reviews: "verified reviews",
+    test_reviews: "reviews",
     test_total: "total payouts",
     test_traders: "funded traders",
     test_quotes: [
@@ -180,7 +177,7 @@ export const t = {
     ],
 
     // CTA
-    cta_badge: "Limited spots available",
+    cta_badge: "Join thousands of funded traders",
     cta_h2_1: "Ready to Get",
     cta_h2_2: "Funded?",
     cta_sub: "Join traders building their performance with ProbCapital. Your journey to professional trading starts today.",
@@ -212,6 +209,25 @@ export const t = {
     footer_terms: "Terms",
     footer_privacy: "Privacy",
     footer_risk: "Risk Disclosure",
+
+    // Blog
+    blog_title: "Trading Blog",
+    blog_subtitle: "Expert guides, strategies and insights from funded traders",
+    blog_allPosts: "All Articles",
+    blog_categoryAll: "All Articles",
+    blog_categoryEducation: "Trading Education",
+    blog_categoryPsychology: "Psychology",
+    blog_readMore: "Read Article",
+    blog_backToBlog: "Back to Blog",
+    blog_shareArticle: "Share this article",
+    blog_copyLink: "Copy link",
+    blog_linkCopied: "Link copied!",
+    blog_by: "By",
+    blog_comingSoon: "Full article coming soon!",
+    blog_meanwhile: "Meanwhile, check out other articles or start your challenge.",
+    blog_startChallenge: "Start Challenge",
+    blog_ctaTitle: "Ready to start your trading journey?",
+    blog_ctaDesc: "Get funded up to $400,000 and keep up to 90% of profits. Start with the 1-step Aggressive challenge.",
   },
 
   ru: {
@@ -227,10 +243,6 @@ export const t = {
     hero_badge: "🏆 Проверенная платформа для оценки трейдеров",
     hero_h1_1: "Докажите торговую дисциплину. Получите доступ к симулированному капиталу.",
     hero_h1_2: "Забирайте до 90% одобренных выплат.",
-    hero_sub: "Пройдите нашу программу оценки. Получите финансирование до",
-    hero_sub_amount: "$400,000",
-    hero_sub_mid: "симулированного торгового капитала с выплатой до",
-    hero_sub_split: "вознаграждение за результаты",
     hero_cta1: "Получить финансирование →",
     hero_cta2: "Как это работает",
     hero_bullets_1: "✓ Рибейт оценочного взноса при первой одобренной выплате",
@@ -249,8 +261,9 @@ export const t = {
 
     // Stats
     stats_payouts: "Всего выплачено",
+    stats_affiliate: "Макс. партнёрская комиссия",
     stats_traders: "Трейдеров с финансированием",
-    stats_split: "Макс. вознаграждение за результаты",
+    stats_split: "Максимальный сплит прибыли",
     stats_funding: "Макс. финансирование",
     stats_payout_time: "Среднее время выплаты",
     stats_rating: "Рейтинг Trustpilot",
@@ -341,7 +354,7 @@ export const t = {
     test_sub: "Реальные выплаты. Реальные трейдеры. Присоединяйтесь к финансируемым профессионалам, развивающим свои результаты по всему миру.",
     test_tp: "Рейтинг",
     test_tp2: "на Trustpilot",
-    test_reviews: "верифицированных отзывов",
+    test_reviews: "отзывов",
     test_total: "всего выплачено",
     test_traders: "финансируемых трейдеров",
     test_quotes: [
@@ -393,7 +406,7 @@ export const t = {
     ],
 
     // CTA
-    cta_badge: "Ограниченное количество мест",
+    cta_badge: "Присоединяйтесь к тысячам трейдеров",
     cta_h2_1: "Готовы получить",
     cta_h2_2: "финансирование?",
     cta_sub: "Присоединяйтесь к трейдерам, развивающим свои результаты с ProbCapital. Ваш путь к профессиональному трейдингу начинается сегодня.",
@@ -443,7 +456,7 @@ export const t = {
     blog_meanwhile: "А пока ознакомьтесь с другими статьями или начните свой челлендж.",
     blog_startChallenge: "Начать челлендж",
     blog_ctaTitle: "Готовы начать свой путь в трейдинге?",
-    blog_ctaDesc: "Получите финансирование до $400,000 и зарабатывайте до 90% прибыли. Пройдите челлендж всего за 1 шаг.",
+    blog_ctaDesc: "Получите финансирование до $400,000 и зарабатывайте до 90% прибыли. Начните с 1-шагового Агрессивного челленджа.",
   },
 } as const;
 

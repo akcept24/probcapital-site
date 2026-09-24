@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 /* ─── Primitives ─── */
 const S = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -51,6 +52,12 @@ const WarnBox = ({ children }: { children: React.ReactNode }) => (
 /* ─── Page ─── */
 export default function TermsPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Условия использования — ProbCapital" : "Terms of Service — ProbCapital",
+    description: lang === "ru" ? "Условия использования платформы оценки торговых навыков ProbCapital." : "Terms of Service for the ProbCapital trading skill evaluation platform.",
+    path: "/terms",
+    lang,
+  });
   const ru = lang === "ru";
 
   return (

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useLang } from '../i18n/LangContext';
+import { usePageHead } from '../hooks/usePageHead';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 // Blog post metadata type
 interface BlogPost {
@@ -113,6 +116,17 @@ export default function BlogPage() {
   const { lang, tr } = useLang();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
+  usePageHead({
+    title: lang === 'ru'
+      ? 'Блог ProbCapital — гайды и стратегии проп-трейдинга'
+      : 'ProbCapital Blog — Prop Trading Guides & Strategies',
+    description: lang === 'ru'
+      ? 'Экспертные гайды, стратегии и инсайты от финансируемых трейдеров ProbCapital.'
+      : 'Expert trading guides, strategies and insights from ProbCapital funded traders.',
+    path: '/blog',
+    lang,
+  });
+
   // Select posts based on current language
   const allPosts = lang === 'ru' ? blogPostsRu : blogPostsEn;
 
@@ -135,6 +149,7 @@ export default function BlogPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', paddingTop: '80px' }}>
+      <Navbar />
       {/* Hero Section */}
       <div
         style={{
@@ -236,18 +251,23 @@ export default function BlogPage() {
                 window.location.href = `/blog/${post.slug}`;
               }}
             >
-              {/* Image placeholder */}
+              {/* Cover image */}
               <div
                 style={{
                   height: '200px',
                   background: 'linear-gradient(135deg, #1a1a2e 0%, #0F1117 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '64px',
+                  overflow: 'hidden',
                 }}
               >
-                📊
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  }}
+                />
               </div>
 
               {/* Content */}
@@ -305,7 +325,7 @@ export default function BlogPage() {
                   }}
                 >
                   <span>{post.readTime}</span>
-                  <span>{new Date(post.date).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US')}</span>
+                  <span>{new Date(post.date + 'T00:00:00').toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US')}</span>
                 </div>
 
                 {/* Read More Button */}
@@ -384,6 +404,7 @@ export default function BlogPage() {
           }),
         }}
       />
+      <Footer />
     </div>
   );
 }

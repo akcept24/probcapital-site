@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 const sectionsEn = [
   {
@@ -98,6 +99,12 @@ const sectionsRu = [
 
 export default function RiskPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Раскрытие рисков — ProbCapital" : "Risk Disclosure — ProbCapital",
+    description: lang === "ru" ? "Раскрытие рисков ProbCapital. Торговля сопряжена с риском." : "ProbCapital Risk Disclosure. Trading involves risk.",
+    path: "/risk",
+    lang,
+  });
   const ru = lang === "ru";
   const sections = ru ? sectionsRu : sectionsEn;
 

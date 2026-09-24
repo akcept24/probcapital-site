@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 /* ─── Primitives ─── */
 const SectionBlock = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -53,6 +54,12 @@ const Ul = ({ items }: { items: string[] }) => (
 /* ─── Page ─── */
 export default function RefundPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Политика возврата — ProbCapital" : "Refund Policy — ProbCapital",
+    description: lang === "ru" ? "Политика возврата оценочных взносов ProbCapital." : "ProbCapital evaluation fee refund policy.",
+    path: "/refund",
+    lang,
+  });
   const ru = lang === "ru";
 
   return (

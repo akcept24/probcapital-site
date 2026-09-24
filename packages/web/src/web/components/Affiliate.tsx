@@ -1,5 +1,6 @@
 import { useLang } from "../i18n/LangContext";
 import { AFFILIATE_SIGNUP_URL } from "../lib/links";
+import { OPEN_CHAT_EVENT } from "./LiveChat";
 
 const labels = {
   en: {
@@ -16,12 +17,12 @@ const labels = {
     point3: "Monthly payouts via bank wire or card",
     point4: "Dedicated affiliate manager",
     cta: "Join Affiliate Program →",
-    cta2: "Learn More",
+    cta2: "Ask a Question",
   },
   ru: {
-    badge: "Зарабатывай больше",
-    h2_1: "Приводи трейдеров.",
-    h2_2: "Получай комиссию.",
+    badge: "Зарабатывайте больше",
+    h2_1: "Приводите трейдеров.",
+    h2_2: "Получайте комиссию.",
     sub: "Присоединяйтесь к нашей партнёрской программе и получайте до 15% комиссии с каждого проданного по вашей ссылке челленджа. Без лимита. Пожизненное отслеживание.",
     stat1: "15%", label1: "Комиссия с продажи",
     stat2: "30д", label2: "Срок куки",
@@ -32,7 +33,7 @@ const labels = {
     point3: "Ежемесячные выплаты — банк или карта",
     point4: "Персональный менеджер",
     cta: "Стать партнёром →",
-    cta2: "Узнать больше",
+    cta2: "Задать вопрос",
   },
 };
 
@@ -85,13 +86,13 @@ export default function Affiliate() {
                   style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
                   {l.cta}
                 </a>
-                <a href={AFFILIATE_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-                  className="text-[#F0F2FF] text-[15px] font-semibold px-7 py-3.5 rounded-xl text-center transition-all duration-200"
+                <button onClick={() => window.dispatchEvent(new CustomEvent(OPEN_CHAT_EVENT))}
+                  className="text-[#F0F2FF] text-[15px] font-semibold px-7 py-3.5 rounded-xl text-center transition-all duration-200 cursor-pointer"
                   style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,170,0.3)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)"; }}>
                   {l.cta2}
-                </a>
+                </button>
               </div>
             </div>
 

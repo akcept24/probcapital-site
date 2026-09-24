@@ -35,7 +35,7 @@ const labels = {
     us: "ProbCapital",
     them: "Другие фирмы",
     rows: [
-      { feature: "Финансирование в течение 24 часов после прохождения", us: true, them: false },
+      { feature: "Активация счёта в течение 24 часов после прохождения", us: true, them: false },
       { feature: "Рибейт взноса при первой одобренной выплате", us: true, them: false },
       { feature: "Выплаты по результатам оценки", us: true, them: false },
       { feature: "Без минимума дней (Агрессивный)", us: true, them: false },

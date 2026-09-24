@@ -42,7 +42,7 @@ export default function HowItWorks() {
           num: "01",
           tag: "Этап 1",
           title: "Оценка навыков",
-          desc: "Торгуйте в симулированной среде, отражающей реальные рыночные условия. Докажите свою стратегию при соблюдении дисциплины риска: дневной просадка −5%, максимальная −10%, цель прибыли +10%.",
+          desc: "Торгуйте в симулированной среде, отражающей реальные рыночные условия. Докажите свою стратегию при соблюдении дисциплины риска: дневная просадка −5%, максимальная −10%, цель прибыли +10%.",
           highlight: "Без ограничений по времени",
         },
         {
@@ -56,7 +56,7 @@ export default function HowItWorks() {
           num: "03",
           tag: "Этап 3",
           title: "Масштабирование капитала",
-          desc: "Прошли верификацию — получайте расширенный счёт и автоматическое увеличение капитала на 25% за каждые 10% прибыльного цикла. Рост без лимитов до следующего уровня.",
+          desc: "Прошли верификацию — получайте расширенный счёт и автоматическое увеличение капитала на 25% за каждые 10% прибыльного цикла, вплоть до $2 000 000.",
           highlight: "+25% за каждый 10%-ный цикл",
         },
         {
@@ -86,7 +86,7 @@ export default function HowItWorks() {
           num: "03",
           tag: "Phase 3",
           title: "Capital Scaling",
-          desc: "Pass verification — receive your funded account and automatic 25% capital increases for every 10% profitable cycle. Compounding growth with no ceiling until the next tier.",
+          desc: "Pass verification — receive your funded account and automatic 25% capital increases for every 10% profitable cycle, up to $2,000,000.",
           highlight: "+25% per 10% profit cycle",
         },
         {

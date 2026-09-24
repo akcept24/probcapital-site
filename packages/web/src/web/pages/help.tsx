@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLang } from "../i18n/LangContext";
+import { usePageHead } from "../hooks/usePageHead";
 
 const faqs = [
   {
@@ -34,6 +35,12 @@ const faqs = [
 
 export default function HelpPage() {
   const { lang } = useLang();
+  usePageHead({
+    title: lang === "ru" ? "Центр помощи — ProbCapital" : "Help Center — ProbCapital",
+    description: lang === "ru" ? "Ответы на частые вопросы о челленджах, выплатах и правилах ProbCapital." : "Answers to common questions about ProbCapital challenges, payouts and rules.",
+    path: "/help",
+    lang,
+  });
   const ru = lang === "ru";
 
   return (

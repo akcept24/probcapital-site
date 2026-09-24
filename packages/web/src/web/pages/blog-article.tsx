@@ -59,6 +59,7 @@ interface BlogPost {
   date: string;
   readTime: string;
   contentPreview: string;
+  image: string;
 }
 
 // English blog posts
@@ -72,6 +73,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '12 min read',
     contentPreview: 'Full article content will be available soon. Learn why ProbCapital stands out with 90% profit splits, 1-step challenges, no minimum trading days, and funding within 24 hours.',
+    image: '/blog/best-prop-firms-2026.jpg',
   },
   'how-to-pass-prop-firm-challenge': {
     slug: 'how-to-pass-prop-firm-challenge',
@@ -82,6 +84,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '15 min read',
     contentPreview: 'Passing a prop firm challenge isn\'t about taking bigger risks or finding a "perfect" trading strategy. It\'s about proving that you can trade consistently while staying within strict risk and drawdown limits. This comprehensive guide covers 10 practical tips, common mistakes, risk management strategies, and a detailed FAQ section.',
+    image: '/blog/pass-prop-challenge.jpg',
   },
   'prop-trading-vs-traditional-trading': {
     slug: 'prop-trading-vs-traditional-trading',
@@ -92,6 +95,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '10 min read',
     contentPreview: 'Full article content will be available soon. Discover how ProbCapital enables you to trade up to $400,000 with only a small evaluation fee.',
+    image: '/blog/prop-vs-traditional.jpg',
   },
   'trading-psychology-mental-mistakes': {
     slug: 'trading-psychology-mental-mistakes',
@@ -102,6 +106,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '13 min read',
     contentPreview: 'Full article content will be available soon. Master fear, greed, and discipline for consistent profits with ProbCapital.',
+    image: '/blog/trading-psychology.jpg',
   },
 };
 
@@ -116,6 +121,7 @@ const blogPostsRu: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '12 мин чтения',
     contentPreview: 'Полная статья скоро появится. Узнайте, почему ProbCapital выделяется благодаря 90% выплатам, 1-этапному челленджу, отсутствию минимальных торговых дней и финансированию в течение 24 часов.',
+    image: '/blog/best-prop-firms-2026.jpg',
   },
   'how-to-pass-prop-firm-challenge': {
     slug: 'how-to-pass-prop-firm-challenge',
@@ -126,6 +132,7 @@ const blogPostsRu: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '15 мин чтения',
     contentPreview: 'Прохождение челленджа проп-компании — это не о больших рисках или поиске "идеальной" стратегии. Это о том, чтобы доказать, что вы можете торговать стабильно, соблюдая строгие лимиты риска и просадки. Это подробное руководство охватывает 10 практических советов, распространённые ошибки, стратегии риск-менеджмента и раздел FAQ.',
+    image: '/blog/pass-prop-challenge.jpg',
   },
   'prop-trading-vs-traditional-trading': {
     slug: 'prop-trading-vs-traditional-trading',
@@ -136,6 +143,7 @@ const blogPostsRu: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '10 мин чтения',
     contentPreview: 'Полная статья скоро появится. Узнайте, как ProbCapital позволяет торговать до $400,000 всего за небольшую плату за оценку.',
+    image: '/blog/prop-vs-traditional.jpg',
   },
   'trading-psychology-mental-mistakes': {
     slug: 'trading-psychology-mental-mistakes',
@@ -146,6 +154,7 @@ const blogPostsRu: Record<string, BlogPost> = {
     date: '2026-08-12',
     readTime: '13 мин чтения',
     contentPreview: 'Полная статья скоро появится. Научитесь управлять страхом, жадностью и дисциплиной для стабильной прибыли с ProbCapital.',
+    image: '/blog/trading-psychology.jpg',
   },
 };
 
@@ -171,17 +180,21 @@ export default function BlogArticlePage() {
 
   if (!post) {
     return (
-      <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
-        <div style={{ textAlign: 'center', padding: '40px' }}>
-          <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>Article not found</h2>
-          <p style={{ color: '#9CA3AF', marginBottom: '24px' }}>The article you're looking for doesn't exist.</p>
-          <button
-            onClick={() => navigate('/blog')}
-            style={{ padding: '12px 24px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}
-          >
-            {tr.blog_backToBlog}
-          </button>
+      <div style={{ minHeight: '100vh', background: '#0F1117', color: '#E5E7EB', paddingTop: '80px' }}>
+        <Navbar />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
+          <div style={{ textAlign: 'center', padding: '40px' }}>
+            <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>{lang === 'ru' ? 'Статья не найдена' : 'Article not found'}</h2>
+            <p style={{ color: '#9CA3AF', marginBottom: '24px' }}>{lang === 'ru' ? 'Запрашиваемая статья не существует.' : "The article you're looking for doesn't exist."}</p>
+            <button
+              onClick={() => navigate('/blog')}
+              style={{ padding: '12px 24px', borderRadius: '8px', background: 'linear-gradient(90deg, #10b981, #34d399)', color: '#0F1117', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}
+            >
+              {tr.blog_backToBlog}
+            </button>
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -223,7 +236,7 @@ export default function BlogArticlePage() {
         </span>
 
         {/* Title */}
-        <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', lineHeight: '1.2', maxWidth: '900px' }}>
+        <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 'bold', marginBottom: '24px', lineHeight: '1.2', maxWidth: '900px' }}>
           {post.title}
         </h1>
 
@@ -240,6 +253,16 @@ export default function BlogArticlePage() {
             <Clock size={16} />
             {post.readTime}
           </div>
+        </div>
+
+        {/* Cover image */}
+        <div style={{ marginBottom: '32px', borderRadius: '16px', overflow: 'hidden', maxWidth: '900px' }}>
+          <img
+            src={post.image}
+            alt={post.title}
+            loading="lazy"
+            style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '16 / 9', objectFit: 'cover' }}
+          />
         </div>
 
         {/* Share buttons */}

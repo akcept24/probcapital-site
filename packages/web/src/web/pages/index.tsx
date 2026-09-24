@@ -17,7 +17,6 @@ import Affiliate from "../components/Affiliate";
 import FAQ from "../components/FAQ";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import LiveChat from "../components/LiveChat";
 
 export default function Index() {
   return (
@@ -41,7 +40,6 @@ export default function Index() {
       <FAQ />
       <CTA />
       <Footer />
-      <LiveChat />
     </div>
   );
 }

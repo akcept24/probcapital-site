@@ -13,6 +13,7 @@ import AboutPage from "./pages/about";
 import PricingPage from "./pages/pricing";
 import BlogPage from "./pages/blog";
 import BlogArticlePage from "./pages/blog-article";
+import LiveChat from "./components/LiveChat";
 import { Provider } from "./components/provider";
 import { LangProvider } from "./i18n/LangContext";
 
@@ -40,6 +41,9 @@ function App() {
           <Route path="/blog" component={BlogPage} />
         </Switch>
 
+        {/* Global support chat bubble — mounted once for every route so the
+            contact page "Open Chat" button always has a listener. */}
+        <LiveChat />
       </LangProvider>
     </Provider>
   );

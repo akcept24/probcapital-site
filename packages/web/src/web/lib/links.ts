@@ -12,7 +12,12 @@ export const AFFILIATE_SIGNUP_URL = "https://app.probcapital.com/partners";
 
 /**
  * Challenge pricing page of the app — the entry point for starting
- * a trial / evaluation. (Note: /trial, /signup and /affiliate 404 on
- * the app, so /plans is the correct funnel entry.)
+ * a paid evaluation.
  */
 export const TRIAL_SIGNUP_URL = "https://app.probcapital.com/plans";
+
+/**
+ * Free 14-day demo trial page of the app — no payment required.
+ * (Shipped with the Free Trial feature; requires the app deploy to be live.)
+ */
+export const FREE_TRIAL_URL = "https://app.probcapital.com/trial";

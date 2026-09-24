@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FREE_TRIAL_URL } from "../lib/links";
 import { useLang } from "../i18n/LangContext";
 import { usePageHead } from "../hooks/usePageHead";
 
@@ -290,6 +291,14 @@ export default function PricingPage() {
           >
             {ru ? "Начать оценку" : "Start Evaluation"}
           </a>
+          <div style={{ marginTop: "16px" }}>
+            <a
+              href={FREE_TRIAL_URL}
+              style={{ color: "#00D4AA", textDecoration: "none", fontWeight: 600, fontSize: "14px" }}
+            >
+              {ru ? "или попробуйте бесплатный триал на 14 дней →" : "or try a free 14-day trial →"}
+            </a>
+          </div>
         </div>
 
       </div>

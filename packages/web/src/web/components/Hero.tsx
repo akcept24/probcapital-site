@@ -1,5 +1,5 @@
 import { useLang } from "../i18n/LangContext";
-import { TRIAL_SIGNUP_URL } from "../lib/links";
+import { TRIAL_SIGNUP_URL, FREE_TRIAL_URL } from "../lib/links";
 
 export default function Hero() {
   const { lang } = useLang();
@@ -113,6 +113,23 @@ export default function Hero() {
                   border: "1.5px solid rgba(255,255,255,0.5)", fontSize: "9px",
                 }}>▶</span>
                 {ru ? "Как это работает" : "How It Works"}
+              </a>
+            </div>
+
+            {/* Free trial link */}
+            <div style={{ marginTop: "14px" }}>
+              <a
+                href={FREE_TRIAL_URL}
+                style={{
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  color: "#00D4AA",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(0,212,170,0.4)",
+                  paddingBottom: "1px",
+                }}
+              >
+                {ru ? "или попробуйте бесплатный триал на 14 дней →" : "or try a free 14-day trial →"}
               </a>
             </div>
 

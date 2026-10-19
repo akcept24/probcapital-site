@@ -22,11 +22,41 @@ const PricingPage = lazy(() => import("./pages/pricing"));
 const BlogPage = lazy(() => import("./pages/blog"));
 const BlogArticlePage = lazy(() => import("./pages/blog-article"));
 
+// Shown while a route chunk loads — replaces the previous blank dark
+// screen (fallback={null}) visitors saw on slow connections.
+function LoadingScreen() {
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#0F1117",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          color: "#00D4AA",
+          fontWeight: 800,
+          letterSpacing: "0.12em",
+          fontSize: 14,
+          textTransform: "uppercase",
+          animation: "pc-pulse 1.2s ease-in-out infinite",
+        }}
+      >
+        ProbCapital
+      </div>
+      <style>{`@keyframes pc-pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }`}</style>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Provider>
       <LangProvider>
-        <Suspense fallback={null}>
+        <Suspense fallback={<LoadingScreen />}>
           <Switch>
             <Route path="/" component={Index} />
             <Route path="/help" component={HelpPage} />
@@ -40,11 +70,21 @@ function App() {
             <Route path="/refund" component={RefundPage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/pricing" component={PricingPage} />
+            {/* /plans is the URL people know from the app — send them to pricing
+                instead of the blank dark screen an unmatched route used to show. */}
+            <Route path="/plans">
+              <Redirect to="/pricing" />
+            </Route>
             <Route path="/blog/prop-trading-makes-money">
               <Redirect to="/blog/prop-trading-vs-traditional-trading" />
             </Route>
             <Route path="/blog/:slug" component={BlogArticlePage} />
             <Route path="/blog" component={BlogPage} />
+            {/* Catch-all (wouter: a pathless Route in a Switch matches anything
+                not matched above) — unknown URLs go home, never a blank screen. */}
+            <Route>
+              <Redirect to="/" />
+            </Route>
           </Switch>
         </Suspense>
 

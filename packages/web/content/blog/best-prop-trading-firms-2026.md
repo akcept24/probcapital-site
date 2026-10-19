@@ -15,7 +15,7 @@ keywords: ["prop trading", "funded trader", "best prop firm 2026", "90% profit s
 ## TL;DR (Key Takeaways)
 
 - **90% profit split** — keep more of what you earn
-- **1-step challenge available** — fastest path to funding
+- **2-phase challenge** — a clear, structured path to funding
 - **No minimum trading days** on Aggressive plan
 - **Funded within 24 hours** — industry-leading speed
 - **Scale up to $2,000,000** — grow your capital
@@ -45,7 +45,7 @@ When you trade with our capital, you keep **90% of the profits** you generate. T
 
 ---
 
-### ⚡ 1-Step Challenge Option
+### ⚡ Two Challenge Plans, One Goal
 
 Choose between two challenge types:
 
@@ -54,13 +54,13 @@ Choose between two challenge types:
 - Phase 2: Confirm consistency
 - **80% profit split**
 
-#### **Aggressive (1-Step Challenge)** ⭐ Most Popular
-- Single evaluation phase
-- Pass once, get funded
+#### **Aggressive (2-Phase Challenge)** ⭐ Most Popular
+- 12% max drawdown — extra room to trade
+- On-demand payouts
 - **90% profit split**
 - **No minimum trading days**
 
-The 1-step challenge cuts your path to funding in half, letting you start earning faster.
+The Aggressive plan keeps the same two-phase structure, but with looser risk limits, no minimum days, and a higher split.
 
 ---
 

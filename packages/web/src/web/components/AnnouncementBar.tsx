@@ -15,11 +15,11 @@ export default function AnnouncementBar() {
       style={{ background: "linear-gradient(90deg, #0ea97a, #10b981, #34d399, #10b981, #0ea97a)" }}
     >
       <span>
-        🎉 {lang === "ru" ? "Новинка" : "New"}: 1-{lang === "ru" ? "шаговый челлендж" : "Step Challenge"}{" "}
+        🎉 {lang === "ru" ? "Бесплатный триал" : "Free Trial"}: $25K{" "}
         —{" "}
-        {lang === "ru" 
-          ? "пройдите за одну фазу, сохраняйте до 90% прибыли" 
-          : "pass in one phase, keep up to 90% of profits"}.{" "}
+        {lang === "ru"
+          ? "14 дней по реальным правилам челленджа, без карты"
+          : "14 days under real challenge rules, no card required"}.{" "}
         <a 
           href={TRIAL_SIGNUP_URL} 
           target="_blank" 

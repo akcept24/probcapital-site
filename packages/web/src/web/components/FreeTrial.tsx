@@ -10,14 +10,14 @@ const labels = {
     point1: "Full platform access",
     point2: "Same rules as the real challenge",
     point3: "No credit card required",
-    point4: "As many free trials as you need",
+    point4: "One free trial per trader",
     cta: "Start Free Trial →",
     cta2: "See Challenge Plans",
     note: "Free Trial accounts are identical to paid challenges — same instruments, same dashboard, same experience.",
     card_title: "Free Trial Account",
     card_profit_target: "Profit Target",
     card_max_drawdown: "Max Drawdown",
-    card_profit_split: "Profit Split",
+    card_profit_split: "Daily Loss Limit",
     card_time_limit: "Time Limit",
     card_time_value: "14 Days",
     card_start: "$0.00 — Start Free",
@@ -30,14 +30,14 @@ const labels = {
     point1: "Полный доступ к платформе",
     point2: "Те же правила, что и в реальном челлендже",
     point3: "Без банковской карты",
-    point4: "Неограниченное количество попыток",
+    point4: "Один бесплатный триал на трейдера",
     cta: "Начать бесплатно →",
     cta2: "Смотреть тарифы",
     note: "Бесплатные аккаунты идентичны платным — те же инструменты, тот же дашборд, тот же опыт.",
     card_title: "Бесплатный пробный счёт",
     card_profit_target: "Целевая прибыль",
     card_max_drawdown: "Макс. просадка",
-    card_profit_split: "Сплит прибыли",
+    card_profit_split: "Дневной лимит убытка",
     card_time_limit: "Лимит времени",
     card_time_value: "14 дней",
     card_start: "$0.00 — Начать бесплатно",
@@ -106,7 +106,7 @@ export default function FreeTrial() {
                 <div className="flex items-center justify-between mb-5">
                   <div>
                     <div className="text-[11px] text-[#555A72] uppercase tracking-widest mb-1">{l.card_title}</div>
-                    <div className="text-[26px] font-black text-[#F0F2FF]">$10,000</div>
+                    <div className="text-[26px] font-black text-[#F0F2FF]">$25,000</div>
                   </div>
                   <div className="px-2.5 py-1 rounded-full text-[11px] font-bold"
                     style={{ background: "rgba(0,212,170,0.12)", color: "#00D4AA", border: "1px solid rgba(0,212,170,0.2)" }}>
@@ -118,7 +118,7 @@ export default function FreeTrial() {
                   {[
                     { label: l.card_profit_target, value: "10%", color: "#00D4AA" },
                     { label: l.card_max_drawdown, value: "10%", color: "#F0F2FF" },
-                    { label: l.card_profit_split, value: "80%", color: "#00D4AA" },
+                    { label: l.card_profit_split, value: "5%", color: "#00D4AA" },
                     { label: l.card_time_limit, value: l.card_time_value, color: "#F0F2FF" },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between items-center py-2.5 px-3 rounded-lg"

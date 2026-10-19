@@ -227,7 +227,7 @@ export const t = {
     blog_meanwhile: "Meanwhile, check out other articles or start your challenge.",
     blog_startChallenge: "Start Challenge",
     blog_ctaTitle: "Ready to start your trading journey?",
-    blog_ctaDesc: "Get funded up to $400,000 and keep up to 90% of profits. Start with the 1-step Aggressive challenge.",
+    blog_ctaDesc: "Get funded up to $400,000 and keep up to 90% of profits. Start with the 2-phase Aggressive challenge.",
   },
 
   ru: {
@@ -456,7 +456,7 @@ export const t = {
     blog_meanwhile: "А пока ознакомьтесь с другими статьями или начните свой челлендж.",
     blog_startChallenge: "Начать челлендж",
     blog_ctaTitle: "Готовы начать свой путь в трейдинге?",
-    blog_ctaDesc: "Получите финансирование до $400,000 и зарабатывайте до 90% прибыли. Начните с 1-шагового Агрессивного челленджа.",
+    blog_ctaDesc: "Получите финансирование до $400,000 и зарабатывайте до 90% прибыли. Начните с 2-фазного Агрессивного челленджа.",
   },
 } as const;
 

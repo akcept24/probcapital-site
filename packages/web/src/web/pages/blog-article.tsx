@@ -72,7 +72,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     author: 'ProbCapital Team',
     date: '2026-08-12',
     readTime: '12 min read',
-    contentPreview: 'Full article content will be available soon. Learn why ProbCapital stands out with 90% profit splits, 1-step challenges, no minimum trading days, and funding within 24 hours.',
+    contentPreview: 'Full article content will be available soon. Learn why ProbCapital stands out with 90% profit splits, 2-phase challenges, no minimum trading days, and funding within 24 hours.',
     image: '/blog/best-prop-firms-2026.jpg',
   },
   'how-to-pass-prop-firm-challenge': {

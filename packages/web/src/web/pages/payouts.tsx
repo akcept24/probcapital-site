@@ -14,12 +14,12 @@ export default function PayoutsPage() {
   const ru = lang === "ru";
 
   const steps = ru ? [
-    { n: "01", title: "Откройте кабинет", desc: "Войдите на app.probcapital.com и перейдите в раздел «Вывод средств»." },
+    { n: "01", title: "Откройте кабинет", desc: "Войдите на app.probcapital.com и перейдите в раздел «Финансы»." },
     { n: "02", title: "Выберите сумму", desc: "Укажите сумму вывода. Минимальная сумма — $50. Максимум — весь накопленный профит." },
     { n: "03", title: "Выберите способ", desc: "USDT (TRC-20 или ERC-20) или Wise — на кошелёк или счёт на ваше имя." },
     { n: "04", title: "Получите деньги", desc: "Обрабатываем в течение 24–48 часов после одобрения." },
   ] : [
-    { n: "01", title: "Open Dashboard", desc: "Log in at app.probcapital.com and go to the Withdrawals section." },
+    { n: "01", title: "Open Dashboard", desc: "Log in at app.probcapital.com and go to the Finance section." },
     { n: "02", title: "Select Amount", desc: "Enter withdrawal amount. Minimum is $50. Maximum is your full accumulated profit." },
     { n: "03", title: "Choose Method", desc: "USDT (TRC-20 or ERC-20) or Wise, to a wallet or account registered in your name." },
     { n: "04", title: "Get Paid", desc: "Processed within 24–48 hours after approval." },

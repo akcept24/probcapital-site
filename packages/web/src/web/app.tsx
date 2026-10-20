@@ -19,6 +19,7 @@ const AmlPage = lazy(() => import("./pages/aml"));
 const RefundPage = lazy(() => import("./pages/refund"));
 const AboutPage = lazy(() => import("./pages/about"));
 const PricingPage = lazy(() => import("./pages/pricing"));
+const FuturesPage = lazy(() => import("./pages/futures"));
 const BlogPage = lazy(() => import("./pages/blog"));
 const BlogArticlePage = lazy(() => import("./pages/blog-article"));
 
@@ -70,6 +71,7 @@ function App() {
             <Route path="/refund" component={RefundPage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/pricing" component={PricingPage} />
+            <Route path="/futures" component={FuturesPage} />
             {/* /plans is the URL people know from the app — send them to pricing
                 instead of the blank dark screen an unmatched route used to show. */}
             <Route path="/plans">

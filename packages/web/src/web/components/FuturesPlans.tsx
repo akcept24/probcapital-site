@@ -11,7 +11,7 @@ const futuresData: Record<string, { price: number; step1: string; step2: string;
 };
 const POPULAR_SIZE = "$50,000";
 
-export default function FuturesPlans() {
+export default function FuturesPlans({ hideHeader = false }: { hideHeader?: boolean }) {
   const [selectedSize, setSelectedSize] = useState(POPULAR_SIZE);
   const { tr } = useLang();
 
@@ -39,16 +39,18 @@ export default function FuturesPlans() {
   return (
     <section id="futures" className="py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
-            style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
-            {tr.fut_badge}
+        {!hideHeader && (
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
+              style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
+              {tr.fut_badge}
+            </div>
+            <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+              {tr.fut_h2_1}{" "}<span className="gold-text">{tr.fut_h2_2}</span>
+            </h2>
+            <p className="text-[#8A8FA8] max-w-[560px] mx-auto text-[16px]">{tr.fut_sub}</p>
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
-            {tr.fut_h2_1}{" "}<span className="gold-text">{tr.fut_h2_2}</span>
-          </h2>
-          <p className="text-[#8A8FA8] max-w-[560px] mx-auto text-[16px]">{tr.fut_sub}</p>
-        </div>
+        )}
 
         {/* Account size selector */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-12">

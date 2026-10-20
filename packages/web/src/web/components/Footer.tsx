@@ -29,6 +29,7 @@ export default function Footer() {
       items: [
         { label: ru ? "Челленджи" : "Challenges", href: "/#challenges" },
         { label: ru ? "Тарифы" : "Pricing", href: "/pricing" },
+        { label: ru ? "Фьючерсы" : "Futures", href: "/futures" },
         { label: ru ? "Возможности" : "Features", href: "/#features" },
         { label: ru ? "Выплаты" : "Payouts", href: "/payouts" },
       ],

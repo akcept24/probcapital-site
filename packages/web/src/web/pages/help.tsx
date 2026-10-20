@@ -18,16 +18,16 @@ const faqs = [
     categoryRu: "Правила оценки",
     items: [
       { q: "What is the profit target for Phase 1?", qRu: "Какова цель прибыли в Фазе 1?", a: "Standard plan: 10% (Phase 1) / 5% (Phase 2). Aggressive plan: 10% (Phase 1) / 5% (Phase 2).", aRu: "Стандартный план: 10% (Фаза 1) / 5% (Фаза 2). Агрессивный план: 10% (Фаза 1) / 5% (Фаза 2)." },
-      { q: "Is there a minimum trading days requirement?", qRu: "Есть ли требование по минимальному количеству дней?", a: "Standard plan requires a minimum of 4 trading days. Aggressive plan has no minimum days requirement.", aRu: "Стандартный план — минимум 4 торговых дня. Агрессивный — без минимума." },
-      { q: "What happens if I breach a rule?", qRu: "Что происходит при нарушении правила?", a: "If you breach a drawdown rule, your evaluation account will be closed. You get 1 free re-take on your first attempt.", aRu: "При нарушении правила просадки счёт закрывается. На первой попытке вы получаете 1 бесплатный рестарт." },
+      { q: "Is there a minimum trading days requirement?", qRu: "Есть ли требование по минимальному количеству дней?", a: "Standard plan requires a minimum of 5 trading days. Aggressive plan has no minimum days requirement.", aRu: "Стандартный план — минимум 5 торговых дней. Агрессивный — без минимума." },
+      { q: "What happens if I breach a rule?", qRu: "Что происходит при нарушении правила?", a: "If you breach a drawdown rule, your evaluation account will be closed. On Aggressive plans, you get 1 free re-take on your first attempt.", aRu: "При нарушении правила просадки счёт закрывается. На планах Aggressive на первой попытке вы получаете 1 бесплатный рестарт." },
     ],
   },
   {
     category: "Payouts",
     categoryRu: "Выплаты",
     items: [
-      { q: "How do I request a payout?", qRu: "Как запросить выплату?", a: "Log in to your dashboard, navigate to Withdrawals, enter the amount and your payment details. Payouts are processed within 24 hours.", aRu: "Войдите в личный кабинет, перейдите в раздел «Вывод средств», укажите сумму и реквизиты. Выплаты обрабатываются в течение 24 часов." },
-      { q: "What payout methods are available?", qRu: "Какие способы выплат доступны?", a: "Approved performance-based payouts are issued via bank wire transfer or other verified payment methods to the account registered in your name. All payouts require completed KYC verification.", aRu: "Одобренные выплаты на основе показателей производительности осуществляются банковским переводом или другими верифицированными методами на счёт, зарегистрированный на ваше имя. Все выплаты требуют пройденной KYC-верификации." },
+      { q: "How do I request a payout?", qRu: "Как запросить выплату?", a: "Log in to your dashboard, go to the Finance section, and request a payout with the amount and your payment details. Approved payouts are processed within 24–48 hours.", aRu: "Войдите в личный кабинет, перейдите в раздел «Финансы» и запросите выплату, указав сумму и реквизиты. Одобренные выплаты обрабатываются в течение 24–48 часов." },
+      { q: "What payout methods are available?", qRu: "Какие способы выплат доступны?", a: "Approved performance-based payouts are sent in USDT (TRC-20 or ERC-20) or via Wise, to a wallet or account registered in your name. All payouts require completed KYC verification.", aRu: "Одобренные выплаты отправляются в USDT (TRC-20 или ERC-20) или через Wise — на кошелёк или счёт, зарегистрированный на ваше имя. Все выплаты требуют пройденной KYC-верификации." },
       { q: "How is performance-based compensation calculated?", qRu: "Как рассчитывается вознаграждение за результаты?", a: "Performance-based compensation is paid by ProbCapital LLC from its own operating funds based on your Evaluation Process metrics. The applicable rate depends on your selected evaluation plan.", aRu: "Вознаграждение за результаты выплачивается ProbCapital LLC из собственных операционных средств на основании метрик вашего процесса оценки. Применимая ставка зависит от выбранного плана оценки." },
     ],
   },

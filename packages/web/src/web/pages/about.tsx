@@ -514,8 +514,8 @@ export default function AboutPage() {
           </h2>
           <p style={{ color: "#A0A8C0", fontSize: "clamp(14px,1.2vw,17px)", marginBottom: "44px", lineHeight: 1.8, maxWidth: "540px", margin: "0 auto 44px" }}>
             {ru
-              ? "Присоединяйтесь к тысячам профессионалов, прошедших нашу программу оценки навыков и получивших доступ к возможностям на основе результатов."
-              : "Join thousands of professionals who have completed our Skill Assessment program and gained access to performance-based opportunities."}
+              ? "Присоединяйтесь к профессионалам, прошедшим нашу программу оценки навыков и получившим доступ к возможностям на основе результатов."
+              : "Join professionals who have completed our Skill Assessment program and gained access to performance-based opportunities."}
           </p>
 
           <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" style={{

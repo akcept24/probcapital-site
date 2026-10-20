@@ -187,6 +187,10 @@ export default function PricingPage() {
           ))}
         </div>
 
+        <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "16px" }}>
+          {tr.risk_eod_note}
+        </p>
+
         {/* ── Rebate note ── */}
         <div style={{
           marginTop: "36px",
@@ -322,6 +326,9 @@ export default function PricingPage() {
           <div style={{ marginTop: "20px" }}>
             <InfoNote>{tr.fut_note}</InfoNote>
           </div>
+          <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "16px" }}>
+            {tr.risk_eod_note}
+          </p>
         </div>
 
         {/* ── What's included ── */}
@@ -333,14 +340,14 @@ export default function PricingPage() {
             {(ru ? [
               ["📊", "Симулированный счёт", "Реальные рыночные данные в реальном времени"],
               ["💸", "Выплата до 90%", "При достижении целевых показателей"],
-              ["🔄", "1 бесплатный рестарт", "При первом провале оценки"],
+              ["🔄", "1 бесплатный рестарт", "На планах Aggressive, при первой неудачной попытке"],
               ["📞", "Поддержка 24/7", "Живой чат: ответ в течение пары минут"],
               ["🛡️", "Без скрытых комиссий", "Один взнос, больше ничего"],
               ["📋", "Все инструменты", "Forex, индексы, металлы, крипто"],
             ] : [
               ["📊", "Simulated Account", "Live market data in real-time"],
               ["💸", "Up to 90% Payout", "Upon hitting profit targets"],
-              ["🔄", "1 Free Re-take", "On first failed attempt"],
+              ["🔄", "1 Free Re-take", "On Aggressive plans, on first failed attempt"],
               ["📞", "24/7 Support", "Live chat: replies within minutes"],
               ["🛡️", "No Hidden Fees", "One fee, nothing else"],
               ["📋", "All Instruments", "Forex, indices, metals, crypto"],
@@ -380,8 +387,8 @@ export default function PricingPage() {
               {ru ? "Платёж и возврат: " : "Payment & Refund: "}
             </strong>
             {ru
-              ? "Платежи обрабатываются через Stripe и иных платёжных провайдеров. Полные условия возврата изложены в "
-              : "Payments are processed via Stripe and other payment processors. Full refund terms are set out in the "}
+              ? "Платежи обрабатываются через наших платёжных провайдеров; оплата криптовалютой доступна уже сейчас. Полные условия возврата изложены в "
+              : "Payments are processed via our payment providers; crypto payments are available now. Full refund terms are set out in the "}
             <a href="/refund" style={{ color: "#00D4AA", textDecoration: "none", fontWeight: 600 }}>
               {ru ? "Политике возврата" : "Refund Policy"}
             </a>

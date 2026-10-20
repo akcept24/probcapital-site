@@ -51,7 +51,7 @@ export default function Challenges() {
         { label: tr.ch_phase2,  value: "5%",     good: true },
         { label: tr.ch_maxdd,   value: "10%",    good: false },
         { label: tr.ch_dailydd, value: "5%",     good: false },
-        { label: tr.ch_mindays, value: "4 " + tr.ch_days, good: false },
+        { label: tr.ch_mindays, value: "5 " + tr.ch_days, good: false },
         { label: tr.ch_split,   value: "80%",    good: true },
         { label: tr.ch_leverage,value: "1:100",  good: true },
         { label: tr.ch_payouts, value: tr.ch_weekly, good: false },
@@ -59,7 +59,6 @@ export default function Challenges() {
       features: [
         tr.ch_feat_mt,
         tr.ch_feat_instruments,
-        tr.ch_feat_retake,
         tr.ch_feat_phase2,
       ],
       cta: tr.ch_cta_std,

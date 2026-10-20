@@ -20,7 +20,7 @@ export const t = {
     hero_cta2: "See How It Works",
     hero_bullets_1: "✓ Evaluation fee rebate on first approved payout",
     hero_bullets_2: "✓ Account activation within 24h after passing",
-    hero_bullets_3: "✓ 1 free re-take if you fail",
+    hero_bullets_3: "✓ 1 free re-take on Aggressive plans",
     hero_trust_1: "Instant payouts",
     hero_trust_2: "No hidden fees",
     hero_trust_3: "24/7 support",
@@ -77,11 +77,11 @@ export const t = {
     ch_feat3_agg: "On-demand payouts",
     ch_feat4: "1 free re-take",
     ch_feat5: "1:100 leverage",
-    ch_mindays_std: "4 days",
+    ch_mindays_std: "5 days",
     ch_mindays_agg: "No minimum",
     ch_cta_std: "Start Standard Challenge →",
     ch_cta_agg: "Start Aggressive Challenge →",
-    ch_note: "✓ 1 free re-take if you fail  ·  ✓ Account activation within 24h  ·  ✓ Evaluation fee rebate on first approved payout",
+    ch_note: "✓ 1 free re-take on Aggressive plans  ·  ✓ Account activation within 24h  ·  ✓ Evaluation fee rebate on first approved payout",
     ch_days: "days",
     ch_weekly: "Weekly",
     ch_ondemand: "On-demand",
@@ -125,6 +125,7 @@ export const t = {
     fut_leverage_value: "Up to 20:1",
     fut_cta: "Start Futures Evaluation",
     fut_note: "The Futures program runs on the ProbCapital terminal. Instruments available today: FX, metals, crypto and index CFDs. CME-listed futures data is in rollout.",
+    risk_eod_note: "Risk limits are evaluated at the end of each trading day",
     fut_h2_1: "Futures Subscription",
     fut_h2_2: "Plans",
     fut_feat_rebate: "Subscription fees rebated with your first payout",
@@ -225,7 +226,7 @@ export const t = {
     feat_1_title: "MT4 & MT5 Platforms",
     feat_1_desc: "Trade on the world's most popular platforms with access to 50+ instruments including Forex, Metals, and Indices within our simulation environment.",
     feat_2_title: "Fast Performance Payouts",
-    feat_2_desc: "No waiting. Request performance-based compensation and receive it within 24 hours via bank wire or verified payment method.",
+    feat_2_desc: "Request performance-based compensation and receive it within 24–48 hours after approval, in USDT (TRC-20/ERC-20) or via Wise.",
     feat_3_title: "Scaling Program",
     feat_3_desc: "Grow your funded account up to $2,000,000. Each +10% of net profit earns a +25% increase after review.",
     feat_4_title: "Expert Support",
@@ -250,7 +251,7 @@ export const t = {
       },
       {
         q: "How fast do I get paid?",
-        a: "Performance compensation requests are processed within 24 hours. We support bank wire and other verified payment methods. All payouts require completed KYC verification.",
+        a: "Approved performance compensation requests are processed within 24–48 hours after approval. Payouts are sent in USDT (TRC-20 or ERC-20) or via Wise. All payouts require completed KYC verification.",
       },
       {
         q: "Can I use EAs and copy trading?",
@@ -258,7 +259,7 @@ export const t = {
       },
       {
         q: "What happens if I lose money?",
-        a: "If you breach a rule or exceed the drawdown limit, your evaluation session is closed. You get 1 free re-take if you fail your first attempt.",
+        a: "If you breach a rule or exceed the drawdown limit, your evaluation session is closed. On Aggressive plans, you get 1 free re-take if you fail your first attempt.",
       },
       {
         q: "Is the evaluation fee refunded?",
@@ -275,7 +276,7 @@ export const t = {
     ],
 
     // CTA
-    cta_badge: "Join thousands of funded traders",
+    cta_badge: "Start your evaluation today",
     cta_h2_1: "Ready to Get",
     cta_h2_2: "Funded?",
     cta_sub: "Join traders building their performance with ProbCapital. Your journey to professional trading starts today.",
@@ -347,7 +348,7 @@ export const t = {
     hero_cta2: "Как это работает",
     hero_bullets_1: "✓ Рибейт оценочного взноса при первой одобренной выплате",
     hero_bullets_2: "✓ Активация счёта в течение 24ч после прохождения",
-    hero_bullets_3: "✓ 1 бесплатный рестарт при провале",
+    hero_bullets_3: "✓ 1 бесплатный рестарт на планах Aggressive",
     hero_trust_1: "Мгновенные выплаты",
     hero_trust_2: "Без скрытых комиссий",
     hero_trust_3: "Поддержка 24/7",
@@ -404,11 +405,11 @@ export const t = {
     ch_feat3_agg: "Выплаты по запросу",
     ch_feat4: "1 бесплатный рестарт",
     ch_feat5: "Плечо 1:100",
-    ch_mindays_std: "4 дня",
+    ch_mindays_std: "5 дней",
     ch_mindays_agg: "Без минимума",
     ch_cta_std: "Начать стандартный челлендж →",
     ch_cta_agg: "Начать агрессивный челлендж →",
-    ch_note: "✓ 1 бесплатный рестарт  ·  ✓ Активация счёта в течение 24ч  ·  ✓ Рибейт взноса при первой одобренной выплате",
+    ch_note: "✓ 1 бесплатный рестарт на планах Aggressive  ·  ✓ Активация счёта в течение 24ч  ·  ✓ Рибейт взноса при первой одобренной выплате",
     ch_days: "дней",
     ch_weekly: "Еженедельно",
     ch_ondemand: "По запросу",
@@ -452,6 +453,7 @@ export const t = {
     fut_leverage_value: "До 20:1",
     fut_cta: "Начать фьючерсную оценку",
     fut_note: "Фьючерсная программа работает в терминале ProbCapital. Инструменты, доступные сегодня: валютные пары (FX), металлы, криптовалюта и CFD на индексы. Данные фьючерсов, торгуемых на CME, находятся в процессе подключения.",
+    risk_eod_note: "Лимиты риска оцениваются по итогам торгового дня",
     fut_h2_1: "Фьючерсные планы",
     fut_h2_2: "по подписке",
     fut_feat_rebate: "Взносы подписки засчитываются в счёт первой выплаты",
@@ -552,7 +554,7 @@ export const t = {
     feat_1_title: "MT4 и MT5",
     feat_1_desc: "Торгуйте на самых популярных платформах с доступом к 50+ инструментам: Forex, металлы и индексы в рамках симулированной среды.",
     feat_2_title: "Мгновенные выплаты",
-    feat_2_desc: "Никаких ожиданий. Запросите вознаграждение за результаты и получите его в течение 24 часов банковским переводом или верифицированным методом оплаты.",
+    feat_2_desc: "Запросите вознаграждение за результаты и получите его в течение 24–48 часов после одобрения — в USDT (TRC-20/ERC-20) или через Wise.",
     feat_3_title: "Программа масштабирования",
     feat_3_desc: "Увеличивайте профинансированный счёт до $2 000 000. Каждые +10% чистой прибыли дают увеличение на 25% после проверки.",
     feat_4_title: "Экспертная поддержка",
@@ -577,7 +579,7 @@ export const t = {
       },
       {
         q: "Как быстро происходят выплаты?",
-        a: "Запросы на выплату вознаграждения обрабатываются в течение 24 часов. Мы поддерживаем банковский перевод и другие верифицированные методы оплаты. Для получения выплат требуется пройденная KYC-верификация.",
+        a: "Одобренные запросы на выплату вознаграждения обрабатываются в течение 24–48 часов после одобрения. Выплаты отправляются в USDT (TRC-20 или ERC-20) или через Wise. Для получения выплат требуется пройденная KYC-верификация.",
       },
       {
         q: "Можно использовать советников (EA) и копирование?",
@@ -585,7 +587,7 @@ export const t = {
       },
       {
         q: "Что происходит при превышении просадки?",
-        a: "При нарушении правил или превышении лимита просадки оценочная сессия закрывается. При первом провале вы получаете 1 бесплатный рестарт.",
+        a: "При нарушении правил или превышении лимита просадки оценочная сессия закрывается. На планах Aggressive при первом провале вы получаете 1 бесплатный рестарт.",
       },
       {
         q: "Возвращается ли оценочный взнос?",
@@ -602,7 +604,7 @@ export const t = {
     ],
 
     // CTA
-    cta_badge: "Присоединяйтесь к тысячам трейдеров",
+    cta_badge: "Начните свою оценку сегодня",
     cta_h2_1: "Готовы получить",
     cta_h2_2: "финансирование?",
     cta_sub: "Присоединяйтесь к трейдерам, развивающим свои результаты с ProbCapital. Ваш путь к профессиональному трейдингу начинается сегодня.",

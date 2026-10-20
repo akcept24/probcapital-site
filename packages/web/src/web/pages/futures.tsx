@@ -123,6 +123,9 @@ export default function FuturesPage() {
               </div>
             ))}
           </div>
+          <p style={{ color: "#555A72", fontSize: "13px", lineHeight: 1.7, marginTop: "20px", marginBottom: 0 }}>
+            {tr.risk_eod_note}
+          </p>
         </div>
 
         {/* ── Comparison ── */}

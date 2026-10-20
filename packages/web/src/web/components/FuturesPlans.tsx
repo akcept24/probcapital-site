@@ -109,6 +109,8 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
               ))}
             </div>
 
+            <p className="text-[12px] text-[#555A72] mb-6">{tr.risk_eod_note}</p>
+
             {/* Features */}
             <ul className="space-y-2.5 mb-7 flex-1">
               {features.map((f) => (

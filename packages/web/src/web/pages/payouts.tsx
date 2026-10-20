@@ -7,7 +7,7 @@ export default function PayoutsPage() {
   const { lang, tr } = useLang();
   usePageHead({
     title: lang === "ru" ? "Выплаты ProbCapital — как получить выплату" : "ProbCapital Payouts — How Payouts Work",
-    description: lang === "ru" ? "Как работают выплаты ProbCapital: сплиты до 90%, минимум $50, обработка в течение 24 часов." : "How ProbCapital payouts work: up to 90% splits, $50 minimum, processed within 24 hours.",
+    description: lang === "ru" ? "Как работают выплаты ProbCapital: сплиты до 90%, минимум $50, обработка в течение 24–48 часов после одобрения." : "How ProbCapital payouts work: up to 90% splits, $50 minimum, processed within 24–48 hours after approval.",
     path: "/payouts",
     lang,
   });
@@ -16,13 +16,13 @@ export default function PayoutsPage() {
   const steps = ru ? [
     { n: "01", title: "Откройте кабинет", desc: "Войдите на app.probcapital.com и перейдите в раздел «Вывод средств»." },
     { n: "02", title: "Выберите сумму", desc: "Укажите сумму вывода. Минимальная сумма — $50. Максимум — весь накопленный профит." },
-    { n: "03", title: "Выберите способ", desc: "Банковский перевод или другой верифицированный метод оплаты." },
-    { n: "04", title: "Получите деньги", desc: "Обрабатываем в течение 24 часов. Крипто — моментально после одобрения." },
+    { n: "03", title: "Выберите способ", desc: "USDT (TRC-20 или ERC-20) или Wise — на кошелёк или счёт на ваше имя." },
+    { n: "04", title: "Получите деньги", desc: "Обрабатываем в течение 24–48 часов после одобрения." },
   ] : [
     { n: "01", title: "Open Dashboard", desc: "Log in at app.probcapital.com and go to the Withdrawals section." },
     { n: "02", title: "Select Amount", desc: "Enter withdrawal amount. Minimum is $50. Maximum is your full accumulated profit." },
-    { n: "03", title: "Choose Method", desc: "Bank wire transfer or other verified payment method registered in your name." },
-    { n: "04", title: "Get Paid", desc: "Processed within 24 hours via bank wire or card after approval." },
+    { n: "03", title: "Choose Method", desc: "USDT (TRC-20 or ERC-20) or Wise, to a wallet or account registered in your name." },
+    { n: "04", title: "Get Paid", desc: "Processed within 24–48 hours after approval." },
   ];
 
   const splits = [
@@ -103,8 +103,9 @@ export default function PayoutsPage() {
         <h2 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "20px" }}>{ru ? "Способы выплат" : "Payment Methods"}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: "12px" }}>
           {[
-            { icon: "🏦", name: ru ? "Банковский перевод" : "Bank Wire", detail: "SWIFT / SEPA", time: "1-3 " + (ru ? "дня" : "days") },
-            { icon: "💳", name: ru ? "Верифицированный метод" : "Verified Method", detail: ru ? "На имя владельца аккаунта" : "Registered in account holder's name", time: ru ? "До 24 часов" : "Up to 24h" },
+            { icon: "₮", name: "USDT (TRC-20)", detail: ru ? "Сеть TRON, кошелёк на ваше имя" : "TRON network, wallet in your name", time: ru ? "24–48 часов после одобрения" : "24–48 hours after approval" },
+            { icon: "₮", name: "USDT (ERC-20)", detail: ru ? "Сеть Ethereum, кошелёк на ваше имя" : "Ethereum network, wallet in your name", time: ru ? "24–48 часов после одобрения" : "24–48 hours after approval" },
+            { icon: "🏦", name: "Wise", detail: ru ? "На счёт на ваше имя" : "To an account in your name", time: ru ? "24–48 часов после одобрения" : "24–48 hours after approval" },
           ].map((m) => (
             <div key={m.name} style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "16px", padding: "20px" }}>
               <div style={{ fontSize: "28px", marginBottom: "8px" }}>{m.icon}</div>

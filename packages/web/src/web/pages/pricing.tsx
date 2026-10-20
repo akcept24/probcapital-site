@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FREE_TRIAL_URL } from "../lib/links";
+import { FREE_TRIAL_URL, TRIAL_SIGNUP_URL } from "../lib/links";
 import { useLang } from "../i18n/LangContext";
 import { usePageHead } from "../hooks/usePageHead";
 
@@ -18,6 +18,23 @@ const PLANS: PlanRow[] = [
   { size: "$100,000", standard: "$349",   aggressive: "$449"   },
   { size: "$200,000", standard: "$599",   aggressive: "$799"   },
   { size: "$400,000", standard: "$999",   aggressive: "$1,299" },
+];
+
+/* ─── Futures subscription plans (mirror the product's futures plan data) ─── */
+interface FuturesPlan {
+  size: string;
+  price: string;
+  step1: string;
+  step2: string;
+  trailing: string;
+  popular?: boolean;
+}
+
+const FUTURES_PLANS: FuturesPlan[] = [
+  { size: "$25,000",  price: "$67",  step1: "$1,500 (6%)", step2: "$750 (3%)",   trailing: "$1,250" },
+  { size: "$50,000",  price: "$149", step1: "$3,000 (6%)", step2: "$1,500 (3%)", trailing: "$2,500", popular: true },
+  { size: "$100,000", price: "$249", step1: "$6,000 (6%)", step2: "$3,000 (3%)", trailing: "$5,000" },
+  { size: "$150,000", price: "$327", step1: "$9,000 (6%)", step2: "$4,500 (3%)", trailing: "$7,500" },
 ];
 
 /* ─── Primitives ─── */
@@ -56,10 +73,10 @@ const InfoNote = ({ children }: { children: React.ReactNode }) => (
 
 /* ─── Page ─── */
 export default function PricingPage() {
-  const { lang } = useLang();
+  const { lang, tr } = useLang();
   usePageHead({
-    title: lang === "ru" ? "Тарифы ProbCapital — стоимость челленджей Standard и Aggressive" : "ProbCapital Pricing — Standard & Aggressive Challenge Fees",
-    description: lang === "ru" ? "Цены челленджей ProbCapital: Standard и Aggressive, счета от $10,000 до $400,000. Разовый взнос, без подписок." : "ProbCapital challenge pricing: Standard and Aggressive plans, $10K–$400K accounts. One-time fee, no subscriptions.",
+    title: lang === "ru" ? "Тарифы ProbCapital — челленджи Standard и Aggressive, фьючерсная подписка" : "ProbCapital Pricing — Challenge Fees & Futures Subscription Plans",
+    description: lang === "ru" ? "Цены ProbCapital: челленджи Standard и Aggressive (счета $10,000–$400,000, разовый взнос) и фьючерсные планы по подписке (счета $25,000–$150,000, помесячно)." : "ProbCapital pricing: Standard and Aggressive challenges ($10K–$400K accounts, one-time fee) and Futures subscription plans ($25K–$150K accounts, monthly).",
     path: "/pricing",
     lang,
   });
@@ -185,6 +202,105 @@ export default function PricingPage() {
               ? "Полная сумма оценочного взноса засчитывается в счёт выплаты при первом успешном получении прибыли. Это означает, что при первой выплате вы получите сумму своей торговой прибыли плюс сумму, эквивалентную уплаченному взносу. Условием является соблюдение всех правил программы и прохождение верификации KYC."
               : "The full evaluation fee is credited back as part of your first successful payout. This means your first payout includes your earned profit split plus an amount equal to the fee you paid. Conditions: all program rules must be met and KYC verification must be completed."}
           </p>
+        </div>
+
+        {/* ── Futures Subscription ── */}
+        <div style={{ marginTop: "72px" }}>
+          <div style={{ marginBottom: "36px", textAlign: "center" }}>
+            <Badge>{tr.fut_badge}</Badge>
+            <h2 style={{ fontSize: "clamp(24px,3.4vw,36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "14px", lineHeight: 1.15 }}>
+              {tr.fut_h2}
+            </h2>
+            <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
+              {tr.fut_sub}
+            </p>
+            <div style={{ marginTop: "16px" }}>
+              <Chip label={tr.fut_chip_sim} />
+              {" "}
+              <Chip label={tr.fut_chip_monthly} accent />
+              {" "}
+              <Chip label={tr.fut_chip_cancel} />
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            {FUTURES_PLANS.map((plan) => {
+              const rows: [string, string][] = [
+                [tr.fut_step1, plan.step1],
+                [tr.fut_step2, plan.step2],
+                [tr.fut_dll, "3%"],
+                [tr.fut_trailing, plan.trailing],
+                [tr.fut_mindays, tr.fut_mindays_value],
+                [tr.fut_timelimit, tr.fut_timelimit_value],
+                [tr.fut_split, tr.fut_split_value],
+                [tr.fut_leverage, tr.fut_leverage_value],
+              ];
+              return (
+                <div
+                  key={plan.size}
+                  style={{
+                    background: plan.popular
+                      ? "linear-gradient(135deg, rgba(0,212,170,0.07) 0%, rgba(0,140,255,0.03) 100%)"
+                      : "rgba(255,255,255,0.02)",
+                    border: `1px solid ${plan.popular ? "rgba(0,212,170,0.35)" : "rgba(255,255,255,0.06)"}`,
+                    borderRadius: "16px", padding: "26px 28px",
+                    display: "flex", flexDirection: "column",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "24px", fontWeight: 900, color: "#E0E8FF", letterSpacing: "-0.01em" }}>
+                      {plan.size}
+                    </span>
+                    {plan.popular && <Chip label={tr.fut_popular} accent />}
+                  </div>
+                  <div style={{ marginBottom: "20px" }}>
+                    <span style={{ fontSize: "30px", fontWeight: 900, color: "#00D4AA", letterSpacing: "-0.02em" }}>
+                      {plan.price}
+                    </span>
+                    <span style={{ fontSize: "14px", color: "#5A6278", fontWeight: 600 }}>
+                      {tr.fut_per_month}
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", marginBottom: "24px" }}>
+                    {rows.map(([label, value], i) => (
+                      <div
+                        key={label}
+                        style={{
+                          display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px",
+                          padding: "8px 0",
+                          borderBottom: i < rows.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                        }}
+                      >
+                        <span style={{ fontSize: "12.5px", color: "#7A8298" }}>{label}</span>
+                        <span style={{ fontSize: "13.5px", fontWeight: 700, color: "#D0D8F0", textAlign: "right" as const }}>{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href={TRIAL_SIGNUP_URL}
+                    style={{
+                      marginTop: "auto",
+                      display: "block", textAlign: "center" as const, padding: "13px 24px",
+                      background: plan.popular
+                        ? "linear-gradient(135deg, #00D4AA 0%, #00B894 100%)"
+                        : "rgba(0,212,170,0.1)",
+                      border: plan.popular ? "none" : "1px solid rgba(0,212,170,0.3)",
+                      borderRadius: "12px",
+                      color: plan.popular ? "#04080F" : "#00D4AA",
+                      fontWeight: 800, fontSize: "14px", letterSpacing: "0.02em", textDecoration: "none",
+                      boxShadow: plan.popular ? "0 4px 20px rgba(0,212,170,0.3)" : "none",
+                    }}
+                  >
+                    {tr.fut_cta}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{ marginTop: "20px" }}>
+            <InfoNote>{tr.fut_note}</InfoNote>
+          </div>
         </div>
 
         {/* ── What's included ── */}

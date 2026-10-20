@@ -4,7 +4,7 @@ import { useLang } from "../i18n/LangContext";
 import { usePageHead } from "../hooks/usePageHead";
 
 export default function PayoutsPage() {
-  const { lang } = useLang();
+  const { lang, tr } = useLang();
   usePageHead({
     title: lang === "ru" ? "Выплаты ProbCapital — как получить выплату" : "ProbCapital Payouts — How Payouts Work",
     description: lang === "ru" ? "Как работают выплаты ProbCapital: сплиты до 90%, минимум $50, обработка в течение 24 часов." : "How ProbCapital payouts work: up to 90% splits, $50 minimum, processed within 24 hours.",
@@ -72,6 +72,19 @@ export default function PayoutsPage() {
               </tbody>
             </table>
           </div>
+        </div>
+
+        {/* Payout policy summary */}
+        <div style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", padding: "24px", marginBottom: "32px" }}>
+          <h2 style={{ fontSize: "17px", fontWeight: 700, margin: "0 0 16px" }}>{tr.pop_h2}</h2>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+            {[tr.pop_1, tr.pop_2, tr.pop_3, tr.pop_4, tr.pop_5].map((item) => (
+              <li key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start", color: "#B0B8D1", fontSize: "14.5px", lineHeight: 1.6 }}>
+                <span style={{ color: "#00D4AA", fontWeight: 800, flexShrink: 0 }}>✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Steps */}

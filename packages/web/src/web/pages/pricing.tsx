@@ -206,9 +206,9 @@ export default function PricingPage() {
 
         {/* ── Futures Subscription ── */}
         <div style={{ marginTop: "72px" }}>
-          <div style={{ marginBottom: "36px", textAlign: "center" }}>
+          <div style={{ marginBottom: "40px", textAlign: "center" }}>
             <Badge>{tr.fut_badge}</Badge>
-            <h2 style={{ fontSize: "clamp(24px,3.4vw,36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "14px", lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: "clamp(30px,4.5vw,46px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "14px", lineHeight: 1.15 }}>
               {tr.fut_h2}
             </h2>
             <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
@@ -223,56 +223,77 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
             {FUTURES_PLANS.map((plan) => {
-              const rows: [string, string][] = [
-                [tr.fut_step1, plan.step1],
-                [tr.fut_step2, plan.step2],
-                [tr.fut_dll, "3%"],
-                [tr.fut_trailing, plan.trailing],
-                [tr.fut_mindays, tr.fut_mindays_value],
-                [tr.fut_timelimit, tr.fut_timelimit_value],
-                [tr.fut_split, tr.fut_split_value],
-                [tr.fut_leverage, tr.fut_leverage_value],
+              const rows: { label: string; value: string; good: boolean }[] = [
+                { label: tr.fut_step1, value: plan.step1, good: true },
+                { label: tr.fut_step2, value: plan.step2, good: true },
+                { label: tr.fut_dll, value: "3%", good: false },
+                { label: tr.fut_trailing, value: plan.trailing, good: false },
+                { label: tr.fut_mindays, value: tr.fut_mindays_value, good: false },
+                { label: tr.fut_timelimit, value: tr.fut_timelimit_value, good: true },
+                { label: tr.fut_split, value: tr.fut_split_value, good: true },
+                { label: tr.fut_leverage, value: tr.fut_leverage_value, good: true },
               ];
               return (
                 <div
                   key={plan.size}
                   style={{
-                    background: plan.popular
-                      ? "linear-gradient(135deg, rgba(0,212,170,0.07) 0%, rgba(0,140,255,0.03) 100%)"
-                      : "rgba(255,255,255,0.02)",
-                    border: `1px solid ${plan.popular ? "rgba(0,212,170,0.35)" : "rgba(255,255,255,0.06)"}`,
-                    borderRadius: "16px", padding: "26px 28px",
+                    position: "relative",
+                    background: "#1A1D27",
+                    border: `1px solid ${plan.popular ? "rgba(0,212,170,0.40)" : "rgba(255,255,255,0.08)"}`,
+                    boxShadow: plan.popular ? "0 0 50px rgba(0,212,170,0.12)" : "none",
+                    borderRadius: "16px", padding: "32px",
                     display: "flex", flexDirection: "column",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-                    <span style={{ fontSize: "24px", fontWeight: 900, color: "#E0E8FF", letterSpacing: "-0.01em" }}>
+                  {plan.popular && (
+                    <div style={{
+                      position: "absolute", top: "16px", right: "16px",
+                      fontSize: "10px", fontWeight: 900, padding: "4px 10px", borderRadius: "100px",
+                      textTransform: "uppercase" as const, letterSpacing: "0.12em",
+                      background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0F1117",
+                    }}>
+                      {tr.fut_popular}
+                    </div>
+                  )}
+                  <div style={{ marginBottom: "24px" }}>
+                    <div style={{ fontSize: "13px", color: "#8A8FA8", fontWeight: 500, textTransform: "uppercase" as const, letterSpacing: "0.12em", marginBottom: "8px" }}>
+                      {tr.fut_badge}
+                    </div>
+                    <div style={{ fontSize: "22px", fontWeight: 800, color: "#E0E8FF", letterSpacing: "-0.01em", marginBottom: "12px" }}>
                       {plan.size}
-                    </span>
-                    {plan.popular && <Chip label={tr.fut_popular} accent />}
+                    </div>
+                    <div style={{ display: "flex", alignItems: "flex-end", gap: "8px" }}>
+                      <span style={{
+                        fontSize: "52px", fontWeight: 900, letterSpacing: "-0.03em", lineHeight: 1,
+                        ...(plan.popular
+                          ? { background: "linear-gradient(135deg, #00D4AA, #00FFCC)", WebkitBackgroundClip: "text" as const, WebkitTextFillColor: "transparent" }
+                          : { color: "#F0F2FF" }),
+                      }}>
+                        {plan.price}
+                      </span>
+                      <span style={{ fontSize: "14px", color: "#555A72", marginBottom: "8px" }}>
+                        {tr.fut_per_month}
+                      </span>
+                    </div>
+                    <div style={{ fontSize: "12px", color: "#22C55E", fontWeight: 500, marginTop: "6px" }}>
+                      ↩ {tr.fut_feat_rebate}
+                    </div>
                   </div>
-                  <div style={{ marginBottom: "20px" }}>
-                    <span style={{ fontSize: "30px", fontWeight: 900, color: "#00D4AA", letterSpacing: "-0.02em" }}>
-                      {plan.price}
-                    </span>
-                    <span style={{ fontSize: "14px", color: "#5A6278", fontWeight: 600 }}>
-                      {tr.fut_per_month}
-                    </span>
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", marginBottom: "24px" }}>
-                    {rows.map(([label, value], i) => (
-                      <div
-                        key={label}
-                        style={{
-                          display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px",
-                          padding: "8px 0",
-                          borderBottom: i < rows.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
-                        }}
-                      >
-                        <span style={{ fontSize: "12.5px", color: "#7A8298" }}>{label}</span>
-                        <span style={{ fontSize: "13.5px", fontWeight: 700, color: "#D0D8F0", textAlign: "right" as const }}>{value}</span>
+                  <div style={{
+                    background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)",
+                    borderRadius: "12px", padding: "16px", marginBottom: "24px",
+                    display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 12px",
+                  }}>
+                    {rows.map((row) => (
+                      <div key={row.label}>
+                        <div style={{ fontSize: "11px", color: "#555A72", textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "4px" }}>
+                          {row.label}
+                        </div>
+                        <div style={{ fontSize: "14px", fontWeight: 700, color: row.good ? "#00D4AA" : "#F0F2FF" }}>
+                          {row.value}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -280,15 +301,15 @@ export default function PricingPage() {
                     href={TRIAL_SIGNUP_URL}
                     style={{
                       marginTop: "auto",
-                      display: "block", textAlign: "center" as const, padding: "13px 24px",
+                      display: "block", textAlign: "center" as const, padding: "14px 24px",
                       background: plan.popular
-                        ? "linear-gradient(135deg, #00D4AA 0%, #00B894 100%)"
-                        : "rgba(0,212,170,0.1)",
+                        ? "linear-gradient(135deg, #00D4AA, #00FFCC)"
+                        : "transparent",
                       border: plan.popular ? "none" : "1px solid rgba(0,212,170,0.3)",
                       borderRadius: "12px",
-                      color: plan.popular ? "#04080F" : "#00D4AA",
-                      fontWeight: 800, fontSize: "14px", letterSpacing: "0.02em", textDecoration: "none",
-                      boxShadow: plan.popular ? "0 4px 20px rgba(0,212,170,0.3)" : "none",
+                      color: plan.popular ? "#0F1117" : "#00D4AA",
+                      fontWeight: 700, fontSize: "15px", letterSpacing: "0.02em", textDecoration: "none",
+                      boxShadow: plan.popular ? "0 4px 20px rgba(0,212,170,0.25)" : "none",
                     }}
                   >
                     {tr.fut_cta}

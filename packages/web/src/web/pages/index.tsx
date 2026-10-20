@@ -6,6 +6,7 @@ import Ticker from "../components/Ticker";
 import Stats from "../components/Stats";
 import HowItWorks from "../components/HowItWorks";
 import Challenges from "../components/Challenges";
+import FuturesPlans from "../components/FuturesPlans";
 import FreeTrial from "../components/FreeTrial";
 import Platforms from "../components/Platforms";
 import Comparison from "../components/Comparison";
@@ -42,6 +43,7 @@ export default function Index() {
       <Stats />
       <HowItWorks />
       <Challenges />
+      <FuturesPlans />
       <FreeTrial />
       <Platforms />
       <Comparison />

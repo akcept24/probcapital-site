@@ -123,6 +123,9 @@ export const t = {
     fut_leverage_value: "Up to 20:1",
     fut_cta: "Start Futures Evaluation",
     fut_note: "The Futures program runs on the ProbCapital terminal. Instruments available today: FX, metals, crypto and index CFDs. CME-listed futures data is in rollout.",
+    fut_h2_1: "Futures Subscription",
+    fut_h2_2: "Plans",
+    fut_feat_rebate: "Subscription fees rebated with your first payout",
 
     // Payout policy summary (payouts page)
     pop_h2: "Payout Policy — In Brief",
@@ -365,6 +368,9 @@ export const t = {
     fut_leverage_value: "До 20:1",
     fut_cta: "Начать фьючерсную оценку",
     fut_note: "Фьючерсная программа работает в терминале ProbCapital. Инструменты, доступные сегодня: валютные пары (FX), металлы, криптовалюта и CFD на индексы. Данные фьючерсов, торгуемых на CME, находятся в процессе подключения.",
+    fut_h2_1: "Фьючерсные планы",
+    fut_h2_2: "по подписке",
+    fut_feat_rebate: "Взносы подписки засчитываются в счёт первой выплаты",
 
     // Payout policy summary (payouts page)
     pop_h2: "Политика выплат — кратко",

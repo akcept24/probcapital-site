@@ -115,6 +115,13 @@ export default function Navbar({ sticky = false }: { sticky?: boolean }) {
             {tr.nav_futures}
           </a>
           <a
+            href="/scaling"
+            onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/scaling"); }}
+            className="text-[13px] xl:text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium whitespace-nowrap"
+          >
+            {tr.nav_scaling}
+          </a>
+          <a
             href="/blog"
             onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/blog"); }}
             className="text-[13px] xl:text-[14px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors duration-200 font-medium whitespace-nowrap"
@@ -238,6 +245,14 @@ export default function Navbar({ sticky = false }: { sticky?: boolean }) {
               className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
             >
               {tr.nav_futures}
+            </a>
+
+            <a
+              href="/scaling"
+              onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate("/scaling"); }}
+              className="text-[15px] text-[#8A8FA8] hover:text-[#F0F2FF] transition-colors font-medium py-1"
+            >
+              {tr.nav_scaling}
             </a>
 
             <div className="flex gap-3 mt-1">

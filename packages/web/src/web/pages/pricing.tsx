@@ -96,8 +96,8 @@ export default function PricingPage() {
           </h1>
           <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "560px", margin: "0 auto" }}>
             {ru
-              ? "Оплатите разовый оценочный взнос и получите доступ к симулированному торговому счёту. Взнос полностью засчитывается в счёт первой выплаты при её получении."
-              : "Pay a one-time evaluation fee and get access to a simulated trading account. The fee is fully credited back on your first payout."}
+              ? "Оплатите разовый оценочный взнос и получите доступ к симулированному торговому счёту. Взнос засчитывается в счёт первой выплаты при её получении."
+              : "Pay a one-time evaluation fee and get access to a simulated trading account. The fee is credited back on your first payout."}
           </p>
           <div style={{ marginTop: "16px" }}>
             <Chip label={ru ? "Симулированный счёт" : "Simulated Account"} />

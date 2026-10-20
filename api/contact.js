@@ -22,9 +22,18 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const hitsByIp = new Map();
 
 function clientIp(req) {
-  const xff = req.headers && req.headers["x-forwarded-for"];
-  if (typeof xff === "string" && xff.length > 0) return xff.split(",")[0].trim();
-  if (Array.isArray(xff) && xff.length > 0) return String(xff[0]);
+  // x-real-ip is set by Vercel's edge and cannot be spoofed by the client.
+  // Fallback: the LAST x-forwarded-for entry (appended by the platform);
+  // the first entry is client-controlled and must never key the limiter.
+  const headers = req.headers || {};
+  const realIp = headers["x-real-ip"];
+  if (typeof realIp === "string" && realIp.length > 0) return realIp.trim();
+  const xff = headers["x-forwarded-for"];
+  if (typeof xff === "string" && xff.length > 0) {
+    const parts = xff.split(",");
+    return parts[parts.length - 1].trim();
+  }
+  if (Array.isArray(xff) && xff.length > 0) return String(xff[xff.length - 1]);
   return (req.socket && req.socket.remoteAddress) || "unknown";
 }
 
@@ -46,13 +55,23 @@ function isRateLimited(ip) {
   return false;
 }
 
+const MAX_BODY_BYTES = 32 * 1024; // legit payloads are ≤ ~7 KB
+
 async function readJsonBody(req) {
   if (req.body !== undefined && req.body !== null) {
-    if (typeof req.body === "string") return JSON.parse(req.body);
+    if (typeof req.body === "string") {
+      if (req.body.length > MAX_BODY_BYTES) throw new Error("body_too_large");
+      return JSON.parse(req.body);
+    }
     if (typeof req.body === "object") return req.body;
   }
   const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
+  let total = 0;
+  for await (const chunk of req) {
+    total += chunk.length;
+    if (total > MAX_BODY_BYTES) throw new Error("body_too_large");
+    chunks.push(chunk);
+  }
   const raw = Buffer.concat(chunks).toString("utf8");
   return raw ? JSON.parse(raw) : {};
 }
@@ -62,6 +81,15 @@ function cleanField(value, max) {
   const trimmed = value.trim();
   if (trimmed.length === 0 || trimmed.length > max) return null;
   return trimmed;
+}
+
+// Single-line fields (name, subject): collapse ALL internal whitespace —
+// including CR/LF and zero-width runs — so a sender cannot forge the
+// layout of the staff-chat message (e.g. a fake "Email:" line).
+function cleanLine(value, max) {
+  const cleaned = cleanField(value, max);
+  if (cleaned === null) return null;
+  return cleaned.replace(/[\s\u200B-\u200D\uFEFF]+/g, " ");
 }
 
 export default async function handler(req, res) {
@@ -87,9 +115,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, reason: "invalid_json" });
   }
 
-  const name = cleanField(payload && payload.name, MAX_NAME);
+  const name = cleanLine(payload && payload.name, MAX_NAME);
   const email = cleanField(payload && payload.email, MAX_EMAIL);
-  const subject = cleanField(payload && payload.subject, MAX_SUBJECT);
+  const subject = cleanLine(payload && payload.subject, MAX_SUBJECT);
   const message = cleanField(payload && payload.message, MAX_MESSAGE);
   if (!name || !email || !subject || !message || !EMAIL_RE.test(email)) {
     return res.status(400).json({ ok: false, reason: "validation_failed" });

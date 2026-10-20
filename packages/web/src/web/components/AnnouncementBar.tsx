@@ -33,7 +33,7 @@ export default function AnnouncementBar() {
       <button
         onClick={() => setVisible(false)}
         className="absolute right-4 top-1/2 -translate-y-1/2 text-[#0F1117] opacity-60 hover:opacity-100 transition-opacity text-lg font-bold"
-        aria-label="Close announcement"
+        aria-label={lang === "ru" ? "Закрыть объявление" : "Close announcement"}
       >
         ×
       </button>

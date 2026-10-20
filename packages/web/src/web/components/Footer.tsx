@@ -1,13 +1,9 @@
 import { useLang } from "../i18n/LangContext";
-import { Twitter, Instagram, Youtube, Send, MessageCircle } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
 
-// TODO(QA): replace with real social URLs
 const SOCIAL_LINKS = [
-  { label: "X (Twitter)", href: "#", Icon: Twitter },
-  { label: "Instagram", href: "#", Icon: Instagram },
-  { label: "YouTube", href: "#", Icon: Youtube },
-  { label: "Telegram", href: "#", Icon: Send },
-  { label: "Discord", href: "#", Icon: MessageCircle },
+  { label: "Instagram", href: "https://www.instagram.com/probcapital", Icon: Instagram },
+  { label: "Telegram", href: "https://t.me/probcapital_support", Icon: Send },
 ];
 
 export default function Footer() {

@@ -1,5 +1,5 @@
 import { useLang } from "../i18n/LangContext";
-import { TRIAL_SIGNUP_URL } from "../lib/links";
+import { FREE_TRIAL_URL, TRIAL_SIGNUP_URL } from "../lib/links";
 
 const labels = {
   en: {
@@ -85,7 +85,7 @@ export default function FreeTrial() {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
+                <a href={FREE_TRIAL_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
                   style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
                   {l.cta}
                 </a>

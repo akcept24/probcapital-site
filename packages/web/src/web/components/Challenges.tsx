@@ -29,7 +29,7 @@ export default function Challenges() {
         { label: tr.ch_dailydd, value: "5%",     good: false },
         { label: tr.ch_mindays, value: tr.ch_nomin, good: true },
         { label: tr.ch_split,   value: "90%",    good: true },
-        { label: tr.ch_leverage,value: "1:20 (up to 1:100)", good: true },
+        { label: tr.ch_leverage,value: lang === "ru" ? "1:20 (до 1:100)" : "1:20 (up to 1:100)", good: true },
         { label: tr.ch_payouts, value: tr.ch_ondemand, good: true },
       ],
       features: [

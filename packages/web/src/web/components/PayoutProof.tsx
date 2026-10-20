@@ -1,5 +1,5 @@
 import { useLang } from "../i18n/LangContext";
-import { TRIAL_SIGNUP_URL } from "../lib/links";
+import { FREE_TRIAL_URL } from "../lib/links";
 
 const labels = {
   en: {
@@ -73,7 +73,7 @@ export default function PayoutProof() {
             <div className="text-[40px] font-black gold-text" style={{ letterSpacing: "-0.03em" }}>{l.stripBig}</div>
             <div className="text-[15px] text-[#8A8FA8] max-w-[340px] leading-snug">{l.stripText}</div>
           </div>
-          <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
+          <a href={FREE_TRIAL_URL} target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
-import { TRIAL_SIGNUP_URL } from "../lib/links";
+import { FREE_TRIAL_URL } from "../lib/links";
 
 export default function AnnouncementBar() {
   const [visible, setVisible] = useState(true);
@@ -21,7 +21,7 @@ export default function AnnouncementBar() {
           ? "14 дней по реальным правилам челленджа, без карты"
           : "14 days under real challenge rules, no card required"}.{" "}
         <a 
-          href={TRIAL_SIGNUP_URL} 
+          href={FREE_TRIAL_URL} 
           target="_blank" 
           rel="noopener noreferrer"
           className="font-bold underline"

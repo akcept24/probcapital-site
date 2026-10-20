@@ -72,7 +72,7 @@ const blogPostsEn: Record<string, BlogPost> = {
     author: 'ProbCapital Team',
     date: '2026-08-12',
     readTime: '12 min read',
-    contentPreview: 'Full article content will be available soon. Learn why ProbCapital stands out with 90% profit splits, 2-phase challenges, no minimum trading days, and funding within 24 hours.',
+    contentPreview: 'Full article content will be available soon. Learn why ProbCapital stands out with profit splits up to 90%, 2-phase challenges, and published rules with no hidden traps.',
     image: '/blog/best-prop-firms-2026.jpg',
   },
   'how-to-pass-prop-firm-challenge': {
@@ -120,7 +120,7 @@ const blogPostsRu: Record<string, BlogPost> = {
     author: 'Команда ProbCapital',
     date: '2026-08-12',
     readTime: '12 мин чтения',
-    contentPreview: 'Полная статья скоро появится. Узнайте, почему ProbCapital выделяется благодаря 90% выплатам, 1-этапному челленджу, отсутствию минимальных торговых дней и финансированию в течение 24 часов.',
+    contentPreview: 'Полная статья скоро появится. Узнайте, почему ProbCapital выделяется: сплит прибыли до 90%, двухэтапные челленджи и опубликованные правила без скрытых ловушек.',
     image: '/blog/best-prop-firms-2026.jpg',
   },
   'how-to-pass-prop-firm-challenge': {

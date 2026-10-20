@@ -274,7 +274,7 @@ Even with a 90% split, **prop trading generates 9x more income** because you're 
 ## Common Myths Debunked
 
 ### Myth 1: "Prop firms don't pay out"
-**Reality**: ProbCapital has paid $2.4M+ to funded traders. Check our verified payout certificates and Trustpilot reviews.
+**Reality**: ProbCapital publishes its full payout terms — splits, schedule and checks — on this site before you pay, and pays performance payouts from its own funds under those terms.
 
 ### Myth 2: "90% split is a scam"
 **Reality**: 90% of $100k profits = $90k. That's better than 100% of $10k profits = $10k.

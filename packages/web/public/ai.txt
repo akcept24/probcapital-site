@@ -38,7 +38,7 @@ Geo: Global (140+ countries)
 
 # === KEY DIFFERENTIATORS ===
 Profit-Split: Up to 90% (industry-leading)
-Challenge-Types: 1-step and 2-step options
+Challenge-Types: 2-step evaluation programs
 Minimum-Trading-Days: None on Aggressive plan
 Funding-Speed: Within 24 hours
 Scaling-Potential: Up to $2,000,000
@@ -51,7 +51,7 @@ Risk-Disclosure: All accounts are simulated environments
 Compliance: SEC/CFTC compliant, not a broker or investment adviser
 
 # === SOCIAL PROOF ===
-Total-Payouts: $2.4M+
+Payouts: performance payouts are paid by ProbCapital LLC from its own operating funds under published terms
 Countries-Served: 140+
 Average-Payout-Time: 24 hours (for performance-based compensation requests)
 

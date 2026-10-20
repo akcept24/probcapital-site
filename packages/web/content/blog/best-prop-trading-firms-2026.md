@@ -139,7 +139,7 @@ We don't micromanage your strategy. If it's profitable and within risk limits, t
 
 ### Real Numbers
 
-- **$2.4M+ paid** to funded traders
+- **Payouts from company funds** — performance payouts are paid by ProbCapital LLC under published terms
 - **12,400+ active traders** currently funded
 - **24-hour average** payout processing time
 
@@ -234,7 +234,7 @@ Visit [probcapital.com/pricing](https://probcapital.com/pricing) and select:
 
 ### Is ProbCapital a scam?
 
-No. We are a registered LLC in Delaware, USA. We've paid out over $2.4M to traders and maintain transparent terms of service. All accounts are demo environments (simulated capital) as disclosed.
+No. We are a registered LLC in Delaware, USA. Performance payouts are made by the company from its own funds under transparent, published terms of service. All accounts are demo environments (simulated capital) as disclosed.
 
 ### What happens if I fail?
 

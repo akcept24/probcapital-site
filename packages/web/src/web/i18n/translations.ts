@@ -118,25 +118,6 @@ export const t = {
     feat_6_title: "Community Access",
     feat_6_desc: "Join funded traders worldwide. Access our private Discord, weekly webinars, and live trade analysis sessions.",
 
-    // Testimonials
-    test_badge: "Proof",
-    test_h2_1: "Traders Who Got",
-    test_h2_2: "Paid",
-    test_sub: "Real payouts. Real traders. Join funded professionals building their performance worldwide.",
-    test_tp: "Rated",
-    test_tp2: "on Trustpilot",
-    test_reviews: "reviews",
-    test_total: "total payouts",
-    test_traders: "funded traders",
-    test_quotes: [
-      "Alex T. — $4,200 payout · Passed the $100K challenge in 18 days. Payment hit within hours. ProbCapital is the real deal — no delays, no excuses.",
-      "Marcus R. — $2,800 payout · Tried 4 other prop firms. ProbCapital is by far the most transparent. Rules are clear, dashboard is clean, support responds fast.",
-      "Dmitri V. — $11,500 total · Been with ProbCapital 8 months. Already scaled to $400K. The scaling program is legit — they actually want you to succeed.",
-      "James K. — $3,600 payout · Aggressive plan with 90% split is insane. No minimum days is perfect for my scalping strategy. Account activated within 24h after passing.",
-      "Sofia M. — $1,900 payout · Discord community alone is worth it. Hundreds of funded traders sharing setups daily. Webinars are genuinely high quality.",
-      "Yusuf A. — $5,100 payout · First payout arrived exactly as promised. Live dashboard helped me stay disciplined and avoid revenge trading. Highly recommend.",
-    ],
-
     // FAQ
     faq_badge: "FAQ",
     faq_h2_1: "Common",
@@ -346,25 +327,6 @@ export const t = {
     feat_5_desc: "Реальное отслеживание кривой доходности, просадки, целей и истории выплат — в одном интерфейсе.",
     feat_6_title: "Сообщество",
     feat_6_desc: "Присоединитесь к финансируемым трейдерам по всему миру. Закрытый Discord, еженедельные вебинары и разборы сделок.",
-
-    // Testimonials
-    test_badge: "Доказательства",
-    test_h2_1: "Трейдеры, которые получили",
-    test_h2_2: "выплаты",
-    test_sub: "Реальные выплаты. Реальные трейдеры. Присоединяйтесь к финансируемым профессионалам, развивающим свои результаты по всему миру.",
-    test_tp: "Рейтинг",
-    test_tp2: "на Trustpilot",
-    test_reviews: "отзывов",
-    test_total: "всего выплачено",
-    test_traders: "финансируемых трейдеров",
-    test_quotes: [
-      "Alex T. — выплата $4 200 · Прошёл челлендж $100K за 18 дней. Деньги пришли за несколько часов. ProbCapital — без задержек и отговорок.",
-      "Marcus R. — выплата $2 800 · Пробовал 4 другие проп-фирмы. ProbCapital — самая прозрачная. Правила понятны, дашборд чистый, поддержка быстрая.",
-      "Dmitri V. — $11 500 всего · Работаю с ProbCapital 8 месяцев. Уже вырос до $400K. Программа масштабирования реальная — они хотят вашего успеха.",
-      "James K. — выплата $3 600 · Агрессивный план с 90% сплитом — это невероятно. Без минимума дней — идеально для скальпинга. Счёт активирован в течение 24ч после прохождения.",
-      "Sofia M. — выплата $1 900 · Discord стоит отдельных денег. Сотни финансируемых трейдеров ежедневно делятся сетапами. Вебинары высокого уровня.",
-      "Yusuf A. — выплата $5 100 · Первая выплата пришла точно по обещанию. Живой дашборд помог сохранить дисциплину. Рекомендую.",
-    ],
 
     // FAQ
     faq_badge: "FAQ",

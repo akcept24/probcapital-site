@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { OPEN_CHAT_EVENT } from "../components/LiveChat";
 import { useLang } from "../i18n/LangContext";
 import { usePageHead } from "../hooks/usePageHead";
+import { useState } from "react";
 
 export default function ContactPage() {
   const { lang } = useLang();
@@ -13,6 +14,8 @@ export default function ContactPage() {
     lang,
   });
   const ru = lang === "ru";
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const openChat = () => window.dispatchEvent(new CustomEvent(OPEN_CHAT_EVENT));
 
@@ -61,14 +64,33 @@ export default function ContactPage() {
           <h2 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "24px" }}>
             {ru ? "Отправить сообщение" : "Send a Message"}
           </h2>
-          <form onSubmit={(e) => {
+          <form onSubmit={async (e) => {
             e.preventDefault();
-            const data = new FormData(e.currentTarget);
-            const subject = encodeURIComponent(String(data.get("subject") || ""));
-            const body = encodeURIComponent(
-              `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
-            );
-            window.location.href = `mailto:support@probcapital.com?subject=${subject}&body=${body}`;
+            const form = e.currentTarget;
+            const data = new FormData(form);
+            const name = String(data.get("name") || "").trim();
+            const email = String(data.get("email") || "").trim();
+            const subject = String(data.get("subject") || "").trim();
+            const message = String(data.get("message") || "").trim();
+            setSending(true);
+            setSent(false);
+            try {
+              const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, subject, message }),
+              });
+              if (!res.ok) throw new Error("contact request failed");
+              form.reset();
+              setSent(true);
+            } catch {
+              // Fallback: never leave the visitor stuck — open their mail client.
+              const mailSubject = encodeURIComponent(subject);
+              const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+              window.location.href = `mailto:support@probcapital.com?subject=${mailSubject}&body=${mailBody}`;
+            } finally {
+              setSending(false);
+            }
           }} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               <div>
@@ -88,8 +110,13 @@ export default function ContactPage() {
               <label style={{ display: "block", fontSize: "13px", color: "#8A8FA8", marginBottom: "8px" }}>{ru ? "Сообщение" : "Message"}</label>
               <textarea name="message" required rows={5} style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F2FF", fontSize: "15px", outline: "none", resize: "vertical", boxSizing: "border-box" }} placeholder={ru ? "Ваше сообщение..." : "Your message..."} />
             </div>
-            <button type="submit" style={{ padding: "14px 32px", borderRadius: "50px", background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0a0e17", fontWeight: 700, fontSize: "15px", border: "none", cursor: "pointer", alignSelf: "flex-start" }}>
-              {ru ? "Отправить" : "Send Message"}
+            {sent && (
+              <div style={{ padding: "12px 16px", borderRadius: "12px", background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.3)", color: "#00D4AA", fontWeight: 600, fontSize: "14px" }}>
+                {ru ? "Сообщение отправлено — ответим в течение одного рабочего дня" : "Message sent — we reply within one business day"}
+              </div>
+            )}
+            <button type="submit" disabled={sending} style={{ padding: "14px 32px", borderRadius: "50px", background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0a0e17", fontWeight: 700, fontSize: "15px", border: "none", cursor: sending ? "default" : "pointer", opacity: sending ? 0.65 : 1, alignSelf: "flex-start" }}>
+              {sending ? (ru ? "Отправка…" : "Sending…") : (ru ? "Отправить" : "Send Message")}
             </button>
           </form>
         </div>

@@ -40,7 +40,7 @@ Geo: Global
 Profit-Split: Up to 90% (industry-leading)
 Challenge-Types: 2-step evaluation programs
 Minimum-Trading-Days: None on Aggressive plan
-Funding-Speed: Within 24 hours
+Funding-Speed: Funded-stage account after passing, following manual review
 Scaling-Potential: Up to $2,000,000
 Payment-Options: Crypto (via Plisio checkout)
 Account-Sizes: $10k, $25k, $50k, $100k, $200k, $400k

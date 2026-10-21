@@ -10,7 +10,7 @@ const labels = {
     us: "ProbCapital",
     them: "Other Firms",
     rows: [
-      { feature: "Account activation within 24h after passing", us: true, them: false },
+      { feature: "Funded account review within 24 hours after passing", us: true, them: false },
       { feature: "Evaluation fee rebate on first approved payout", us: true, them: false },
       { feature: "Performance-based payouts", us: true, them: false },
       { feature: "No minimum trading days (Aggressive)", us: true, them: false },
@@ -35,7 +35,7 @@ const labels = {
     us: "ProbCapital",
     them: "Другие фирмы",
     rows: [
-      { feature: "Активация счёта в течение 24 часов после прохождения", us: true, them: false },
+      { feature: "Рассмотрение счёта в течение 24 часов после прохождения", us: true, them: false },
       { feature: "Рибейт взноса при первой одобренной выплате", us: true, them: false },
       { feature: "Выплаты по результатам оценки", us: true, them: false },
       { feature: "Без минимума дней (Агрессивный)", us: true, them: false },

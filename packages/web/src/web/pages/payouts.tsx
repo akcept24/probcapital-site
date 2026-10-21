@@ -27,7 +27,7 @@ export default function PayoutsPage() {
 
   const splits = [
     { plan: ru ? "Стандартный" : "Standard", split: "80%", freq: ru ? "Еженедельно" : "Weekly", min: "$50" },
-    { plan: ru ? "Агрессивный" : "Aggressive", split: "90%", freq: ru ? "По запросу" : "On-demand", min: "$50" },
+    { plan: ru ? "Агрессивный" : "Aggressive", split: "90%", freq: ru ? "Запрос в любое время" : "Request anytime", min: "$50" },
   ];
 
   return (

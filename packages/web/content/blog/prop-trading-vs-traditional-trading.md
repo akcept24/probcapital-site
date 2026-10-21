@@ -312,7 +312,7 @@ Even with a 90% split, **prop trading generates 9x more income** because you're 
 ## Action Steps
 
 ### If You Choose Prop Trading:
-1. **Choose ProbCapital**: Industry-leading 90% split, 24h funding
+1. **Choose ProbCapital**: Industry-leading 90% split, funded-stage account after passing and manual review
 2. **Start small**: $10k-$50k challenge first
 3. **Practice**: Demo account with same rules
 4. **Budget**: Only invest what you can lose

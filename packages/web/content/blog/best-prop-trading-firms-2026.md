@@ -56,7 +56,7 @@ Choose between two challenge types:
 
 #### **Aggressive (2-Phase Challenge)** ⭐ Most Popular
 - 12% max drawdown — extra room to trade
-- On-demand payouts
+- Payout requests anytime
 - **90% profit split**
 - **No minimum trading days**
 

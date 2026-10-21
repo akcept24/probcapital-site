@@ -19,7 +19,7 @@ const labels = {
     sub: "No trader screenshots and no invented totals. Just the payout terms of the program — published here and in the Terms before you pay a cent.",
     stat1: "90%", label1: "Max Performance Split",
     stat2: "$400K", label2: "Max Simulated Capital",
-    stat3: "24h", label3: "Payout Processing",
+    stat3: "24–48h", label3: "Payout After Approval",
     stat4: "15%", label4: "Max Affiliate Commission",
   },
   ru: {
@@ -29,7 +29,7 @@ const labels = {
     sub: "Никаких скриншотов трейдеров и выдуманных итогов. Только условия выплат программы — опубликованы здесь и в условиях до того, как вы заплатите хоть цент.",
     stat1: "90%", label1: "Максимальный сплит прибыли",
     stat2: "$400K", label2: "Макс. симулированный капитал",
-    stat3: "24ч", label3: "Обработка выплат",
+    stat3: "24–48ч", label3: "Выплата после одобрения",
     stat4: "15%", label4: "Макс. партнёрская комиссия",
   },
 };

@@ -113,7 +113,7 @@ export default function AboutPage() {
   const stats = [
     { v: "Delaware, USA", l: ru ? "Юрисдикция" : "Jurisdiction" },
     { v: "#10541343", l: ru ? "Номер регистрации" : "File Number" },
-    { v: "MT4 & MT5", l: ru ? "Платформы" : "Platforms" },
+    { v: "ProbTrader", l: ru ? "Платформа" : "Platform" },
     { v: "99.9%", l: ru ? "Целевой аптайм" : "Uptime Target" },
   ];
 
@@ -186,8 +186,8 @@ export default function AboutPage() {
       icon: "🌐",
       title: ru ? "Глобальная платформа SaaS" : "Global SaaS Platform",
       desc: ru
-        ? "Платформа с поддержкой MT4/MT5 и полнофункциональным веб-интерфейсом, оптимизированным для любых устройств."
-        : "A platform with MT4/MT5 bridge support and a fully responsive web interface, optimized for any device.",
+        ? "Собственная веб-платформа ProbTrader с полнофункциональным интерфейсом, оптимизированным для любых устройств."
+        : "Our in-house ProbTrader web platform with a fully responsive interface, optimized for any device.",
       tag: "Global SaaS",
     },
   ];
@@ -402,7 +402,7 @@ export default function AboutPage() {
             <span style={{ fontSize: "11px", color: "#5A6070", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
               {ru ? "Стек технологий" : "Tech Stack"}
             </span>
-            {["React", "TypeScript", "Supabase", "PostgreSQL", "VPS / Bare Metal", "AES-256", "MT4 / MT5 Bridge", "WebSockets"].map(tech => (
+            {["React", "TypeScript", "Supabase", "PostgreSQL", "VPS / Bare Metal", "AES-256", "ProbTrader Terminal", "WebSockets"].map(tech => (
               <span key={tech} style={{
                 fontSize: "12px", color: "#8090A8", fontWeight: 600, padding: "4px 12px",
                 borderRadius: "8px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)",

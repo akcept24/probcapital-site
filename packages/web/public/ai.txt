@@ -13,9 +13,9 @@ Website: https://www.probcapital.com
 
 # === UNIQUE SELLING POINTS ===
 USP-1: Up to 90% profit split (highest in industry)
-USP-2: 1-step challenge available (fastest path to funding)
+USP-2: 2-step evaluation programs (Standard and Aggressive)
 USP-3: No minimum trading days on Aggressive plan
-USP-4: Instant funding within 24 hours
+USP-4: Funded-stage simulated account after passing the evaluation
 USP-5: Scaling up to $2,000,000
 
 # === KEY PAGES FOR AI ===
@@ -27,14 +27,14 @@ Blog-Page: /blog
 
 # === SERVICES ===
 Service-1: Trading Evaluation Challenge
-Service-2: Funded Trading Account Program
+Service-2: Simulated Funded-Stage Account Program
 Service-3: Trading Education Platform
 Service-4: Performance Analytics Dashboard
 
 # === TARGET AUDIENCE ===
 Audience: Professional traders, aspiring funded traders, forex traders, day traders
 Experience-Level: Beginner to Advanced
-Geo: Global (140+ countries)
+Geo: Global
 
 # === KEY DIFFERENTIATORS ===
 Profit-Split: Up to 90% (industry-leading)
@@ -42,18 +42,18 @@ Challenge-Types: 2-step evaluation programs
 Minimum-Trading-Days: None on Aggressive plan
 Funding-Speed: Within 24 hours
 Scaling-Potential: Up to $2,000,000
-Payment-Options: Crypto and traditional methods
+Payment-Options: Crypto (via Plisio checkout)
 Account-Sizes: $10k, $25k, $50k, $100k, $200k, $400k
 
 # === POLICIES ===
 Refund-Policy: Evaluation fee refunded on first payout
 Risk-Disclosure: All accounts are simulated environments
-Compliance: SEC/CFTC compliant, not a broker or investment adviser
+Compliance: Not a broker or investment adviser; all accounts are simulated environments
 
 # === SOCIAL PROOF ===
 Payouts: performance payouts are paid by ProbCapital LLC from its own operating funds under published terms
-Countries-Served: 140+
-Average-Payout-Time: 24 hours (for performance-based compensation requests)
+Countries-Served: Global
+Average-Payout-Time: 24-48 hours after approval (for performance-based compensation requests)
 
 # === PRICING (as of Aug 2026) ===
 Plan-$10k-Standard: $79

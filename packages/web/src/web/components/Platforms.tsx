@@ -6,9 +6,9 @@ const labels = {
     badge: "Proprietary Platform",
     h2_1: "Trade on",
     h2_2: "ProbTrader",
-    sub: "Our fully in-house built platform — designed from scratch for funded traders. MT4 & MT5 also supported.",
+    sub: "Our fully in-house built platform — designed from scratch for funded traders.",
     built: "Built in-house",
-    built_sub: "MT4 & MT5 also available.",
+    built_sub: "No third-party platform dependencies.",
     features: [
       { icon: "⚡", title: "Ultra-Low Latency", desc: "Sub-millisecond order execution. No requotes, no slippage on limit orders." },
       { icon: "📊", title: "Advanced Charting", desc: "50+ indicators, multi-timeframe analysis, custom drawing tools built in." },
@@ -26,7 +26,7 @@ const labels = {
     badge: "Собственная платформа",
     h2_1: "Торгуйте на",
     h2_2: "ProbTrader",
-    sub: "Наша собственная платформа, разработанная с нуля для финансируемых трейдеров. MT4 и MT5 также поддерживаются.",
+    sub: "Наша собственная платформа, разработанная с нуля для финансируемых трейдеров.",
     built: "Собственная разработка",
     built_sub: "Никаких сторонних зависимостей. Полный контроль.",
     features: [
@@ -232,17 +232,6 @@ export default function Platforms() {
                 style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 {d.icon}
                 {d.name}
-              </span>
-            ))}
-            <span className="text-[12px] text-[#555A72] ml-1">+</span>
-            {[
-              { name: "MT4", img: null },
-              { name: "MT5", img: "/mt5.png" },
-            ].map(p => (
-              <span key={p.name} className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold"
-                style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
-                {p.img && <img src={p.img} alt={p.name} className="w-4 h-4 object-contain" />}
-                {p.name}
               </span>
             ))}
           </div>

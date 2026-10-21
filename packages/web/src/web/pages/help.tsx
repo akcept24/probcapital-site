@@ -9,7 +9,7 @@ const faqs = [
     categoryRu: "Начало работы",
     items: [
       { q: "How do I start an evaluation?", qRu: "Как начать оценку?", a: "Register on app.probcapital.com, choose your account size and evaluation plan, complete payment, and receive your login credentials within minutes.", aRu: "Зарегистрируйтесь на app.probcapital.com, выберите размер счёта и план оценки, оплатите — данные для входа придут в течение нескольких минут." },
-      { q: "What trading platforms are supported?", qRu: "Какие платформы поддерживаются?", a: "We support MetaTrader 4 (MT4) and MetaTrader 5 (MT5). Both platforms are available for desktop, web, and mobile.", aRu: "Мы поддерживаем MetaTrader 4 (MT4) и MetaTrader 5 (MT5). Доступны версии для ПК, браузера и мобильных устройств." },
+      { q: "What trading platforms are supported?", qRu: "Какие платформы поддерживаются?", a: "Trading runs on ProbTrader, our in-house web terminal, in your browser — no MetaTrader account or download is required.", aRu: "Торговля идёт в ProbTrader — нашем собственном веб-терминале, прямо в браузере; MetaTrader не требуется." },
       { q: "What instruments can I trade?", qRu: "Какими инструментами можно торговать?", a: "The simulation environment supports Forex pairs, indices, commodities, and metals. All major and minor pairs are available within the evaluation software.", aRu: "Симулированная среда поддерживает форекс-пары, индексы, сырьевые товары и металлы. Все основные и минорные пары доступны в рамках программы оценки." },
     ],
   },

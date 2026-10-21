@@ -2,7 +2,7 @@ import { useLang } from "../i18n/LangContext";
 
 const principles = [
   { icon: "📅", en: { t: "Weekly Payouts", d: "Standard plan pays out on a weekly schedule" }, ru: { t: "Выплаты каждую неделю", d: "План Standard — выплаты по недельному графику" } },
-  { icon: "⚡", en: { t: "On-Demand Payouts", d: "Aggressive plan — request a payout when you want it" }, ru: { t: "Выплаты по запросу", d: "План Aggressive — запрашивайте выплату, когда удобно" } },
+  { icon: "⚡", en: { t: "Payout Requests Anytime", d: "Aggressive plan — request a payout when you want it" }, ru: { t: "Запрос выплаты в любое время", d: "План Aggressive — запрашивайте выплату, когда удобно" } },
   { icon: "💰", en: { t: "Up to 90% Split", d: "Performance split up to 90% on Aggressive, 80% on Standard" }, ru: { t: "Сплит до 90%", d: "До 90% прибыли на Aggressive, 80% — на Standard" } },
   { icon: "↩️", en: { t: "Fee Rebate", d: "Evaluation fee returned with your first approved payout" }, ru: { t: "Возврат комиссии", d: "Комиссия за оценку возвращается с первой одобренной выплатой" } },
   { icon: "🏦", en: { t: "Paid by ProbCapital LLC", d: "Payouts are made by the company from its own operating funds" }, ru: { t: "Платит ProbCapital LLC", d: "Выплаты производит компания из собственных операционных средств" } },
@@ -19,7 +19,7 @@ const labels = {
     sub: "No trader screenshots and no invented totals. Just the payout terms of the program — published here and in the Terms before you pay a cent.",
     stat1: "90%", label1: "Max Performance Split",
     stat2: "$400K", label2: "Max Simulated Capital",
-    stat3: "24h", label3: "Payout Processing",
+    stat3: "24–48h", label3: "Payout After Approval",
     stat4: "15%", label4: "Max Affiliate Commission",
   },
   ru: {
@@ -29,7 +29,7 @@ const labels = {
     sub: "Никаких скриншотов трейдеров и выдуманных итогов. Только условия выплат программы — опубликованы здесь и в условиях до того, как вы заплатите хоть цент.",
     stat1: "90%", label1: "Максимальный сплит прибыли",
     stat2: "$400K", label2: "Макс. симулированный капитал",
-    stat3: "24ч", label3: "Обработка выплат",
+    stat3: "24–48ч", label3: "Выплата после одобрения",
     stat4: "15%", label4: "Макс. партнёрская комиссия",
   },
 };

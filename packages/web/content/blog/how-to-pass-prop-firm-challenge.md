@@ -331,9 +331,9 @@ The goal isn't to prove that you can make the most money in the shortest possibl
 If you're looking for a prop firm that offers trader-friendly rules, explore [ProbCapital's evaluation options](https://probcapital.com/pricing):
 
 - ✅ **90% profit split** — keep more of what you earn
-- ✅ **1-step or 2-step challenges** — choose your path
+- ✅ **2-step challenges (Standard and Aggressive)** — choose your plan
 - ✅ **No minimum trading days** on Aggressive plans
-- ✅ **Funded within 24 hours** — fastest in the industry
+- ✅ **Funded-stage simulated account after passing** — following manual review
 
 Choose the challenge structure that fits your trading style and start your journey to becoming a funded trader.
 

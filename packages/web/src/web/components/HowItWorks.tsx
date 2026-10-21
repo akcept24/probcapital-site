@@ -31,10 +31,10 @@ export default function HowItWorks() {
 
   const badge = ru ? "Программа масштабирования" : "Scaling Program";
   const h2_1 = ru ? "Ваш путь к" : "Your Path to";
-  const h2_2 = ru ? "управлению капиталом" : "Institutional Capital";
+  const h2_2 = ru ? "масштабируемому симулированному счёту" : "a Scaled Simulated Account";
   const sub = ru
-    ? "Четыре этапа от первичной оценки до управления капиталом на институциональном уровне."
-    : "Four structured stages from initial evaluation to managing institutional-level capital.";
+    ? "Четыре этапа от первичной оценки до масштабируемого симулированного финансируемого счёта."
+    : "Four structured stages from initial evaluation to a scaled simulated funded-stage account.";
 
   const steps = ru
     ? [
@@ -56,14 +56,14 @@ export default function HowItWorks() {
           num: "03",
           tag: "Этап 3",
           title: "Масштабирование капитала",
-          desc: "Прошли верификацию — получайте расширенный счёт и автоматическое увеличение капитала на 25% за каждые 10% прибыльного цикла, вплоть до $2 000 000.",
-          highlight: "+25% за каждый 10%-ный цикл",
+          desc: "Прошли верификацию — получайте финансируемый симулированный счёт. Масштабирование — только после ручной проверки: +10% чистой прибыли может дать +25% к размеру счёта, не чаще раза в 30 дней, вплоть до $2 000 000.",
+          highlight: "+25% за одобренный цикл +10%",
         },
         {
           num: "04",
-          tag: "Элита",
-          title: "Элитный уровень",
-          desc: "Лучшие трейдеры достигают управления капиталом до $2 000 000. Приоритетная инфраструктура, пониженные спреды и выделенный риск-менеджер для топ-тирных участников.",
+          tag: "Потолок",
+          title: "Потолок масштабирования",
+          desc: "Финансируемые счета могут вырасти до $2 000 000 по программе масштабирования. Каждое увеличение — только вручную, после проверок KYC, правил торговли и злоупотреблений; автоматически размер счёта не растёт.",
           highlight: "До $2 000 000",
         },
       ]
@@ -86,14 +86,14 @@ export default function HowItWorks() {
           num: "03",
           tag: "Phase 3",
           title: "Capital Scaling",
-          desc: "Pass verification — receive your funded account and automatic 25% capital increases for every 10% profitable cycle, up to $2,000,000.",
-          highlight: "+25% per 10% profit cycle",
+          desc: "Pass verification — receive your funded-stage simulated account. Scaling is reviewed manually: +10% net profit can earn a +25% account increase, at most once per 30 days, up to $2,000,000.",
+          highlight: "+25% per approved +10% cycle",
         },
         {
           num: "04",
-          tag: "Elite",
-          title: "Elite Tier",
-          desc: "Top performers reach up to $2,000,000 in allocated capital. Priority infrastructure, tightened spreads, and a dedicated risk manager for tier-1 participants.",
+          tag: "Cap",
+          title: "Scaling Cap",
+          desc: "Funded-stage accounts can grow up to $2,000,000 through the scaling program. Every increase is manual — KYC, trading-rules and abuse checks — never automatic.",
           highlight: "Up to $2,000,000",
         },
       ];

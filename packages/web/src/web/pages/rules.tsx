@@ -48,11 +48,11 @@ export default function RulesPage() {
       title: ru ? "Минимальные дни торговли" : "Minimum Trading Days",
       icon: "📅",
       items: ru ? [
-        "Стандарт: минимум 4 торговых дня в каждой фазе",
+        "Стандарт: минимум 5 торговых дней в каждой фазе",
         "Агрессив: нет минимального требования по дням",
         "Торговый день — день, в котором открыта хотя бы 1 сделка",
       ] : [
-        "Standard: minimum 4 trading days per phase",
+        "Standard: minimum 5 trading days per phase",
         "Aggressive: no minimum trading days required",
         "A trading day counts when at least 1 trade is opened",
       ],

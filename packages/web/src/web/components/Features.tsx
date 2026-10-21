@@ -74,8 +74,8 @@ export default function Features() {
     },
     {
       title: "Глобальная доступность платформы",
-      desc: "Платформа оценки торговых навыков доступна в 140+ странах через MT4, MT5 и адаптивный веб-интерфейс — созданная для профессионалов по всему миру.",
-      tag: "140+ Countries",
+      desc: "Платформа оценки торговых навыков доступна через адаптивный веб-интерфейс ProbTrader — созданная для профессионалов по всему миру.",
+      tag: "Web Access",
     },
   ] : [
     {
@@ -105,8 +105,8 @@ export default function Features() {
     },
     {
       title: "Global Platform Accessibility",
-      desc: "Our Skill Assessment Software is accessible across 140+ countries via MT4, MT5, and a responsive web interface — engineered for professionals operating at global scale.",
-      tag: "140+ Countries",
+      desc: "Our Skill Assessment Software is accessible worldwide through the responsive ProbTrader web interface — engineered for professionals operating at global scale.",
+      tag: "Web Access",
     },
   ];
 
@@ -213,12 +213,12 @@ export default function Features() {
             { v: "< 1ms", l: "Задержка VPS" },
             { v: "AES-256", l: "Шифрование данных" },
             { v: "99.9%", l: "Целевой аптайм платформы" },
-            { v: "140+", l: "Обслуживаемых стран" },
+            { v: "Web", l: "Доступ из браузера" },
           ] : [
             { v: "< 1ms", l: "VPS Latency" },
             { v: "AES-256", l: "Data Encryption" },
             { v: "99.9%", l: "Platform Uptime Target" },
-            { v: "140+", l: "Countries Served" },
+            { v: "Web", l: "Browser Access" },
           ]).map(s => (
             <div key={s.l} style={{ textAlign: "center" }}>
               <div style={{ fontSize: "18px", fontWeight: 800, color: "#00D4AA", letterSpacing: "-0.02em" }}>{s.v}</div>

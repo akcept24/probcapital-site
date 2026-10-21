@@ -7,7 +7,7 @@ export default function Stats() {
     { value: "15%", label: tr.stats_affiliate },
     { value: "90%", label: tr.stats_split },
     { value: "$400K", label: tr.stats_funding },
-    { value: "24h", label: tr.stats_payout_time },
+    { value: "24–48h", label: tr.stats_payout_time },
   ];
 
   return (

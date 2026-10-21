@@ -22,7 +22,7 @@ const blogPostsEn: BlogPost[] = [
   {
     slug: 'best-prop-trading-firms-2026',
     title: 'Why ProbCapital is the Best Choice for Funded Traders in 2026',
-    description: 'Discover why ProbCapital offers the highest profit splits (90%), fastest funding (24h), and most trader-friendly rules in the prop trading industry.',
+    description: 'Discover why ProbCapital offers profit splits up to 90%, 2-step challenges (Standard and Aggressive), and trader-friendly rules in the prop trading industry.',
     category: 'Trading Education',
     author: 'ProbCapital Team',
     date: '2026-08-12',
@@ -69,7 +69,7 @@ const blogPostsRu: BlogPost[] = [
   {
     slug: 'best-prop-trading-firms-2026',
     title: 'Почему ProbCapital — лучший выбор для финансируемых трейдеров в 2026',
-    description: 'Узнайте, почему ProbCapital предлагает самые высокие выплаты (90%), самое быстрое финансирование (24ч) и самые дружелюбные правила в индустрии проп-трейдинга.',
+    description: 'Узнайте, почему ProbCapital предлагает выплаты до 90%, 2-этапные челленджи (Standard и Aggressive) и дружелюбные правила в индустрии проп-трейдинга.',
     category: 'Обучение трейдингу',
     author: 'Команда ProbCapital',
     date: '2026-08-12',

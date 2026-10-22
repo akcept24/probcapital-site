@@ -190,6 +190,9 @@ export default function PricingPage() {
         <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "16px" }}>
           {tr.risk_eod_note}
         </p>
+        <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "8px" }}>
+          {tr.ts_most_fail}
+        </p>
 
         {/* ── Rebate note ── */}
         <div style={{
@@ -265,8 +268,11 @@ export default function PricingPage() {
                     <div style={{ fontSize: "13px", color: "#8A8FA8", fontWeight: 500, textTransform: "uppercase" as const, letterSpacing: "0.12em", marginBottom: "8px" }}>
                       {tr.fut_badge}
                     </div>
-                    <div style={{ fontSize: "22px", fontWeight: 800, color: "#E0E8FF", letterSpacing: "-0.01em", marginBottom: "12px" }}>
+                    <div style={{ fontSize: "22px", fontWeight: 800, color: "#E0E8FF", letterSpacing: "-0.01em" }}>
                       {plan.size}
+                    </div>
+                    <div style={{ fontSize: "12px", color: "#8A8FA8", marginBottom: "12px" }}>
+                      {tr.fut_size_label}
                     </div>
                     <div style={{ display: "flex", alignItems: "flex-end", gap: "8px" }}>
                       <span style={{
@@ -326,7 +332,16 @@ export default function PricingPage() {
           <div style={{ marginTop: "20px" }}>
             <InfoNote>{tr.fut_note}</InfoNote>
           </div>
-          <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "16px" }}>
+          <p style={{ color: "#8A8FA8", fontSize: "13.5px", textAlign: "center" as const, marginTop: "16px", fontWeight: 600 }}>
+            {tr.ts_pair}
+          </p>
+          <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "8px" }}>
+            {tr.ts_invoice} {tr.ts_reset_credit}
+          </p>
+          <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "8px" }}>
+            {tr.ts_most_fail}
+          </p>
+          <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "8px" }}>
             {tr.risk_eod_note}
           </p>
         </div>
@@ -442,6 +457,9 @@ export default function PricingPage() {
             >
               {ru ? "или попробуйте бесплатный триал на 14 дней →" : "or try a free 14-day trial →"}
             </a>
+            <div style={{ color: "#555A72", fontSize: "12.5px", marginTop: "10px", lineHeight: 1.6 }}>
+              {tr.ts_trial}
+            </div>
           </div>
         </div>
 

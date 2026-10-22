@@ -129,6 +129,34 @@ export default function Footer() {
             : "ProbCapital LLC provides Skill Evaluation Software and Educational Trading Simulation services. ProbCapital LLC is NOT a financial broker, NOT a registered investment adviser, NOT an investment firm, and does NOT accept client deposits for investment or trading purposes. All evaluation environments are proprietary software simulations using real-time market data feeds — no real capital is deployed in financial markets on behalf of users. Performance-based compensation is paid by ProbCapital LLC from its own operating funds based solely on Evaluation Process metrics. Past simulation performance does not indicate future results. Participation fees are non-refundable once the service is rendered. Please read our Terms of Service, Refund Policy, and Risk Disclosure in full before participating."}
         </div>
 
+        {/* Simulated / hypothetical performance disclosure (CFTC Rule 4.41 style) */}
+        <div style={{
+          padding: "20px 24px", borderRadius: "14px", marginBottom: "16px",
+          background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+          fontSize: "12px", color: "#9098B8", lineHeight: 1.75,
+        }}>
+          <strong style={{ color: "#B0B4C8", display: "block", marginBottom: "6px" }}>
+            {ru ? "Раскрытие о симулированной (гипотетической) доходности" : "Simulated (Hypothetical) Performance Disclosure"}
+          </strong>
+          {ru
+            ? "Вся торговля на ProbCapital проходит в симулированной среде. Гипотетические и симулированные результаты доходности имеют присущие им ограничения. В отличие от записей реальной торговли, симулированные результаты не отражают реальную торговлю. Поскольку сделки фактически не исполнялись, результаты могут недооценивать или переоценивать влияние, если таковое имеется, отдельных рыночных факторов, таких как недостаток ликвидности. Программы симулированной торговли в целом также устроены так, что разрабатываются с учётом знания последующей динамики рынка. Не даётся никаких заверений, что какой-либо счёт достигнет или может достичь прибылей или убытков, аналогичных показанным. Торговля симулирована; выплаты при одобрении по правилам выплат являются контрактными платежами ProbCapital LLC на основе симулированных результатов, а не прибылью от торговли на живом рынке."
+            : "All trading on ProbCapital takes place in a simulated environment. Hypothetical and simulated performance results have certain inherent limitations. Unlike the results shown in an actual performance record, simulated results do not represent actual trading. Because the trades have not actually been executed, the results may have under- or over-compensated for the impact, if any, of certain market factors, such as lack of liquidity. Simulated trading programs in general are also subject to the fact that they are designed with the benefit of hindsight. No representation is being made that any account will or is likely to achieve profits or losses similar to those shown. The trading is simulated; payouts, when approved under the payout rules, are contractual payments by ProbCapital LLC based on simulated results — they are not profits from live-market trading."}
+        </div>
+
+        {/* Testimonial disclaimer */}
+        <div style={{
+          padding: "20px 24px", borderRadius: "14px", marginBottom: "16px",
+          background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+          fontSize: "12px", color: "#9098B8", lineHeight: 1.75,
+        }}>
+          <strong style={{ color: "#B0B4C8", display: "block", marginBottom: "6px" }}>
+            {ru ? "Отзывы" : "Testimonials"}
+          </strong>
+          {ru
+            ? "Отзывы, размещённые на этом сайте, могут не отражать опыт других клиентов и не являются гарантией будущих результатов или успеха. Результаты не типичны: большинство оценок не завершается прохождением, а пройти оценку сложно."
+            : "Testimonials appearing on this website may not be representative of the experience of other clients or customers and are not a guarantee of future performance or success. Results are not typical: most evaluations are not completed, and passing an evaluation is difficult."}
+        </div>
+
         {/* Delaware entity block */}
         <div style={{
           padding: "16px 24px", borderRadius: "14px", marginBottom: "28px",

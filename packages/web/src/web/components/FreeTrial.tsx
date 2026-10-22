@@ -13,7 +13,8 @@ const labels = {
     point4: "One free trial per trader",
     cta: "Start Free Trial →",
     cta2: "See Challenge Plans",
-    note: "Free Trial accounts are identical to paid challenges — same instruments, same dashboard, same experience.",
+    note: "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules.",
+    qualifier: "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules.",
     card_title: "Free Trial Account",
     card_profit_target: "Profit Target",
     card_max_drawdown: "Max Drawdown",
@@ -33,7 +34,8 @@ const labels = {
     point4: "Один бесплатный триал на трейдера",
     cta: "Начать бесплатно →",
     cta2: "Смотреть тарифы",
-    note: "Бесплатные аккаунты идентичны платным — те же инструменты, тот же дашборд, тот же опыт.",
+    note: "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила.",
+    qualifier: "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила.",
     card_title: "Бесплатный пробный счёт",
     card_profit_target: "Целевая прибыль",
     card_max_drawdown: "Макс. просадка",
@@ -70,7 +72,8 @@ export default function FreeTrial() {
               <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
                 {l.h2_1}<br /><span className="gold-text">{l.h2_2}</span>
               </h2>
-              <p className="text-[#8A8FA8] text-[16px] leading-relaxed mb-8 max-w-[460px]">{l.sub}</p>
+              <p className="text-[#8A8FA8] text-[16px] leading-relaxed mb-4 max-w-[460px]">{l.sub}</p>
+              <p className="text-[13px] leading-relaxed mb-8 max-w-[460px]" style={{ color: "#00D4AA" }}>{l.qualifier}</p>
 
               <ul className="space-y-3 mb-8">
                 {[l.point1, l.point2, l.point3, l.point4].map((point) => (

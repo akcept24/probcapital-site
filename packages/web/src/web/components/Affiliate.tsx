@@ -16,6 +16,8 @@ const labels = {
     point2: "Real-time tracking & analytics",
     point3: "Monthly payouts via crypto, processed manually",
     point4: "Dedicated affiliate manager",
+    conduct_t: "Partner conduct rules",
+    conduct: "Partners may not promise profits or payouts. Results are not typical — most evaluations are not completed, and passing is difficult. All trading is simulated; never present accounts as live-market or real-money accounts.",
     cta: "Join Affiliate Program →",
     cta2: "Ask a Question",
   },
@@ -32,6 +34,8 @@ const labels = {
     point2: "Отслеживание в реальном времени",
     point3: "Ежемесячные выплаты в криптовалюте, обработка вручную",
     point4: "Персональный менеджер",
+    conduct_t: "Правила для партнёров",
+    conduct: "Партнёры не вправе обещать прибыль или выплаты. Результаты не типичны: большинство оценок не завершается прохождением, а пройти оценку сложно. Вся торговля симулирована; никогда не представляйте счета как счета для живого рынка или реальных денег.",
     cta: "Стать партнёром →",
     cta2: "Задать вопрос",
   },
@@ -79,6 +83,11 @@ export default function Affiliate() {
                   </li>
                 ))}
               </ul>
+
+              <div className="rounded-xl p-4 mb-8" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div className="text-[12px] font-bold uppercase tracking-wider text-[#00D4AA] mb-2">{l.conduct_t}</div>
+                <p className="text-[13px] text-[#8A8FA8] leading-relaxed m-0">{l.conduct}</p>
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={AFFILIATE_SIGNUP_URL} target="_blank" rel="noopener noreferrer"

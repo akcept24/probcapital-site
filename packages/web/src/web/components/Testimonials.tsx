@@ -7,7 +7,7 @@ const labels = {
     h2_2: "Screenshots.",
     sub: "Any firm can post payout screenshots and trader stories. We would rather you tested the product itself — the trial is free.",
     cards: [
-      { icon: "🎁", t: "Free $25K Trial First", d: "A full-size $25,000 evaluation account for 14 days. No card, no payment, no catch — judge the platform before spending a cent." },
+      { icon: "🎁", t: "Free $25K Trial First", d: "A full-size $25,000 evaluation account for 14 days. No card, no payment, no catch — judge the platform before spending a cent. Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules." },
       { icon: "📜", t: "Rules Before Money", d: "Drawdown, daily loss, targets, payout schedule — published in full on this site before checkout, not after a dispute." },
       { icon: "🖥️", t: "Our Own Terminal", d: "ProbTrader is built in-house for this program. The tool you are judged on is the tool we control." },
       { icon: "1️⃣", t: "One Fee. Once.", d: "No subscriptions and no monthly platform fees. The evaluation fee is rebated with your first approved payout." },
@@ -22,7 +22,7 @@ const labels = {
     h2_2: "скриншотам.",
     sub: "Скриншоты выплат и истории трейдеров может выложить любая фирма. Мы предпочитаем, чтобы вы проверили сам продукт, — триал бесплатный.",
     cards: [
-      { icon: "🎁", t: "Сначала бесплатный триал $25K", d: "Полноразмерный оценочный счёт на $25 000 на 14 дней. Без карты и оплаты — оцените платформу до того, как потратить цент." },
+      { icon: "🎁", t: "Сначала бесплатный триал $25K", d: "Полноразмерный оценочный счёт на $25 000 на 14 дней. Без карты и оплаты — оцените платформу до того, как потратить цент. Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила." },
       { icon: "📜", t: "Правила — до денег", d: "Просадка, дневной убыток, цели, график выплат — опубликованы на этом сайте полностью до оплаты, а не после спора." },
       { icon: "🖥️", t: "Собственный терминал", d: "ProbTrader разработан внутри компании под эту программу. Инструмент оценки — под нашим контролем." },
       { icon: "1️⃣", t: "Одна комиссия. Один раз.", d: "Никаких подписок и ежемесячных плат за платформу. Комиссия за оценку возвращается с первой одобренной выплатой." },

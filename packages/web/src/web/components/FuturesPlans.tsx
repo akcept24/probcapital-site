@@ -31,6 +31,8 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
 
   const features = [
     tr.fut_chip_monthly,
+    tr.ts_invoice,
+    tr.ts_reset_credit,
     tr.fut_chip_cancel,
     tr.fut_feat_rebate,
     tr.fut_chip_sim,
@@ -80,7 +82,8 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
             {/* Name + Price */}
             <div className="mb-6">
               <div className="text-[13px] text-[#8A8FA8] font-medium uppercase tracking-widest mb-2">{tr.fut_badge}</div>
-              <div className="text-[22px] font-bold text-[#F0F2FF] mb-3">{selectedSize}</div>
+              <div className="text-[22px] font-bold text-[#F0F2FF]">{selectedSize}</div>
+              <div className="text-[12px] text-[#8A8FA8] mb-3">{tr.fut_size_label}</div>
               <div className="flex items-end gap-2">
                 <span className="font-black" style={{
                   fontSize: "52px", letterSpacing: "-0.03em", lineHeight: 1,

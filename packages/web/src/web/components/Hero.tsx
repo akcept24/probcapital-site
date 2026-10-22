@@ -131,6 +131,11 @@ export default function Hero() {
               >
                 {ru ? "или попробуйте бесплатный триал на 14 дней →" : "or try a free 14-day trial →"}
               </a>
+              <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.55)", marginTop: "8px", lineHeight: 1.6, maxWidth: "420px" }}>
+                {ru
+                  ? "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила."
+                  : "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules."}
+              </div>
             </div>
 
             {/* Company trust signal */}

@@ -54,8 +54,11 @@ export default function ScalingPage() {
           <h1 style={{ fontSize: "clamp(34px,5.5vw,56px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "18px", lineHeight: 1.05 }}>
             {tr.scl_h1_1} <span className="gold-text">{tr.scl_h1_2}</span>
           </h1>
-          <p style={{ color: "#8A8FA8", fontSize: "16px", lineHeight: 1.8, maxWidth: "620px", margin: "0 auto 30px" }}>
+          <p style={{ color: "#8A8FA8", fontSize: "16px", lineHeight: 1.8, maxWidth: "620px", margin: "0 auto 16px" }}>
             {tr.scl_sub}
+          </p>
+          <p style={{ color: "#F0F2FF", fontSize: "14.5px", fontWeight: 700, lineHeight: 1.6, maxWidth: "620px", margin: "0 auto 30px" }}>
+            {tr.ts_pair}
           </p>
           <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" style={ctaStyle}>
             {tr.nav_getFunded}

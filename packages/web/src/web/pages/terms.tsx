@@ -142,6 +142,7 @@ export default function TermsPage() {
                   "Образовательные материалы и симуляционные сценарии.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>Компания <strong style={{ color: "#E0E8FF" }}>не является</strong> брокером, дилером, инвестиционным советником, управляющей компанией или финансовым посредником. Все торговые среды являются исключительно программными симуляциями. Компания не управляет реальными активами пользователей и не размещает реальный капитал на финансовых рынках. Имитационная торговля в рамках Сервиса носит чисто фиктивный характер: сделки симулируются и не являются сделками с реальными финансовыми инструментами. Сумма, отображаемая в качестве капитала на вашем симулированном счёте в любой момент времени, носит симулированный характер, не является депозитом денежных средств и не имеет денежной стоимости. Вознаграждение или прибыль по результатам вашей имитационной торговли в процессе оценки не выплачиваются; выплаты по результатам производительности, где они предусмотрены, регулируются исключительно условиями выплат, описанными в разделе 6.</p>
+                <p style={{ marginTop: "12px" }}><strong style={{ color: "#E0E8FF" }}>Определение Simulated Funded.</strong> Сделки на оценочных счетах и на счетах этапа Simulated Funded («симулированный финансируемый») не исполняются на живых рынках. Счёт Simulated Funded является симулированным счётом. Выплата — это контрактный платёж ProbCapital LLC на основе симулированных результатов, подлежащий проверке и правилам выплат; она не является долей прибыли от торговли на живом рынке.</p>
               </>
             ) : (
               <>
@@ -153,6 +154,7 @@ export default function TermsPage() {
                   "Educational resources and simulation scenario modules.",
                 ]} />
                 <p style={{ marginTop: "12px" }}>The Company is <strong style={{ color: "#E0E8FF" }}>NOT</strong> a broker-dealer, investment adviser, fund manager, or financial intermediary of any kind. All trading environments are software simulations only. The Company does not manage real user assets, does not deploy real capital on financial markets, and does not offer any form of investment product or financial service regulated under applicable securities law. Simulated trading within the Service is purely fictional: trades are simulated and are not trades in real financial instruments. The amount shown as capital in your simulated account at any point is simulated in nature, does not represent any deposit of funds, and has no monetary value. You will not be paid any remuneration or profits based on the results of your simulated trading in the Evaluation Process; performance-based payouts, where available, are governed exclusively by the payout terms described in Section 6.</p>
+                <p style={{ marginTop: "12px" }}><strong style={{ color: "#E0E8FF" }}>Simulated Funded — definition.</strong> Trades on evaluation accounts and on Simulated Funded accounts are not executed in live markets. A Simulated Funded account is a simulated account. A payout is a contractual payment by ProbCapital LLC based on simulated results, subject to review and the payout rules; it is not a share of live-market trading profits.</p>
               </>
             )}
           </S>
@@ -202,6 +204,7 @@ export default function TermsPage() {
               <>
                 <p style={{ marginBottom: "12px" }}>Оплата оценочного взноса предоставляет доступ к программному обеспечению для оценки торговых навыков на один процесс оценки. К оплате применяются следующие условия:</p>
                 <Ul items={[
+                  "Все взносы являются платой за услуги — доступ к программе оценки. Они не являются депозитами, не удерживаются для торговли и не инвестируются от вашего имени.",
                   "Все оценочные взносы взимаются в полном объёме в момент покупки.",
                   "Взносы не подлежат возврату после начала использования Сервиса (первый ордер или первое применение учётных данных).",
                   "14-дневный период охлаждения применяется при условии, что Сервис не был использован — подробнее в Политике возврата средств.",
@@ -214,6 +217,7 @@ export default function TermsPage() {
               <>
                 <p style={{ marginBottom: "12px" }}>Payment of an evaluation fee grants access to the Skill Evaluation Software for one evaluation session. The following terms apply to all fees and payments:</p>
                 <Ul items={[
+                  "All fees are service fees for access to an evaluation program. They are not deposits, are not held for trading, and are not invested on your behalf.",
                   "All evaluation fees are charged in full at the time of purchase.",
                   "Fees are non-refundable once the Service has been accessed (first trade placed or credentials first used).",
                   "A 14-day cooling-off period applies where the Service has not been used — see the Refund Policy for full details.",
@@ -385,6 +389,32 @@ export default function TermsPage() {
                   <div style={{ marginBottom: "6px" }}>📧 <a href="mailto:support@probcapital.com" style={{ color: "#00D4AA", fontWeight: 600, textDecoration: "none" }}>support@probcapital.com</a></div>
                   <div style={{ fontSize: "13px", color: "#5A6278", marginTop: "8px" }}>ProbCapital LLC · 8 The Green, Suite B · Dover, DE 19901 · USA</div>
                 </div>
+              </>
+            )}
+          </S>
+
+          <S title={ru ? "17. Правила для партнёров и аффилиатов" : "17. Affiliate and Partner Conduct"}>
+            {ru ? (
+              <>
+                <p style={{ marginBottom: "10px" }}>Партнёры и аффилиаты, продвигающие ProbCapital, обязаны соблюдать следующие правила во всех материалах и каналах:</p>
+                <Ul items={[
+                  "Не обещать и не гарантировать прибыль, выплаты или прохождение оценки.",
+                  "Указывать, что результаты не типичны: большинство оценок не завершается прохождением, а пройти оценку сложно.",
+                  "Не описывать счета как счета для торговли на живом рынке или реальными деньгами и не утверждать, что трейдеры торгуют капиталом Компании. Вся торговля симулирована; выплаты являются контрактными платежами на основе симулированных результатов и производятся при одобрении по правилам выплат.",
+                  "Не использовать вымышленные отзывы, скриншоты выплат или статистику, не предоставленную Компанией.",
+                ]} />
+                <p style={{ marginTop: "12px" }}>Компания вправе приостановить или прекратить партнёрство при нарушении настоящих правил.</p>
+              </>
+            ) : (
+              <>
+                <p style={{ marginBottom: "10px" }}>Partners and affiliates promoting ProbCapital must comply with the following rules in all materials and channels:</p>
+                <Ul items={[
+                  "Do not promise or guarantee profits, payouts, or passing an evaluation.",
+                  "State that results are not typical: most evaluations are not completed, and passing an evaluation is difficult.",
+                  "Do not describe accounts as live-market or real-money accounts, and do not claim that traders trade the Company's capital. All trading is simulated; payouts are contractual payments based on simulated results, paid when approved under the payout rules.",
+                  "Do not use invented testimonials, payout screenshots, or statistics not provided by the Company.",
+                ]} />
+                <p style={{ marginTop: "12px" }}>The Company may suspend or terminate a partnership for violation of these rules.</p>
               </>
             )}
           </S>

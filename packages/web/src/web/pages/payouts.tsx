@@ -44,6 +44,9 @@ export default function PayoutsPage() {
           <p style={{ color: "#8A8FA8", fontSize: "17px" }}>
             {ru ? "Прозрачно, быстро, без скрытых комиссий" : "Transparent, fast, no hidden fees"}
           </p>
+          <div style={{ marginTop: "20px", padding: "14px 22px", borderRadius: "14px", background: "rgba(0,212,170,0.06)", border: "1px solid rgba(0,212,170,0.22)", fontSize: "16px", fontWeight: 800, color: "#F0F2FF", lineHeight: 1.5 }}>
+            {tr.ts_pair}
+          </div>
         </div>
 
         {/* Splits table */}

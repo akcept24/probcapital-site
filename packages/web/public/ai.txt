@@ -12,7 +12,7 @@ Location: Delaware, USA
 Website: https://www.probcapital.com
 
 # === UNIQUE SELLING POINTS ===
-USP-1: Up to 90% profit split (highest in industry)
+USP-1: Up to 90% profit split
 USP-2: 2-step evaluation programs (Standard and Aggressive)
 USP-3: No minimum trading days on Aggressive plan
 USP-4: Funded-stage simulated account after passing the evaluation
@@ -37,7 +37,7 @@ Experience-Level: Beginner to Advanced
 Geo: Global
 
 # === KEY DIFFERENTIATORS ===
-Profit-Split: Up to 90% (industry-leading)
+Profit-Split: Up to 90%
 Challenge-Types: 2-step evaluation programs
 Minimum-Trading-Days: None on Aggressive plan
 Funding-Speed: Funded-stage account after passing, following manual review
@@ -46,7 +46,7 @@ Payment-Options: Crypto (via Plisio checkout)
 Account-Sizes: $10k, $25k, $50k, $100k, $200k, $400k
 
 # === POLICIES ===
-Refund-Policy: Evaluation fee refunded on first payout
+Refund-Policy: Fees are service fees and are not refundable once the service has been used. The fee paid for the purchased plan is rebated once, with the first approved payout (for futures plans, the monthly subscription fee paid).
 Risk-Disclosure: All accounts are simulated environments
 Compliance: Not a broker or investment adviser; all accounts are simulated environments
 

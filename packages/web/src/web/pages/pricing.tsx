@@ -190,10 +190,6 @@ export default function PricingPage() {
         <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "16px" }}>
           {tr.risk_eod_note}
         </p>
-        <p style={{ color: "#555A72", fontSize: "13px", textAlign: "center" as const, marginTop: "8px" }}>
-          {tr.ts_most_fail}
-        </p>
-
         {/* ── Rebate note ── */}
         <div style={{
           marginTop: "36px",

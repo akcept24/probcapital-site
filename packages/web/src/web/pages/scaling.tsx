@@ -9,11 +9,11 @@ export default function ScalingPage() {
   const ru = lang === "ru";
   usePageHead({
     title: ru
-      ? "Скейлинг ProbCapital — рост финансируемого счёта до $2 000 000"
-      : "ProbCapital Scaling Program — Grow Your Funded Account to $2,000,000",
+      ? "Скейлинг ProbCapital — рост счёта Simulated Funded до $2 000 000"
+      : "ProbCapital Scaling Program — Grow Your Simulated Funded Account to $2,000,000",
     description: ru
-      ? "Как работает скейлинг ProbCapital: +10% чистой прибыли на профинансированном счёте даёт увеличение размера на 25% после проверки, не чаще одного раза в 30 дней, вплоть до $2 000 000."
-      : "How ProbCapital scaling works: +10% net profit on your funded account earns a +25% size increase after review, at most once per 30 days, up to $2,000,000.",
+      ? "Как работает скейлинг ProbCapital: +10% чистой прибыли на вашем счёте Simulated Funded даёт увеличение размера на 25% после проверки, не чаще одного раза в 30 дней, вплоть до $2 000 000."
+      : "How ProbCapital scaling works: +10% net profit on your Simulated Funded account earns a +25% size increase after review, at most once per 30 days, up to $2,000,000.",
     path: "/scaling",
     lang,
   });

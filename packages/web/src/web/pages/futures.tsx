@@ -11,8 +11,8 @@ export default function FuturesPage() {
   usePageHead({
     title: ru ? "Фьючерсы ProbCapital — фьючерсная оценка по подписке" : "ProbCapital Futures — Futures Evaluation by Subscription",
     description: ru
-      ? "Фьючерсная оценка ProbCapital по подписке: покупательная способность $25,000–$150,000 от $67/мес, цели 6% + 3%, взносы засчитываются в счёт первой выплаты."
-      : "ProbCapital Futures evaluation by subscription: $25K–$150K buying power from $67/mo, 6% + 3% targets, fees rebated with your first payout.",
+      ? "Фьючерсная оценка ProbCapital по подписке: покупательная способность $25,000–$150,000 от $67/мес, цели 6% + 3%, уплаченный месячный взнос один раз засчитывается в счёт первой одобренной выплаты."
+      : "ProbCapital Futures evaluation by subscription: $25K–$150K buying power from $67/mo, 6% + 3% targets, the monthly fee paid rebated once with your first approved payout.",
     path: "/futures",
     lang,
   });
@@ -168,8 +168,8 @@ export default function FuturesPage() {
             </div>
             <p style={{ color: "#B0B8D1", fontSize: "14px", lineHeight: 1.75, margin: 0 }}>
               {ru
-                ? "На этапе Simulated Funded симулированный баланс растёт с $50,000 до $53,000 (симулированная прибыль $3,000) → вы запрашиваете выплату → запрос проходит ручную проверку по правилам выплат → при одобрении вам выплачивается 90% прибыли = $2,700. С этой первой выплатой также засчитываются взносы вашей подписки."
-                : "On the Simulated Funded stage, the simulated balance grows from $50,000 to $53,000 (simulated profit $3,000) → you request a payout → the request passes a manual review under the payout rules → if approved, you are paid 90% of the profit = $2,700. Your subscription fees are also rebated with this first payout."}
+                ? "На этапе Simulated Funded симулированный баланс растёт с $50,000 до $53,000 (симулированная прибыль $3,000) → вы запрашиваете выплату → вы проходите верификацию личности (KYC), если ещё не проходили → запрос проходит ручную проверку по правилам выплат → при одобрении вам выплачивается 90% прибыли = $2,700. С этой первой выплатой также один раз засчитывается уплаченный вами месячный взнос за план 50K — $149. Итого к получению: $2,700 + $149 = $2,849."
+                : "On the Simulated Funded stage, the simulated balance grows from $50,000 to $53,000 (simulated profit $3,000) → you request a payout → you complete identity verification (KYC) if you have not already → the request passes a manual review under the payout rules → if approved, you are paid 90% of the profit = $2,700. With this first payout, the $149 monthly fee you paid for the 50K plan is also rebated once. Total received: $2,700 + $149 = $2,849."}
             </p>
           </div>
           <div style={{ background: "#1A1D27", border: "1px solid rgba(255,120,120,0.22)", borderRadius: "20px", padding: "24px" }}>
@@ -178,8 +178,8 @@ export default function FuturesPage() {
             </div>
             <p style={{ color: "#B0B8D1", fontSize: "14px", lineHeight: 1.75, margin: 0 }}>
               {ru
-                ? "Симулированный баланс падает так, что на конец дня коснулся трейлинг-лимита просадки ($2,500 на плане 50K) → счёт закрывается, выплата не производится."
-                : "The simulated balance falls so that, at end of day, it touches the trailing drawdown limit ($2,500 on the 50K plan) → the account is closed and no payout is made."}
+                ? "Симулированный баланс падает до трейлинг-лимита на конец дня (просадка $2,500 на плане 50K) → счёт закрывается, выплата не производится."
+                : "The simulated balance falls to the trailed end-of-day limit (a $2,500 drawdown on the 50K plan) → the account is closed and no payout is made."}
             </p>
           </div>
         </div>

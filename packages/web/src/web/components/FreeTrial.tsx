@@ -8,12 +8,11 @@ const labels = {
     h2_2: "Buy",
     sub: "Not sure yet? Start with a Free Trial account. No payment required. Test our platform, explore the rules, and get comfortable before committing.",
     point1: "Full platform access",
-    point2: "Same rules as the real challenge",
+    point2: "FX evaluation rules — 10% target, 10% max drawdown, 5% daily loss",
     point3: "No credit card required",
     point4: "One free trial per trader",
     cta: "Start Free Trial →",
     cta2: "See Challenge Plans",
-    note: "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules.",
     qualifier: "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules.",
     card_title: "Free Trial Account",
     card_profit_target: "Profit Target",
@@ -29,12 +28,11 @@ const labels = {
     h2_2: "бесплатно",
     sub: "Не уверены? Начните с бесплатного пробного аккаунта. Без оплаты. Протестируйте платформу, изучите правила и убедитесь, прежде чем начинать.",
     point1: "Полный доступ к платформе",
-    point2: "Те же правила, что и в реальном челлендже",
+    point2: "Правила FX-оценки — цель 10%, просадка 10%, дневной лимит потерь 5%",
     point3: "Без банковской карты",
     point4: "Один бесплатный триал на трейдера",
     cta: "Начать бесплатно →",
     cta2: "Смотреть тарифы",
-    note: "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила.",
     qualifier: "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила.",
     card_title: "Бесплатный пробный счёт",
     card_profit_target: "Целевая прибыль",
@@ -137,7 +135,6 @@ export default function FreeTrial() {
                   {l.card_start}
                 </div>
 
-                <p className="text-[11px] text-[#555A72] text-center mt-3 leading-relaxed">{l.note}</p>
               </div>
             </div>
           </div>

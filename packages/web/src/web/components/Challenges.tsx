@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
 import { TRIAL_SIGNUP_URL } from "../lib/links";
 
-const accountSizes = ["$10,000", "$25,000", "$50,000", "$100,000", "$200,000", "$400,000"];
-const prices: Record<string, { standard: number; aggressive: number }> = {
+const accountSizes = ["$5,000", "$10,000", "$25,000", "$50,000", "$100,000", "$200,000", "$400,000"];
+const prices: Record<string, { standard: number; aggressive?: number }> = {
+  // $5,000 exists only as Standard in the plan catalog (forex-5k) —
+  // there is no 5K Aggressive SKU, so its card is hidden at that size.
+  "$5,000":   { standard: 39 },
   "$10,000":  { standard: 79,   aggressive: 99   },
   "$25,000":  { standard: 149,  aggressive: 189  },
   "$50,000":  { standard: 249,  aggressive: 329  },
@@ -53,8 +56,8 @@ export default function Challenges() {
         { label: tr.ch_dailydd, value: "5%",     good: false },
         { label: tr.ch_mindays, value: "5 " + tr.ch_days, good: false },
         { label: tr.ch_split,   value: "80%",    good: true },
-        { label: tr.ch_leverage,value: "1:100",  good: true },
-        { label: tr.ch_payouts, value: tr.ch_weekly, good: false },
+        { label: tr.ch_leverage,value: lang === "ru" ? "1:20 (до 1:100)" : "1:20 (up to 1:100)", good: true },
+        { label: tr.ch_payouts, value: tr.ch_ondemand, good: true },
       ],
       features: [
         tr.ch_feat_mt,
@@ -64,6 +67,10 @@ export default function Challenges() {
       cta: tr.ch_cta_std,
     },
   ];
+
+  const visiblePlans = selectedSize === "$5,000"
+    ? plans.filter((plan) => plan.id === "standard")
+    : plans;
 
   return (
     <section id="challenges" className="py-12 px-6">
@@ -93,8 +100,8 @@ export default function Challenges() {
         </div>
 
         {/* Plan cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
-          {plans.map((plan) => (
+        <div className={`grid gap-6 mx-auto ${visiblePlans.length === 1 ? "md:grid-cols-1 max-w-[450px]" : "md:grid-cols-2 max-w-[900px]"}`}>
+          {visiblePlans.map((plan) => (
             <div key={plan.id} className="rounded-2xl p-8 relative flex flex-col"
               style={plan.highlight
                 ? { background: "#1A1D27", border: "1px solid rgba(0,212,170,0.40)", boxShadow: "0 0 50px rgba(0,212,170,0.12)" }

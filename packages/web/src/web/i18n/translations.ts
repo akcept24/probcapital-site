@@ -73,10 +73,10 @@ export const t = {
     ch_split: "Profit Split",
     ch_feat1: "ProbTrader web terminal",
     ch_feat2: "All instruments available",
-    ch_feat3_std: "Weekly payouts",
+    ch_feat3_std: "Payout requests anytime",
     ch_feat3_agg: "Payout requests anytime",
     ch_feat4: "1 free re-take (Aggressive)",
-    ch_feat5: "1:100 leverage",
+    ch_feat5: "Leverage 1:20 (up to 1:100)",
     ch_mindays_std: "5 days",
     ch_mindays_agg: "No minimum",
     ch_cta_std: "Start Standard Challenge →",
@@ -98,9 +98,9 @@ export const t = {
     ch_diff1_title: "Standard: Safe & Steady",
     ch_diff1_desc: "2-phase evaluation, 80% split, conservative rules. Best for disciplined traders.",
     ch_diff2_title: "Aggressive: Fast Track",
-    ch_diff2_desc: "No minimum days, payout requests anytime, 90% split. Pass faster, earn more.",
+    ch_diff2_desc: "No minimum days and a 90% split. Pass faster, earn more.",
     ch_diff3_title: "Key Difference",
-    ch_diff3_desc: "Aggressive has a 12% max drawdown (vs 10%), no minimum days, 90% split & payout requests anytime.",
+    ch_diff3_desc: "Aggressive has a 12% max drawdown (vs 10%), no minimum days and a 90% split. Payouts can be requested anytime on both plans.",
 
     // Futures subscription (pricing page)
     fut_badge: "Futures Subscription",
@@ -138,6 +138,10 @@ export const t = {
     fut_h2_1: "Futures Subscription",
     fut_h2_2: "Plans",
     fut_feat_rebate: "Monthly fee paid rebated once, with your first payout",
+    fut_consistency: "Consistency rule: your best single day can account for at most 55% of the profit target. If one day earns more than 55% of the target, the total profit required to pass rises proportionally — the effective target becomes your best day ÷ 0.55.",
+    fut_1step_suffix: "1-Step",
+    fut_step2_none: "— (single step)",
+    fut_onestep_note: "The 50K 1-Step plan has a single 8% target ($4,000) and no Step 2 — every other futures rule (3% daily loss limit, EOD trailing drawdown, 5 min trading days, consistency rule, 90% split) is the same.",
 
     // Futures page (/futures)
     futp_h1_1: "Futures Evaluation",
@@ -410,10 +414,10 @@ export const t = {
     ch_split: "Сплит прибыли",
     ch_feat1: "Веб-терминал ProbTrader",
     ch_feat2: "Все инструменты",
-    ch_feat3_std: "Еженедельные выплаты",
+    ch_feat3_std: "Запрос выплаты в любое время",
     ch_feat3_agg: "Запрос выплаты в любое время",
     ch_feat4: "1 бесплатный рестарт (Aggressive)",
-    ch_feat5: "Плечо 1:100",
+    ch_feat5: "Плечо 1:20 (до 1:100)",
     ch_mindays_std: "5 дней",
     ch_mindays_agg: "Без минимума",
     ch_cta_std: "Начать стандартный челлендж →",
@@ -435,9 +439,9 @@ export const t = {
     ch_diff1_title: "Стандартный: Стабильно",
     ch_diff1_desc: "2 фазы, сплит 80%, консервативные правила. Лучший выбор для дисциплинированных.",
     ch_diff2_title: "Агрессивный: Быстрый старт",
-    ch_diff2_desc: "Нет минимума дней, запрос выплаты в любое время, сплит 90%. Проходи быстрее.",
+    ch_diff2_desc: "Нет минимума дней, сплит 90%. Проходи быстрее.",
     ch_diff3_title: "Главное отличие",
-    ch_diff3_desc: "Агрессивный — просадка 12% (вместо 10%), нет минимума дней, сплит 90% и запрос выплаты в любое время.",
+    ch_diff3_desc: "Агрессивный — просадка 12% (вместо 10%), нет минимума дней и сплит 90%. Выплату можно запросить в любое время на обоих планах.",
 
     // Futures subscription (pricing page)
     fut_badge: "Фьючерсная подписка",
@@ -475,6 +479,10 @@ export const t = {
     fut_h2_1: "Фьючерсные планы",
     fut_h2_2: "по подписке",
     fut_feat_rebate: "Уплаченный взнос — один раз, с первой выплатой",
+    fut_consistency: "Правило консистентности: лучший день может составлять не более 55% цели прибыли. Если за один день заработано больше 55% цели, общий объём прибыли для прохождения пропорционально увеличивается — эффективная цель становится равной лучшему дню ÷ 0,55.",
+    fut_1step_suffix: "1-Step",
+    fut_step2_none: "— (один этап)",
+    fut_onestep_note: "План 50K 1-Step имеет одну цель 8% ($4,000) и не имеет этапа 2 — все остальные фьючерсные правила (дневной лимит потерь 3%, трейлинг-просадка на конец дня, минимум 5 торговых дней, правило консистентности, сплит 90%) те же.",
 
     // Futures page (/futures)
     futp_h1_1: "Фьючерсная оценка",

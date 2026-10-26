@@ -2,25 +2,37 @@ import { useState } from "react";
 import { useLang } from "../i18n/LangContext";
 import { TRIAL_SIGNUP_URL } from "../lib/links";
 
-const futuresSizes = ["$25,000", "$50,000", "$100,000", "$150,000"];
-const futuresData: Record<string, { price: number; step1: string; step2: string; trailing: string }> = {
-  "$25,000":  { price: 67,  step1: "$1,500 (6%)", step2: "$750 (3%)",   trailing: "$1,250" },
-  "$50,000":  { price: 149, step1: "$3,000 (6%)", step2: "$1,500 (3%)", trailing: "$2,500" },
-  "$100,000": { price: 249, step1: "$6,000 (6%)", step2: "$3,000 (3%)", trailing: "$5,000" },
-  "$150,000": { price: 327, step1: "$9,000 (6%)", step2: "$4,500 (3%)", trailing: "$7,500" },
-};
-const POPULAR_SIZE = "$50,000";
+interface FuturesPlanOption {
+  key: string;
+  size: string;
+  oneStep?: boolean;
+  price: number;
+  step1: string;
+  step2: string | null;
+  trailing: string;
+}
+
+const futuresPlans: FuturesPlanOption[] = [
+  { key: "25k",       size: "$25,000",  price: 67,  step1: "$1,500 (6%)", step2: "$750 (3%)",   trailing: "$1,250" },
+  { key: "50k",       size: "$50,000",  price: 149, step1: "$3,000 (6%)", step2: "$1,500 (3%)", trailing: "$2,500" },
+  { key: "100k",      size: "$100,000", price: 249, step1: "$6,000 (6%)", step2: "$3,000 (3%)", trailing: "$5,000" },
+  { key: "150k",      size: "$150,000", price: 327, step1: "$9,000 (6%)", step2: "$4,500 (3%)", trailing: "$7,500" },
+  // futures-50k-1step in the plan catalog: TRUE 1-step — a single 8%
+  // target, no Step 2; every other futures rule is unchanged.
+  { key: "50k-1step", size: "$50,000",  oneStep: true, price: 199, step1: "$4,000 (8%)", step2: null, trailing: "$2,500" },
+];
+const POPULAR_KEY = "50k";
 
 export default function FuturesPlans({ hideHeader = false }: { hideHeader?: boolean }) {
-  const [selectedSize, setSelectedSize] = useState(POPULAR_SIZE);
+  const [selectedKey, setSelectedKey] = useState(POPULAR_KEY);
   const { tr } = useLang();
 
-  const data = futuresData[selectedSize];
-  const isPopular = selectedSize === POPULAR_SIZE;
+  const data = futuresPlans.find((plan) => plan.key === selectedKey) ?? futuresPlans[1];
+  const isPopular = selectedKey === POPULAR_KEY;
 
   const rules = [
     { label: tr.fut_step1,    value: data.step1,            good: true },
-    { label: tr.fut_step2,    value: data.step2,            good: true },
+    { label: tr.fut_step2,    value: data.step2 ?? tr.fut_step2_none, good: true },
     { label: tr.fut_dll,      value: "3%",                  good: false },
     { label: tr.fut_trailing, value: data.trailing,         good: false },
     { label: tr.fut_mindays,  value: tr.fut_mindays_value,  good: false },
@@ -56,13 +68,13 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
 
         {/* Account size selector */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-12">
-          {futuresSizes.map((size) => (
-            <button key={size} onClick={() => setSelectedSize(size)}
+          {futuresPlans.map((plan) => (
+            <button key={plan.key} onClick={() => setSelectedKey(plan.key)}
               className="px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-200"
-              style={selectedSize === size
+              style={selectedKey === plan.key
                 ? { background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0F1117", boxShadow: "0 4px 20px rgba(0,212,170,0.3)" }
                 : { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#8A8FA8" }}>
-              {size}
+              {plan.size}{plan.oneStep ? ` · ${tr.fut_1step_suffix}` : ""}
             </button>
           ))}
         </div>
@@ -82,7 +94,7 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
             {/* Name + Price */}
             <div className="mb-6">
               <div className="text-[13px] text-[#8A8FA8] font-medium uppercase tracking-widest mb-2">{tr.fut_badge}</div>
-              <div className="text-[22px] font-bold text-[#F0F2FF]">{selectedSize}</div>
+              <div className="text-[22px] font-bold text-[#F0F2FF]">{data.size}{data.oneStep ? ` · ${tr.fut_1step_suffix}` : ""}</div>
               <div className="text-[12px] text-[#8A8FA8] mb-3">{tr.fut_size_label}</div>
               <div className="flex items-end gap-2">
                 <span className="font-black" style={{
@@ -113,6 +125,12 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
             </div>
 
             <p className="text-[12px] text-[#555A72] mb-6">{tr.risk_eod_note}</p>
+
+            <p className="text-[12px] text-[#555A72] mb-3">{tr.fut_consistency}</p>
+
+            {data.oneStep && (
+              <p className="text-[12px] text-[#555A72] mb-6">{tr.fut_onestep_note}</p>
+            )}
 
             {/* Features */}
             <ul className="space-y-2.5 mb-7 flex-1">

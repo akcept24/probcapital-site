@@ -1,8 +1,7 @@
 import { useLang } from "../i18n/LangContext";
 
 const principles = [
-  { icon: "📅", en: { t: "Weekly Payouts", d: "Standard plan pays out on a weekly schedule" }, ru: { t: "Выплаты каждую неделю", d: "План Standard — выплаты по недельному графику" } },
-  { icon: "⚡", en: { t: "Payout Requests Anytime", d: "Aggressive plan — request a payout when you want it" }, ru: { t: "Запрос выплаты в любое время", d: "План Aggressive — запрашивайте выплату, когда удобно" } },
+  { icon: "⚡", en: { t: "Payout Requests Anytime", d: "Every plan — request a payout whenever you want it, once funded (min $50, KYC verified)" }, ru: { t: "Запрос выплаты в любое время", d: "Любой план — запрашивайте выплату, когда удобно, после получения Funded-счёта (мин. $50, верификация KYC)" } },
   { icon: "💰", en: { t: "Up to 90% Split", d: "Performance split up to 90% on Aggressive, 80% on Standard" }, ru: { t: "Сплит до 90%", d: "До 90% прибыли на Aggressive, 80% — на Standard" } },
   { icon: "↩️", en: { t: "Fee Rebate", d: "Evaluation fee returned with your first approved payout" }, ru: { t: "Возврат комиссии", d: "Комиссия за оценку возвращается с первой одобренной выплатой" } },
   { icon: "🏦", en: { t: "Paid by ProbCapital LLC", d: "Payouts are made by the company from its own operating funds" }, ru: { t: "Платит ProbCapital LLC", d: "Выплаты производит компания из собственных операционных средств" } },

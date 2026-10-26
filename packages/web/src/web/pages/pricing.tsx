@@ -12,6 +12,8 @@ interface PlanRow {
 }
 
 const PLANS: PlanRow[] = [
+  // forex-5k in the plan catalog is Standard-only — no 5K Aggressive SKU.
+  { size: "$5,000",   standard: "$39",    aggressive: "—"      },
   { size: "$10,000",  standard: "$79",    aggressive: "$99"    },
   { size: "$25,000",  standard: "$149",   aggressive: "$189"   },
   { size: "$50,000",  standard: "$249",   aggressive: "$329"   },
@@ -28,6 +30,7 @@ interface FuturesPlan {
   step2: string;
   trailing: string;
   popular?: boolean;
+  oneStep?: boolean;
 }
 
 const FUTURES_PLANS: FuturesPlan[] = [
@@ -35,6 +38,9 @@ const FUTURES_PLANS: FuturesPlan[] = [
   { size: "$50,000",  price: "$149", step1: "$3,000 (6%)", step2: "$1,500 (3%)", trailing: "$2,500", popular: true },
   { size: "$100,000", price: "$249", step1: "$6,000 (6%)", step2: "$3,000 (3%)", trailing: "$5,000" },
   { size: "$150,000", price: "$327", step1: "$9,000 (6%)", step2: "$4,500 (3%)", trailing: "$7,500" },
+  // futures-50k-1step: TRUE 1-step — single 8% target, no Step 2,
+  // otherwise the standard futures rules.
+  { size: "$50,000", price: "$199", step1: "$4,000 (8%)", step2: "", trailing: "$2,500", oneStep: true },
 ];
 
 /* ─── Primitives ─── */
@@ -76,7 +82,7 @@ export default function PricingPage() {
   const { lang, tr } = useLang();
   usePageHead({
     title: lang === "ru" ? "Тарифы ProbCapital — челленджи Standard и Aggressive, фьючерсная подписка" : "ProbCapital Pricing — Challenge Fees & Futures Subscription Plans",
-    description: lang === "ru" ? "Цены ProbCapital: челленджи Standard и Aggressive (счета $10,000–$400,000, разовый взнос) и фьючерсные планы по подписке (счета $25,000–$150,000, помесячно)." : "ProbCapital pricing: Standard and Aggressive challenges ($10K–$400K accounts, one-time fee) and Futures subscription plans ($25K–$150K accounts, monthly).",
+    description: lang === "ru" ? "Цены ProbCapital: челленджи Standard и Aggressive (счета $5,000–$400,000, разовый взнос) и фьючерсные планы по подписке (счета $25,000–$150,000, помесячно)." : "ProbCapital pricing: Standard and Aggressive challenges ($5K–$400K accounts, one-time fee) and Futures subscription plans ($25K–$150K accounts, monthly).",
     path: "/pricing",
     lang,
   });
@@ -180,7 +186,7 @@ export default function PricingPage() {
                   {row.aggressive}
                 </span>
                 <div style={{ fontSize: "11px", color: "#3A6858", marginTop: "2px" }}>
-                  {ru ? "разовый взнос" : "one-time fee"}
+                  {row.aggressive === "—" ? (ru ? "только Standard" : "Standard only") : (ru ? "разовый взнос" : "one-time fee")}
                 </div>
               </div>
             </div>
@@ -230,7 +236,7 @@ export default function PricingPage() {
             {FUTURES_PLANS.map((plan) => {
               const rows: { label: string; value: string; good: boolean }[] = [
                 { label: tr.fut_step1, value: plan.step1, good: true },
-                { label: tr.fut_step2, value: plan.step2, good: true },
+                { label: tr.fut_step2, value: plan.oneStep ? tr.fut_step2_none : plan.step2, good: true },
                 { label: tr.fut_dll, value: "3%", good: false },
                 { label: tr.fut_trailing, value: plan.trailing, good: false },
                 { label: tr.fut_mindays, value: tr.fut_mindays_value, good: false },
@@ -240,7 +246,7 @@ export default function PricingPage() {
               ];
               return (
                 <div
-                  key={plan.size}
+                  key={`${plan.size}-${plan.price}`}
                   style={{
                     position: "relative",
                     background: "#1A1D27",
@@ -265,7 +271,7 @@ export default function PricingPage() {
                       {tr.fut_badge}
                     </div>
                     <div style={{ fontSize: "22px", fontWeight: 800, color: "#E0E8FF", letterSpacing: "-0.01em" }}>
-                      {plan.size}
+                      {plan.size}{plan.oneStep ? ` · ${tr.fut_1step_suffix}` : ""}
                     </div>
                     <div style={{ fontSize: "12px", color: "#8A8FA8", marginBottom: "12px" }}>
                       {tr.fut_size_label}
@@ -327,6 +333,12 @@ export default function PricingPage() {
 
           <div style={{ marginTop: "20px" }}>
             <InfoNote>{tr.fut_note}</InfoNote>
+          </div>
+          <div style={{ marginTop: "12px" }}>
+            <InfoNote>{tr.fut_consistency}</InfoNote>
+          </div>
+          <div style={{ marginTop: "12px" }}>
+            <InfoNote>{tr.fut_onestep_note}</InfoNote>
           </div>
           <p style={{ color: "#8A8FA8", fontSize: "13.5px", textAlign: "center" as const, marginTop: "16px", fontWeight: 600 }}>
             {tr.ts_pair}

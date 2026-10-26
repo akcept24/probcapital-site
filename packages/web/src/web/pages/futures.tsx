@@ -157,6 +157,8 @@ export default function FuturesPage() {
           <div style={{ padding: "16px 24px", borderTop: "1px solid rgba(255,255,255,0.05)", color: "#8A8FA8", fontSize: "13.5px", lineHeight: 1.7 }}>
             {tr.fut_mindays}: {tr.fut_mindays_value} · {tr.fut_timelimit}: {tr.fut_timelimit_value} · {tr.fut_split}: {tr.fut_split_value} · {tr.fut_leverage}: {tr.fut_leverage_value}
             <div style={{ color: "#555A72", fontSize: "13px", marginTop: "6px" }}>{tr.risk_eod_note}</div>
+            <div style={{ color: "#555A72", fontSize: "13px", marginTop: "6px" }}>{tr.fut_consistency}</div>
+            <div style={{ color: "#555A72", fontSize: "13px", marginTop: "6px" }}>{tr.fut_onestep_note}</div>
           </div>
         </div>
 

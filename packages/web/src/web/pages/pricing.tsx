@@ -213,6 +213,76 @@ export default function PricingPage() {
           </p>
         </div>
 
+        {/* ── Spreads ── */}
+        <div style={{ marginTop: "72px" }}>
+          <div style={{ marginBottom: "32px", textAlign: "center" }}>
+            <Badge>{ru ? "Торговые условия" : "Trading Conditions"}</Badge>
+            <h2 style={{ fontSize: "clamp(24px,3.5vw,36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "12px", lineHeight: 1.15 }}>
+              {ru ? "Типичные спреды" : "Typical Spreads"}
+            </h2>
+            <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
+              {ru
+                ? "Спред уже включён в котировку: покупка исполняется по ask, продажа — по bid. Отдельной комиссии за сделку нет."
+                : "The spread is built into the quote: buys execute at the ask, sells at the bid. There is no separate per-trade commission."}
+            </p>
+          </div>
+
+          <div style={{
+            display: "grid", gridTemplateColumns: "1fr 1fr",
+            padding: "0 0 12px",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+          }}>
+            <div style={{ color: "#4A5268", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", paddingLeft: "24px" }}>
+              {ru ? "Инструмент" : "Instrument"}
+            </div>
+            <div style={{ color: "#4A5268", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", textAlign: "center" as const }}>
+              {ru ? "Типичный спред" : "Typical Spread"}
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+            {[
+              { symbol: "EUR/USD", spread: ru ? "1.0 пипса" : "1.0 pip" },
+              { symbol: "GBP/USD", spread: ru ? "1.2 пипса" : "1.2 pips" },
+              { symbol: "USD/JPY", spread: ru ? "1.0 пипс" : "1.0 pip" },
+              { symbol: "EUR/GBP", spread: ru ? "1.2 пипса" : "1.2 pips" },
+              { symbol: "AUD/USD", spread: ru ? "1.2 пипса" : "1.2 pips" },
+              { symbol: "USD/CAD", spread: ru ? "1.5 пипса" : "1.5 pips" },
+              { symbol: "XAU/USD (Gold)", spread: "$0.30" },
+              { symbol: "BTC/USD", spread: "$30" },
+            ].map((row, i) => (
+              <div
+                key={row.symbol}
+                style={{
+                  display: "grid", gridTemplateColumns: "1fr 1fr",
+                  alignItems: "center",
+                  padding: "14px 0",
+                  borderBottom: "1px solid rgba(255,255,255,0.04)",
+                  background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.012)",
+                }}
+              >
+                <div style={{ paddingLeft: "24px" }}>
+                  <span style={{ fontSize: "15px", fontWeight: 700, color: "#E0E8FF", letterSpacing: "-0.01em" }}>
+                    {row.symbol}
+                  </span>
+                </div>
+                <div style={{ textAlign: "center" as const }}>
+                  <span style={{ fontSize: "15px", fontWeight: 700, color: "#C8D0E8" }}>
+                    {row.spread}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: "20px" }}>
+            <InfoNote>
+              {ru
+                ? "Типичные спреды в симулированной среде. Значения ориентировочные: фактический спред зависит от рыночной ликвидности и может расширяться на новостях и в часы низкой ликвидности. Исполнение всегда идёт по живой котировке на момент сделки."
+                : "Typical spreads in the simulated environment. Values are indicative: the actual spread depends on market liquidity and may widen around news releases and low-liquidity hours. Execution always uses the live quote at the time of the trade."}
+            </InfoNote>
+          </div>
+        </div>
+
         {/* ── Futures Subscription ── */}
         <div style={{ marginTop: "72px" }}>
           <div style={{ marginBottom: "40px", textAlign: "center" }}>

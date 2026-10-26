@@ -93,12 +93,12 @@ export default function RulesPage() {
       title: ru ? "Плечо" : "Leverage",
       icon: "⚡",
       items: ru ? [
-        "Стандартный план: плечо до 1:100",
-        "Агрессивный план: плечо 1:20 (до 1:100)",
+        "Стандартный план: плечо 1:20 (1:100 с аддоном High Leverage)",
+        "Агрессивный план: плечо 1:20 (1:100 с аддоном High Leverage)",
         "Плечо применяется ко всем инструментам",
       ] : [
-        "Standard plan: leverage up to 1:100",
-        "Aggressive plan: leverage 1:20 (up to 1:100)",
+        "Standard plan: leverage 1:20 (1:100 with the High Leverage add-on)",
+        "Aggressive plan: leverage 1:20 (1:100 with the High Leverage add-on)",
         "Leverage applies across all instruments",
       ],
     },

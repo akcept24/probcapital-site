@@ -243,7 +243,7 @@ export default function PricingPage() {
             {[
               { symbol: "EUR/USD", spread: ru ? "1.0 пипса" : "1.0 pip" },
               { symbol: "GBP/USD", spread: ru ? "1.2 пипса" : "1.2 pips" },
-              { symbol: "USD/JPY", spread: ru ? "1.0 пипс" : "1.0 pip" },
+              { symbol: "USD/JPY", spread: ru ? "1.0 пипса" : "1.0 pip" },
               { symbol: "EUR/GBP", spread: ru ? "1.2 пипса" : "1.2 pips" },
               { symbol: "AUD/USD", spread: ru ? "1.2 пипса" : "1.2 pips" },
               { symbol: "USD/CAD", spread: ru ? "1.5 пипса" : "1.5 pips" },

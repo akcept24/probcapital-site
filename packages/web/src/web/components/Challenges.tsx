@@ -73,24 +73,24 @@ export default function Challenges() {
     : plans;
 
   return (
-    <section id="challenges" className="py-12 px-6">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} id="challenges" className="px-6">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
             style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
             {tr.ch_badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {tr.ch_h2_1}{" "}<span className="gold-text">{tr.ch_h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px]">{tr.ch_sub}</p>
+          <p className="leading-[1.65] text-[#8A8FA8] max-w-[640px] mx-auto text-[17px]">{tr.ch_sub}</p>
         </div>
 
         {/* Account size selector */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-12">
           {accountSizes.map((size) => (
             <button key={size} onClick={() => setSelectedSize(size)}
-              className="px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-200"
+              className="px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all duration-200"
               style={selectedSize === size
                 ? { background: "linear-gradient(135deg, #00D4AA, #00FFCC)", color: "#0F1117", boxShadow: "0 4px 20px rgba(0,212,170,0.3)" }
                 : { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#8A8FA8" }}>
@@ -118,7 +118,7 @@ export default function Challenges() {
               <div className="mb-6">
                 <div className="text-[13px] text-[#8A8FA8] font-medium uppercase tracking-widest mb-2">{plan.name}</div>
                 <div className="flex items-end gap-2">
-                  <span className="font-black" style={{
+                  <span className="font-black num-serif" style={{
                     fontSize: "52px", letterSpacing: "-0.03em", lineHeight: 1,
                     ...(plan.highlight
                       ? { background: "linear-gradient(135deg, #00D4AA, #00FFCC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }

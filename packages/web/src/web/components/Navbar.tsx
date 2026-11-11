@@ -160,7 +160,7 @@ export default function Navbar({ sticky = false }: { sticky?: boolean }) {
           </a>
           <a
             href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-            className="gold-gradient text-[#0F1117] text-[13px] font-bold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="gold-gradient text-[#0F1117] text-[13px] font-bold px-4 py-2.5 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             {tr.nav_getFunded}
           </a>
@@ -265,7 +265,7 @@ export default function Navbar({ sticky = false }: { sticky?: boolean }) {
               </a>
               <a
                 href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-                className="flex-1 text-center gold-gradient text-[#0F1117] text-[14px] font-bold px-4 py-3 rounded-lg"
+                className="flex-1 text-center gold-gradient text-[#0F1117] text-[14px] font-bold px-4 py-3 rounded-full"
                 onClick={() => setMenuOpen(false)}
               >
                 {tr.nav_getFunded}

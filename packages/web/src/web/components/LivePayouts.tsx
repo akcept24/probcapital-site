@@ -57,7 +57,7 @@ export default function LivePayouts() {
   );
 
   return (
-    <section className="py-12 px-6 overflow-hidden">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} className="px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
@@ -67,10 +67,10 @@ export default function LivePayouts() {
           >
             {l.badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {l.h2_1} <span className="gold-text">{l.h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[520px] mx-auto text-[16px] leading-relaxed">{l.sub}</p>
+          <p className="text-[#8A8FA8] max-w-[640px] mx-auto text-[17px] leading-[1.65]">{l.sub}</p>
         </div>
 
         {/* Big stats */}
@@ -83,7 +83,7 @@ export default function LivePayouts() {
           ].map((s, i) => (
             <div key={i} className="text-center py-6 rounded-2xl"
               style={{ background: "#1A1D27", border: "1px solid rgba(255,255,255,0.06)" }}>
-              <div className="font-black gold-text mb-1" style={{ fontSize: "clamp(26px, 4vw, 40px)", letterSpacing: "-0.02em" }}>
+              <div className="num-serif gold-text mb-1" style={{ fontSize: "clamp(34px, 4.5vw, 52px)", fontWeight: 600, letterSpacing: "-0.02em" }}>
                 {s.v}
               </div>
               <div className="text-[12px] text-[#8A8FA8] uppercase tracking-wider font-medium px-2">{s.label}</div>

@@ -175,12 +175,12 @@ export default function PrivacyPage() {
   return (
     <div style={{ background: "#0F1117", minHeight: "100vh", color: "#F0F2FF" }}>
       <Navbar />
-      <div style={{ maxWidth: "780px", margin: "0 auto", padding: "120px 24px 80px" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "120px 24px 80px" }}>
         <div style={{ marginBottom: "48px" }}>
           <div style={{ display: "inline-block", padding: "6px 16px", borderRadius: "100px", background: "rgba(0,212,170,0.1)", border: "1px solid rgba(0,212,170,0.25)", color: "#00D4AA", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "16px" }}>
             {ru ? "Правовая информация" : "Legal"}
           </div>
-          <h1 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "12px" }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: "12px" }}>
             {ru ? "Политика конфиденциальности" : "Privacy Policy"}
           </h1>
           <p style={{ color: "#555A72", fontSize: "14px" }}>{ru ? "Последнее обновление: сентябрь 2026" : "Last updated: September 2026"}</p>

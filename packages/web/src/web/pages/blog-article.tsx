@@ -236,7 +236,7 @@ export default function BlogArticlePage() {
         </span>
 
         {/* Title */}
-        <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 'bold', marginBottom: '24px', lineHeight: '1.2', maxWidth: '900px' }}>
+        <h1 className="font-display" style={{ fontSize: 'clamp(36px, 5vw, 60px)', fontWeight: 'bold', marginBottom: '24px', lineHeight: '1.08', maxWidth: '900px' }}>
           {post.title}
         </h1>
 

@@ -51,7 +51,7 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
   ];
 
   return (
-    <section id="futures" className="py-12 px-6">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} id="futures" className="px-6">
       <div className="max-w-[1200px] mx-auto">
         {!hideHeader && (
           <div className="text-center mb-14">
@@ -59,10 +59,10 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
               style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
               {tr.fut_badge}
             </div>
-            <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+            <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
               {tr.fut_h2_1}{" "}<span className="gold-text">{tr.fut_h2_2}</span>
             </h2>
-            <p className="text-[#8A8FA8] max-w-[560px] mx-auto text-[16px]">{tr.fut_sub}</p>
+            <p className="leading-[1.65] text-[#8A8FA8] max-w-[640px] mx-auto text-[17px]">{tr.fut_sub}</p>
           </div>
         )}
 
@@ -97,7 +97,7 @@ export default function FuturesPlans({ hideHeader = false }: { hideHeader?: bool
               <div className="text-[22px] font-bold text-[#F0F2FF]">{data.size}{data.oneStep ? ` · ${tr.fut_1step_suffix}` : ""}</div>
               <div className="text-[12px] text-[#8A8FA8] mb-3">{tr.fut_size_label}</div>
               <div className="flex items-end gap-2">
-                <span className="font-black" style={{
+                <span className="font-black num-serif" style={{
                   fontSize: "52px", letterSpacing: "-0.03em", lineHeight: 1,
                   background: "linear-gradient(135deg, #00D4AA, #00FFCC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 }}>

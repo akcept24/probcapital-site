@@ -99,7 +99,7 @@ export default function HowItWorks() {
       ];
 
   return (
-    <section id="how-it-works" style={{ padding: "80px 24px" }}>
+    <section id="how-it-works" style={{ padding: "clamp(88px, 11vw, 140px) 24px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -112,9 +112,9 @@ export default function HowItWorks() {
           }}>
             {badge}
           </div>
-          <h2 style={{
-            fontSize: "clamp(30px, 4.5vw, 50px)", fontWeight: 900,
-            letterSpacing: "-0.025em", marginBottom: 16,
+          <h2 className="font-display" style={{
+            fontSize: "clamp(34px, 4.6vw, 64px)", fontWeight: 800,
+            letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 16,
             color: "#F0F4FF", overflowWrap: "break-word",
           }}>
             {h2_1}{" "}
@@ -122,7 +122,7 @@ export default function HowItWorks() {
               {h2_2}
             </span>
           </h2>
-          <p style={{ color: "#9098B8", maxWidth: 520, margin: "0 auto", fontSize: 15, lineHeight: 1.7 }}>
+          <p style={{ color: "#9098B8", maxWidth: "640px", margin: "0 auto", fontSize: "17px", lineHeight: 1.65 }}>
             {sub}
           </p>
         </div>

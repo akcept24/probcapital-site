@@ -66,7 +66,7 @@ export default function RefundPage() {
     <div style={{ background: "#04080F", minHeight: "100vh", color: "#F0F4FF" }}>
       <Navbar />
 
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "130px 24px 96px" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "130px 24px 96px" }}>
 
         {/* Header */}
         <div style={{ marginBottom: "48px" }}>
@@ -78,9 +78,9 @@ export default function RefundPage() {
           }}>
             {ru ? "Правовой документ" : "Legal Document"}
           </span>
-          <h1 style={{
-            fontSize: "clamp(28px,4vw,46px)", fontWeight: 900,
-            letterSpacing: "-0.025em", marginBottom: "14px", lineHeight: 1.1,
+          <h1 className="font-display" style={{
+            fontSize: "clamp(40px, 5.5vw, 72px)", fontWeight: 800,
+            letterSpacing: "-0.03em", marginBottom: "14px", lineHeight: 1.05,
           }}>
             {ru ? "Политика возврата средств" : "Refund Policy"}
           </h1>

@@ -231,7 +231,7 @@ export default function AboutPage() {
 
           <Badge text={ru ? "О компании" : "About ProbCapital"} />
 
-          <h1 style={{
+          <h1 className="font-display" style={{
             fontSize: "clamp(30px, 6.5vw, 86px)", fontWeight: 900,
             lineHeight: 1.03, letterSpacing: "-0.03em",
             marginBottom: "30px", maxWidth: "860px",

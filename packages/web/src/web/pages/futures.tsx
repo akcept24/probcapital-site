@@ -58,7 +58,7 @@ export default function FuturesPage() {
           <div style={{ display: "inline-block", padding: "6px 16px", borderRadius: "100px", background: "rgba(0,212,170,0.1)", border: "1px solid rgba(0,212,170,0.25)", color: "#00D4AA", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
             {tr.fut_badge}
           </div>
-          <h1 style={{ fontSize: "clamp(34px,5.5vw,56px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "18px", lineHeight: 1.05 }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "18px", lineHeight: 1.05 }}>
             {tr.futp_h1_1} <span className="gold-text">{tr.futp_h1_2}</span>
           </h1>
           <p style={{ color: "#8A8FA8", fontSize: "16px", lineHeight: 1.8, maxWidth: "620px", margin: "0 auto 30px" }}>
@@ -90,7 +90,7 @@ export default function FuturesPage() {
 
         {/* ── Plan selector (shared component, header provided by hero) ── */}
         <div style={{ marginBottom: "72px" }}>
-          <h2 style={{ fontSize: "clamp(26px,4vw,38px)", fontWeight: 900, letterSpacing: "-0.02em", textAlign: "center", marginBottom: "8px" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, letterSpacing: "-0.03em", textAlign: "center", marginBottom: "8px" }}>
             {tr.fut_h2}
           </h2>
           <FuturesPlans hideHeader />
@@ -115,10 +115,10 @@ export default function FuturesPage() {
 
         {/* ── Rules: compression headline + full dollar table immediately beneath ── */}
         <div style={{ textAlign: "center", marginBottom: "24px" }}>
-          <h2 style={{ fontSize: "clamp(30px,4.5vw,44px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "10px" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "10px" }}>
             {tr.ts_compression}
           </h2>
-          <p style={{ color: "#8A8FA8", fontSize: "15px", lineHeight: 1.7, maxWidth: "620px", margin: "0 auto" }}>
+          <p style={{ color: "#8A8FA8", fontSize: "17px", lineHeight: 1.65, maxWidth: "640px", margin: "0 auto" }}>
             {tr.ts_compression_sub}
           </p>
         </div>
@@ -254,10 +254,10 @@ export default function FuturesPage() {
           background: "linear-gradient(135deg, rgba(0,212,170,0.07) 0%, rgba(0,140,255,0.03) 100%)",
           border: "1px solid rgba(0,212,170,0.18)", borderRadius: "24px",
         }}>
-          <h2 style={{ fontSize: "clamp(24px,3.5vw,36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "12px" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "12px" }}>
             {tr.futp_cta_h2}
           </h2>
-          <p style={{ color: "#8A8FA8", fontSize: "15px", marginBottom: "28px" }}>
+          <p style={{ color: "#8A8FA8", fontSize: "17px", lineHeight: 1.65, maxWidth: "640px", margin: "0 auto 28px" }}>
             {tr.futp_cta_sub}
           </p>
           <a

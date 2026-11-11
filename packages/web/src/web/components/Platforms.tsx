@@ -49,7 +49,7 @@ export default function Platforms() {
   const l = labels[lang];
 
   return (
-    <section id="platform" className="py-12 px-6">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} id="platform" className="px-6">
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}
@@ -58,10 +58,10 @@ export default function Platforms() {
             style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
             {l.badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(36px, 6vw, 64px)", letterSpacing: "-0.03em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {l.h2_1} <span className="gold-text">{l.h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[560px] mx-auto text-[17px] leading-relaxed">{l.sub}</p>
+          <p className="text-[#8A8FA8] max-w-[640px] mx-auto text-[17px] leading-[1.65]">{l.sub}</p>
         </div>
 
         {/* Main showcase */}
@@ -256,7 +256,7 @@ export default function Platforms() {
         {/* CTA row */}
         <div className="flex justify-center">
           <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-            className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
+            className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-4 rounded-full hover:opacity-90 transition-opacity text-center"
             style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
             {l.cta}
           </a>

@@ -97,7 +97,7 @@ export default function PricingPage() {
         {/* ── Header ── */}
         <div style={{ marginBottom: "56px", textAlign: "center" }}>
           <Badge>{ru ? "Тарифные планы" : "Pricing"}</Badge>
-          <h1 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-0.03em", marginBottom: "16px", lineHeight: 1.1 }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "16px", lineHeight: 1.05 }}>
             {ru ? "Один взнос. Без скрытых сборов." : "One fee. No hidden charges."}
           </h1>
           <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "560px", margin: "0 auto" }}>
@@ -217,10 +217,10 @@ export default function PricingPage() {
         <div style={{ marginTop: "72px" }}>
           <div style={{ marginBottom: "32px", textAlign: "center" }}>
             <Badge>{ru ? "Торговые условия" : "Trading Conditions"}</Badge>
-            <h2 style={{ fontSize: "clamp(24px,3.5vw,36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "12px", lineHeight: 1.15 }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "12px", lineHeight: 1.15 }}>
               {ru ? "Типичные спреды" : "Typical Spreads"}
             </h2>
-            <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
+            <p style={{ color: "#606880", fontSize: "17px", lineHeight: 1.65, maxWidth: "640px", margin: "0 auto" }}>
               {ru
                 ? "Спред уже включён в котировку: покупка исполняется по ask, продажа — по bid. Отдельной комиссии за сделку нет."
                 : "The spread is built into the quote: buys execute at the ask, sells at the bid. There is no separate per-trade commission."}
@@ -287,10 +287,10 @@ export default function PricingPage() {
         <div style={{ marginTop: "72px" }}>
           <div style={{ marginBottom: "40px", textAlign: "center" }}>
             <Badge>{tr.fut_badge}</Badge>
-            <h2 style={{ fontSize: "clamp(30px,4.5vw,46px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "14px", lineHeight: 1.15 }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "14px", lineHeight: 1.15 }}>
               {tr.fut_h2}
             </h2>
-            <p style={{ color: "#606880", fontSize: "15px", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
+            <p style={{ color: "#606880", fontSize: "17px", lineHeight: 1.65, maxWidth: "640px", margin: "0 auto" }}>
               {tr.fut_sub}
             </p>
             <div style={{ marginTop: "16px" }}>

@@ -111,7 +111,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" style={{ padding: "80px 24px", position: "relative", overflow: "hidden" }}>
+    <section id="features" style={{ padding: "clamp(88px, 11vw, 140px) 24px", position: "relative", overflow: "hidden" }}>
       {/* Subtle grid */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
@@ -139,14 +139,14 @@ export default function Features() {
             <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#00D4AA", boxShadow: "0 0 6px #00D4AA" }} />
             {ru ? "Инфраструктура и возможности" : "Infrastructure & Opportunities"}
           </span>
-          <h2 style={{
-            fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 900,
-            letterSpacing: "-0.025em", lineHeight: 1.1, marginBottom: "16px", color: "#F0F4FF",
+          <h2 className="font-display" style={{
+            fontSize: "clamp(34px, 4.6vw, 64px)", fontWeight: 800,
+            letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: "16px", color: "#F0F4FF",
           }}>
             {ru ? <>Институциональная инфраструктура.<br /><span style={{ color: "#00D4AA" }}>Ваши навыки.</span></>
               : <>Institutional-Grade Infrastructure.<br /><span style={{ color: "#00D4AA" }}>Your Skill.</span></>}
           </h2>
-          <p style={{ color: "#9098B8", maxWidth: "520px", margin: "0 auto", fontSize: "16px", lineHeight: 1.8 }}>
+          <p style={{ color: "#9098B8", maxWidth: "640px", margin: "0 auto", fontSize: "17px", lineHeight: 1.65 }}>
             {ru
               ? "Мы обеспечиваем высокотехнологичную среду оценки. Трейдеры приносят дисциплину. Наше программное обеспечение предоставляет объективный анализ."
               : "We provide the high-technology evaluation environment. Traders bring the discipline. Our software delivers the objective Performance Analysis."}

@@ -38,17 +38,17 @@ export default function Testimonials() {
   const l = labels[lang];
 
   return (
-    <section className="py-12 px-6 overflow-hidden">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} className="px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 text-[12px] font-semibold uppercase tracking-widest"
             style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
             {l.badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {l.h2_1}{" "}<span className="gold-text">{l.h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px]">{l.sub}</p>
+          <p className="leading-[1.65] text-[#8A8FA8] max-w-[640px] mx-auto text-[17px]">{l.sub}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

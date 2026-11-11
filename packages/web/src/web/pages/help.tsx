@@ -51,7 +51,7 @@ export default function HelpPage() {
           <div style={{ display: "inline-block", padding: "6px 16px", borderRadius: "100px", background: "rgba(0,212,170,0.1)", border: "1px solid rgba(0,212,170,0.25)", color: "#00D4AA", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "16px" }}>
             {ru ? "Поддержка" : "Support"}
           </div>
-          <h1 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "16px" }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: "16px" }}>
             {ru ? "Центр помощи" : "Help Center"}
           </h1>
           <p style={{ color: "#8A8FA8", fontSize: "17px" }}>

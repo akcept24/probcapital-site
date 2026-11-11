@@ -59,7 +59,7 @@ export default function Comparison() {
   const l = labels[lang];
 
   return (
-    <section className="py-12 px-6">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} className="px-6">
       <div className="max-w-[900px] mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
@@ -69,10 +69,10 @@ export default function Comparison() {
           >
             {l.badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {l.h2_1} <span className="gold-text">{l.h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px] leading-relaxed">{l.sub}</p>
+          <p className="text-[#8A8FA8] max-w-[640px] mx-auto text-[17px] leading-[1.65]">{l.sub}</p>
         </div>
 
         {/* Table */}
@@ -148,7 +148,7 @@ export default function Comparison() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
           <p className="text-[12px] text-[#555A72] max-w-[400px]">{l.note}</p>
           <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-            className="gold-gradient text-[#0F1117] text-[14px] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="gold-gradient text-[#0F1117] text-[14px] font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}
           </a>

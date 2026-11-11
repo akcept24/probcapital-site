@@ -34,27 +34,27 @@ export default function Hero() {
           padding: "clamp(50px, 8vw, 110px) 40px",
           display: "flex", flexDirection: "column", alignItems: "flex-start",
         }}>
-          <div style={{ maxWidth: "480px" }}>
+          <div style={{ maxWidth: "720px" }}>
 
             {/* Headline */}
-            <h1 style={{
+            <h1 className="font-display" style={{
               margin: 0,
-              fontSize: "clamp(24px, 3.2vw, 48px)",
-              fontWeight: 900,
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              fontSize: "clamp(34px, 5.6vw, 76px)",
+              fontWeight: 800,
+              lineHeight: 1.04,
+              letterSpacing: "-0.03em",
               color: "#FFFFFF",
             }}>
               {ru ? (
                 <>
                   Докажите торговую<br />дисциплину.<br />
-                  Получите доступ к<br />симулированному капиталу.<br />
+                  Получите доступ к<br />симулированному<br />капиталу.<br />
                   <span style={{ color: "#00D4AA" }}>Забирайте до 90%<br />одобренных выплат.</span>
                 </>
               ) : (
                 <>
-                  Prove your trading<br />discipline.<br />
-                  Access simulated capital.<br />
+                  Prove your<br />trading discipline.<br />
+                  Access simulated<br />capital.<br />
                   <span style={{ color: "#00D4AA" }}>Keep up to 90%<br />of approved payouts.</span>
                 </>
               )}
@@ -63,9 +63,9 @@ export default function Hero() {
             {/* Subtitle */}
             <p style={{
               marginTop: "clamp(14px, 2vw, 24px)",
-              fontSize: "clamp(12px, 1vw, 14px)",
+              fontSize: "clamp(15px, 1.4vw, 18px)",
               color: "rgba(255,255,255,0.65)",
-              lineHeight: 1.7,
+              lineHeight: 1.6,
             }}>
               {ru
                 ? <>Пройдите нашу программу оценки. Получите до <strong style={{ color: "#fff" }}>$400,000</strong> симулированного капитала с выплатой до <strong style={{ color: "#fff" }}>90%</strong> по результатам оценки.</>
@@ -85,7 +85,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  padding: "12px 26px", borderRadius: "8px",
+                  padding: "12px 26px", borderRadius: "999px",
                   background: "#00D4AA", color: "#060a10",
                   fontWeight: 700, fontSize: "14px",
                   textDecoration: "none", whiteSpace: "nowrap",
@@ -99,7 +99,7 @@ export default function Hero() {
                 href="#how-it-works"
                 style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  padding: "12px 22px", borderRadius: "8px",
+                  padding: "12px 22px", borderRadius: "999px",
                   background: "rgba(255,255,255,0.08)",
                   border: "1.5px solid rgba(255,255,255,0.3)",
                   color: "#FFFFFF",
@@ -131,7 +131,7 @@ export default function Hero() {
               >
                 {ru ? "или попробуйте бесплатный триал на 14 дней →" : "or try a free 14-day trial →"}
               </a>
-              <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.55)", marginTop: "8px", lineHeight: 1.6, maxWidth: "420px" }}>
+              <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.55)", marginTop: "8px", lineHeight: 1.6, maxWidth: "560px" }}>
                 {ru
                   ? "Бесплатный триал 25K работает по правилам FX-оценки; платные фьючерсные планы используют другие цели и правила."
                   : "Free 25K trial runs on FX evaluation rules; paid futures plans use different targets and rules."}

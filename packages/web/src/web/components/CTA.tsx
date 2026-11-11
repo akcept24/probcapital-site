@@ -5,7 +5,7 @@ export default function CTA() {
   const { tr } = useLang();
 
   return (
-    <section className="py-12 px-6">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} className="px-6">
       <div className="max-w-[1200px] mx-auto">
         <div className="relative rounded-3xl p-12 md:p-20 text-center overflow-hidden"
           style={{ background: "#1A1D27", border: "1px solid rgba(0,212,170,0.2)", boxShadow: "0 0 80px rgba(0,212,170,0.08)" }}>
@@ -27,18 +27,18 @@ export default function CTA() {
               <span className="text-[13px] font-medium text-[#00D4AA]">{tr.cta_badge}</span>
             </div>
 
-            <h2 className="font-black mb-5" style={{ fontSize: "clamp(36px, 6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+            <h2 className="font-display mb-5" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
               {tr.cta_h2_1}{" "}<span className="gold-text">{tr.cta_h2_2}</span>
             </h2>
 
-            <p className="text-[#8A8FA8] text-[17px] max-w-[500px] mx-auto mb-10 leading-relaxed">{tr.cta_sub}</p>
+            <p className="text-[#8A8FA8] text-[17px] max-w-[640px] mx-auto mb-10 leading-[1.65]">{tr.cta_sub}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[16px] font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-all duration-200"
+              <a href={TRIAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="gold-gradient text-[#0F1117] text-[16px] font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all duration-200"
                 style={{ boxShadow: "0 8px 32px rgba(0,212,170,0.3)" }}>
                 {tr.cta_btn1}
               </a>
-              <a href="#how-it-works" className="text-[#F0F2FF] text-[16px] font-semibold px-10 py-4 rounded-xl transition-all duration-200"
+              <a href="#how-it-works" className="text-[#F0F2FF] text-[16px] font-semibold px-10 py-4 rounded-full transition-all duration-200"
                 style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
                 {tr.cta_btn2}
               </a>

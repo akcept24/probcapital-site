@@ -39,7 +39,7 @@ export default function PayoutProof() {
   const l = labels[lang];
 
   return (
-    <section className="py-12 px-6 overflow-hidden">
+    <section style={{ paddingTop: "clamp(88px, 11vw, 140px)", paddingBottom: "clamp(88px, 11vw, 140px)" }} className="px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}
@@ -48,10 +48,10 @@ export default function PayoutProof() {
             style={{ background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.2)", color: "#00D4AA" }}>
             {l.badge}
           </div>
-          <h2 className="font-black mb-4" style={{ fontSize: "clamp(32px, 5vw, 52px)", letterSpacing: "-0.02em" }}>
+          <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {l.h2_1} <span className="gold-text">{l.h2_2}</span>
           </h2>
-          <p className="text-[#8A8FA8] max-w-[480px] mx-auto text-[16px] leading-relaxed">{l.sub}</p>
+          <p className="text-[#8A8FA8] max-w-[640px] mx-auto text-[17px] leading-[1.65]">{l.sub}</p>
         </div>
 
         {/* Steps */}
@@ -74,7 +74,7 @@ export default function PayoutProof() {
             <div className="text-[15px] text-[#8A8FA8] max-w-[340px] leading-snug">{l.stripText}</div>
           </div>
           <a href={FREE_TRIAL_URL} target="_blank" rel="noopener noreferrer"
-            className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="gold-gradient text-[#0F1117] text-[15px] font-bold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ boxShadow: "0 4px 20px rgba(0,212,170,0.25)" }}>
             {l.cta}
           </a>

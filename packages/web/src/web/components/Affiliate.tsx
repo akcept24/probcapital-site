@@ -67,10 +67,10 @@ export default function Affiliate() {
               >
                 {l.badge}
               </div>
-              <h2 className="font-black mb-4" style={{ fontSize: "clamp(30px, 4vw, 48px)", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+              <h2 className="font-display mb-4" style={{ fontWeight: 800, fontSize: "clamp(34px, 4.6vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
                 {l.h2_1}<br /><span className="gold-text">{l.h2_2}</span>
               </h2>
-              <p className="text-[#8A8FA8] text-[16px] leading-relaxed mb-8 max-w-[460px]">{l.sub}</p>
+              <p className="text-[#8A8FA8] text-[17px] leading-[1.65] mb-8 max-w-[640px]">{l.sub}</p>
 
               <ul className="space-y-3 mb-8">
                 {[l.point1, l.point2, l.point3, l.point4].map(p => (
@@ -91,7 +91,7 @@ export default function Affiliate() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={AFFILIATE_SIGNUP_URL} target="_blank" rel="noopener noreferrer"
-                  className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-center"
+                  className="gold-gradient text-[#0F1117] text-[15px] font-bold px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity text-center"
                   style={{ boxShadow: "0 8px 24px rgba(0,212,170,0.25)" }}>
                   {l.cta}
                 </a>
@@ -120,7 +120,7 @@ export default function Affiliate() {
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(0,212,170,0.2)"; el.style.boxShadow = "0 0 20px rgba(0,212,170,0.06)"; }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(255,255,255,0.06)"; el.style.boxShadow = "none"; }}
                 >
-                  <div className="font-black gold-text leading-none" style={{ fontSize: "clamp(28px, 4vw, 40px)", letterSpacing: "-0.03em", wordBreak: "break-all" }}>
+                  <div className="num-serif gold-text leading-none" style={{ fontSize: "clamp(34px, 4.5vw, 52px)", fontWeight: 600, letterSpacing: "-0.03em", wordBreak: "break-all" }}>
                     {s.v}
                   </div>
                   <div className="text-[12px] text-[#8A8FA8] uppercase tracking-wider font-medium mt-3">{s.label}</div>

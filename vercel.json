@@ -3,6 +3,14 @@
   "outputDirectory": "packages/web/dist",
   "installCommand": "bun install",
   "framework": null,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/api/quotes/:symbol", "destination": "https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1d&range=2d" },
     { "source": "/(.*)", "destination": "/index.html" }

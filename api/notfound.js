@@ -52,17 +52,17 @@ const PAGE = `<!DOCTYPE html>
   <div class="card">
     <div class="code">404</div>
     <div class="fish">🎣 … 🐟💨</div>
-    <h1>Ловить здесь <span class="gold">нечего</span>.</h1>
-    <p>Привет, хакер. Да, мы знаем, зачем ты сюда залез.<br/>
-    <b>.env</b> уехал. <b>.git</b> в отпуске. Ключи, пароли и «админка за углом» — всё мимо.</p>
+    <h1>Nothing to <span class="gold">catch</span> here.</h1>
+    <p>Hey, hacker. Yes, we know why you're here.<br/>
+    The <b>.env</b> has left the building. <b>.git</b> is on vacation. Keys, passwords and the "secret admin panel" — all a miss.</p>
     <div class="mono">$ cat /.env
 cat: /.env: No such file or directory
 $ ls /.git
 ls: /.git: Nothing to steal here
 $ sudo make-me-a-millionaire
 Permission denied (and nice try 😄)</div>
-    <p>Но упорство мы уважаем. Держи печеньку 🍪 — и иди торговать честно, у нас как раз челленджи до $400 000.</p>
-    <a class="btn" href="https://www.probcapital.com/">← Вернуться торговать</a>
+    <p>But we respect the hustle. Here's a cookie 🍪 — now go trade honestly: our challenges go up to $400,000.</p>
+    <a class="btn" href="https://www.probcapital.com/">← Back to trading</a>
     <p class="tiny">ProbCapital LLC · This page is a 404 with a sense of humor. The status code is real, the secrets are not here.</p>
   </div>
 </body>

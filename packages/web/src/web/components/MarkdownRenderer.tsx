@@ -325,21 +325,6 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       >
         {content}
       </ReactMarkdown>
-
-      {/* Global styles for markdown content */}
-      <style>
-        {`
-          .markdown-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-          }
-
-          .markdown-content * {
-            scroll-margin-top: 100px;
-          }
-        `}
-      </style>
     </div>
   );
 }

@@ -162,10 +162,6 @@ export default function HowItWorks() {
           </a>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 900px) { .hiw-connector { display: none !important; } }
-      `}</style>
     </section>
   );
 }

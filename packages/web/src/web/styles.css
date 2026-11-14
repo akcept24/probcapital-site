@@ -161,3 +161,12 @@ html { scroll-behavior: smooth; }
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
+
+/* Moved from inline <style> elements (app.tsx splash keyframes,
+   HowItWorks connector media query, MarkdownRenderer markdown layout)
+   so the Content-Security-Policy can drop style-src 'unsafe-inline'
+   entirely (ShipAudit cleanup, 2026-11-14). */
+@keyframes pc-pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+@media (max-width: 900px) { .hiw-connector { display: none !important; } }
+.markdown-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.markdown-content * { scroll-margin-top: 100px; }

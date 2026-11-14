@@ -49,7 +49,6 @@ function LoadingScreen() {
       >
         ProbCapital
       </div>
-      <style>{`@keyframes pc-pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }`}</style>
     </div>
   );
 }

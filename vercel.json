@@ -1,18 +1,1 @@
-{
-  "buildCommand": "bun run build",
-  "outputDirectory": "packages/web/dist",
-  "installCommand": "bun install",
-  "framework": null,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    }
-  ],
-  "rewrites": [
-    { "source": "/api/quotes/:symbol", "destination": "https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1d&range=2d" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
+{"buildCommand":"bun run build","framework":null,"headers":[{"headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"X-Frame-Options","value":"SAMEORIGIN"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},{"key":"Access-Control-Allow-Origin","value":"https://www.probcapital.com"},{"key":"Content-Security-Policy-Report-Only","value":"default-src 'self'; script-src 'self' 'unsafe-inline' https://collector.onedollarstats.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://collector.onedollarstats.com https://ipapi.co https://app.probcapital.com; frame-src 'self'; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"}],"source":"/(.*)"}],"installCommand":"bun install","outputDirectory":"packages/web/dist","rewrites":[{"destination":"https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1d&range=2d","source":"/api/quotes/:symbol"},{"destination":"/index.html","source":"/(.*)"}]}

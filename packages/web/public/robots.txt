@@ -12,12 +12,6 @@ User-agent: Claude-Web
 User-agent: PerplexityBot
 Allow: /
 
-# Block admin and API routes
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /private/
-
 # Sitemap location
 Sitemap: https://www.probcapital.com/sitemap.xml
 

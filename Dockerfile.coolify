@@ -1,0 +1,19 @@
+# ProbCapital marketing site — Coolify/Contabo deployment.
+# Vercel ignores this file; it exists so the site can be served by
+# deploy/server.mjs with the same behavior vercel.json provided.
+FROM oven/bun:1 AS build
+WORKDIR /app
+COPY . .
+RUN bun install --frozen-lockfile || bun install
+RUN bun run build
+
+FROM node:22-alpine AS runtime
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV DIST_DIR=/app/dist
+COPY --from=build /app/packages/web/dist ./dist
+COPY --from=build /app/api ./api
+COPY --from=build /app/deploy ./deploy
+EXPOSE 3000
+CMD ["node", "deploy/server.mjs"]
